@@ -1,4 +1,4 @@
-# Bzzhh\Tzkt\HeadApi
+# Tzkt\HeadApi
 
 All URIs are relative to https://api.tzkt.io, except if the operation defines another base path.
 
@@ -10,7 +10,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `headGet()`
 
 ```php
-headGet(): \Bzzhh\Tzkt\Model\State
+headGet(): \Tzkt\Model\State
 ```
 
 Get indexer head
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\HeadApi(
+$apiInstance = new Tzkt\Api\HeadApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\State**](../Model/State.md)
+[**\Tzkt\Model\State**](../Model/State.md)
 
 ### Authorization
 

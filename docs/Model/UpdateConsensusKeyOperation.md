@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **timestamp** | **\DateTime** | Datetime of the block, in which the operation was included (ISO 8601, e.g. &#x60;2020-02-20T02:40:57Z&#x60;) | [optional]
 **block** | **string** | Hash of the block, in which the operation was included | [optional]
 **hash** | **string** | Hash of the operation | [optional]
-**sender** | [**OneOfAlias**](OneOfAlias.md) | Information about the account who has sent the operation | [optional]
+**sender** | [**\Tzkt\Model\UpdateConsensusKeyOperationAllOfSender**](UpdateConsensusKeyOperationAllOfSender.md) |  | [optional]
 **counter** | **int** | An account nonce which is used to prevent operation replay | [optional]
 **gas_limit** | **int** | A cap on the amount of gas a given operation can consume | [optional]
 **gas_used** | **int** | Amount of gas, consumed by the operation | [optional]
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **activation_cycle** | **int** | Index of the cycle from which the consensus key will be active | [optional]
 **public_key** | **string** | Consensus key | [optional]
 **public_key_hash** | **string** | Consensus key hash | [optional]
-**errors** | [**\Bzzhh\Tzkt\Model\OperationError[]**](OperationError.md) | List of errors provided by the node, injected the operation to the blockchain. &#x60;null&#x60; if there is no errors | [optional]
-**quote** | [**OneOfQuoteShort**](OneOfQuoteShort.md) | Injected historical quote at the time of operation | [optional]
+**errors** | [**\Tzkt\Model\OperationError[]**](OperationError.md) | List of errors provided by the node, injected the operation to the blockchain. &#x60;null&#x60; if there is no errors | [optional]
+**quote** | [**\Tzkt\Model\UpdateConsensusKeyOperationAllOfQuote**](UpdateConsensusKeyOperationAllOfQuote.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

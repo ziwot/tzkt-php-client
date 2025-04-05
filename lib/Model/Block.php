@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -13,12 +13,12 @@
 /**
  * TzKT API
  *
- * # Introduction  TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.  You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community  to help developers build more services and dapps on top of Tezos.  TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service, because you can always clone, build and run it yourself to have full control over all the components.  Feel free to contact us if you have any questions or feature requests. Your feedback is much appreciated!  - Discord: https://discord.gg/aG8XKuwsQd - Telegram: https://t.me/baking_bad_chat - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L - Twitter: https://twitter.com/TezosBakingBad - Email: hello@bakingbad.dev  And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊  # Get Started  There are two API services provided for public use: - **Free TzKT API** with free anonymous access; - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.  You can find more details about differences between available tiers [here](https://tzkt.io/api).  ## Free TzKT API  Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality. It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.  > #### Note: attribution required If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io)) - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io)) - Parisnet: `https://api.parisnet.tzkt.io/` ([view docs](https://api.parisnet.tzkt.io))  ### Sending Requests  To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint (for example, chain's head: `/v1/head`), that's pretty much it:   ```bash curl https://api.tzkt.io/v1/head ```  Read through this documentation to explore available endpoints, query parameters (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.) and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits.  If you exceed the limit, the API will respond with `HTTP 429` status code.  ## TzKT Pro  TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA. TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io)) - Testnets: *let us know if you need TzKT Pro for testnets*  ### Authorization  To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription. This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.  Note that you can have multiple API keys within a single subscription.  Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories. If your key was compromised, just let us know and we will issue a new one.  Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted, but query string is not, so the key can be unintentionally exposed to third parties.  ### Sending Requests  Sending a request with the API key passed as a query string parameter:  ```bash curl https://pro.tzkt.io/v1/head?apikey={your_key} ```  Sending a request with the API key passed via an HTTP header:  ```bash curl https://pro.tzkt.io/v1/head \\     -H 'apikey: {your_key}' ```  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.  Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests and the time remaining (in seconds) until the quota is reset. Here's an example:  ``` RateLimit-Limit: 50 RateLimit-Remaining: 49 RateLimit-Reset: 1 ```  It also sends general information about your rate limits per second and per day:  ``` X-RateLimit-Limit-Second: 50 X-RateLimit-Remaining-Second: 49 X-RateLimit-Limit-Day: 3000000 X-RateLimit-Remaining-Day: 2994953 ```  If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Quebecnet: `https://api.quebecnet.tzkt.io/` ([view docs](https://api.quebecnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.4
+ * The version of the OpenAPI document: 1.14.7
  * Contact: hello@bakingbad.dev
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 6.2.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Bzzhh\Tzkt\Model;
+namespace Tzkt\Model;
 
 use \ArrayAccess;
-use \Bzzhh\Tzkt\ObjectSerializer;
+use \Tzkt\ObjectSerializer;
 
 /**
  * Block Class Doc Comment
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -77,62 +77,62 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
         'bonus_staked_shared' => 'int',
         'fees' => 'int',
         'nonce_revealed' => 'bool',
-        'proposer' => '\Bzzhh\Tzkt\Model\BlockProposer',
-        'producer' => '\Bzzhh\Tzkt\Model\BlockProducer',
-        'software' => '\Bzzhh\Tzkt\Model\BlockSoftware',
+        'proposer' => '\Tzkt\Model\BakingOperationAllOfProposer',
+        'producer' => '\Tzkt\Model\BakingOperationAllOfProducer',
+        'software' => '\Tzkt\Model\BlockSoftware',
         'lb_toggle' => 'bool',
         'lb_toggle_ema' => 'int',
         'ai_toggle' => 'bool',
         'ai_toggle_ema' => 'int',
-        'endorsements' => '\Bzzhh\Tzkt\Model\EndorsementOperation[]',
-        'preendorsements' => '\Bzzhh\Tzkt\Model\PreendorsementOperation[]',
-        'proposals' => '\Bzzhh\Tzkt\Model\ProposalOperation[]',
-        'ballots' => '\Bzzhh\Tzkt\Model\BallotOperation[]',
-        'activations' => '\Bzzhh\Tzkt\Model\ActivationOperation[]',
-        'double_baking' => '\Bzzhh\Tzkt\Model\DoubleBakingOperation[]',
-        'double_endorsing' => '\Bzzhh\Tzkt\Model\DoubleEndorsingOperation[]',
-        'double_preendorsing' => '\Bzzhh\Tzkt\Model\DoublePreendorsingOperation[]',
-        'nonce_revelations' => '\Bzzhh\Tzkt\Model\NonceRevelationOperation[]',
-        'vdf_revelations' => '\Bzzhh\Tzkt\Model\VdfRevelationOperation[]',
-        'delegations' => '\Bzzhh\Tzkt\Model\DelegationOperation[]',
-        'originations' => '\Bzzhh\Tzkt\Model\OriginationOperation[]',
-        'transactions' => '\Bzzhh\Tzkt\Model\TransactionOperation[]',
-        'reveals' => '\Bzzhh\Tzkt\Model\RevealOperation[]',
-        'register_constants' => '\Bzzhh\Tzkt\Model\RegisterConstantOperation[]',
-        'set_deposits_limits' => '\Bzzhh\Tzkt\Model\SetDepositsLimitOperation[]',
-        'transfer_ticket_ops' => '\Bzzhh\Tzkt\Model\TransferTicketOperation[]',
-        'tx_rollup_commit_ops' => '\Bzzhh\Tzkt\Model\TxRollupCommitOperation[]',
-        'tx_rollup_dispatch_tickets_ops' => '\Bzzhh\Tzkt\Model\TxRollupDispatchTicketsOperation[]',
-        'tx_rollup_finalize_commitment_ops' => '\Bzzhh\Tzkt\Model\TxRollupFinalizeCommitmentOperation[]',
-        'tx_rollup_origination_ops' => '\Bzzhh\Tzkt\Model\TxRollupOriginationOperation[]',
-        'tx_rollup_rejection_ops' => '\Bzzhh\Tzkt\Model\TxRollupRejectionOperation[]',
-        'tx_rollup_remove_commitment_ops' => '\Bzzhh\Tzkt\Model\TxRollupRemoveCommitmentOperation[]',
-        'tx_rollup_return_bond_ops' => '\Bzzhh\Tzkt\Model\TxRollupReturnBondOperation[]',
-        'tx_rollup_submit_batch_ops' => '\Bzzhh\Tzkt\Model\TxRollupSubmitBatchOperation[]',
-        'increase_paid_storage_ops' => '\Bzzhh\Tzkt\Model\IncreasePaidStorageOperation[]',
-        'update_consensus_key_ops' => '\Bzzhh\Tzkt\Model\UpdateConsensusKeyOperation[]',
-        'drain_delegate_ops' => '\Bzzhh\Tzkt\Model\DrainDelegateOperation[]',
-        'sr_add_messages_ops' => '\Bzzhh\Tzkt\Model\SmartRollupAddMessagesOperation[]',
-        'sr_cement_ops' => '\Bzzhh\Tzkt\Model\SmartRollupCementOperation[]',
-        'sr_execute_ops' => '\Bzzhh\Tzkt\Model\SmartRollupExecuteOperation[]',
-        'sr_originate_ops' => '\Bzzhh\Tzkt\Model\SmartRollupOriginateOperation[]',
-        'sr_publish_ops' => '\Bzzhh\Tzkt\Model\SmartRollupPublishOperation[]',
-        'sr_recover_bond_ops' => '\Bzzhh\Tzkt\Model\SmartRollupRecoverBondOperation[]',
-        'sr_refute_ops' => '\Bzzhh\Tzkt\Model\SmartRollupRefuteOperation[]',
-        'staking_ops' => '\Bzzhh\Tzkt\Model\StakingOperation[]',
-        'set_delegate_parameters_ops' => '\Bzzhh\Tzkt\Model\SetDelegateParametersOperation[]',
-        'dal_publish_commitment_ops' => '\Bzzhh\Tzkt\Model\DalPublishCommitmentOperation[]',
-        'migrations' => '\Bzzhh\Tzkt\Model\MigrationOperation[]',
-        'revelation_penalties' => '\Bzzhh\Tzkt\Model\RevelationPenaltyOperation[]',
-        'endorsing_rewards' => '\Bzzhh\Tzkt\Model\EndorsingRewardOperation[]',
-        'autostaking_ops' => '\Bzzhh\Tzkt\Model\AutostakingOperation[]',
-        'quote' => '\Bzzhh\Tzkt\Model\BlockQuote',
+        'endorsements' => '\Tzkt\Model\EndorsementOperation[]',
+        'preendorsements' => '\Tzkt\Model\PreendorsementOperation[]',
+        'proposals' => '\Tzkt\Model\ProposalOperation[]',
+        'ballots' => '\Tzkt\Model\BallotOperation[]',
+        'activations' => '\Tzkt\Model\ActivationOperation[]',
+        'double_baking' => '\Tzkt\Model\DoubleBakingOperation[]',
+        'double_endorsing' => '\Tzkt\Model\DoubleEndorsingOperation[]',
+        'double_preendorsing' => '\Tzkt\Model\DoublePreendorsingOperation[]',
+        'nonce_revelations' => '\Tzkt\Model\NonceRevelationOperation[]',
+        'vdf_revelations' => '\Tzkt\Model\VdfRevelationOperation[]',
+        'delegations' => '\Tzkt\Model\DelegationOperation[]',
+        'originations' => '\Tzkt\Model\OriginationOperation[]',
+        'transactions' => '\Tzkt\Model\TransactionOperation[]',
+        'reveals' => '\Tzkt\Model\RevealOperation[]',
+        'register_constants' => '\Tzkt\Model\RegisterConstantOperation[]',
+        'set_deposits_limits' => '\Tzkt\Model\SetDepositsLimitOperation[]',
+        'transfer_ticket_ops' => '\Tzkt\Model\TransferTicketOperation[]',
+        'tx_rollup_commit_ops' => '\Tzkt\Model\TxRollupCommitOperation[]',
+        'tx_rollup_dispatch_tickets_ops' => '\Tzkt\Model\TxRollupDispatchTicketsOperation[]',
+        'tx_rollup_finalize_commitment_ops' => '\Tzkt\Model\TxRollupFinalizeCommitmentOperation[]',
+        'tx_rollup_origination_ops' => '\Tzkt\Model\TxRollupOriginationOperation[]',
+        'tx_rollup_rejection_ops' => '\Tzkt\Model\TxRollupRejectionOperation[]',
+        'tx_rollup_remove_commitment_ops' => '\Tzkt\Model\TxRollupRemoveCommitmentOperation[]',
+        'tx_rollup_return_bond_ops' => '\Tzkt\Model\TxRollupReturnBondOperation[]',
+        'tx_rollup_submit_batch_ops' => '\Tzkt\Model\TxRollupSubmitBatchOperation[]',
+        'increase_paid_storage_ops' => '\Tzkt\Model\IncreasePaidStorageOperation[]',
+        'update_consensus_key_ops' => '\Tzkt\Model\UpdateConsensusKeyOperation[]',
+        'drain_delegate_ops' => '\Tzkt\Model\DrainDelegateOperation[]',
+        'sr_add_messages_ops' => '\Tzkt\Model\SmartRollupAddMessagesOperation[]',
+        'sr_cement_ops' => '\Tzkt\Model\SmartRollupCementOperation[]',
+        'sr_execute_ops' => '\Tzkt\Model\SmartRollupExecuteOperation[]',
+        'sr_originate_ops' => '\Tzkt\Model\SmartRollupOriginateOperation[]',
+        'sr_publish_ops' => '\Tzkt\Model\SmartRollupPublishOperation[]',
+        'sr_recover_bond_ops' => '\Tzkt\Model\SmartRollupRecoverBondOperation[]',
+        'sr_refute_ops' => '\Tzkt\Model\SmartRollupRefuteOperation[]',
+        'staking_ops' => '\Tzkt\Model\StakingOperation[]',
+        'set_delegate_parameters_ops' => '\Tzkt\Model\SetDelegateParametersOperation[]',
+        'dal_publish_commitment_ops' => '\Tzkt\Model\DalPublishCommitmentOperation[]',
+        'migrations' => '\Tzkt\Model\MigrationOperation[]',
+        'revelation_penalties' => '\Tzkt\Model\RevelationPenaltyOperation[]',
+        'endorsing_rewards' => '\Tzkt\Model\EndorsingRewardOperation[]',
+        'autostaking_ops' => '\Tzkt\Model\AutostakingOperation[]',
+        'quote' => '\Tzkt\Model\BlockQuote',
         'reward_liquid' => 'int',
         'bonus_liquid' => 'int',
         'reward' => 'int',
         'bonus' => 'int',
         'priority' => 'int',
-        'baker' => '\Bzzhh\Tzkt\Model\BlockBaker',
+        'baker' => '\Tzkt\Model\BakingOperationAllOfBaker',
         'lb_escape_vote' => 'bool',
         'lb_escape_ema' => 'int'
     ];
@@ -231,82 +231,82 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'cycle' => false,
-		'level' => false,
-		'hash' => true,
-		'timestamp' => false,
-		'proto' => false,
-		'payload_round' => false,
-		'block_round' => false,
-		'validations' => false,
-		'deposit' => false,
-		'reward_delegated' => false,
-		'reward_staked_own' => false,
-		'reward_staked_edge' => false,
-		'reward_staked_shared' => false,
-		'bonus_delegated' => false,
-		'bonus_staked_own' => false,
-		'bonus_staked_edge' => false,
-		'bonus_staked_shared' => false,
-		'fees' => false,
-		'nonce_revealed' => false,
-		'proposer' => true,
-		'producer' => true,
-		'software' => true,
-		'lb_toggle' => true,
-		'lb_toggle_ema' => false,
-		'ai_toggle' => true,
-		'ai_toggle_ema' => false,
-		'endorsements' => true,
-		'preendorsements' => true,
-		'proposals' => true,
-		'ballots' => true,
-		'activations' => true,
-		'double_baking' => true,
-		'double_endorsing' => true,
-		'double_preendorsing' => true,
-		'nonce_revelations' => true,
-		'vdf_revelations' => true,
-		'delegations' => true,
-		'originations' => true,
-		'transactions' => true,
-		'reveals' => true,
-		'register_constants' => true,
-		'set_deposits_limits' => true,
-		'transfer_ticket_ops' => true,
-		'tx_rollup_commit_ops' => true,
-		'tx_rollup_dispatch_tickets_ops' => true,
-		'tx_rollup_finalize_commitment_ops' => true,
-		'tx_rollup_origination_ops' => true,
-		'tx_rollup_rejection_ops' => true,
-		'tx_rollup_remove_commitment_ops' => true,
-		'tx_rollup_return_bond_ops' => true,
-		'tx_rollup_submit_batch_ops' => true,
-		'increase_paid_storage_ops' => true,
-		'update_consensus_key_ops' => true,
-		'drain_delegate_ops' => true,
-		'sr_add_messages_ops' => true,
-		'sr_cement_ops' => true,
-		'sr_execute_ops' => true,
-		'sr_originate_ops' => true,
-		'sr_publish_ops' => true,
-		'sr_recover_bond_ops' => true,
-		'sr_refute_ops' => true,
-		'staking_ops' => true,
-		'set_delegate_parameters_ops' => true,
-		'dal_publish_commitment_ops' => true,
-		'migrations' => true,
-		'revelation_penalties' => true,
-		'endorsing_rewards' => true,
-		'autostaking_ops' => true,
-		'quote' => true,
-		'reward_liquid' => false,
-		'bonus_liquid' => false,
-		'reward' => false,
-		'bonus' => false,
-		'priority' => false,
-		'baker' => true,
-		'lb_escape_vote' => false,
-		'lb_escape_ema' => false
+        'level' => false,
+        'hash' => true,
+        'timestamp' => false,
+        'proto' => false,
+        'payload_round' => false,
+        'block_round' => false,
+        'validations' => false,
+        'deposit' => false,
+        'reward_delegated' => false,
+        'reward_staked_own' => false,
+        'reward_staked_edge' => false,
+        'reward_staked_shared' => false,
+        'bonus_delegated' => false,
+        'bonus_staked_own' => false,
+        'bonus_staked_edge' => false,
+        'bonus_staked_shared' => false,
+        'fees' => false,
+        'nonce_revealed' => false,
+        'proposer' => true,
+        'producer' => true,
+        'software' => true,
+        'lb_toggle' => true,
+        'lb_toggle_ema' => false,
+        'ai_toggle' => true,
+        'ai_toggle_ema' => false,
+        'endorsements' => true,
+        'preendorsements' => true,
+        'proposals' => true,
+        'ballots' => true,
+        'activations' => true,
+        'double_baking' => true,
+        'double_endorsing' => true,
+        'double_preendorsing' => true,
+        'nonce_revelations' => true,
+        'vdf_revelations' => true,
+        'delegations' => true,
+        'originations' => true,
+        'transactions' => true,
+        'reveals' => true,
+        'register_constants' => true,
+        'set_deposits_limits' => true,
+        'transfer_ticket_ops' => true,
+        'tx_rollup_commit_ops' => true,
+        'tx_rollup_dispatch_tickets_ops' => true,
+        'tx_rollup_finalize_commitment_ops' => true,
+        'tx_rollup_origination_ops' => true,
+        'tx_rollup_rejection_ops' => true,
+        'tx_rollup_remove_commitment_ops' => true,
+        'tx_rollup_return_bond_ops' => true,
+        'tx_rollup_submit_batch_ops' => true,
+        'increase_paid_storage_ops' => true,
+        'update_consensus_key_ops' => true,
+        'drain_delegate_ops' => true,
+        'sr_add_messages_ops' => true,
+        'sr_cement_ops' => true,
+        'sr_execute_ops' => true,
+        'sr_originate_ops' => true,
+        'sr_publish_ops' => true,
+        'sr_recover_bond_ops' => true,
+        'sr_refute_ops' => true,
+        'staking_ops' => true,
+        'set_delegate_parameters_ops' => true,
+        'dal_publish_commitment_ops' => true,
+        'migrations' => true,
+        'revelation_penalties' => true,
+        'endorsing_rewards' => true,
+        'autostaking_ops' => true,
+        'quote' => true,
+        'reward_liquid' => false,
+        'bonus_liquid' => false,
+        'reward' => false,
+        'bonus' => false,
+        'priority' => false,
+        'baker' => true,
+        'lb_escape_vote' => false,
+        'lb_escape_ema' => false
     ];
 
     /**
@@ -696,10 +696,10 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[] $data Associated array of property values
+     * @param mixed[]|null $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('cycle', $data ?? [], null);
         $this->setIfExists('level', $data ?? [], null);
@@ -841,11 +841,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCycle($cycle)
     {
-
         if (is_null($cycle)) {
             throw new \InvalidArgumentException('non-nullable cycle cannot be null');
         }
-
         $this->container['cycle'] = $cycle;
 
         return $this;
@@ -870,11 +868,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLevel($level)
     {
-
         if (is_null($level)) {
             throw new \InvalidArgumentException('non-nullable level cannot be null');
         }
-
         $this->container['level'] = $level;
 
         return $this;
@@ -899,7 +895,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setHash($hash)
     {
-
         if (is_null($hash)) {
             array_push($this->openAPINullablesSetToNull, 'hash');
         } else {
@@ -910,7 +905,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['hash'] = $hash;
 
         return $this;
@@ -935,11 +929,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTimestamp($timestamp)
     {
-
         if (is_null($timestamp)) {
             throw new \InvalidArgumentException('non-nullable timestamp cannot be null');
         }
-
         $this->container['timestamp'] = $timestamp;
 
         return $this;
@@ -964,11 +956,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setProto($proto)
     {
-
         if (is_null($proto)) {
             throw new \InvalidArgumentException('non-nullable proto cannot be null');
         }
-
         $this->container['proto'] = $proto;
 
         return $this;
@@ -993,11 +983,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPayloadRound($payload_round)
     {
-
         if (is_null($payload_round)) {
             throw new \InvalidArgumentException('non-nullable payload_round cannot be null');
         }
-
         $this->container['payload_round'] = $payload_round;
 
         return $this;
@@ -1022,11 +1010,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlockRound($block_round)
     {
-
         if (is_null($block_round)) {
             throw new \InvalidArgumentException('non-nullable block_round cannot be null');
         }
-
         $this->container['block_round'] = $block_round;
 
         return $this;
@@ -1051,11 +1037,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setValidations($validations)
     {
-
         if (is_null($validations)) {
             throw new \InvalidArgumentException('non-nullable validations cannot be null');
         }
-
         $this->container['validations'] = $validations;
 
         return $this;
@@ -1080,11 +1064,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDeposit($deposit)
     {
-
         if (is_null($deposit)) {
             throw new \InvalidArgumentException('non-nullable deposit cannot be null');
         }
-
         $this->container['deposit'] = $deposit;
 
         return $this;
@@ -1109,11 +1091,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRewardDelegated($reward_delegated)
     {
-
         if (is_null($reward_delegated)) {
             throw new \InvalidArgumentException('non-nullable reward_delegated cannot be null');
         }
-
         $this->container['reward_delegated'] = $reward_delegated;
 
         return $this;
@@ -1138,11 +1118,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRewardStakedOwn($reward_staked_own)
     {
-
         if (is_null($reward_staked_own)) {
             throw new \InvalidArgumentException('non-nullable reward_staked_own cannot be null');
         }
-
         $this->container['reward_staked_own'] = $reward_staked_own;
 
         return $this;
@@ -1167,11 +1145,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRewardStakedEdge($reward_staked_edge)
     {
-
         if (is_null($reward_staked_edge)) {
             throw new \InvalidArgumentException('non-nullable reward_staked_edge cannot be null');
         }
-
         $this->container['reward_staked_edge'] = $reward_staked_edge;
 
         return $this;
@@ -1196,11 +1172,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRewardStakedShared($reward_staked_shared)
     {
-
         if (is_null($reward_staked_shared)) {
             throw new \InvalidArgumentException('non-nullable reward_staked_shared cannot be null');
         }
-
         $this->container['reward_staked_shared'] = $reward_staked_shared;
 
         return $this;
@@ -1225,11 +1199,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBonusDelegated($bonus_delegated)
     {
-
         if (is_null($bonus_delegated)) {
             throw new \InvalidArgumentException('non-nullable bonus_delegated cannot be null');
         }
-
         $this->container['bonus_delegated'] = $bonus_delegated;
 
         return $this;
@@ -1254,11 +1226,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBonusStakedOwn($bonus_staked_own)
     {
-
         if (is_null($bonus_staked_own)) {
             throw new \InvalidArgumentException('non-nullable bonus_staked_own cannot be null');
         }
-
         $this->container['bonus_staked_own'] = $bonus_staked_own;
 
         return $this;
@@ -1283,11 +1253,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBonusStakedEdge($bonus_staked_edge)
     {
-
         if (is_null($bonus_staked_edge)) {
             throw new \InvalidArgumentException('non-nullable bonus_staked_edge cannot be null');
         }
-
         $this->container['bonus_staked_edge'] = $bonus_staked_edge;
 
         return $this;
@@ -1312,11 +1280,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBonusStakedShared($bonus_staked_shared)
     {
-
         if (is_null($bonus_staked_shared)) {
             throw new \InvalidArgumentException('non-nullable bonus_staked_shared cannot be null');
         }
-
         $this->container['bonus_staked_shared'] = $bonus_staked_shared;
 
         return $this;
@@ -1341,11 +1307,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFees($fees)
     {
-
         if (is_null($fees)) {
             throw new \InvalidArgumentException('non-nullable fees cannot be null');
         }
-
         $this->container['fees'] = $fees;
 
         return $this;
@@ -1370,11 +1334,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNonceRevealed($nonce_revealed)
     {
-
         if (is_null($nonce_revealed)) {
             throw new \InvalidArgumentException('non-nullable nonce_revealed cannot be null');
         }
-
         $this->container['nonce_revealed'] = $nonce_revealed;
 
         return $this;
@@ -1383,7 +1345,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets proposer
      *
-     * @return \Bzzhh\Tzkt\Model\BlockProposer|null
+     * @return \Tzkt\Model\BakingOperationAllOfProposer|null
      */
     public function getProposer()
     {
@@ -1393,13 +1355,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets proposer
      *
-     * @param \Bzzhh\Tzkt\Model\BlockProposer|null $proposer proposer
+     * @param \Tzkt\Model\BakingOperationAllOfProposer|null $proposer proposer
      *
      * @return self
      */
     public function setProposer($proposer)
     {
-
         if (is_null($proposer)) {
             array_push($this->openAPINullablesSetToNull, 'proposer');
         } else {
@@ -1410,7 +1371,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['proposer'] = $proposer;
 
         return $this;
@@ -1419,7 +1379,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets producer
      *
-     * @return \Bzzhh\Tzkt\Model\BlockProducer|null
+     * @return \Tzkt\Model\BakingOperationAllOfProducer|null
      */
     public function getProducer()
     {
@@ -1429,13 +1389,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets producer
      *
-     * @param \Bzzhh\Tzkt\Model\BlockProducer|null $producer producer
+     * @param \Tzkt\Model\BakingOperationAllOfProducer|null $producer producer
      *
      * @return self
      */
     public function setProducer($producer)
     {
-
         if (is_null($producer)) {
             array_push($this->openAPINullablesSetToNull, 'producer');
         } else {
@@ -1446,7 +1405,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['producer'] = $producer;
 
         return $this;
@@ -1455,7 +1413,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets software
      *
-     * @return \Bzzhh\Tzkt\Model\BlockSoftware|null
+     * @return \Tzkt\Model\BlockSoftware|null
      */
     public function getSoftware()
     {
@@ -1465,13 +1423,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets software
      *
-     * @param \Bzzhh\Tzkt\Model\BlockSoftware|null $software software
+     * @param \Tzkt\Model\BlockSoftware|null $software software
      *
      * @return self
      */
     public function setSoftware($software)
     {
-
         if (is_null($software)) {
             array_push($this->openAPINullablesSetToNull, 'software');
         } else {
@@ -1482,7 +1439,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['software'] = $software;
 
         return $this;
@@ -1507,7 +1463,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLbToggle($lb_toggle)
     {
-
         if (is_null($lb_toggle)) {
             array_push($this->openAPINullablesSetToNull, 'lb_toggle');
         } else {
@@ -1518,7 +1473,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['lb_toggle'] = $lb_toggle;
 
         return $this;
@@ -1543,11 +1497,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLbToggleEma($lb_toggle_ema)
     {
-
         if (is_null($lb_toggle_ema)) {
             throw new \InvalidArgumentException('non-nullable lb_toggle_ema cannot be null');
         }
-
         $this->container['lb_toggle_ema'] = $lb_toggle_ema;
 
         return $this;
@@ -1572,7 +1524,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setAiToggle($ai_toggle)
     {
-
         if (is_null($ai_toggle)) {
             array_push($this->openAPINullablesSetToNull, 'ai_toggle');
         } else {
@@ -1583,7 +1534,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['ai_toggle'] = $ai_toggle;
 
         return $this;
@@ -1608,11 +1558,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setAiToggleEma($ai_toggle_ema)
     {
-
         if (is_null($ai_toggle_ema)) {
             throw new \InvalidArgumentException('non-nullable ai_toggle_ema cannot be null');
         }
-
         $this->container['ai_toggle_ema'] = $ai_toggle_ema;
 
         return $this;
@@ -1621,7 +1569,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets endorsements
      *
-     * @return \Bzzhh\Tzkt\Model\EndorsementOperation[]|null
+     * @return \Tzkt\Model\EndorsementOperation[]|null
      */
     public function getEndorsements()
     {
@@ -1631,13 +1579,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets endorsements
      *
-     * @param \Bzzhh\Tzkt\Model\EndorsementOperation[]|null $endorsements List of endorsement (is operation, which specifies the head of the chain as seen by the endorser of a given slot) operations, included in the block
+     * @param \Tzkt\Model\EndorsementOperation[]|null $endorsements List of endorsement (is operation, which specifies the head of the chain as seen by the endorser of a given slot) operations, included in the block
      *
      * @return self
      */
     public function setEndorsements($endorsements)
     {
-
         if (is_null($endorsements)) {
             array_push($this->openAPINullablesSetToNull, 'endorsements');
         } else {
@@ -1648,7 +1595,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['endorsements'] = $endorsements;
 
         return $this;
@@ -1657,7 +1603,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets preendorsements
      *
-     * @return \Bzzhh\Tzkt\Model\PreendorsementOperation[]|null
+     * @return \Tzkt\Model\PreendorsementOperation[]|null
      */
     public function getPreendorsements()
     {
@@ -1667,13 +1613,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets preendorsements
      *
-     * @param \Bzzhh\Tzkt\Model\PreendorsementOperation[]|null $preendorsements List of preendorsement operations, included in the block
+     * @param \Tzkt\Model\PreendorsementOperation[]|null $preendorsements List of preendorsement operations, included in the block
      *
      * @return self
      */
     public function setPreendorsements($preendorsements)
     {
-
         if (is_null($preendorsements)) {
             array_push($this->openAPINullablesSetToNull, 'preendorsements');
         } else {
@@ -1684,7 +1629,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['preendorsements'] = $preendorsements;
 
         return $this;
@@ -1693,7 +1637,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets proposals
      *
-     * @return \Bzzhh\Tzkt\Model\ProposalOperation[]|null
+     * @return \Tzkt\Model\ProposalOperation[]|null
      */
     public function getProposals()
     {
@@ -1703,13 +1647,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets proposals
      *
-     * @param \Bzzhh\Tzkt\Model\ProposalOperation[]|null $proposals List of proposal (is used by bakers (delegates) to submit and/or upvote proposals to amend the protocol) operations, included in the block
+     * @param \Tzkt\Model\ProposalOperation[]|null $proposals List of proposal (is used by bakers (delegates) to submit and/or upvote proposals to amend the protocol) operations, included in the block
      *
      * @return self
      */
     public function setProposals($proposals)
     {
-
         if (is_null($proposals)) {
             array_push($this->openAPINullablesSetToNull, 'proposals');
         } else {
@@ -1720,7 +1663,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['proposals'] = $proposals;
 
         return $this;
@@ -1729,7 +1671,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ballots
      *
-     * @return \Bzzhh\Tzkt\Model\BallotOperation[]|null
+     * @return \Tzkt\Model\BallotOperation[]|null
      */
     public function getBallots()
     {
@@ -1739,13 +1681,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ballots
      *
-     * @param \Bzzhh\Tzkt\Model\BallotOperation[]|null $ballots List of ballot (is used to vote for a proposal in a given voting cycle) operations, included in the block
+     * @param \Tzkt\Model\BallotOperation[]|null $ballots List of ballot (is used to vote for a proposal in a given voting cycle) operations, included in the block
      *
      * @return self
      */
     public function setBallots($ballots)
     {
-
         if (is_null($ballots)) {
             array_push($this->openAPINullablesSetToNull, 'ballots');
         } else {
@@ -1756,7 +1697,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['ballots'] = $ballots;
 
         return $this;
@@ -1765,7 +1705,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets activations
      *
-     * @return \Bzzhh\Tzkt\Model\ActivationOperation[]|null
+     * @return \Tzkt\Model\ActivationOperation[]|null
      */
     public function getActivations()
     {
@@ -1775,13 +1715,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets activations
      *
-     * @param \Bzzhh\Tzkt\Model\ActivationOperation[]|null $activations List of activation (is used to activate accounts that were recommended allocations of tezos tokens for donations to the Tezos Foundation’s fundraiser) operations, included in the block
+     * @param \Tzkt\Model\ActivationOperation[]|null $activations List of activation (is used to activate accounts that were recommended allocations of tezos tokens for donations to the Tezos Foundation’s fundraiser) operations, included in the block
      *
      * @return self
      */
     public function setActivations($activations)
     {
-
         if (is_null($activations)) {
             array_push($this->openAPINullablesSetToNull, 'activations');
         } else {
@@ -1792,7 +1731,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['activations'] = $activations;
 
         return $this;
@@ -1801,7 +1739,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets double_baking
      *
-     * @return \Bzzhh\Tzkt\Model\DoubleBakingOperation[]|null
+     * @return \Tzkt\Model\DoubleBakingOperation[]|null
      */
     public function getDoubleBaking()
     {
@@ -1811,13 +1749,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets double_baking
      *
-     * @param \Bzzhh\Tzkt\Model\DoubleBakingOperation[]|null $double_baking List of double baking evidence (is used by bakers to provide evidence of double baking (baking two different blocks at the same height) by a baker) operations, included in the block
+     * @param \Tzkt\Model\DoubleBakingOperation[]|null $double_baking List of double baking evidence (is used by bakers to provide evidence of double baking (baking two different blocks at the same height) by a baker) operations, included in the block
      *
      * @return self
      */
     public function setDoubleBaking($double_baking)
     {
-
         if (is_null($double_baking)) {
             array_push($this->openAPINullablesSetToNull, 'double_baking');
         } else {
@@ -1828,7 +1765,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['double_baking'] = $double_baking;
 
         return $this;
@@ -1837,7 +1773,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets double_endorsing
      *
-     * @return \Bzzhh\Tzkt\Model\DoubleEndorsingOperation[]|null
+     * @return \Tzkt\Model\DoubleEndorsingOperation[]|null
      */
     public function getDoubleEndorsing()
     {
@@ -1847,13 +1783,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets double_endorsing
      *
-     * @param \Bzzhh\Tzkt\Model\DoubleEndorsingOperation[]|null $double_endorsing List of double endorsement evidence (is used by bakers to provide evidence of double endorsement (endorsing two different blocks at the same block height) by a baker) operations, included in the block
+     * @param \Tzkt\Model\DoubleEndorsingOperation[]|null $double_endorsing List of double endorsement evidence (is used by bakers to provide evidence of double endorsement (endorsing two different blocks at the same block height) by a baker) operations, included in the block
      *
      * @return self
      */
     public function setDoubleEndorsing($double_endorsing)
     {
-
         if (is_null($double_endorsing)) {
             array_push($this->openAPINullablesSetToNull, 'double_endorsing');
         } else {
@@ -1864,7 +1799,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['double_endorsing'] = $double_endorsing;
 
         return $this;
@@ -1873,7 +1807,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets double_preendorsing
      *
-     * @return \Bzzhh\Tzkt\Model\DoublePreendorsingOperation[]|null
+     * @return \Tzkt\Model\DoublePreendorsingOperation[]|null
      */
     public function getDoublePreendorsing()
     {
@@ -1883,13 +1817,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets double_preendorsing
      *
-     * @param \Bzzhh\Tzkt\Model\DoublePreendorsingOperation[]|null $double_preendorsing List of double preendorsement evidence operations, included in the block
+     * @param \Tzkt\Model\DoublePreendorsingOperation[]|null $double_preendorsing List of double preendorsement evidence operations, included in the block
      *
      * @return self
      */
     public function setDoublePreendorsing($double_preendorsing)
     {
-
         if (is_null($double_preendorsing)) {
             array_push($this->openAPINullablesSetToNull, 'double_preendorsing');
         } else {
@@ -1900,7 +1833,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['double_preendorsing'] = $double_preendorsing;
 
         return $this;
@@ -1909,7 +1841,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets nonce_revelations
      *
-     * @return \Bzzhh\Tzkt\Model\NonceRevelationOperation[]|null
+     * @return \Tzkt\Model\NonceRevelationOperation[]|null
      */
     public function getNonceRevelations()
     {
@@ -1919,13 +1851,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nonce_revelations
      *
-     * @param \Bzzhh\Tzkt\Model\NonceRevelationOperation[]|null $nonce_revelations List of nonce revelation (used by the blockchain to create randomness) operations, included in the block
+     * @param \Tzkt\Model\NonceRevelationOperation[]|null $nonce_revelations List of nonce revelation (used by the blockchain to create randomness) operations, included in the block
      *
      * @return self
      */
     public function setNonceRevelations($nonce_revelations)
     {
-
         if (is_null($nonce_revelations)) {
             array_push($this->openAPINullablesSetToNull, 'nonce_revelations');
         } else {
@@ -1936,7 +1867,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['nonce_revelations'] = $nonce_revelations;
 
         return $this;
@@ -1945,7 +1875,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets vdf_revelations
      *
-     * @return \Bzzhh\Tzkt\Model\VdfRevelationOperation[]|null
+     * @return \Tzkt\Model\VdfRevelationOperation[]|null
      */
     public function getVdfRevelations()
     {
@@ -1955,13 +1885,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vdf_revelations
      *
-     * @param \Bzzhh\Tzkt\Model\VdfRevelationOperation[]|null $vdf_revelations List of vdf revelation (used by the blockchain to create randomness) operations, included in the block
+     * @param \Tzkt\Model\VdfRevelationOperation[]|null $vdf_revelations List of vdf revelation (used by the blockchain to create randomness) operations, included in the block
      *
      * @return self
      */
     public function setVdfRevelations($vdf_revelations)
     {
-
         if (is_null($vdf_revelations)) {
             array_push($this->openAPINullablesSetToNull, 'vdf_revelations');
         } else {
@@ -1972,7 +1901,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['vdf_revelations'] = $vdf_revelations;
 
         return $this;
@@ -1981,7 +1909,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets delegations
      *
-     * @return \Bzzhh\Tzkt\Model\DelegationOperation[]|null
+     * @return \Tzkt\Model\DelegationOperation[]|null
      */
     public function getDelegations()
     {
@@ -1991,13 +1919,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets delegations
      *
-     * @param \Bzzhh\Tzkt\Model\DelegationOperation[]|null $delegations List of delegation (is used to delegate funds to a delegate (an implicit account registered as a baker)) operations, included in the block
+     * @param \Tzkt\Model\DelegationOperation[]|null $delegations List of delegation (is used to delegate funds to a delegate (an implicit account registered as a baker)) operations, included in the block
      *
      * @return self
      */
     public function setDelegations($delegations)
     {
-
         if (is_null($delegations)) {
             array_push($this->openAPINullablesSetToNull, 'delegations');
         } else {
@@ -2008,7 +1935,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['delegations'] = $delegations;
 
         return $this;
@@ -2017,7 +1943,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets originations
      *
-     * @return \Bzzhh\Tzkt\Model\OriginationOperation[]|null
+     * @return \Tzkt\Model\OriginationOperation[]|null
      */
     public function getOriginations()
     {
@@ -2027,13 +1953,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets originations
      *
-     * @param \Bzzhh\Tzkt\Model\OriginationOperation[]|null $originations List of origination (deployment / contract creation ) operations, included in the block
+     * @param \Tzkt\Model\OriginationOperation[]|null $originations List of origination (deployment / contract creation ) operations, included in the block
      *
      * @return self
      */
     public function setOriginations($originations)
     {
-
         if (is_null($originations)) {
             array_push($this->openAPINullablesSetToNull, 'originations');
         } else {
@@ -2044,7 +1969,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['originations'] = $originations;
 
         return $this;
@@ -2053,7 +1977,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transactions
      *
-     * @return \Bzzhh\Tzkt\Model\TransactionOperation[]|null
+     * @return \Tzkt\Model\TransactionOperation[]|null
      */
     public function getTransactions()
     {
@@ -2063,13 +1987,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactions
      *
-     * @param \Bzzhh\Tzkt\Model\TransactionOperation[]|null $transactions List of transaction (is a standard operation used to transfer tezos tokens to an account) operations, included in the block
+     * @param \Tzkt\Model\TransactionOperation[]|null $transactions List of transaction (is a standard operation used to transfer tezos tokens to an account) operations, included in the block
      *
      * @return self
      */
     public function setTransactions($transactions)
     {
-
         if (is_null($transactions)) {
             array_push($this->openAPINullablesSetToNull, 'transactions');
         } else {
@@ -2080,7 +2003,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['transactions'] = $transactions;
 
         return $this;
@@ -2089,7 +2011,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets reveals
      *
-     * @return \Bzzhh\Tzkt\Model\RevealOperation[]|null
+     * @return \Tzkt\Model\RevealOperation[]|null
      */
     public function getReveals()
     {
@@ -2099,13 +2021,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reveals
      *
-     * @param \Bzzhh\Tzkt\Model\RevealOperation[]|null $reveals List of reveal (is used to reveal the public key associated with an account) operations, included in the block
+     * @param \Tzkt\Model\RevealOperation[]|null $reveals List of reveal (is used to reveal the public key associated with an account) operations, included in the block
      *
      * @return self
      */
     public function setReveals($reveals)
     {
-
         if (is_null($reveals)) {
             array_push($this->openAPINullablesSetToNull, 'reveals');
         } else {
@@ -2116,7 +2037,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['reveals'] = $reveals;
 
         return $this;
@@ -2125,7 +2045,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets register_constants
      *
-     * @return \Bzzhh\Tzkt\Model\RegisterConstantOperation[]|null
+     * @return \Tzkt\Model\RegisterConstantOperation[]|null
      */
     public function getRegisterConstants()
     {
@@ -2135,13 +2055,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets register_constants
      *
-     * @param \Bzzhh\Tzkt\Model\RegisterConstantOperation[]|null $register_constants List of register global constant operations, included in the block
+     * @param \Tzkt\Model\RegisterConstantOperation[]|null $register_constants List of register global constant operations, included in the block
      *
      * @return self
      */
     public function setRegisterConstants($register_constants)
     {
-
         if (is_null($register_constants)) {
             array_push($this->openAPINullablesSetToNull, 'register_constants');
         } else {
@@ -2152,7 +2071,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['register_constants'] = $register_constants;
 
         return $this;
@@ -2161,7 +2079,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets set_deposits_limits
      *
-     * @return \Bzzhh\Tzkt\Model\SetDepositsLimitOperation[]|null
+     * @return \Tzkt\Model\SetDepositsLimitOperation[]|null
      */
     public function getSetDepositsLimits()
     {
@@ -2171,13 +2089,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets set_deposits_limits
      *
-     * @param \Bzzhh\Tzkt\Model\SetDepositsLimitOperation[]|null $set_deposits_limits List of set deposits limit operations, included in the block
+     * @param \Tzkt\Model\SetDepositsLimitOperation[]|null $set_deposits_limits List of set deposits limit operations, included in the block
      *
      * @return self
      */
     public function setSetDepositsLimits($set_deposits_limits)
     {
-
         if (is_null($set_deposits_limits)) {
             array_push($this->openAPINullablesSetToNull, 'set_deposits_limits');
         } else {
@@ -2188,7 +2105,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['set_deposits_limits'] = $set_deposits_limits;
 
         return $this;
@@ -2197,7 +2113,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transfer_ticket_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TransferTicketOperation[]|null
+     * @return \Tzkt\Model\TransferTicketOperation[]|null
      */
     public function getTransferTicketOps()
     {
@@ -2207,13 +2123,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transfer_ticket_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TransferTicketOperation[]|null $transfer_ticket_ops List of transfer ticket operations, included in the block
+     * @param \Tzkt\Model\TransferTicketOperation[]|null $transfer_ticket_ops List of transfer ticket operations, included in the block
      *
      * @return self
      */
     public function setTransferTicketOps($transfer_ticket_ops)
     {
-
         if (is_null($transfer_ticket_ops)) {
             array_push($this->openAPINullablesSetToNull, 'transfer_ticket_ops');
         } else {
@@ -2224,7 +2139,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['transfer_ticket_ops'] = $transfer_ticket_ops;
 
         return $this;
@@ -2233,7 +2147,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tx_rollup_commit_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TxRollupCommitOperation[]|null
+     * @return \Tzkt\Model\TxRollupCommitOperation[]|null
      */
     public function getTxRollupCommitOps()
     {
@@ -2243,13 +2157,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tx_rollup_commit_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TxRollupCommitOperation[]|null $tx_rollup_commit_ops List of tx rollup commit operations, included in the block
+     * @param \Tzkt\Model\TxRollupCommitOperation[]|null $tx_rollup_commit_ops List of tx rollup commit operations, included in the block
      *
      * @return self
      */
     public function setTxRollupCommitOps($tx_rollup_commit_ops)
     {
-
         if (is_null($tx_rollup_commit_ops)) {
             array_push($this->openAPINullablesSetToNull, 'tx_rollup_commit_ops');
         } else {
@@ -2260,7 +2173,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['tx_rollup_commit_ops'] = $tx_rollup_commit_ops;
 
         return $this;
@@ -2269,7 +2181,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tx_rollup_dispatch_tickets_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TxRollupDispatchTicketsOperation[]|null
+     * @return \Tzkt\Model\TxRollupDispatchTicketsOperation[]|null
      */
     public function getTxRollupDispatchTicketsOps()
     {
@@ -2279,13 +2191,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tx_rollup_dispatch_tickets_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TxRollupDispatchTicketsOperation[]|null $tx_rollup_dispatch_tickets_ops List of tx rollup dispatch tickets operations, included in the block
+     * @param \Tzkt\Model\TxRollupDispatchTicketsOperation[]|null $tx_rollup_dispatch_tickets_ops List of tx rollup dispatch tickets operations, included in the block
      *
      * @return self
      */
     public function setTxRollupDispatchTicketsOps($tx_rollup_dispatch_tickets_ops)
     {
-
         if (is_null($tx_rollup_dispatch_tickets_ops)) {
             array_push($this->openAPINullablesSetToNull, 'tx_rollup_dispatch_tickets_ops');
         } else {
@@ -2296,7 +2207,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['tx_rollup_dispatch_tickets_ops'] = $tx_rollup_dispatch_tickets_ops;
 
         return $this;
@@ -2305,7 +2215,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tx_rollup_finalize_commitment_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TxRollupFinalizeCommitmentOperation[]|null
+     * @return \Tzkt\Model\TxRollupFinalizeCommitmentOperation[]|null
      */
     public function getTxRollupFinalizeCommitmentOps()
     {
@@ -2315,13 +2225,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tx_rollup_finalize_commitment_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TxRollupFinalizeCommitmentOperation[]|null $tx_rollup_finalize_commitment_ops List of tx rollup finalize commitment operations, included in the block
+     * @param \Tzkt\Model\TxRollupFinalizeCommitmentOperation[]|null $tx_rollup_finalize_commitment_ops List of tx rollup finalize commitment operations, included in the block
      *
      * @return self
      */
     public function setTxRollupFinalizeCommitmentOps($tx_rollup_finalize_commitment_ops)
     {
-
         if (is_null($tx_rollup_finalize_commitment_ops)) {
             array_push($this->openAPINullablesSetToNull, 'tx_rollup_finalize_commitment_ops');
         } else {
@@ -2332,7 +2241,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['tx_rollup_finalize_commitment_ops'] = $tx_rollup_finalize_commitment_ops;
 
         return $this;
@@ -2341,7 +2249,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tx_rollup_origination_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TxRollupOriginationOperation[]|null
+     * @return \Tzkt\Model\TxRollupOriginationOperation[]|null
      */
     public function getTxRollupOriginationOps()
     {
@@ -2351,13 +2259,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tx_rollup_origination_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TxRollupOriginationOperation[]|null $tx_rollup_origination_ops List of tx rollup origination operations, included in the block
+     * @param \Tzkt\Model\TxRollupOriginationOperation[]|null $tx_rollup_origination_ops List of tx rollup origination operations, included in the block
      *
      * @return self
      */
     public function setTxRollupOriginationOps($tx_rollup_origination_ops)
     {
-
         if (is_null($tx_rollup_origination_ops)) {
             array_push($this->openAPINullablesSetToNull, 'tx_rollup_origination_ops');
         } else {
@@ -2368,7 +2275,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['tx_rollup_origination_ops'] = $tx_rollup_origination_ops;
 
         return $this;
@@ -2377,7 +2283,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tx_rollup_rejection_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TxRollupRejectionOperation[]|null
+     * @return \Tzkt\Model\TxRollupRejectionOperation[]|null
      */
     public function getTxRollupRejectionOps()
     {
@@ -2387,13 +2293,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tx_rollup_rejection_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TxRollupRejectionOperation[]|null $tx_rollup_rejection_ops List of tx rollup rejection operations, included in the block
+     * @param \Tzkt\Model\TxRollupRejectionOperation[]|null $tx_rollup_rejection_ops List of tx rollup rejection operations, included in the block
      *
      * @return self
      */
     public function setTxRollupRejectionOps($tx_rollup_rejection_ops)
     {
-
         if (is_null($tx_rollup_rejection_ops)) {
             array_push($this->openAPINullablesSetToNull, 'tx_rollup_rejection_ops');
         } else {
@@ -2404,7 +2309,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['tx_rollup_rejection_ops'] = $tx_rollup_rejection_ops;
 
         return $this;
@@ -2413,7 +2317,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tx_rollup_remove_commitment_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TxRollupRemoveCommitmentOperation[]|null
+     * @return \Tzkt\Model\TxRollupRemoveCommitmentOperation[]|null
      */
     public function getTxRollupRemoveCommitmentOps()
     {
@@ -2423,13 +2327,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tx_rollup_remove_commitment_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TxRollupRemoveCommitmentOperation[]|null $tx_rollup_remove_commitment_ops List of tx rollup remove commitment operations, included in the block
+     * @param \Tzkt\Model\TxRollupRemoveCommitmentOperation[]|null $tx_rollup_remove_commitment_ops List of tx rollup remove commitment operations, included in the block
      *
      * @return self
      */
     public function setTxRollupRemoveCommitmentOps($tx_rollup_remove_commitment_ops)
     {
-
         if (is_null($tx_rollup_remove_commitment_ops)) {
             array_push($this->openAPINullablesSetToNull, 'tx_rollup_remove_commitment_ops');
         } else {
@@ -2440,7 +2343,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['tx_rollup_remove_commitment_ops'] = $tx_rollup_remove_commitment_ops;
 
         return $this;
@@ -2449,7 +2351,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tx_rollup_return_bond_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TxRollupReturnBondOperation[]|null
+     * @return \Tzkt\Model\TxRollupReturnBondOperation[]|null
      */
     public function getTxRollupReturnBondOps()
     {
@@ -2459,13 +2361,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tx_rollup_return_bond_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TxRollupReturnBondOperation[]|null $tx_rollup_return_bond_ops List of tx rollup return bond operations, included in the block
+     * @param \Tzkt\Model\TxRollupReturnBondOperation[]|null $tx_rollup_return_bond_ops List of tx rollup return bond operations, included in the block
      *
      * @return self
      */
     public function setTxRollupReturnBondOps($tx_rollup_return_bond_ops)
     {
-
         if (is_null($tx_rollup_return_bond_ops)) {
             array_push($this->openAPINullablesSetToNull, 'tx_rollup_return_bond_ops');
         } else {
@@ -2476,7 +2377,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['tx_rollup_return_bond_ops'] = $tx_rollup_return_bond_ops;
 
         return $this;
@@ -2485,7 +2385,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tx_rollup_submit_batch_ops
      *
-     * @return \Bzzhh\Tzkt\Model\TxRollupSubmitBatchOperation[]|null
+     * @return \Tzkt\Model\TxRollupSubmitBatchOperation[]|null
      */
     public function getTxRollupSubmitBatchOps()
     {
@@ -2495,13 +2395,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tx_rollup_submit_batch_ops
      *
-     * @param \Bzzhh\Tzkt\Model\TxRollupSubmitBatchOperation[]|null $tx_rollup_submit_batch_ops List of tx rollup submit batch operations, included in the block
+     * @param \Tzkt\Model\TxRollupSubmitBatchOperation[]|null $tx_rollup_submit_batch_ops List of tx rollup submit batch operations, included in the block
      *
      * @return self
      */
     public function setTxRollupSubmitBatchOps($tx_rollup_submit_batch_ops)
     {
-
         if (is_null($tx_rollup_submit_batch_ops)) {
             array_push($this->openAPINullablesSetToNull, 'tx_rollup_submit_batch_ops');
         } else {
@@ -2512,7 +2411,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['tx_rollup_submit_batch_ops'] = $tx_rollup_submit_batch_ops;
 
         return $this;
@@ -2521,7 +2419,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets increase_paid_storage_ops
      *
-     * @return \Bzzhh\Tzkt\Model\IncreasePaidStorageOperation[]|null
+     * @return \Tzkt\Model\IncreasePaidStorageOperation[]|null
      */
     public function getIncreasePaidStorageOps()
     {
@@ -2531,13 +2429,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets increase_paid_storage_ops
      *
-     * @param \Bzzhh\Tzkt\Model\IncreasePaidStorageOperation[]|null $increase_paid_storage_ops List of increase paid storage operations, included in the block
+     * @param \Tzkt\Model\IncreasePaidStorageOperation[]|null $increase_paid_storage_ops List of increase paid storage operations, included in the block
      *
      * @return self
      */
     public function setIncreasePaidStorageOps($increase_paid_storage_ops)
     {
-
         if (is_null($increase_paid_storage_ops)) {
             array_push($this->openAPINullablesSetToNull, 'increase_paid_storage_ops');
         } else {
@@ -2548,7 +2445,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['increase_paid_storage_ops'] = $increase_paid_storage_ops;
 
         return $this;
@@ -2557,7 +2453,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets update_consensus_key_ops
      *
-     * @return \Bzzhh\Tzkt\Model\UpdateConsensusKeyOperation[]|null
+     * @return \Tzkt\Model\UpdateConsensusKeyOperation[]|null
      */
     public function getUpdateConsensusKeyOps()
     {
@@ -2567,13 +2463,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets update_consensus_key_ops
      *
-     * @param \Bzzhh\Tzkt\Model\UpdateConsensusKeyOperation[]|null $update_consensus_key_ops List of update consensus key operations, included in the block
+     * @param \Tzkt\Model\UpdateConsensusKeyOperation[]|null $update_consensus_key_ops List of update consensus key operations, included in the block
      *
      * @return self
      */
     public function setUpdateConsensusKeyOps($update_consensus_key_ops)
     {
-
         if (is_null($update_consensus_key_ops)) {
             array_push($this->openAPINullablesSetToNull, 'update_consensus_key_ops');
         } else {
@@ -2584,7 +2479,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['update_consensus_key_ops'] = $update_consensus_key_ops;
 
         return $this;
@@ -2593,7 +2487,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets drain_delegate_ops
      *
-     * @return \Bzzhh\Tzkt\Model\DrainDelegateOperation[]|null
+     * @return \Tzkt\Model\DrainDelegateOperation[]|null
      */
     public function getDrainDelegateOps()
     {
@@ -2603,13 +2497,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets drain_delegate_ops
      *
-     * @param \Bzzhh\Tzkt\Model\DrainDelegateOperation[]|null $drain_delegate_ops List of drain delegate operations, included in the block
+     * @param \Tzkt\Model\DrainDelegateOperation[]|null $drain_delegate_ops List of drain delegate operations, included in the block
      *
      * @return self
      */
     public function setDrainDelegateOps($drain_delegate_ops)
     {
-
         if (is_null($drain_delegate_ops)) {
             array_push($this->openAPINullablesSetToNull, 'drain_delegate_ops');
         } else {
@@ -2620,7 +2513,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['drain_delegate_ops'] = $drain_delegate_ops;
 
         return $this;
@@ -2629,7 +2521,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sr_add_messages_ops
      *
-     * @return \Bzzhh\Tzkt\Model\SmartRollupAddMessagesOperation[]|null
+     * @return \Tzkt\Model\SmartRollupAddMessagesOperation[]|null
      */
     public function getSrAddMessagesOps()
     {
@@ -2639,13 +2531,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sr_add_messages_ops
      *
-     * @param \Bzzhh\Tzkt\Model\SmartRollupAddMessagesOperation[]|null $sr_add_messages_ops List of smart rollup add messages operations, included in the block
+     * @param \Tzkt\Model\SmartRollupAddMessagesOperation[]|null $sr_add_messages_ops List of smart rollup add messages operations, included in the block
      *
      * @return self
      */
     public function setSrAddMessagesOps($sr_add_messages_ops)
     {
-
         if (is_null($sr_add_messages_ops)) {
             array_push($this->openAPINullablesSetToNull, 'sr_add_messages_ops');
         } else {
@@ -2656,7 +2547,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['sr_add_messages_ops'] = $sr_add_messages_ops;
 
         return $this;
@@ -2665,7 +2555,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sr_cement_ops
      *
-     * @return \Bzzhh\Tzkt\Model\SmartRollupCementOperation[]|null
+     * @return \Tzkt\Model\SmartRollupCementOperation[]|null
      */
     public function getSrCementOps()
     {
@@ -2675,13 +2565,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sr_cement_ops
      *
-     * @param \Bzzhh\Tzkt\Model\SmartRollupCementOperation[]|null $sr_cement_ops List of smart rollup cement operations, included in the block
+     * @param \Tzkt\Model\SmartRollupCementOperation[]|null $sr_cement_ops List of smart rollup cement operations, included in the block
      *
      * @return self
      */
     public function setSrCementOps($sr_cement_ops)
     {
-
         if (is_null($sr_cement_ops)) {
             array_push($this->openAPINullablesSetToNull, 'sr_cement_ops');
         } else {
@@ -2692,7 +2581,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['sr_cement_ops'] = $sr_cement_ops;
 
         return $this;
@@ -2701,7 +2589,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sr_execute_ops
      *
-     * @return \Bzzhh\Tzkt\Model\SmartRollupExecuteOperation[]|null
+     * @return \Tzkt\Model\SmartRollupExecuteOperation[]|null
      */
     public function getSrExecuteOps()
     {
@@ -2711,13 +2599,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sr_execute_ops
      *
-     * @param \Bzzhh\Tzkt\Model\SmartRollupExecuteOperation[]|null $sr_execute_ops List of smart rollup execute operations, included in the block
+     * @param \Tzkt\Model\SmartRollupExecuteOperation[]|null $sr_execute_ops List of smart rollup execute operations, included in the block
      *
      * @return self
      */
     public function setSrExecuteOps($sr_execute_ops)
     {
-
         if (is_null($sr_execute_ops)) {
             array_push($this->openAPINullablesSetToNull, 'sr_execute_ops');
         } else {
@@ -2728,7 +2615,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['sr_execute_ops'] = $sr_execute_ops;
 
         return $this;
@@ -2737,7 +2623,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sr_originate_ops
      *
-     * @return \Bzzhh\Tzkt\Model\SmartRollupOriginateOperation[]|null
+     * @return \Tzkt\Model\SmartRollupOriginateOperation[]|null
      */
     public function getSrOriginateOps()
     {
@@ -2747,13 +2633,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sr_originate_ops
      *
-     * @param \Bzzhh\Tzkt\Model\SmartRollupOriginateOperation[]|null $sr_originate_ops List of smart rollup originate operations, included in the block
+     * @param \Tzkt\Model\SmartRollupOriginateOperation[]|null $sr_originate_ops List of smart rollup originate operations, included in the block
      *
      * @return self
      */
     public function setSrOriginateOps($sr_originate_ops)
     {
-
         if (is_null($sr_originate_ops)) {
             array_push($this->openAPINullablesSetToNull, 'sr_originate_ops');
         } else {
@@ -2764,7 +2649,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['sr_originate_ops'] = $sr_originate_ops;
 
         return $this;
@@ -2773,7 +2657,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sr_publish_ops
      *
-     * @return \Bzzhh\Tzkt\Model\SmartRollupPublishOperation[]|null
+     * @return \Tzkt\Model\SmartRollupPublishOperation[]|null
      */
     public function getSrPublishOps()
     {
@@ -2783,13 +2667,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sr_publish_ops
      *
-     * @param \Bzzhh\Tzkt\Model\SmartRollupPublishOperation[]|null $sr_publish_ops List of smart rollup publish operations, included in the block
+     * @param \Tzkt\Model\SmartRollupPublishOperation[]|null $sr_publish_ops List of smart rollup publish operations, included in the block
      *
      * @return self
      */
     public function setSrPublishOps($sr_publish_ops)
     {
-
         if (is_null($sr_publish_ops)) {
             array_push($this->openAPINullablesSetToNull, 'sr_publish_ops');
         } else {
@@ -2800,7 +2683,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['sr_publish_ops'] = $sr_publish_ops;
 
         return $this;
@@ -2809,7 +2691,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sr_recover_bond_ops
      *
-     * @return \Bzzhh\Tzkt\Model\SmartRollupRecoverBondOperation[]|null
+     * @return \Tzkt\Model\SmartRollupRecoverBondOperation[]|null
      */
     public function getSrRecoverBondOps()
     {
@@ -2819,13 +2701,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sr_recover_bond_ops
      *
-     * @param \Bzzhh\Tzkt\Model\SmartRollupRecoverBondOperation[]|null $sr_recover_bond_ops List of smart rollup recover bond operations, included in the block
+     * @param \Tzkt\Model\SmartRollupRecoverBondOperation[]|null $sr_recover_bond_ops List of smart rollup recover bond operations, included in the block
      *
      * @return self
      */
     public function setSrRecoverBondOps($sr_recover_bond_ops)
     {
-
         if (is_null($sr_recover_bond_ops)) {
             array_push($this->openAPINullablesSetToNull, 'sr_recover_bond_ops');
         } else {
@@ -2836,7 +2717,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['sr_recover_bond_ops'] = $sr_recover_bond_ops;
 
         return $this;
@@ -2845,7 +2725,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sr_refute_ops
      *
-     * @return \Bzzhh\Tzkt\Model\SmartRollupRefuteOperation[]|null
+     * @return \Tzkt\Model\SmartRollupRefuteOperation[]|null
      */
     public function getSrRefuteOps()
     {
@@ -2855,13 +2735,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sr_refute_ops
      *
-     * @param \Bzzhh\Tzkt\Model\SmartRollupRefuteOperation[]|null $sr_refute_ops List of smart rollup refute operations, included in the block
+     * @param \Tzkt\Model\SmartRollupRefuteOperation[]|null $sr_refute_ops List of smart rollup refute operations, included in the block
      *
      * @return self
      */
     public function setSrRefuteOps($sr_refute_ops)
     {
-
         if (is_null($sr_refute_ops)) {
             array_push($this->openAPINullablesSetToNull, 'sr_refute_ops');
         } else {
@@ -2872,7 +2751,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['sr_refute_ops'] = $sr_refute_ops;
 
         return $this;
@@ -2881,7 +2759,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets staking_ops
      *
-     * @return \Bzzhh\Tzkt\Model\StakingOperation[]|null
+     * @return \Tzkt\Model\StakingOperation[]|null
      */
     public function getStakingOps()
     {
@@ -2891,13 +2769,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets staking_ops
      *
-     * @param \Bzzhh\Tzkt\Model\StakingOperation[]|null $staking_ops List of staking operations, included in the block
+     * @param \Tzkt\Model\StakingOperation[]|null $staking_ops List of staking operations, included in the block
      *
      * @return self
      */
     public function setStakingOps($staking_ops)
     {
-
         if (is_null($staking_ops)) {
             array_push($this->openAPINullablesSetToNull, 'staking_ops');
         } else {
@@ -2908,7 +2785,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['staking_ops'] = $staking_ops;
 
         return $this;
@@ -2917,7 +2793,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets set_delegate_parameters_ops
      *
-     * @return \Bzzhh\Tzkt\Model\SetDelegateParametersOperation[]|null
+     * @return \Tzkt\Model\SetDelegateParametersOperation[]|null
      */
     public function getSetDelegateParametersOps()
     {
@@ -2927,13 +2803,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets set_delegate_parameters_ops
      *
-     * @param \Bzzhh\Tzkt\Model\SetDelegateParametersOperation[]|null $set_delegate_parameters_ops List of set delegate parameters operations, included in the block
+     * @param \Tzkt\Model\SetDelegateParametersOperation[]|null $set_delegate_parameters_ops List of set delegate parameters operations, included in the block
      *
      * @return self
      */
     public function setSetDelegateParametersOps($set_delegate_parameters_ops)
     {
-
         if (is_null($set_delegate_parameters_ops)) {
             array_push($this->openAPINullablesSetToNull, 'set_delegate_parameters_ops');
         } else {
@@ -2944,7 +2819,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['set_delegate_parameters_ops'] = $set_delegate_parameters_ops;
 
         return $this;
@@ -2953,7 +2827,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dal_publish_commitment_ops
      *
-     * @return \Bzzhh\Tzkt\Model\DalPublishCommitmentOperation[]|null
+     * @return \Tzkt\Model\DalPublishCommitmentOperation[]|null
      */
     public function getDalPublishCommitmentOps()
     {
@@ -2963,13 +2837,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dal_publish_commitment_ops
      *
-     * @param \Bzzhh\Tzkt\Model\DalPublishCommitmentOperation[]|null $dal_publish_commitment_ops List of DAL publish commitment operations, included in the block
+     * @param \Tzkt\Model\DalPublishCommitmentOperation[]|null $dal_publish_commitment_ops List of DAL publish commitment operations, included in the block
      *
      * @return self
      */
     public function setDalPublishCommitmentOps($dal_publish_commitment_ops)
     {
-
         if (is_null($dal_publish_commitment_ops)) {
             array_push($this->openAPINullablesSetToNull, 'dal_publish_commitment_ops');
         } else {
@@ -2980,7 +2853,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['dal_publish_commitment_ops'] = $dal_publish_commitment_ops;
 
         return $this;
@@ -2989,7 +2861,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets migrations
      *
-     * @return \Bzzhh\Tzkt\Model\MigrationOperation[]|null
+     * @return \Tzkt\Model\MigrationOperation[]|null
      */
     public function getMigrations()
     {
@@ -2999,13 +2871,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets migrations
      *
-     * @param \Bzzhh\Tzkt\Model\MigrationOperation[]|null $migrations List of migration operations, implicitly applied at the end of the block
+     * @param \Tzkt\Model\MigrationOperation[]|null $migrations List of migration operations, implicitly applied at the end of the block
      *
      * @return self
      */
     public function setMigrations($migrations)
     {
-
         if (is_null($migrations)) {
             array_push($this->openAPINullablesSetToNull, 'migrations');
         } else {
@@ -3016,7 +2887,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['migrations'] = $migrations;
 
         return $this;
@@ -3025,7 +2895,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets revelation_penalties
      *
-     * @return \Bzzhh\Tzkt\Model\RevelationPenaltyOperation[]|null
+     * @return \Tzkt\Model\RevelationPenaltyOperation[]|null
      */
     public function getRevelationPenalties()
     {
@@ -3035,13 +2905,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets revelation_penalties
      *
-     * @param \Bzzhh\Tzkt\Model\RevelationPenaltyOperation[]|null $revelation_penalties List of revelation penalty operations, implicitly applied at the end of the block
+     * @param \Tzkt\Model\RevelationPenaltyOperation[]|null $revelation_penalties List of revelation penalty operations, implicitly applied at the end of the block
      *
      * @return self
      */
     public function setRevelationPenalties($revelation_penalties)
     {
-
         if (is_null($revelation_penalties)) {
             array_push($this->openAPINullablesSetToNull, 'revelation_penalties');
         } else {
@@ -3052,7 +2921,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['revelation_penalties'] = $revelation_penalties;
 
         return $this;
@@ -3061,7 +2929,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets endorsing_rewards
      *
-     * @return \Bzzhh\Tzkt\Model\EndorsingRewardOperation[]|null
+     * @return \Tzkt\Model\EndorsingRewardOperation[]|null
      */
     public function getEndorsingRewards()
     {
@@ -3071,13 +2939,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets endorsing_rewards
      *
-     * @param \Bzzhh\Tzkt\Model\EndorsingRewardOperation[]|null $endorsing_rewards List of endorsing rewards, implicitly applied at the end of the block
+     * @param \Tzkt\Model\EndorsingRewardOperation[]|null $endorsing_rewards List of endorsing rewards, implicitly applied at the end of the block
      *
      * @return self
      */
     public function setEndorsingRewards($endorsing_rewards)
     {
-
         if (is_null($endorsing_rewards)) {
             array_push($this->openAPINullablesSetToNull, 'endorsing_rewards');
         } else {
@@ -3088,7 +2955,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['endorsing_rewards'] = $endorsing_rewards;
 
         return $this;
@@ -3097,7 +2963,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets autostaking_ops
      *
-     * @return \Bzzhh\Tzkt\Model\AutostakingOperation[]|null
+     * @return \Tzkt\Model\AutostakingOperation[]|null
      */
     public function getAutostakingOps()
     {
@@ -3107,13 +2973,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets autostaking_ops
      *
-     * @param \Bzzhh\Tzkt\Model\AutostakingOperation[]|null $autostaking_ops List of autostaking operations, implicitly applied at the end of the block
+     * @param \Tzkt\Model\AutostakingOperation[]|null $autostaking_ops List of autostaking operations, implicitly applied at the end of the block
      *
      * @return self
      */
     public function setAutostakingOps($autostaking_ops)
     {
-
         if (is_null($autostaking_ops)) {
             array_push($this->openAPINullablesSetToNull, 'autostaking_ops');
         } else {
@@ -3124,7 +2989,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['autostaking_ops'] = $autostaking_ops;
 
         return $this;
@@ -3133,7 +2997,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets quote
      *
-     * @return \Bzzhh\Tzkt\Model\BlockQuote|null
+     * @return \Tzkt\Model\BlockQuote|null
      */
     public function getQuote()
     {
@@ -3143,13 +3007,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quote
      *
-     * @param \Bzzhh\Tzkt\Model\BlockQuote|null $quote quote
+     * @param \Tzkt\Model\BlockQuote|null $quote quote
      *
      * @return self
      */
     public function setQuote($quote)
     {
-
         if (is_null($quote)) {
             array_push($this->openAPINullablesSetToNull, 'quote');
         } else {
@@ -3160,7 +3023,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['quote'] = $quote;
 
         return $this;
@@ -3185,11 +3047,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRewardLiquid($reward_liquid)
     {
-
         if (is_null($reward_liquid)) {
             throw new \InvalidArgumentException('non-nullable reward_liquid cannot be null');
         }
-
         $this->container['reward_liquid'] = $reward_liquid;
 
         return $this;
@@ -3214,11 +3074,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBonusLiquid($bonus_liquid)
     {
-
         if (is_null($bonus_liquid)) {
             throw new \InvalidArgumentException('non-nullable bonus_liquid cannot be null');
         }
-
         $this->container['bonus_liquid'] = $bonus_liquid;
 
         return $this;
@@ -3243,11 +3101,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setReward($reward)
     {
-
         if (is_null($reward)) {
             throw new \InvalidArgumentException('non-nullable reward cannot be null');
         }
-
         $this->container['reward'] = $reward;
 
         return $this;
@@ -3272,11 +3128,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBonus($bonus)
     {
-
         if (is_null($bonus)) {
             throw new \InvalidArgumentException('non-nullable bonus cannot be null');
         }
-
         $this->container['bonus'] = $bonus;
 
         return $this;
@@ -3301,11 +3155,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPriority($priority)
     {
-
         if (is_null($priority)) {
             throw new \InvalidArgumentException('non-nullable priority cannot be null');
         }
-
         $this->container['priority'] = $priority;
 
         return $this;
@@ -3314,7 +3166,7 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets baker
      *
-     * @return \Bzzhh\Tzkt\Model\BlockBaker|null
+     * @return \Tzkt\Model\BakingOperationAllOfBaker|null
      */
     public function getBaker()
     {
@@ -3324,13 +3176,12 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets baker
      *
-     * @param \Bzzhh\Tzkt\Model\BlockBaker|null $baker baker
+     * @param \Tzkt\Model\BakingOperationAllOfBaker|null $baker baker
      *
      * @return self
      */
     public function setBaker($baker)
     {
-
         if (is_null($baker)) {
             array_push($this->openAPINullablesSetToNull, 'baker');
         } else {
@@ -3341,7 +3192,6 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['baker'] = $baker;
 
         return $this;
@@ -3366,11 +3216,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLbEscapeVote($lb_escape_vote)
     {
-
         if (is_null($lb_escape_vote)) {
             throw new \InvalidArgumentException('non-nullable lb_escape_vote cannot be null');
         }
-
         $this->container['lb_escape_vote'] = $lb_escape_vote;
 
         return $this;
@@ -3395,11 +3243,9 @@ class Block implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLbEscapeEma($lb_escape_ema)
     {
-
         if (is_null($lb_escape_ema)) {
             throw new \InvalidArgumentException('non-nullable lb_escape_ema cannot be null');
         }
-
         $this->container['lb_escape_ema'] = $lb_escape_ema;
 
         return $this;

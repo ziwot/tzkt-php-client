@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **timestamp** | **\DateTime** | Datetime of the block, in which the operation was included (ISO 8601, e.g. &#x60;2020-02-20T02:40:57Z&#x60;) | [optional]
 **block** | **string** | Hash of the block, in which the operation was included | [optional]
 **hash** | **string** | Hash of the operation | [optional]
-**baker** | [**OneOfAlias**](OneOfAlias.md) | Information about the delegate (baker), who produced the block with the operation | [optional]
+**baker** | [**\Tzkt\Model\VdfRevelationOperationAllOfBaker**](VdfRevelationOperationAllOfBaker.md) |  | [optional]
 **cycle** | **int** | Cycle in which the operation was included | [optional]
 **solution** | **string** | Vdf solution | [optional]
 **proof** | **string** | Vdf proof | [optional]
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **reward_staked_own** | **int** | Reward, corresponding to baker&#39;s own stake, paid to baker&#39;s own staked balance (micro tez) (it is frozen and belongs to the baker). | [optional]
 **reward_staked_edge** | **int** | Reward, corresponding to baker&#39;s edge from external stake, paid to baker&#39;s own staked balance (micro tez) (it is frozen and belongs to the baker). | [optional]
 **reward_staked_shared** | **int** | Reward, corresponding to baker&#39;s external stake, paid to baker&#39;s external staked balance (micro tez) (it is frozen and belongs to baker&#39;s stakers). | [optional]
-**quote** | [**OneOfQuoteShort**](OneOfQuoteShort.md) | Injected historical quote at the time of operation | [optional]
+**quote** | [**\Tzkt\Model\VdfRevelationOperationAllOfQuote**](VdfRevelationOperationAllOfQuote.md) |  | [optional]
 **reward_liquid** | **int** | [DEPRECATED] | [optional]
 **reward** | **int** | [DEPRECATED] | [optional]
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hash** | **string** | Hash of the proposal, which representing a tarball of concatenated .ml/.mli source files | [optional]
-**initiator** | [**\Bzzhh\Tzkt\Model\ProposalInitiator**](ProposalInitiator.md) |  | [optional]
+**initiator** | [**\Tzkt\Model\ProposalInitiator**](ProposalInitiator.md) |  | [optional]
 **first_period** | **int** | The first voting period where the proposal was active | [optional]
 **last_period** | **int** | The last voting period where the proposal was active | [optional]
 **epoch** | **int** | The voting epoch where the proposal was active | [optional]

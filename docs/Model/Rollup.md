@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **string** | Type of the account | [optional]
 **address** | **string** | Address of the account | [optional]
 **alias** | **string** | Name of the account | [optional]
-**creator** | [**OneOfAlias**](OneOfAlias.md) | Information about the account, which has deployed the rollup to the blockchain | [optional]
+**creator** | [**\Tzkt\Model\RollupAllOfCreator**](RollupAllOfCreator.md) |  | [optional]
 **rollup_bonds** | **int** | Amount of mutez locked as bonds | [optional]
 **active_tokens_count** | **int** | Number of account tokens with non-zero balances | [optional]
 **token_balances_count** | **int** | Number of tokens the account ever had | [optional]

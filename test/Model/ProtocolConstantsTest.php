@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -13,12 +13,12 @@
 /**
  * TzKT API
  *
- * # Introduction  TzKT Explorer provides free REST API and WebSocket API for accessing detailed Tezos blockchain data and helps developers build more services and applications on top of Tezos. TzKT is an open-source project, so you can easily clone and build it and use it as a self-hosted service to avoid any risks of depending on third-party services.  TzKT API is available for the following Tezos networks with the following base URLs:  - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io)) - Kathmandunet: `https://api.kathmandunet.tzkt.io/` ([view docs](https://api.kathmandunet.tzkt.io)) - Limanet: `https://api.limanet.tzkt.io/` ([view docs](https://api.limanet.tzkt.io))  We also provide a staging environment for testing newest features and pre-updating client applications before deploying to production:  - Mainnet staging: `https://staging.api.tzkt.io/` or `https://staging.api.mainnet.tzkt.io/` ([view docs](https://staging.api.tzkt.io))  Feel free to contact us if you have any questions or feature requests. Your feedback really helps us make TzKT better!  - Discord: https://discord.gg/aG8XKuwsQd - Telegram: https://t.me/baking_bad_chat - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L - Twitter: https://twitter.com/TezosBakingBad - Email: hello@baking-bad.org  And don't forget to star TzKT project [on GitHub](https://github.com/baking-bad/tzkt) ;)  # Terms of Use  TzKT API is free for everyone and for both commercial and non-commercial usage.  If your application or service uses the TzKT API in any forms: directly on frontend or indirectly on backend, you must mention that fact on your website or application by placing the label **\"Powered by TzKT API\"** or **\"Built with TzKT API\"** with a direct link to [tzkt.io](https://tzkt.io).   # Rate Limits  There will be no rate limits as long as our servers can handle the load without additional infrastructure costs. However, any apparent abuse will be prevented by setting targeted rate limits.  Check out [Tezos Explorer API Best Practices](https://baking-bad.org/blog/tag/TzKT/) and in particular [how to optimize requests count](https://baking-bad.org/blog/2020/07/29/tezos-explorer-api-tzkt-how-often-to-make-requests/).  ---
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Quebecnet: `https://api.quebecnet.tzkt.io/` ([view docs](https://api.quebecnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: v1.11.0
- * Contact: hello@baking-bad.org
+ * The version of the OpenAPI document: 1.14.7
+ * Contact: hello@bakingbad.dev
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 6.2.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Bzzhh\Tzkt\Test\Model;
+namespace Tzkt\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description Information about the protocol constants
- * @package     Bzzhh\Tzkt
+ * @package     Tzkt
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
@@ -77,7 +77,7 @@ class ProtocolConstantsTest extends TestCase
     public function testProtocolConstants()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -86,7 +86,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyRampUpCycles()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -95,16 +95,25 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyNoRewardCycles()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "preserved_cycles"
+     * Test attribute "consensus_rights_delay"
      */
-    public function testPropertyPreservedCycles()
+    public function testPropertyConsensusRightsDelay()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "delegate_parameters_activation_delay"
+     */
+    public function testPropertyDelegateParametersActivationDelay()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -113,7 +122,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyBlocksPerCycle()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -122,7 +131,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyBlocksPerCommitment()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -131,7 +140,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyBlocksPerSnapshot()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -140,7 +149,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyBlocksPerVoting()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -149,7 +158,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyTimeBetweenBlocks()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -158,7 +167,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyEndorsersPerBlock()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -167,7 +176,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyHardOperationGasLimit()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -176,7 +185,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyHardOperationStorageLimit()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -185,25 +194,25 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyHardBlockGasLimit()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "tokens_per_roll"
+     * Test attribute "minimal_stake"
      */
-    public function testPropertyTokensPerRoll()
+    public function testPropertyMinimalStake()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "revelation_reward"
+     * Test attribute "minimal_frozen_stake"
      */
-    public function testPropertyRevelationReward()
+    public function testPropertyMinimalFrozenStake()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -212,7 +221,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyBlockDeposit()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -221,7 +230,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyBlockReward()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -230,7 +239,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyEndorsementDeposit()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -239,7 +248,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyEndorsementReward()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -248,7 +257,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyOriginationSize()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -257,7 +266,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyByteCost()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -266,7 +275,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyProposalQuorum()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -275,7 +284,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyBallotQuorumMin()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -284,16 +293,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyBallotQuorumMax()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "lb_subsidy"
-     */
-    public function testPropertyLbSubsidy()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -302,7 +302,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyLbToggleThreshold()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -311,7 +311,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyConsensusThreshold()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -320,7 +320,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyMinParticipationNumerator()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -329,7 +329,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyMinParticipationDenominator()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -338,61 +338,70 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyMaxSlashingPeriod()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "frozen_deposits_percentage"
+     * Test attribute "max_delegated_over_frozen_ratio"
      */
-    public function testPropertyFrozenDepositsPercentage()
+    public function testPropertyMaxDelegatedOverFrozenRatio()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "double_baking_punishment"
+     * Test attribute "max_external_over_own_stake_ratio"
      */
-    public function testPropertyDoubleBakingPunishment()
+    public function testPropertyMaxExternalOverOwnStakeRatio()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "double_endorsing_punishment_numerator"
+     * Test attribute "smart_rollup_origination_size"
      */
-    public function testPropertyDoubleEndorsingPunishmentNumerator()
+    public function testPropertySmartRollupOriginationSize()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "double_endorsing_punishment_denominator"
+     * Test attribute "smart_rollup_stake_amount"
      */
-    public function testPropertyDoubleEndorsingPunishmentDenominator()
+    public function testPropertySmartRollupStakeAmount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "tx_rollup_origination_size"
+     * Test attribute "smart_rollup_challenge_window"
      */
-    public function testPropertyTxRollupOriginationSize()
+    public function testPropertySmartRollupChallengeWindow()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "tx_rollup_commitment_bond"
+     * Test attribute "smart_rollup_commitment_period"
      */
-    public function testPropertyTxRollupCommitmentBond()
+    public function testPropertySmartRollupCommitmentPeriod()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollup_timeout_period"
+     */
+    public function testPropertySmartRollupTimeoutPeriod()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -401,7 +410,16 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyDictator()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "preserved_cycles"
+     */
+    public function testPropertyPreservedCycles()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -410,7 +428,7 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyLbEscapeThreshold()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -419,6 +437,87 @@ class ProtocolConstantsTest extends TestCase
     public function testPropertyLbSunsetLevel()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "frozen_deposits_percentage"
+     */
+    public function testPropertyFrozenDepositsPercentage()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tx_rollup_origination_size"
+     */
+    public function testPropertyTxRollupOriginationSize()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tx_rollup_commitment_bond"
+     */
+    public function testPropertyTxRollupCommitmentBond()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "double_baking_punishment"
+     */
+    public function testPropertyDoubleBakingPunishment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "double_endorsing_punishment_numerator"
+     */
+    public function testPropertyDoubleEndorsingPunishmentNumerator()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "double_endorsing_punishment_denominator"
+     */
+    public function testPropertyDoubleEndorsingPunishmentDenominator()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "revelation_reward"
+     */
+    public function testPropertyRevelationReward()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lb_subsidy"
+     */
+    public function testPropertyLbSubsidy()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tokens_per_roll"
+     */
+    public function testPropertyTokensPerRoll()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 }

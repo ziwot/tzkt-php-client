@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ptr** | **int** | Bigmap pointer | [optional]
-**contract** | [**\Bzzhh\Tzkt\Model\BigMapContract**](BigMapContract.md) |  | [optional]
+**contract** | [**\Tzkt\Model\BigMapContract**](BigMapContract.md) |  | [optional]
 **path** | **string** | Path to the bigmap in the contract storage | [optional]
 **tags** | **string[]** | List of tags ( &#x60;metadata&#x60;, &#x60;token_metadata&#x60;,&#x60;ledger&#x60;, or &#x60;null&#x60; if there are no tags) | [optional]
 **active** | **bool** | Bigmap status (&#x60;true&#x60; - active, &#x60;false&#x60; - removed) | [optional]

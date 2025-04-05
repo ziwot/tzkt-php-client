@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -13,12 +13,12 @@
 /**
  * TzKT API
  *
- * # Introduction  TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.  You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community  to help developers build more services and dapps on top of Tezos.  TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service, because you can always clone, build and run it yourself to have full control over all the components.  Feel free to contact us if you have any questions or feature requests. Your feedback is much appreciated!  - Discord: https://discord.gg/aG8XKuwsQd - Telegram: https://t.me/baking_bad_chat - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L - Twitter: https://twitter.com/TezosBakingBad - Email: hello@bakingbad.dev  And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊  # Get Started  There are two API services provided for public use: - **Free TzKT API** with free anonymous access; - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.  You can find more details about differences between available tiers [here](https://tzkt.io/api).  ## Free TzKT API  Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality. It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.  > #### Note: attribution required If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io)) - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io)) - Parisnet: `https://api.parisnet.tzkt.io/` ([view docs](https://api.parisnet.tzkt.io))  ### Sending Requests  To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint (for example, chain's head: `/v1/head`), that's pretty much it:   ```bash curl https://api.tzkt.io/v1/head ```  Read through this documentation to explore available endpoints, query parameters (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.) and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits.  If you exceed the limit, the API will respond with `HTTP 429` status code.  ## TzKT Pro  TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA. TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io)) - Testnets: *let us know if you need TzKT Pro for testnets*  ### Authorization  To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription. This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.  Note that you can have multiple API keys within a single subscription.  Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories. If your key was compromised, just let us know and we will issue a new one.  Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted, but query string is not, so the key can be unintentionally exposed to third parties.  ### Sending Requests  Sending a request with the API key passed as a query string parameter:  ```bash curl https://pro.tzkt.io/v1/head?apikey={your_key} ```  Sending a request with the API key passed via an HTTP header:  ```bash curl https://pro.tzkt.io/v1/head \\     -H 'apikey: {your_key}' ```  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.  Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests and the time remaining (in seconds) until the quota is reset. Here's an example:  ``` RateLimit-Limit: 50 RateLimit-Remaining: 49 RateLimit-Reset: 1 ```  It also sends general information about your rate limits per second and per day:  ``` X-RateLimit-Limit-Second: 50 X-RateLimit-Remaining-Second: 49 X-RateLimit-Limit-Day: 3000000 X-RateLimit-Remaining-Day: 2994953 ```  If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Quebecnet: `https://api.quebecnet.tzkt.io/` ([view docs](https://api.quebecnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.4
+ * The version of the OpenAPI document: 1.14.7
  * Contact: hello@bakingbad.dev
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 6.2.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Bzzhh\Tzkt\Model;
+namespace Tzkt\Model;
 
 use \ArrayAccess;
-use \Bzzhh\Tzkt\ObjectSerializer;
+use \Tzkt\ObjectSerializer;
 
 /**
  * DelegatorRewards Class Doc Comment
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
         'cycle' => 'int',
         'delegated_balance' => 'int',
         'staked_balance' => 'int',
-        'baker' => '\Bzzhh\Tzkt\Model\DelegatorRewardsBaker',
+        'baker' => '\Tzkt\Model\DelegatorRewardsBaker',
         'baking_power' => 'int',
         'total_baking_power' => 'int',
         'baker_delegated_balance' => 'int',
@@ -114,7 +114,7 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
         'nonce_revelation_rewards_staked_edge' => 'int',
         'nonce_revelation_rewards_staked_shared' => 'int',
         'nonce_revelation_losses' => 'int',
-        'quote' => '\Bzzhh\Tzkt\Model\CycleQuote',
+        'quote' => '\Tzkt\Model\CycleQuote',
         'block_rewards_liquid' => 'int',
         'endorsement_rewards_liquid' => 'int',
         'nonce_revelation_rewards_liquid' => 'int',
@@ -277,105 +277,105 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'cycle' => false,
-		'delegated_balance' => false,
-		'staked_balance' => false,
-		'baker' => true,
-		'baking_power' => false,
-		'total_baking_power' => false,
-		'baker_delegated_balance' => false,
-		'external_delegated_balance' => false,
-		'baker_staked_balance' => false,
-		'external_staked_balance' => false,
-		'expected_blocks' => false,
-		'expected_endorsements' => false,
-		'future_blocks' => false,
-		'future_block_rewards' => false,
-		'blocks' => false,
-		'block_rewards_delegated' => false,
-		'block_rewards_staked_own' => false,
-		'block_rewards_staked_edge' => false,
-		'block_rewards_staked_shared' => false,
-		'missed_blocks' => false,
-		'missed_block_rewards' => false,
-		'future_endorsements' => false,
-		'future_endorsement_rewards' => false,
-		'endorsements' => false,
-		'endorsement_rewards_delegated' => false,
-		'endorsement_rewards_staked_own' => false,
-		'endorsement_rewards_staked_edge' => false,
-		'endorsement_rewards_staked_shared' => false,
-		'missed_endorsements' => false,
-		'missed_endorsement_rewards' => false,
-		'block_fees' => false,
-		'missed_block_fees' => false,
-		'double_baking_rewards' => false,
-		'double_baking_lost_staked' => false,
-		'double_baking_lost_unstaked' => false,
-		'double_baking_lost_external_staked' => false,
-		'double_baking_lost_external_unstaked' => false,
-		'double_endorsing_rewards' => false,
-		'double_endorsing_lost_staked' => false,
-		'double_endorsing_lost_unstaked' => false,
-		'double_endorsing_lost_external_staked' => false,
-		'double_endorsing_lost_external_unstaked' => false,
-		'double_preendorsing_rewards' => false,
-		'double_preendorsing_lost_staked' => false,
-		'double_preendorsing_lost_unstaked' => false,
-		'double_preendorsing_lost_external_staked' => false,
-		'double_preendorsing_lost_external_unstaked' => false,
-		'vdf_revelation_rewards_delegated' => false,
-		'vdf_revelation_rewards_staked_own' => false,
-		'vdf_revelation_rewards_staked_edge' => false,
-		'vdf_revelation_rewards_staked_shared' => false,
-		'nonce_revelation_rewards_delegated' => false,
-		'nonce_revelation_rewards_staked_own' => false,
-		'nonce_revelation_rewards_staked_edge' => false,
-		'nonce_revelation_rewards_staked_shared' => false,
-		'nonce_revelation_losses' => false,
-		'quote' => true,
-		'block_rewards_liquid' => false,
-		'endorsement_rewards_liquid' => false,
-		'nonce_revelation_rewards_liquid' => false,
-		'vdf_revelation_rewards_liquid' => false,
-		'revelation_rewards' => false,
-		'revelation_losses' => false,
-		'double_preendorsing_losses' => false,
-		'double_endorsing_losses' => false,
-		'double_baking_losses' => false,
-		'endorsement_rewards' => false,
-		'block_rewards' => false,
-		'staking_balance' => false,
-		'active_stake' => false,
-		'selected_stake' => false,
-		'balance' => false,
-		'own_blocks' => false,
-		'extra_blocks' => false,
-		'missed_own_blocks' => false,
-		'missed_extra_blocks' => false,
-		'uncovered_own_blocks' => false,
-		'uncovered_extra_blocks' => false,
-		'uncovered_endorsements' => false,
-		'own_block_rewards' => false,
-		'extra_block_rewards' => false,
-		'missed_own_block_rewards' => false,
-		'missed_extra_block_rewards' => false,
-		'uncovered_own_block_rewards' => false,
-		'uncovered_extra_block_rewards' => false,
-		'uncovered_endorsement_rewards' => false,
-		'own_block_fees' => false,
-		'extra_block_fees' => false,
-		'missed_own_block_fees' => false,
-		'missed_extra_block_fees' => false,
-		'uncovered_own_block_fees' => false,
-		'uncovered_extra_block_fees' => false,
-		'double_baking_lost_deposits' => false,
-		'double_baking_lost_rewards' => false,
-		'double_baking_lost_fees' => false,
-		'double_endorsing_lost_deposits' => false,
-		'double_endorsing_lost_rewards' => false,
-		'double_endorsing_lost_fees' => false,
-		'revelation_lost_rewards' => false,
-		'revelation_lost_fees' => false
+        'delegated_balance' => false,
+        'staked_balance' => false,
+        'baker' => true,
+        'baking_power' => false,
+        'total_baking_power' => false,
+        'baker_delegated_balance' => false,
+        'external_delegated_balance' => false,
+        'baker_staked_balance' => false,
+        'external_staked_balance' => false,
+        'expected_blocks' => false,
+        'expected_endorsements' => false,
+        'future_blocks' => false,
+        'future_block_rewards' => false,
+        'blocks' => false,
+        'block_rewards_delegated' => false,
+        'block_rewards_staked_own' => false,
+        'block_rewards_staked_edge' => false,
+        'block_rewards_staked_shared' => false,
+        'missed_blocks' => false,
+        'missed_block_rewards' => false,
+        'future_endorsements' => false,
+        'future_endorsement_rewards' => false,
+        'endorsements' => false,
+        'endorsement_rewards_delegated' => false,
+        'endorsement_rewards_staked_own' => false,
+        'endorsement_rewards_staked_edge' => false,
+        'endorsement_rewards_staked_shared' => false,
+        'missed_endorsements' => false,
+        'missed_endorsement_rewards' => false,
+        'block_fees' => false,
+        'missed_block_fees' => false,
+        'double_baking_rewards' => false,
+        'double_baking_lost_staked' => false,
+        'double_baking_lost_unstaked' => false,
+        'double_baking_lost_external_staked' => false,
+        'double_baking_lost_external_unstaked' => false,
+        'double_endorsing_rewards' => false,
+        'double_endorsing_lost_staked' => false,
+        'double_endorsing_lost_unstaked' => false,
+        'double_endorsing_lost_external_staked' => false,
+        'double_endorsing_lost_external_unstaked' => false,
+        'double_preendorsing_rewards' => false,
+        'double_preendorsing_lost_staked' => false,
+        'double_preendorsing_lost_unstaked' => false,
+        'double_preendorsing_lost_external_staked' => false,
+        'double_preendorsing_lost_external_unstaked' => false,
+        'vdf_revelation_rewards_delegated' => false,
+        'vdf_revelation_rewards_staked_own' => false,
+        'vdf_revelation_rewards_staked_edge' => false,
+        'vdf_revelation_rewards_staked_shared' => false,
+        'nonce_revelation_rewards_delegated' => false,
+        'nonce_revelation_rewards_staked_own' => false,
+        'nonce_revelation_rewards_staked_edge' => false,
+        'nonce_revelation_rewards_staked_shared' => false,
+        'nonce_revelation_losses' => false,
+        'quote' => true,
+        'block_rewards_liquid' => false,
+        'endorsement_rewards_liquid' => false,
+        'nonce_revelation_rewards_liquid' => false,
+        'vdf_revelation_rewards_liquid' => false,
+        'revelation_rewards' => false,
+        'revelation_losses' => false,
+        'double_preendorsing_losses' => false,
+        'double_endorsing_losses' => false,
+        'double_baking_losses' => false,
+        'endorsement_rewards' => false,
+        'block_rewards' => false,
+        'staking_balance' => false,
+        'active_stake' => false,
+        'selected_stake' => false,
+        'balance' => false,
+        'own_blocks' => false,
+        'extra_blocks' => false,
+        'missed_own_blocks' => false,
+        'missed_extra_blocks' => false,
+        'uncovered_own_blocks' => false,
+        'uncovered_extra_blocks' => false,
+        'uncovered_endorsements' => false,
+        'own_block_rewards' => false,
+        'extra_block_rewards' => false,
+        'missed_own_block_rewards' => false,
+        'missed_extra_block_rewards' => false,
+        'uncovered_own_block_rewards' => false,
+        'uncovered_extra_block_rewards' => false,
+        'uncovered_endorsement_rewards' => false,
+        'own_block_fees' => false,
+        'extra_block_fees' => false,
+        'missed_own_block_fees' => false,
+        'missed_extra_block_fees' => false,
+        'uncovered_own_block_fees' => false,
+        'uncovered_extra_block_fees' => false,
+        'double_baking_lost_deposits' => false,
+        'double_baking_lost_rewards' => false,
+        'double_baking_lost_fees' => false,
+        'double_endorsing_lost_deposits' => false,
+        'double_endorsing_lost_rewards' => false,
+        'double_endorsing_lost_fees' => false,
+        'revelation_lost_rewards' => false,
+        'revelation_lost_fees' => false
     ];
 
     /**
@@ -834,10 +834,10 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[] $data Associated array of property values
+     * @param mixed[]|null $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('cycle', $data ?? [], null);
         $this->setIfExists('delegated_balance', $data ?? [], null);
@@ -1002,11 +1002,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCycle($cycle)
     {
-
         if (is_null($cycle)) {
             throw new \InvalidArgumentException('non-nullable cycle cannot be null');
         }
-
         $this->container['cycle'] = $cycle;
 
         return $this;
@@ -1031,11 +1029,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDelegatedBalance($delegated_balance)
     {
-
         if (is_null($delegated_balance)) {
             throw new \InvalidArgumentException('non-nullable delegated_balance cannot be null');
         }
-
         $this->container['delegated_balance'] = $delegated_balance;
 
         return $this;
@@ -1060,11 +1056,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setStakedBalance($staked_balance)
     {
-
         if (is_null($staked_balance)) {
             throw new \InvalidArgumentException('non-nullable staked_balance cannot be null');
         }
-
         $this->container['staked_balance'] = $staked_balance;
 
         return $this;
@@ -1073,7 +1067,7 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets baker
      *
-     * @return \Bzzhh\Tzkt\Model\DelegatorRewardsBaker|null
+     * @return \Tzkt\Model\DelegatorRewardsBaker|null
      */
     public function getBaker()
     {
@@ -1083,13 +1077,12 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets baker
      *
-     * @param \Bzzhh\Tzkt\Model\DelegatorRewardsBaker|null $baker baker
+     * @param \Tzkt\Model\DelegatorRewardsBaker|null $baker baker
      *
      * @return self
      */
     public function setBaker($baker)
     {
-
         if (is_null($baker)) {
             array_push($this->openAPINullablesSetToNull, 'baker');
         } else {
@@ -1100,7 +1093,6 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['baker'] = $baker;
 
         return $this;
@@ -1125,11 +1117,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBakingPower($baking_power)
     {
-
         if (is_null($baking_power)) {
             throw new \InvalidArgumentException('non-nullable baking_power cannot be null');
         }
-
         $this->container['baking_power'] = $baking_power;
 
         return $this;
@@ -1154,11 +1144,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTotalBakingPower($total_baking_power)
     {
-
         if (is_null($total_baking_power)) {
             throw new \InvalidArgumentException('non-nullable total_baking_power cannot be null');
         }
-
         $this->container['total_baking_power'] = $total_baking_power;
 
         return $this;
@@ -1183,11 +1171,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBakerDelegatedBalance($baker_delegated_balance)
     {
-
         if (is_null($baker_delegated_balance)) {
             throw new \InvalidArgumentException('non-nullable baker_delegated_balance cannot be null');
         }
-
         $this->container['baker_delegated_balance'] = $baker_delegated_balance;
 
         return $this;
@@ -1212,11 +1198,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setExternalDelegatedBalance($external_delegated_balance)
     {
-
         if (is_null($external_delegated_balance)) {
             throw new \InvalidArgumentException('non-nullable external_delegated_balance cannot be null');
         }
-
         $this->container['external_delegated_balance'] = $external_delegated_balance;
 
         return $this;
@@ -1241,11 +1225,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBakerStakedBalance($baker_staked_balance)
     {
-
         if (is_null($baker_staked_balance)) {
             throw new \InvalidArgumentException('non-nullable baker_staked_balance cannot be null');
         }
-
         $this->container['baker_staked_balance'] = $baker_staked_balance;
 
         return $this;
@@ -1270,11 +1252,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setExternalStakedBalance($external_staked_balance)
     {
-
         if (is_null($external_staked_balance)) {
             throw new \InvalidArgumentException('non-nullable external_staked_balance cannot be null');
         }
-
         $this->container['external_staked_balance'] = $external_staked_balance;
 
         return $this;
@@ -1299,11 +1279,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setExpectedBlocks($expected_blocks)
     {
-
         if (is_null($expected_blocks)) {
             throw new \InvalidArgumentException('non-nullable expected_blocks cannot be null');
         }
-
         $this->container['expected_blocks'] = $expected_blocks;
 
         return $this;
@@ -1328,11 +1306,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setExpectedEndorsements($expected_endorsements)
     {
-
         if (is_null($expected_endorsements)) {
             throw new \InvalidArgumentException('non-nullable expected_endorsements cannot be null');
         }
-
         $this->container['expected_endorsements'] = $expected_endorsements;
 
         return $this;
@@ -1357,11 +1333,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFutureBlocks($future_blocks)
     {
-
         if (is_null($future_blocks)) {
             throw new \InvalidArgumentException('non-nullable future_blocks cannot be null');
         }
-
         $this->container['future_blocks'] = $future_blocks;
 
         return $this;
@@ -1386,11 +1360,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFutureBlockRewards($future_block_rewards)
     {
-
         if (is_null($future_block_rewards)) {
             throw new \InvalidArgumentException('non-nullable future_block_rewards cannot be null');
         }
-
         $this->container['future_block_rewards'] = $future_block_rewards;
 
         return $this;
@@ -1415,11 +1387,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlocks($blocks)
     {
-
         if (is_null($blocks)) {
             throw new \InvalidArgumentException('non-nullable blocks cannot be null');
         }
-
         $this->container['blocks'] = $blocks;
 
         return $this;
@@ -1444,11 +1414,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlockRewardsDelegated($block_rewards_delegated)
     {
-
         if (is_null($block_rewards_delegated)) {
             throw new \InvalidArgumentException('non-nullable block_rewards_delegated cannot be null');
         }
-
         $this->container['block_rewards_delegated'] = $block_rewards_delegated;
 
         return $this;
@@ -1473,11 +1441,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlockRewardsStakedOwn($block_rewards_staked_own)
     {
-
         if (is_null($block_rewards_staked_own)) {
             throw new \InvalidArgumentException('non-nullable block_rewards_staked_own cannot be null');
         }
-
         $this->container['block_rewards_staked_own'] = $block_rewards_staked_own;
 
         return $this;
@@ -1502,11 +1468,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlockRewardsStakedEdge($block_rewards_staked_edge)
     {
-
         if (is_null($block_rewards_staked_edge)) {
             throw new \InvalidArgumentException('non-nullable block_rewards_staked_edge cannot be null');
         }
-
         $this->container['block_rewards_staked_edge'] = $block_rewards_staked_edge;
 
         return $this;
@@ -1531,11 +1495,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlockRewardsStakedShared($block_rewards_staked_shared)
     {
-
         if (is_null($block_rewards_staked_shared)) {
             throw new \InvalidArgumentException('non-nullable block_rewards_staked_shared cannot be null');
         }
-
         $this->container['block_rewards_staked_shared'] = $block_rewards_staked_shared;
 
         return $this;
@@ -1560,11 +1522,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedBlocks($missed_blocks)
     {
-
         if (is_null($missed_blocks)) {
             throw new \InvalidArgumentException('non-nullable missed_blocks cannot be null');
         }
-
         $this->container['missed_blocks'] = $missed_blocks;
 
         return $this;
@@ -1589,11 +1549,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedBlockRewards($missed_block_rewards)
     {
-
         if (is_null($missed_block_rewards)) {
             throw new \InvalidArgumentException('non-nullable missed_block_rewards cannot be null');
         }
-
         $this->container['missed_block_rewards'] = $missed_block_rewards;
 
         return $this;
@@ -1618,11 +1576,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFutureEndorsements($future_endorsements)
     {
-
         if (is_null($future_endorsements)) {
             throw new \InvalidArgumentException('non-nullable future_endorsements cannot be null');
         }
-
         $this->container['future_endorsements'] = $future_endorsements;
 
         return $this;
@@ -1647,11 +1603,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFutureEndorsementRewards($future_endorsement_rewards)
     {
-
         if (is_null($future_endorsement_rewards)) {
             throw new \InvalidArgumentException('non-nullable future_endorsement_rewards cannot be null');
         }
-
         $this->container['future_endorsement_rewards'] = $future_endorsement_rewards;
 
         return $this;
@@ -1676,11 +1630,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEndorsements($endorsements)
     {
-
         if (is_null($endorsements)) {
             throw new \InvalidArgumentException('non-nullable endorsements cannot be null');
         }
-
         $this->container['endorsements'] = $endorsements;
 
         return $this;
@@ -1705,11 +1657,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEndorsementRewardsDelegated($endorsement_rewards_delegated)
     {
-
         if (is_null($endorsement_rewards_delegated)) {
             throw new \InvalidArgumentException('non-nullable endorsement_rewards_delegated cannot be null');
         }
-
         $this->container['endorsement_rewards_delegated'] = $endorsement_rewards_delegated;
 
         return $this;
@@ -1734,11 +1684,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEndorsementRewardsStakedOwn($endorsement_rewards_staked_own)
     {
-
         if (is_null($endorsement_rewards_staked_own)) {
             throw new \InvalidArgumentException('non-nullable endorsement_rewards_staked_own cannot be null');
         }
-
         $this->container['endorsement_rewards_staked_own'] = $endorsement_rewards_staked_own;
 
         return $this;
@@ -1763,11 +1711,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEndorsementRewardsStakedEdge($endorsement_rewards_staked_edge)
     {
-
         if (is_null($endorsement_rewards_staked_edge)) {
             throw new \InvalidArgumentException('non-nullable endorsement_rewards_staked_edge cannot be null');
         }
-
         $this->container['endorsement_rewards_staked_edge'] = $endorsement_rewards_staked_edge;
 
         return $this;
@@ -1792,11 +1738,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEndorsementRewardsStakedShared($endorsement_rewards_staked_shared)
     {
-
         if (is_null($endorsement_rewards_staked_shared)) {
             throw new \InvalidArgumentException('non-nullable endorsement_rewards_staked_shared cannot be null');
         }
-
         $this->container['endorsement_rewards_staked_shared'] = $endorsement_rewards_staked_shared;
 
         return $this;
@@ -1821,11 +1765,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedEndorsements($missed_endorsements)
     {
-
         if (is_null($missed_endorsements)) {
             throw new \InvalidArgumentException('non-nullable missed_endorsements cannot be null');
         }
-
         $this->container['missed_endorsements'] = $missed_endorsements;
 
         return $this;
@@ -1850,11 +1792,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedEndorsementRewards($missed_endorsement_rewards)
     {
-
         if (is_null($missed_endorsement_rewards)) {
             throw new \InvalidArgumentException('non-nullable missed_endorsement_rewards cannot be null');
         }
-
         $this->container['missed_endorsement_rewards'] = $missed_endorsement_rewards;
 
         return $this;
@@ -1879,11 +1819,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlockFees($block_fees)
     {
-
         if (is_null($block_fees)) {
             throw new \InvalidArgumentException('non-nullable block_fees cannot be null');
         }
-
         $this->container['block_fees'] = $block_fees;
 
         return $this;
@@ -1908,11 +1846,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedBlockFees($missed_block_fees)
     {
-
         if (is_null($missed_block_fees)) {
             throw new \InvalidArgumentException('non-nullable missed_block_fees cannot be null');
         }
-
         $this->container['missed_block_fees'] = $missed_block_fees;
 
         return $this;
@@ -1937,11 +1873,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingRewards($double_baking_rewards)
     {
-
         if (is_null($double_baking_rewards)) {
             throw new \InvalidArgumentException('non-nullable double_baking_rewards cannot be null');
         }
-
         $this->container['double_baking_rewards'] = $double_baking_rewards;
 
         return $this;
@@ -1966,11 +1900,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingLostStaked($double_baking_lost_staked)
     {
-
         if (is_null($double_baking_lost_staked)) {
             throw new \InvalidArgumentException('non-nullable double_baking_lost_staked cannot be null');
         }
-
         $this->container['double_baking_lost_staked'] = $double_baking_lost_staked;
 
         return $this;
@@ -1995,11 +1927,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingLostUnstaked($double_baking_lost_unstaked)
     {
-
         if (is_null($double_baking_lost_unstaked)) {
             throw new \InvalidArgumentException('non-nullable double_baking_lost_unstaked cannot be null');
         }
-
         $this->container['double_baking_lost_unstaked'] = $double_baking_lost_unstaked;
 
         return $this;
@@ -2024,11 +1954,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingLostExternalStaked($double_baking_lost_external_staked)
     {
-
         if (is_null($double_baking_lost_external_staked)) {
             throw new \InvalidArgumentException('non-nullable double_baking_lost_external_staked cannot be null');
         }
-
         $this->container['double_baking_lost_external_staked'] = $double_baking_lost_external_staked;
 
         return $this;
@@ -2053,11 +1981,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingLostExternalUnstaked($double_baking_lost_external_unstaked)
     {
-
         if (is_null($double_baking_lost_external_unstaked)) {
             throw new \InvalidArgumentException('non-nullable double_baking_lost_external_unstaked cannot be null');
         }
-
         $this->container['double_baking_lost_external_unstaked'] = $double_baking_lost_external_unstaked;
 
         return $this;
@@ -2082,11 +2008,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingRewards($double_endorsing_rewards)
     {
-
         if (is_null($double_endorsing_rewards)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_rewards cannot be null');
         }
-
         $this->container['double_endorsing_rewards'] = $double_endorsing_rewards;
 
         return $this;
@@ -2111,11 +2035,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingLostStaked($double_endorsing_lost_staked)
     {
-
         if (is_null($double_endorsing_lost_staked)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_lost_staked cannot be null');
         }
-
         $this->container['double_endorsing_lost_staked'] = $double_endorsing_lost_staked;
 
         return $this;
@@ -2140,11 +2062,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingLostUnstaked($double_endorsing_lost_unstaked)
     {
-
         if (is_null($double_endorsing_lost_unstaked)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_lost_unstaked cannot be null');
         }
-
         $this->container['double_endorsing_lost_unstaked'] = $double_endorsing_lost_unstaked;
 
         return $this;
@@ -2169,11 +2089,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingLostExternalStaked($double_endorsing_lost_external_staked)
     {
-
         if (is_null($double_endorsing_lost_external_staked)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_lost_external_staked cannot be null');
         }
-
         $this->container['double_endorsing_lost_external_staked'] = $double_endorsing_lost_external_staked;
 
         return $this;
@@ -2198,11 +2116,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingLostExternalUnstaked($double_endorsing_lost_external_unstaked)
     {
-
         if (is_null($double_endorsing_lost_external_unstaked)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_lost_external_unstaked cannot be null');
         }
-
         $this->container['double_endorsing_lost_external_unstaked'] = $double_endorsing_lost_external_unstaked;
 
         return $this;
@@ -2227,11 +2143,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoublePreendorsingRewards($double_preendorsing_rewards)
     {
-
         if (is_null($double_preendorsing_rewards)) {
             throw new \InvalidArgumentException('non-nullable double_preendorsing_rewards cannot be null');
         }
-
         $this->container['double_preendorsing_rewards'] = $double_preendorsing_rewards;
 
         return $this;
@@ -2256,11 +2170,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoublePreendorsingLostStaked($double_preendorsing_lost_staked)
     {
-
         if (is_null($double_preendorsing_lost_staked)) {
             throw new \InvalidArgumentException('non-nullable double_preendorsing_lost_staked cannot be null');
         }
-
         $this->container['double_preendorsing_lost_staked'] = $double_preendorsing_lost_staked;
 
         return $this;
@@ -2285,11 +2197,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoublePreendorsingLostUnstaked($double_preendorsing_lost_unstaked)
     {
-
         if (is_null($double_preendorsing_lost_unstaked)) {
             throw new \InvalidArgumentException('non-nullable double_preendorsing_lost_unstaked cannot be null');
         }
-
         $this->container['double_preendorsing_lost_unstaked'] = $double_preendorsing_lost_unstaked;
 
         return $this;
@@ -2314,11 +2224,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoublePreendorsingLostExternalStaked($double_preendorsing_lost_external_staked)
     {
-
         if (is_null($double_preendorsing_lost_external_staked)) {
             throw new \InvalidArgumentException('non-nullable double_preendorsing_lost_external_staked cannot be null');
         }
-
         $this->container['double_preendorsing_lost_external_staked'] = $double_preendorsing_lost_external_staked;
 
         return $this;
@@ -2343,11 +2251,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoublePreendorsingLostExternalUnstaked($double_preendorsing_lost_external_unstaked)
     {
-
         if (is_null($double_preendorsing_lost_external_unstaked)) {
             throw new \InvalidArgumentException('non-nullable double_preendorsing_lost_external_unstaked cannot be null');
         }
-
         $this->container['double_preendorsing_lost_external_unstaked'] = $double_preendorsing_lost_external_unstaked;
 
         return $this;
@@ -2372,11 +2278,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setVdfRevelationRewardsDelegated($vdf_revelation_rewards_delegated)
     {
-
         if (is_null($vdf_revelation_rewards_delegated)) {
             throw new \InvalidArgumentException('non-nullable vdf_revelation_rewards_delegated cannot be null');
         }
-
         $this->container['vdf_revelation_rewards_delegated'] = $vdf_revelation_rewards_delegated;
 
         return $this;
@@ -2401,11 +2305,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setVdfRevelationRewardsStakedOwn($vdf_revelation_rewards_staked_own)
     {
-
         if (is_null($vdf_revelation_rewards_staked_own)) {
             throw new \InvalidArgumentException('non-nullable vdf_revelation_rewards_staked_own cannot be null');
         }
-
         $this->container['vdf_revelation_rewards_staked_own'] = $vdf_revelation_rewards_staked_own;
 
         return $this;
@@ -2430,11 +2332,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setVdfRevelationRewardsStakedEdge($vdf_revelation_rewards_staked_edge)
     {
-
         if (is_null($vdf_revelation_rewards_staked_edge)) {
             throw new \InvalidArgumentException('non-nullable vdf_revelation_rewards_staked_edge cannot be null');
         }
-
         $this->container['vdf_revelation_rewards_staked_edge'] = $vdf_revelation_rewards_staked_edge;
 
         return $this;
@@ -2459,11 +2359,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setVdfRevelationRewardsStakedShared($vdf_revelation_rewards_staked_shared)
     {
-
         if (is_null($vdf_revelation_rewards_staked_shared)) {
             throw new \InvalidArgumentException('non-nullable vdf_revelation_rewards_staked_shared cannot be null');
         }
-
         $this->container['vdf_revelation_rewards_staked_shared'] = $vdf_revelation_rewards_staked_shared;
 
         return $this;
@@ -2488,11 +2386,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNonceRevelationRewardsDelegated($nonce_revelation_rewards_delegated)
     {
-
         if (is_null($nonce_revelation_rewards_delegated)) {
             throw new \InvalidArgumentException('non-nullable nonce_revelation_rewards_delegated cannot be null');
         }
-
         $this->container['nonce_revelation_rewards_delegated'] = $nonce_revelation_rewards_delegated;
 
         return $this;
@@ -2517,11 +2413,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNonceRevelationRewardsStakedOwn($nonce_revelation_rewards_staked_own)
     {
-
         if (is_null($nonce_revelation_rewards_staked_own)) {
             throw new \InvalidArgumentException('non-nullable nonce_revelation_rewards_staked_own cannot be null');
         }
-
         $this->container['nonce_revelation_rewards_staked_own'] = $nonce_revelation_rewards_staked_own;
 
         return $this;
@@ -2546,11 +2440,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNonceRevelationRewardsStakedEdge($nonce_revelation_rewards_staked_edge)
     {
-
         if (is_null($nonce_revelation_rewards_staked_edge)) {
             throw new \InvalidArgumentException('non-nullable nonce_revelation_rewards_staked_edge cannot be null');
         }
-
         $this->container['nonce_revelation_rewards_staked_edge'] = $nonce_revelation_rewards_staked_edge;
 
         return $this;
@@ -2575,11 +2467,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNonceRevelationRewardsStakedShared($nonce_revelation_rewards_staked_shared)
     {
-
         if (is_null($nonce_revelation_rewards_staked_shared)) {
             throw new \InvalidArgumentException('non-nullable nonce_revelation_rewards_staked_shared cannot be null');
         }
-
         $this->container['nonce_revelation_rewards_staked_shared'] = $nonce_revelation_rewards_staked_shared;
 
         return $this;
@@ -2604,11 +2494,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNonceRevelationLosses($nonce_revelation_losses)
     {
-
         if (is_null($nonce_revelation_losses)) {
             throw new \InvalidArgumentException('non-nullable nonce_revelation_losses cannot be null');
         }
-
         $this->container['nonce_revelation_losses'] = $nonce_revelation_losses;
 
         return $this;
@@ -2617,7 +2505,7 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets quote
      *
-     * @return \Bzzhh\Tzkt\Model\CycleQuote|null
+     * @return \Tzkt\Model\CycleQuote|null
      */
     public function getQuote()
     {
@@ -2627,13 +2515,12 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quote
      *
-     * @param \Bzzhh\Tzkt\Model\CycleQuote|null $quote quote
+     * @param \Tzkt\Model\CycleQuote|null $quote quote
      *
      * @return self
      */
     public function setQuote($quote)
     {
-
         if (is_null($quote)) {
             array_push($this->openAPINullablesSetToNull, 'quote');
         } else {
@@ -2644,7 +2531,6 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['quote'] = $quote;
 
         return $this;
@@ -2669,11 +2555,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlockRewardsLiquid($block_rewards_liquid)
     {
-
         if (is_null($block_rewards_liquid)) {
             throw new \InvalidArgumentException('non-nullable block_rewards_liquid cannot be null');
         }
-
         $this->container['block_rewards_liquid'] = $block_rewards_liquid;
 
         return $this;
@@ -2698,11 +2582,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEndorsementRewardsLiquid($endorsement_rewards_liquid)
     {
-
         if (is_null($endorsement_rewards_liquid)) {
             throw new \InvalidArgumentException('non-nullable endorsement_rewards_liquid cannot be null');
         }
-
         $this->container['endorsement_rewards_liquid'] = $endorsement_rewards_liquid;
 
         return $this;
@@ -2727,11 +2609,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNonceRevelationRewardsLiquid($nonce_revelation_rewards_liquid)
     {
-
         if (is_null($nonce_revelation_rewards_liquid)) {
             throw new \InvalidArgumentException('non-nullable nonce_revelation_rewards_liquid cannot be null');
         }
-
         $this->container['nonce_revelation_rewards_liquid'] = $nonce_revelation_rewards_liquid;
 
         return $this;
@@ -2756,11 +2636,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setVdfRevelationRewardsLiquid($vdf_revelation_rewards_liquid)
     {
-
         if (is_null($vdf_revelation_rewards_liquid)) {
             throw new \InvalidArgumentException('non-nullable vdf_revelation_rewards_liquid cannot be null');
         }
-
         $this->container['vdf_revelation_rewards_liquid'] = $vdf_revelation_rewards_liquid;
 
         return $this;
@@ -2785,11 +2663,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRevelationRewards($revelation_rewards)
     {
-
         if (is_null($revelation_rewards)) {
             throw new \InvalidArgumentException('non-nullable revelation_rewards cannot be null');
         }
-
         $this->container['revelation_rewards'] = $revelation_rewards;
 
         return $this;
@@ -2814,11 +2690,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRevelationLosses($revelation_losses)
     {
-
         if (is_null($revelation_losses)) {
             throw new \InvalidArgumentException('non-nullable revelation_losses cannot be null');
         }
-
         $this->container['revelation_losses'] = $revelation_losses;
 
         return $this;
@@ -2843,11 +2717,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoublePreendorsingLosses($double_preendorsing_losses)
     {
-
         if (is_null($double_preendorsing_losses)) {
             throw new \InvalidArgumentException('non-nullable double_preendorsing_losses cannot be null');
         }
-
         $this->container['double_preendorsing_losses'] = $double_preendorsing_losses;
 
         return $this;
@@ -2872,11 +2744,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingLosses($double_endorsing_losses)
     {
-
         if (is_null($double_endorsing_losses)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_losses cannot be null');
         }
-
         $this->container['double_endorsing_losses'] = $double_endorsing_losses;
 
         return $this;
@@ -2901,11 +2771,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingLosses($double_baking_losses)
     {
-
         if (is_null($double_baking_losses)) {
             throw new \InvalidArgumentException('non-nullable double_baking_losses cannot be null');
         }
-
         $this->container['double_baking_losses'] = $double_baking_losses;
 
         return $this;
@@ -2930,11 +2798,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEndorsementRewards($endorsement_rewards)
     {
-
         if (is_null($endorsement_rewards)) {
             throw new \InvalidArgumentException('non-nullable endorsement_rewards cannot be null');
         }
-
         $this->container['endorsement_rewards'] = $endorsement_rewards;
 
         return $this;
@@ -2959,11 +2825,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBlockRewards($block_rewards)
     {
-
         if (is_null($block_rewards)) {
             throw new \InvalidArgumentException('non-nullable block_rewards cannot be null');
         }
-
         $this->container['block_rewards'] = $block_rewards;
 
         return $this;
@@ -2988,11 +2852,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setStakingBalance($staking_balance)
     {
-
         if (is_null($staking_balance)) {
             throw new \InvalidArgumentException('non-nullable staking_balance cannot be null');
         }
-
         $this->container['staking_balance'] = $staking_balance;
 
         return $this;
@@ -3017,11 +2879,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setActiveStake($active_stake)
     {
-
         if (is_null($active_stake)) {
             throw new \InvalidArgumentException('non-nullable active_stake cannot be null');
         }
-
         $this->container['active_stake'] = $active_stake;
 
         return $this;
@@ -3046,11 +2906,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSelectedStake($selected_stake)
     {
-
         if (is_null($selected_stake)) {
             throw new \InvalidArgumentException('non-nullable selected_stake cannot be null');
         }
-
         $this->container['selected_stake'] = $selected_stake;
 
         return $this;
@@ -3075,11 +2933,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBalance($balance)
     {
-
         if (is_null($balance)) {
             throw new \InvalidArgumentException('non-nullable balance cannot be null');
         }
-
         $this->container['balance'] = $balance;
 
         return $this;
@@ -3104,11 +2960,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setOwnBlocks($own_blocks)
     {
-
         if (is_null($own_blocks)) {
             throw new \InvalidArgumentException('non-nullable own_blocks cannot be null');
         }
-
         $this->container['own_blocks'] = $own_blocks;
 
         return $this;
@@ -3133,11 +2987,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setExtraBlocks($extra_blocks)
     {
-
         if (is_null($extra_blocks)) {
             throw new \InvalidArgumentException('non-nullable extra_blocks cannot be null');
         }
-
         $this->container['extra_blocks'] = $extra_blocks;
 
         return $this;
@@ -3162,11 +3014,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedOwnBlocks($missed_own_blocks)
     {
-
         if (is_null($missed_own_blocks)) {
             throw new \InvalidArgumentException('non-nullable missed_own_blocks cannot be null');
         }
-
         $this->container['missed_own_blocks'] = $missed_own_blocks;
 
         return $this;
@@ -3191,11 +3041,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedExtraBlocks($missed_extra_blocks)
     {
-
         if (is_null($missed_extra_blocks)) {
             throw new \InvalidArgumentException('non-nullable missed_extra_blocks cannot be null');
         }
-
         $this->container['missed_extra_blocks'] = $missed_extra_blocks;
 
         return $this;
@@ -3220,11 +3068,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUncoveredOwnBlocks($uncovered_own_blocks)
     {
-
         if (is_null($uncovered_own_blocks)) {
             throw new \InvalidArgumentException('non-nullable uncovered_own_blocks cannot be null');
         }
-
         $this->container['uncovered_own_blocks'] = $uncovered_own_blocks;
 
         return $this;
@@ -3249,11 +3095,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUncoveredExtraBlocks($uncovered_extra_blocks)
     {
-
         if (is_null($uncovered_extra_blocks)) {
             throw new \InvalidArgumentException('non-nullable uncovered_extra_blocks cannot be null');
         }
-
         $this->container['uncovered_extra_blocks'] = $uncovered_extra_blocks;
 
         return $this;
@@ -3278,11 +3122,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUncoveredEndorsements($uncovered_endorsements)
     {
-
         if (is_null($uncovered_endorsements)) {
             throw new \InvalidArgumentException('non-nullable uncovered_endorsements cannot be null');
         }
-
         $this->container['uncovered_endorsements'] = $uncovered_endorsements;
 
         return $this;
@@ -3307,11 +3149,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setOwnBlockRewards($own_block_rewards)
     {
-
         if (is_null($own_block_rewards)) {
             throw new \InvalidArgumentException('non-nullable own_block_rewards cannot be null');
         }
-
         $this->container['own_block_rewards'] = $own_block_rewards;
 
         return $this;
@@ -3336,11 +3176,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setExtraBlockRewards($extra_block_rewards)
     {
-
         if (is_null($extra_block_rewards)) {
             throw new \InvalidArgumentException('non-nullable extra_block_rewards cannot be null');
         }
-
         $this->container['extra_block_rewards'] = $extra_block_rewards;
 
         return $this;
@@ -3365,11 +3203,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedOwnBlockRewards($missed_own_block_rewards)
     {
-
         if (is_null($missed_own_block_rewards)) {
             throw new \InvalidArgumentException('non-nullable missed_own_block_rewards cannot be null');
         }
-
         $this->container['missed_own_block_rewards'] = $missed_own_block_rewards;
 
         return $this;
@@ -3394,11 +3230,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedExtraBlockRewards($missed_extra_block_rewards)
     {
-
         if (is_null($missed_extra_block_rewards)) {
             throw new \InvalidArgumentException('non-nullable missed_extra_block_rewards cannot be null');
         }
-
         $this->container['missed_extra_block_rewards'] = $missed_extra_block_rewards;
 
         return $this;
@@ -3423,11 +3257,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUncoveredOwnBlockRewards($uncovered_own_block_rewards)
     {
-
         if (is_null($uncovered_own_block_rewards)) {
             throw new \InvalidArgumentException('non-nullable uncovered_own_block_rewards cannot be null');
         }
-
         $this->container['uncovered_own_block_rewards'] = $uncovered_own_block_rewards;
 
         return $this;
@@ -3452,11 +3284,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUncoveredExtraBlockRewards($uncovered_extra_block_rewards)
     {
-
         if (is_null($uncovered_extra_block_rewards)) {
             throw new \InvalidArgumentException('non-nullable uncovered_extra_block_rewards cannot be null');
         }
-
         $this->container['uncovered_extra_block_rewards'] = $uncovered_extra_block_rewards;
 
         return $this;
@@ -3481,11 +3311,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUncoveredEndorsementRewards($uncovered_endorsement_rewards)
     {
-
         if (is_null($uncovered_endorsement_rewards)) {
             throw new \InvalidArgumentException('non-nullable uncovered_endorsement_rewards cannot be null');
         }
-
         $this->container['uncovered_endorsement_rewards'] = $uncovered_endorsement_rewards;
 
         return $this;
@@ -3510,11 +3338,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setOwnBlockFees($own_block_fees)
     {
-
         if (is_null($own_block_fees)) {
             throw new \InvalidArgumentException('non-nullable own_block_fees cannot be null');
         }
-
         $this->container['own_block_fees'] = $own_block_fees;
 
         return $this;
@@ -3539,11 +3365,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setExtraBlockFees($extra_block_fees)
     {
-
         if (is_null($extra_block_fees)) {
             throw new \InvalidArgumentException('non-nullable extra_block_fees cannot be null');
         }
-
         $this->container['extra_block_fees'] = $extra_block_fees;
 
         return $this;
@@ -3568,11 +3392,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedOwnBlockFees($missed_own_block_fees)
     {
-
         if (is_null($missed_own_block_fees)) {
             throw new \InvalidArgumentException('non-nullable missed_own_block_fees cannot be null');
         }
-
         $this->container['missed_own_block_fees'] = $missed_own_block_fees;
 
         return $this;
@@ -3597,11 +3419,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setMissedExtraBlockFees($missed_extra_block_fees)
     {
-
         if (is_null($missed_extra_block_fees)) {
             throw new \InvalidArgumentException('non-nullable missed_extra_block_fees cannot be null');
         }
-
         $this->container['missed_extra_block_fees'] = $missed_extra_block_fees;
 
         return $this;
@@ -3626,11 +3446,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUncoveredOwnBlockFees($uncovered_own_block_fees)
     {
-
         if (is_null($uncovered_own_block_fees)) {
             throw new \InvalidArgumentException('non-nullable uncovered_own_block_fees cannot be null');
         }
-
         $this->container['uncovered_own_block_fees'] = $uncovered_own_block_fees;
 
         return $this;
@@ -3655,11 +3473,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUncoveredExtraBlockFees($uncovered_extra_block_fees)
     {
-
         if (is_null($uncovered_extra_block_fees)) {
             throw new \InvalidArgumentException('non-nullable uncovered_extra_block_fees cannot be null');
         }
-
         $this->container['uncovered_extra_block_fees'] = $uncovered_extra_block_fees;
 
         return $this;
@@ -3684,11 +3500,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingLostDeposits($double_baking_lost_deposits)
     {
-
         if (is_null($double_baking_lost_deposits)) {
             throw new \InvalidArgumentException('non-nullable double_baking_lost_deposits cannot be null');
         }
-
         $this->container['double_baking_lost_deposits'] = $double_baking_lost_deposits;
 
         return $this;
@@ -3713,11 +3527,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingLostRewards($double_baking_lost_rewards)
     {
-
         if (is_null($double_baking_lost_rewards)) {
             throw new \InvalidArgumentException('non-nullable double_baking_lost_rewards cannot be null');
         }
-
         $this->container['double_baking_lost_rewards'] = $double_baking_lost_rewards;
 
         return $this;
@@ -3742,11 +3554,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleBakingLostFees($double_baking_lost_fees)
     {
-
         if (is_null($double_baking_lost_fees)) {
             throw new \InvalidArgumentException('non-nullable double_baking_lost_fees cannot be null');
         }
-
         $this->container['double_baking_lost_fees'] = $double_baking_lost_fees;
 
         return $this;
@@ -3771,11 +3581,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingLostDeposits($double_endorsing_lost_deposits)
     {
-
         if (is_null($double_endorsing_lost_deposits)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_lost_deposits cannot be null');
         }
-
         $this->container['double_endorsing_lost_deposits'] = $double_endorsing_lost_deposits;
 
         return $this;
@@ -3800,11 +3608,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingLostRewards($double_endorsing_lost_rewards)
     {
-
         if (is_null($double_endorsing_lost_rewards)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_lost_rewards cannot be null');
         }
-
         $this->container['double_endorsing_lost_rewards'] = $double_endorsing_lost_rewards;
 
         return $this;
@@ -3829,11 +3635,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDoubleEndorsingLostFees($double_endorsing_lost_fees)
     {
-
         if (is_null($double_endorsing_lost_fees)) {
             throw new \InvalidArgumentException('non-nullable double_endorsing_lost_fees cannot be null');
         }
-
         $this->container['double_endorsing_lost_fees'] = $double_endorsing_lost_fees;
 
         return $this;
@@ -3858,11 +3662,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRevelationLostRewards($revelation_lost_rewards)
     {
-
         if (is_null($revelation_lost_rewards)) {
             throw new \InvalidArgumentException('non-nullable revelation_lost_rewards cannot be null');
         }
-
         $this->container['revelation_lost_rewards'] = $revelation_lost_rewards;
 
         return $this;
@@ -3887,11 +3689,9 @@ class DelegatorRewards implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setRevelationLostFees($revelation_lost_fees)
     {
-
         if (is_null($revelation_lost_fees)) {
             throw new \InvalidArgumentException('non-nullable revelation_lost_fees cannot be null');
         }
-
         $this->container['revelation_lost_fees'] = $revelation_lost_fees;
 
         return $this;

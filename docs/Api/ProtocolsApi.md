@@ -1,4 +1,4 @@
-# Bzzhh\Tzkt\ProtocolsApi
+# Tzkt\ProtocolsApi
 
 All URIs are relative to https://api.tzkt.io, except if the operation defines another base path.
 
@@ -15,7 +15,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `protocolsGet()`
 
 ```php
-protocolsGet($sort, $offset, $limit): \Bzzhh\Tzkt\Model\Protocol[]
+protocolsGet($sort, $offset, $limit): \Tzkt\Model\Protocol[]
 ```
 
 Get protocols
@@ -30,13 +30,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ProtocolsApi(
+$apiInstance = new Tzkt\Api\ProtocolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts protocols by specified field. Supported fields: `code` (default), `firstLevel`, `lastLevel`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts protocols by specified field. Supported fields: `code` (default), `firstLevel`, `lastLevel`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
@@ -51,13 +51,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts protocols by specified field. Supported fields: &#x60;code&#x60; (default), &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts protocols by specified field. Supported fields: &#x60;code&#x60; (default), &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Protocol[]**](../Model/Protocol.md)
+[**\Tzkt\Model\Protocol[]**](../Model/Protocol.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 ## `protocolsGetByCode()`
 
 ```php
-protocolsGetByCode($code): \Bzzhh\Tzkt\Model\Protocol
+protocolsGetByCode($code): \Tzkt\Model\Protocol
 ```
 
 Get protocol by code
@@ -90,7 +90,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ProtocolsApi(
+$apiInstance = new Tzkt\Api\ProtocolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -113,7 +113,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Protocol**](../Model/Protocol.md)
+[**\Tzkt\Model\Protocol**](../Model/Protocol.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ No authorization required
 ## `protocolsGetByCycle()`
 
 ```php
-protocolsGetByCycle($cycle): \Bzzhh\Tzkt\Model\Protocol
+protocolsGetByCycle($cycle): \Tzkt\Model\Protocol
 ```
 
 Get protocol by cycle
@@ -146,7 +146,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ProtocolsApi(
+$apiInstance = new Tzkt\Api\ProtocolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -169,7 +169,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Protocol**](../Model/Protocol.md)
+[**\Tzkt\Model\Protocol**](../Model/Protocol.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ No authorization required
 ## `protocolsGetByHash()`
 
 ```php
-protocolsGetByHash($hash): \Bzzhh\Tzkt\Model\Protocol
+protocolsGetByHash($hash): \Tzkt\Model\Protocol
 ```
 
 Get protocol by hash
@@ -202,7 +202,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ProtocolsApi(
+$apiInstance = new Tzkt\Api\ProtocolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -225,7 +225,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Protocol**](../Model/Protocol.md)
+[**\Tzkt\Model\Protocol**](../Model/Protocol.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ProtocolsApi(
+$apiInstance = new Tzkt\Api\ProtocolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -296,7 +296,7 @@ No authorization required
 ## `protocolsGetCurrent()`
 
 ```php
-protocolsGetCurrent(): \Bzzhh\Tzkt\Model\Protocol
+protocolsGetCurrent(): \Tzkt\Model\Protocol
 ```
 
 Get current protocol
@@ -311,7 +311,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ProtocolsApi(
+$apiInstance = new Tzkt\Api\ProtocolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -331,7 +331,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Protocol**](../Model/Protocol.md)
+[**\Tzkt\Model\Protocol**](../Model/Protocol.md)
 
 ### Authorization
 

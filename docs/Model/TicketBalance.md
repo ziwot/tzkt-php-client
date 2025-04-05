@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Internal TzKT id.   **[sortable]** | [optional]
-**ticket** | [**\Bzzhh\Tzkt\Model\TicketBalanceTicket**](TicketBalanceTicket.md) |  | [optional]
-**account** | [**\Bzzhh\Tzkt\Model\TicketBalanceAccount**](TicketBalanceAccount.md) |  | [optional]
+**ticket** | [**\Tzkt\Model\TicketBalanceTicket**](TicketBalanceTicket.md) |  | [optional]
+**account** | [**\Tzkt\Model\TicketBalanceAccount**](TicketBalanceAccount.md) |  | [optional]
 **balance** | **string** | Balance.   **[sortable]** | [optional]
 **transfers_count** | **int** | Total number of transfers, affecting the ticket balance.   **[sortable]** | [optional]
 **first_level** | **int** | Level of the block where the ticket balance was first changed.   **[sortable]** | [optional]

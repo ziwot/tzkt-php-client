@@ -1,4 +1,4 @@
-# Bzzhh\Tzkt\AccountsApi
+# Tzkt\AccountsApi
 
 All URIs are relative to https://api.tzkt.io, except if the operation defines another base path.
 
@@ -21,7 +21,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `accountsGet()`
 
 ```php
-accountsGet($id, $address, $type, $kind, $delegate, $staked_pseudotokens, $balance, $staked, $last_activity, $select, $sort, $offset, $limit): \Bzzhh\Tzkt\Model\Account[]
+accountsGet($id, $address, $type, $kind, $delegate, $staked_pseudotokens, $balance, $staked, $last_activity, $select, $sort, $offset, $limit): \Tzkt\Model\Account[]
 ```
 
 Get accounts
@@ -36,23 +36,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters by internal id.
-$address = new \Bzzhh\Tzkt\Model\AccountsGetAddressParameter(); // AccountsGetAddressParameter | Filters by address.
-$type = new \Bzzhh\Tzkt\Model\AccountsGetTypeParameter(); // AccountsGetTypeParameter | Filters accounts by type (`user`, `delegate`, `contract`, `rollup`, `smart_rollup`, `ghost`).
-$kind = new \Bzzhh\Tzkt\Model\AccountsGetKindParameter(); // AccountsGetKindParameter | Filters accounts by contract kind (`delegator_contract` or `smart_contract`)
-$delegate = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters accounts by delegate. Allowed fields for `.eqx` mode: none.
-$staked_pseudotokens = new \Bzzhh\Tzkt\Model\AccountsGetStakedPseudotokensParameter(); // AccountsGetStakedPseudotokensParameter | Filters accounts by amount of staked pseudotokens.
-$balance = new \Bzzhh\Tzkt\Model\AccountsGetBalanceParameter(); // AccountsGetBalanceParameter | Filters accounts by balance
-$staked = new \Bzzhh\Tzkt\Model\AccountsGetStakedParameter(); // AccountsGetStakedParameter | Filters accounts by participation in staking
-$last_activity = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters accounts by last activity level (where the account was updated)
-$select = new \Bzzhh\Tzkt\Model\AccountsGetSelectParameter(); // AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `id` (default), `balance`, `rollupBonds`, `firstActivity`, `lastActivity`, `numTransactions`, `numContracts`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by internal id.
+$address = new \Tzkt\Model\\Tzkt\Model\AccountsGetAddressParameter(); // \Tzkt\Model\AccountsGetAddressParameter | Filters by address.
+$type = new \Tzkt\Model\\Tzkt\Model\AccountsGetTypeParameter(); // \Tzkt\Model\AccountsGetTypeParameter | Filters accounts by type (`user`, `delegate`, `contract`, `rollup`, `smart_rollup`, `ghost`).
+$kind = new \Tzkt\Model\\Tzkt\Model\AccountsGetKindParameter(); // \Tzkt\Model\AccountsGetKindParameter | Filters accounts by contract kind (`delegator_contract` or `smart_contract`)
+$delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters accounts by delegate. Allowed fields for `.eqx` mode: none.
+$staked_pseudotokens = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedPseudotokensParameter(); // \Tzkt\Model\AccountsGetStakedPseudotokensParameter | Filters accounts by amount of staked pseudotokens.
+$balance = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters accounts by balance
+$staked = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Filters accounts by participation in staking
+$last_activity = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters accounts by last activity level (where the account was updated)
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `id` (default), `balance`, `rollupBonds`, `firstActivity`, `lastActivity`, `numTransactions`, `numContracts`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
@@ -67,23 +67,23 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**AccountsGetIdParameter**](../Model/.md)| Filters by internal id. | [optional] |
-| **address** | [**AccountsGetAddressParameter**](../Model/.md)| Filters by address. | [optional] |
-| **type** | [**AccountsGetTypeParameter**](../Model/.md)| Filters accounts by type (&#x60;user&#x60;, &#x60;delegate&#x60;, &#x60;contract&#x60;, &#x60;rollup&#x60;, &#x60;smart_rollup&#x60;, &#x60;ghost&#x60;). | [optional] |
-| **kind** | [**AccountsGetKindParameter**](../Model/.md)| Filters accounts by contract kind (&#x60;delegator_contract&#x60; or &#x60;smart_contract&#x60;) | [optional] |
-| **delegate** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters accounts by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **staked_pseudotokens** | [**AccountsGetStakedPseudotokensParameter**](../Model/.md)| Filters accounts by amount of staked pseudotokens. | [optional] |
-| **balance** | [**AccountsGetBalanceParameter**](../Model/.md)| Filters accounts by balance | [optional] |
-| **staked** | [**AccountsGetStakedParameter**](../Model/.md)| Filters accounts by participation in staking | [optional] |
-| **last_activity** | [**AccountsGetIdParameter**](../Model/.md)| Filters accounts by last activity level (where the account was updated) | [optional] |
-| **select** | [**AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;balance&#x60;, &#x60;rollupBonds&#x60;, &#x60;firstActivity&#x60;, &#x60;lastActivity&#x60;, &#x60;numTransactions&#x60;, &#x60;numContracts&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by internal id. | [optional] |
+| **address** | [**\Tzkt\Model\AccountsGetAddressParameter**](../Model/.md)| Filters by address. | [optional] |
+| **type** | [**\Tzkt\Model\AccountsGetTypeParameter**](../Model/.md)| Filters accounts by type (&#x60;user&#x60;, &#x60;delegate&#x60;, &#x60;contract&#x60;, &#x60;rollup&#x60;, &#x60;smart_rollup&#x60;, &#x60;ghost&#x60;). | [optional] |
+| **kind** | [**\Tzkt\Model\AccountsGetKindParameter**](../Model/.md)| Filters accounts by contract kind (&#x60;delegator_contract&#x60; or &#x60;smart_contract&#x60;) | [optional] |
+| **delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters accounts by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **staked_pseudotokens** | [**\Tzkt\Model\AccountsGetStakedPseudotokensParameter**](../Model/.md)| Filters accounts by amount of staked pseudotokens. | [optional] |
+| **balance** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters accounts by balance | [optional] |
+| **staked** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Filters accounts by participation in staking | [optional] |
+| **last_activity** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters accounts by last activity level (where the account was updated) | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;balance&#x60;, &#x60;rollupBonds&#x60;, &#x60;firstActivity&#x60;, &#x60;lastActivity&#x60;, &#x60;numTransactions&#x60;, &#x60;numContracts&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Account[]**](../Model/Account.md)
+[**\Tzkt\Model\Account[]**](../Model/Account.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -172,13 +172,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Account address (starting with tz or KT)
-$datetime = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Datetime at which you want to know account balance (e.g. `2020-01-01`, or `2019-12-30T23:42:59Z`)
+$datetime = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Datetime at which you want to know account balance (e.g. `2020-01-01`, or `2019-12-30T23:42:59Z`)
 
 try {
     $result = $apiInstance->accountsGetBalanceAtDate($address, $datetime);
@@ -230,7 +230,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -273,7 +273,7 @@ No authorization required
 ## `accountsGetBalanceHistory()`
 
 ```php
-accountsGetBalanceHistory($address, $step, $select, $sort, $offset, $limit, $quote): \Bzzhh\Tzkt\Model\HistoricalBalance[]
+accountsGetBalanceHistory($address, $step, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\HistoricalBalance[]
 ```
 
 Get balance history
@@ -288,18 +288,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Account address (starting with tz or KT)
 $step = 56; // int | Step of the time series, for example if `step = 1000` you will get balances at blocks `1000, 2000, 3000, ...`.
-$select = new \Bzzhh\Tzkt\Model\AccountsGetSelectParameter(); // AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts historical balances by specified field. Supported fields: `level`.
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts historical balances by specified field. Supported fields: `level`.
 $offset = 0; // int | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Bzzhh\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->accountsGetBalanceHistory($address, $step, $select, $sort, $offset, $limit, $quote);
@@ -315,15 +315,15 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | **string**| Account address (starting with tz or KT) | |
 | **step** | **int**| Step of the time series, for example if &#x60;step &#x3D; 1000&#x60; you will get balances at blocks &#x60;1000, 2000, 3000, ...&#x60;. | [optional] |
-| **select** | [**AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts historical balances by specified field. Supported fields: &#x60;level&#x60;. | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts historical balances by specified field. Supported fields: &#x60;level&#x60;. | [optional] |
 | **offset** | **int**| Specifies which or how many items should be skipped | [optional] [default to 0] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\HistoricalBalance[]**](../Model/HistoricalBalance.md)
+[**\Tzkt\Model\HistoricalBalance[]**](../Model/HistoricalBalance.md)
 
 ### Authorization
 
@@ -356,14 +356,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Account address (starting with tz or KT)
-$from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Start of the datetime range to filter by (ISO 8601, e.g. 2019-11-31)
-$to = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | End of the datetime range to filter by (ISO 8601, e.g. 2019-12-31)
+$from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Start of the datetime range to filter by (ISO 8601, e.g. 2019-11-31)
+$to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | End of the datetime range to filter by (ISO 8601, e.g. 2019-12-31)
 $currency = 'currency_example'; // string | Currency to convert amounts to (`btc`, `eur`, `usd`, `cny`, `jpy`, `krw`, `eth`, `gbp`)
 $historical = false; // bool | `true` if you want to use historical prices, `false` to use current price
 $delimiter = 'comma'; // string | Column delimiter (`comma`, `semicolon`)
@@ -409,7 +409,7 @@ No authorization required
 ## `accountsGetByAddress()`
 
 ```php
-accountsGetByAddress($address, $legacy): \Bzzhh\Tzkt\Model\Account
+accountsGetByAddress($address, $legacy): \Tzkt\Model\Account
 ```
 
 Get account by address
@@ -424,7 +424,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -449,7 +449,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Account**](../Model/Account.md)
+[**\Tzkt\Model\Account**](../Model/Account.md)
 
 ### Authorization
 
@@ -467,7 +467,7 @@ No authorization required
 ## `accountsGetContracts()`
 
 ```php
-accountsGetContracts($address, $sort, $offset, $limit): \Bzzhh\Tzkt\Model\RelatedContract[]
+accountsGetContracts($address, $sort, $offset, $limit): \Tzkt\Model\RelatedContract[]
 ```
 
 Get account contracts
@@ -482,14 +482,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Account address (starting with tz or KT)
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts contracts by specified field. Supported fields: `id` (default, desc), `balance`, `creationLevel`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts contracts by specified field. Supported fields: `id` (default, desc), `balance`, `creationLevel`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
@@ -505,13 +505,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | **string**| Account address (starting with tz or KT) | |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts contracts by specified field. Supported fields: &#x60;id&#x60; (default, desc), &#x60;balance&#x60;, &#x60;creationLevel&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts contracts by specified field. Supported fields: &#x60;id&#x60; (default, desc), &#x60;balance&#x60;, &#x60;creationLevel&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\RelatedContract[]**](../Model/RelatedContract.md)
+[**\Tzkt\Model\RelatedContract[]**](../Model/RelatedContract.md)
 
 ### Authorization
 
@@ -544,16 +544,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$type = new \Bzzhh\Tzkt\Model\AccountsGetTypeParameter(); // AccountsGetTypeParameter | Filters accounts by type (`user`, `delegate`, `contract`, `rollup`, `smart_rollup`, `ghost`).
-$kind = new \Bzzhh\Tzkt\Model\AccountsGetKindParameter(); // AccountsGetKindParameter | Filters accounts by contract kind (`delegator_contract` or `smart_contract`)
-$balance = new \Bzzhh\Tzkt\Model\AccountsGetBalanceParameter(); // AccountsGetBalanceParameter | Filters accounts by balance
-$staked = new \Bzzhh\Tzkt\Model\AccountsGetStakedParameter(); // AccountsGetStakedParameter | Filters accounts by participation in staking
-$first_activity = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters accounts by first activity level (where the account was created)
+$type = new \Tzkt\Model\\Tzkt\Model\AccountsGetTypeParameter(); // \Tzkt\Model\AccountsGetTypeParameter | Filters accounts by type (`user`, `delegate`, `contract`, `rollup`, `smart_rollup`, `ghost`).
+$kind = new \Tzkt\Model\\Tzkt\Model\AccountsGetKindParameter(); // \Tzkt\Model\AccountsGetKindParameter | Filters accounts by contract kind (`delegator_contract` or `smart_contract`)
+$balance = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters accounts by balance
+$staked = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Filters accounts by participation in staking
+$first_activity = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters accounts by first activity level (where the account was created)
 
 try {
     $result = $apiInstance->accountsGetCount($type, $kind, $balance, $staked, $first_activity);
@@ -567,11 +567,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | [**AccountsGetTypeParameter**](../Model/.md)| Filters accounts by type (&#x60;user&#x60;, &#x60;delegate&#x60;, &#x60;contract&#x60;, &#x60;rollup&#x60;, &#x60;smart_rollup&#x60;, &#x60;ghost&#x60;). | [optional] |
-| **kind** | [**AccountsGetKindParameter**](../Model/.md)| Filters accounts by contract kind (&#x60;delegator_contract&#x60; or &#x60;smart_contract&#x60;) | [optional] |
-| **balance** | [**AccountsGetBalanceParameter**](../Model/.md)| Filters accounts by balance | [optional] |
-| **staked** | [**AccountsGetStakedParameter**](../Model/.md)| Filters accounts by participation in staking | [optional] |
-| **first_activity** | [**AccountsGetIdParameter**](../Model/.md)| Filters accounts by first activity level (where the account was created) | [optional] |
+| **type** | [**\Tzkt\Model\AccountsGetTypeParameter**](../Model/.md)| Filters accounts by type (&#x60;user&#x60;, &#x60;delegate&#x60;, &#x60;contract&#x60;, &#x60;rollup&#x60;, &#x60;smart_rollup&#x60;, &#x60;ghost&#x60;). | [optional] |
+| **kind** | [**\Tzkt\Model\AccountsGetKindParameter**](../Model/.md)| Filters accounts by contract kind (&#x60;delegator_contract&#x60; or &#x60;smart_contract&#x60;) | [optional] |
+| **balance** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters accounts by balance | [optional] |
+| **staked** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Filters accounts by participation in staking | [optional] |
+| **first_activity** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters accounts by first activity level (where the account was created) | [optional] |
 
 ### Return type
 
@@ -608,7 +608,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -649,7 +649,7 @@ No authorization required
 ## `accountsGetDelegators()`
 
 ```php
-accountsGetDelegators($address, $type, $balance, $delegation_level, $sort, $offset, $limit): \Bzzhh\Tzkt\Model\Delegator[]
+accountsGetDelegators($address, $type, $balance, $delegation_level, $sort, $offset, $limit): \Tzkt\Model\Delegator[]
 ```
 
 Get account delegators
@@ -664,17 +664,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Account address (starting with tz)
-$type = new \Bzzhh\Tzkt\Model\AccountsGetTypeParameter(); // AccountsGetTypeParameter | Filters delegators by type (`user`, `delegate`, `contract`, `rollup`, `smart_rollup`, `ghost`).
-$balance = new \Bzzhh\Tzkt\Model\AccountsGetBalanceParameter(); // AccountsGetBalanceParameter | Filters delegators by balance.
-$delegation_level = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Number of items to skip
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `delegationLevel` (default, desc), `balance`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$type = new \Tzkt\Model\\Tzkt\Model\AccountsGetTypeParameter(); // \Tzkt\Model\AccountsGetTypeParameter | Filters delegators by type (`user`, `delegate`, `contract`, `rollup`, `smart_rollup`, `ghost`).
+$balance = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters delegators by balance.
+$delegation_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Number of items to skip
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `delegationLevel` (default, desc), `balance`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
@@ -690,16 +690,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | **string**| Account address (starting with tz) | |
-| **type** | [**AccountsGetTypeParameter**](../Model/.md)| Filters delegators by type (&#x60;user&#x60;, &#x60;delegate&#x60;, &#x60;contract&#x60;, &#x60;rollup&#x60;, &#x60;smart_rollup&#x60;, &#x60;ghost&#x60;). | [optional] |
-| **balance** | [**AccountsGetBalanceParameter**](../Model/.md)| Filters delegators by balance. | [optional] |
-| **delegation_level** | [**AccountsGetIdParameter**](../Model/.md)| Number of items to skip | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;delegationLevel&#x60; (default, desc), &#x60;balance&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **type** | [**\Tzkt\Model\AccountsGetTypeParameter**](../Model/.md)| Filters delegators by type (&#x60;user&#x60;, &#x60;delegate&#x60;, &#x60;contract&#x60;, &#x60;rollup&#x60;, &#x60;smart_rollup&#x60;, &#x60;ghost&#x60;). | [optional] |
+| **balance** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters delegators by balance. | [optional] |
+| **delegation_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Number of items to skip | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;delegationLevel&#x60; (default, desc), &#x60;balance&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Delegator[]**](../Model/Delegator.md)
+[**\Tzkt\Model\Delegator[]**](../Model/Delegator.md)
 
 ### Authorization
 
@@ -717,7 +717,7 @@ No authorization required
 ## `accountsGetOperations()`
 
 ```php
-accountsGetOperations($address, $type, $initiator, $sender, $target, $prev_delegate, $new_delegate, $contract_manager, $contract_delegate, $originated_contract, $accuser, $offender, $baker, $level, $timestamp, $entrypoint, $parameter, $has_internals, $status, $sort, $last_id, $limit, $micheline, $quote): \Bzzhh\Tzkt\Model\Operation[]
+accountsGetOperations($address, $type, $initiator, $sender, $target, $prev_delegate, $new_delegate, $contract_manager, $contract_delegate, $originated_contract, $accuser, $offender, $baker, $level, $timestamp, $entrypoint, $parameter, $has_internals, $status, $sort, $last_id, $limit, $micheline, $quote): \Tzkt\Model\Operation[]
 ```
 
 Get account operations
@@ -732,35 +732,35 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\AccountsApi(
+$apiInstance = new Tzkt\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Account address
 $type = 'type_example'; // string | Comma separated list of operation types to return (`endorsement`, `preendorsement`, `ballot`, `proposal`, `activation`, `double_baking`,             `double_endorsing`, `double_preendorsing`, `nonce_revelation`, `vdf_revelation`, `delegation`, `origination`, `transaction`, `reveal`, `register_constant`,             `set_deposits_limit`, `increase_paid_storage`, `tx_rollup_origination`, `tx_rollup_submit_batch`, `tx_rollup_commit`, `tx_rollup_return_bond`,             `tx_rollup_finalize_commitment`, `tx_rollup_remove_commitment`, `tx_rollup_rejection`, `tx_rollup_dispatch_tickets`, `transfer_ticket`, `migration`,             `update_consensus_key`, `drain_delegate`, `sr_add_messages`, `sr_cement`, `sr_execute`, `sr_originate`, `sr_publish`, `sr_recover_bond`, `sr_refute`,             `revelation_penalty`, `baking`, `endorsing_reward`). If not specified then the default set will be returned.
-$initiator = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters transactions, delegations and originations by initiator. Allowed fields for `.eqx` mode: none.
-$sender = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters transactions, delegations, originations, reveals and seed nonce revelations by sender. Allowed fields for `.eqx` mode: none.
-$target = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters transactions by target. Allowed fields for `.eqx` mode: none.
-$prev_delegate = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters delegations by prev delegate. Allowed fields for `.eqx` mode: none.
-$new_delegate = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters delegations by new delegate. Allowed fields for `.eqx` mode: none.
-$contract_manager = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters origination operations by manager. Allowed fields for `.eqx` mode: none.
-$contract_delegate = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters origination operations by delegate. Allowed fields for `.eqx` mode: none.
-$originated_contract = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters origination operations by originated contract. Allowed fields for `.eqx` mode: none.
-$accuser = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters double baking and double endorsing by accuser. Allowed fields for `.eqx` mode: none.
-$offender = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters double baking and double endorsing by offender. Allowed fields for `.eqx` mode: none.
-$baker = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters seed nonce revelation operations by baker. Allowed fields for `.eqx` mode: none.
-$level = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters operations by level.
-$timestamp = new \Bzzhh\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // AccountsGetOperationsTimestampParameter | Filters operations by timestamp.
-$entrypoint = new \Bzzhh\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // AccountsGetOperationsEntrypointParameter | Filters transactions by entrypoint called on the target contract.
-$parameter = new \Bzzhh\Tzkt\Model\AccountsGetOperationsParameterParameter(); // AccountsGetOperationsParameterParameter | Filters transactions by parameter value. Note, this query parameter supports the following format: `?parameter{.path?}{.mode?}=...`,             so you can specify a path to a particular field to filter by, for example: `?parameter.token_id=...` or `?parameter.sigs.0.ne=...`.
-$has_internals = new \Bzzhh\Tzkt\Model\AccountsGetStakedParameter(); // AccountsGetStakedParameter | Filters transactions by presence of internal operations.
-$status = new \Bzzhh\Tzkt\Model\AccountsGetOperationsStatusParameter(); // AccountsGetOperationsStatusParameter | Filters transactions, delegations, originations and reveals by operation status (`applied`, `failed`, `backtracked`, `skipped`).
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetOperationsSortParameter(); // AccountsGetOperationsSortParameter | Sort mode (0 - ascending, 1 - descending), operations of different types can only be sorted by ID.
+$initiator = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters transactions, delegations and originations by initiator. Allowed fields for `.eqx` mode: none.
+$sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters transactions, delegations, originations, reveals and seed nonce revelations by sender. Allowed fields for `.eqx` mode: none.
+$target = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters transactions by target. Allowed fields for `.eqx` mode: none.
+$prev_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters delegations by prev delegate. Allowed fields for `.eqx` mode: none.
+$new_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters delegations by new delegate. Allowed fields for `.eqx` mode: none.
+$contract_manager = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by manager. Allowed fields for `.eqx` mode: none.
+$contract_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by delegate. Allowed fields for `.eqx` mode: none.
+$originated_contract = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by originated contract. Allowed fields for `.eqx` mode: none.
+$accuser = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters double baking and double endorsing by accuser. Allowed fields for `.eqx` mode: none.
+$offender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters double baking and double endorsing by offender. Allowed fields for `.eqx` mode: none.
+$baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters seed nonce revelation operations by baker. Allowed fields for `.eqx` mode: none.
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters operations by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters operations by timestamp.
+$entrypoint = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // \Tzkt\Model\AccountsGetOperationsEntrypointParameter | Filters transactions by entrypoint called on the target contract.
+$parameter = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsParameterParameter(); // \Tzkt\Model\AccountsGetOperationsParameterParameter | Filters transactions by parameter value. Note, this query parameter supports the following format: `?parameter{.path?}{.mode?}=...`,             so you can specify a path to a particular field to filter by, for example: `?parameter.token_id=...` or `?parameter.sigs.0.ne=...`.
+$has_internals = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Filters transactions by presence of internal operations.
+$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters transactions, delegations, originations and reveals by operation status (`applied`, `failed`, `backtracked`, `skipped`).
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsSortParameter(); // \Tzkt\Model\AccountsGetOperationsSortParameter | Sort mode (0 - ascending, 1 - descending), operations of different types can only be sorted by ID.
 $last_id = 56; // int | Id of the last operation received, which is used as an offset for pagination
 $limit = 100; // int | Number of items to return
-$micheline = new \Bzzhh\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Bzzhh\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->accountsGetOperations($address, $type, $initiator, $sender, $target, $prev_delegate, $new_delegate, $contract_manager, $contract_delegate, $originated_contract, $accuser, $offender, $baker, $level, $timestamp, $entrypoint, $parameter, $has_internals, $status, $sort, $last_id, $limit, $micheline, $quote);
@@ -776,32 +776,32 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | **string**| Account address | |
 | **type** | **string**| Comma separated list of operation types to return (&#x60;endorsement&#x60;, &#x60;preendorsement&#x60;, &#x60;ballot&#x60;, &#x60;proposal&#x60;, &#x60;activation&#x60;, &#x60;double_baking&#x60;,             &#x60;double_endorsing&#x60;, &#x60;double_preendorsing&#x60;, &#x60;nonce_revelation&#x60;, &#x60;vdf_revelation&#x60;, &#x60;delegation&#x60;, &#x60;origination&#x60;, &#x60;transaction&#x60;, &#x60;reveal&#x60;, &#x60;register_constant&#x60;,             &#x60;set_deposits_limit&#x60;, &#x60;increase_paid_storage&#x60;, &#x60;tx_rollup_origination&#x60;, &#x60;tx_rollup_submit_batch&#x60;, &#x60;tx_rollup_commit&#x60;, &#x60;tx_rollup_return_bond&#x60;,             &#x60;tx_rollup_finalize_commitment&#x60;, &#x60;tx_rollup_remove_commitment&#x60;, &#x60;tx_rollup_rejection&#x60;, &#x60;tx_rollup_dispatch_tickets&#x60;, &#x60;transfer_ticket&#x60;, &#x60;migration&#x60;,             &#x60;update_consensus_key&#x60;, &#x60;drain_delegate&#x60;, &#x60;sr_add_messages&#x60;, &#x60;sr_cement&#x60;, &#x60;sr_execute&#x60;, &#x60;sr_originate&#x60;, &#x60;sr_publish&#x60;, &#x60;sr_recover_bond&#x60;, &#x60;sr_refute&#x60;,             &#x60;revelation_penalty&#x60;, &#x60;baking&#x60;, &#x60;endorsing_reward&#x60;). If not specified then the default set will be returned. | [optional] |
-| **initiator** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters transactions, delegations and originations by initiator. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **sender** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters transactions, delegations, originations, reveals and seed nonce revelations by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **target** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters transactions by target. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **prev_delegate** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters delegations by prev delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **new_delegate** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters delegations by new delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **contract_manager** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by manager. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **contract_delegate** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **originated_contract** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by originated contract. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **accuser** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters double baking and double endorsing by accuser. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **offender** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters double baking and double endorsing by offender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **baker** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters seed nonce revelation operations by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **level** | [**AccountsGetIdParameter**](../Model/.md)| Filters operations by level. | [optional] |
-| **timestamp** | [**AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
-| **entrypoint** | [**AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filters transactions by entrypoint called on the target contract. | [optional] |
-| **parameter** | [**AccountsGetOperationsParameterParameter**](../Model/.md)| Filters transactions by parameter value. Note, this query parameter supports the following format: &#x60;?parameter{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?parameter.token_id&#x3D;...&#x60; or &#x60;?parameter.sigs.0.ne&#x3D;...&#x60;. | [optional] |
-| **has_internals** | [**AccountsGetStakedParameter**](../Model/.md)| Filters transactions by presence of internal operations. | [optional] |
-| **status** | [**AccountsGetOperationsStatusParameter**](../Model/.md)| Filters transactions, delegations, originations and reveals by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
-| **sort** | [**AccountsGetOperationsSortParameter**](../Model/.md)| Sort mode (0 - ascending, 1 - descending), operations of different types can only be sorted by ID. | [optional] |
+| **initiator** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters transactions, delegations and originations by initiator. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters transactions, delegations, originations, reveals and seed nonce revelations by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **target** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters transactions by target. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **prev_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters delegations by prev delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **new_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters delegations by new delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **contract_manager** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by manager. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **contract_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **originated_contract** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by originated contract. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **accuser** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters double baking and double endorsing by accuser. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **offender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters double baking and double endorsing by offender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters seed nonce revelation operations by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters operations by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
+| **entrypoint** | [**\Tzkt\Model\AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filters transactions by entrypoint called on the target contract. | [optional] |
+| **parameter** | [**\Tzkt\Model\AccountsGetOperationsParameterParameter**](../Model/.md)| Filters transactions by parameter value. Note, this query parameter supports the following format: &#x60;?parameter{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?parameter.token_id&#x3D;...&#x60; or &#x60;?parameter.sigs.0.ne&#x3D;...&#x60;. | [optional] |
+| **has_internals** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Filters transactions by presence of internal operations. | [optional] |
+| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters transactions, delegations, originations and reveals by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetOperationsSortParameter**](../Model/.md)| Sort mode (0 - ascending, 1 - descending), operations of different types can only be sorted by ID. | [optional] |
 | **last_id** | **int**| Id of the last operation received, which is used as an offset for pagination | [optional] |
 | **limit** | **int**| Number of items to return | [optional] [default to 100] |
-| **micheline** | [**AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Operation[]**](../Model/Operation.md)
+[**\Tzkt\Model\Operation[]**](../Model/Operation.md)
 
 ### Authorization
 

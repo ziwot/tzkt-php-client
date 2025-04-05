@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Internal TzKT ID.   **[sortable]** | [optional]
 **cycle** | **int** | Cycle at which the unstake request was created.   **[sortable]** | [optional]
-**baker** | [**\Bzzhh\Tzkt\Model\StakingUpdateBaker**](StakingUpdateBaker.md) |  | [optional]
-**staker** | [**\Bzzhh\Tzkt\Model\StakingUpdateStaker**](StakingUpdateStaker.md) |  | [optional]
+**baker** | [**\Tzkt\Model\StakingUpdateBaker**](StakingUpdateBaker.md) |  | [optional]
+**staker** | [**\Tzkt\Model\StakingUpdateStaker**](StakingUpdateStaker.md) |  | [optional]
 **requested_amount** | **int** | Initially requested amount (mutez). | [optional]
 **restaked_amount** | **int** | Amount that was restaked back (mutez). | [optional]
 **finalized_amount** | **int** | Finalized amount (mutez). | [optional]

@@ -1,6 +1,5 @@
 {
-    "name": "bzzhh/tzkt-php-client",
-    "description": "Auto-generated Tzkt OpenApi Client",
+    "name": "ziwot/tzkt-php-client",
     "keywords": [
         "openapitools",
         "openapi-generator",
@@ -14,7 +13,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "OpenAPI-Generator contributors",
+            "name": "OpenAPI",
             "homepage": "https://openapi-generator.tech"
         }
     ],
@@ -32,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Bzzhh\\Tzkt\\": "lib/"
+            "Tzkt\\": "lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bzzhh\\Tzkt\\Test\\": "test/"
+            "Tzkt\\Test\\": "test/"
         }
     }
 }

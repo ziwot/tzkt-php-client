@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -13,12 +13,12 @@
 /**
  * TzKT API
  *
- * # Introduction  TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.  You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community  to help developers build more services and dapps on top of Tezos.  TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service, because you can always clone, build and run it yourself to have full control over all the components.  Feel free to contact us if you have any questions or feature requests. Your feedback is much appreciated!  - Discord: https://discord.gg/aG8XKuwsQd - Telegram: https://t.me/baking_bad_chat - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L - Twitter: https://twitter.com/TezosBakingBad - Email: hello@bakingbad.dev  And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊  # Get Started  There are two API services provided for public use: - **Free TzKT API** with free anonymous access; - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.  You can find more details about differences between available tiers [here](https://tzkt.io/api).  ## Free TzKT API  Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality. It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.  > #### Note: attribution required If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io)) - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io)) - Parisnet: `https://api.parisnet.tzkt.io/` ([view docs](https://api.parisnet.tzkt.io))  ### Sending Requests  To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint (for example, chain's head: `/v1/head`), that's pretty much it:   ```bash curl https://api.tzkt.io/v1/head ```  Read through this documentation to explore available endpoints, query parameters (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.) and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits.  If you exceed the limit, the API will respond with `HTTP 429` status code.  ## TzKT Pro  TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA. TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io)) - Testnets: *let us know if you need TzKT Pro for testnets*  ### Authorization  To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription. This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.  Note that you can have multiple API keys within a single subscription.  Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories. If your key was compromised, just let us know and we will issue a new one.  Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted, but query string is not, so the key can be unintentionally exposed to third parties.  ### Sending Requests  Sending a request with the API key passed as a query string parameter:  ```bash curl https://pro.tzkt.io/v1/head?apikey={your_key} ```  Sending a request with the API key passed via an HTTP header:  ```bash curl https://pro.tzkt.io/v1/head \\     -H 'apikey: {your_key}' ```  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.  Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests and the time remaining (in seconds) until the quota is reset. Here's an example:  ``` RateLimit-Limit: 50 RateLimit-Remaining: 49 RateLimit-Reset: 1 ```  It also sends general information about your rate limits per second and per day:  ``` X-RateLimit-Limit-Second: 50 X-RateLimit-Remaining-Second: 49 X-RateLimit-Limit-Day: 3000000 X-RateLimit-Remaining-Day: 2994953 ```  If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Quebecnet: `https://api.quebecnet.tzkt.io/` ([view docs](https://api.quebecnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.4
+ * The version of the OpenAPI document: 1.14.7
  * Contact: hello@bakingbad.dev
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 6.2.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Bzzhh\Tzkt\Model;
+namespace Tzkt\Model;
 
 use \ArrayAccess;
-use \Bzzhh\Tzkt\ObjectSerializer;
+use \Tzkt\ObjectSerializer;
 
 /**
  * Ticket Class Doc Comment
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,13 +59,13 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'ticketer' => '\Bzzhh\Tzkt\Model\TicketTicketer',
-        'raw_type' => '\Bzzhh\Tzkt\Model\TicketRawType',
-        'raw_content' => '\Bzzhh\Tzkt\Model\TicketRawContent',
+        'ticketer' => '\Tzkt\Model\TicketTicketer',
+        'raw_type' => '\Tzkt\Model\TicketRawType',
+        'raw_content' => '\Tzkt\Model\TicketRawContent',
         'content' => 'mixed',
         'type_hash' => 'int',
         'content_hash' => 'int',
-        'first_minter' => '\Bzzhh\Tzkt\Model\TicketFirstMinter',
+        'first_minter' => '\Tzkt\Model\TicketFirstMinter',
         'first_level' => 'int',
         'first_time' => '\DateTime',
         'last_level' => 'int',
@@ -113,23 +113,23 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-		'ticketer' => true,
-		'raw_type' => true,
-		'raw_content' => true,
-		'content' => true,
-		'type_hash' => false,
-		'content_hash' => false,
-		'first_minter' => true,
-		'first_level' => false,
-		'first_time' => false,
-		'last_level' => false,
-		'last_time' => false,
-		'transfers_count' => false,
-		'balances_count' => false,
-		'holders_count' => false,
-		'total_minted' => false,
-		'total_burned' => false,
-		'total_supply' => false
+        'ticketer' => true,
+        'raw_type' => true,
+        'raw_content' => true,
+        'content' => true,
+        'type_hash' => false,
+        'content_hash' => false,
+        'first_minter' => true,
+        'first_level' => false,
+        'first_time' => false,
+        'last_level' => false,
+        'last_time' => false,
+        'transfers_count' => false,
+        'balances_count' => false,
+        'holders_count' => false,
+        'total_minted' => false,
+        'total_burned' => false,
+        'total_supply' => false
     ];
 
     /**
@@ -342,10 +342,10 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[] $data Associated array of property values
+     * @param mixed[]|null $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('ticketer', $data ?? [], null);
@@ -428,11 +428,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -441,7 +439,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ticketer
      *
-     * @return \Bzzhh\Tzkt\Model\TicketTicketer|null
+     * @return \Tzkt\Model\TicketTicketer|null
      */
     public function getTicketer()
     {
@@ -451,13 +449,12 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ticketer
      *
-     * @param \Bzzhh\Tzkt\Model\TicketTicketer|null $ticketer ticketer
+     * @param \Tzkt\Model\TicketTicketer|null $ticketer ticketer
      *
      * @return self
      */
     public function setTicketer($ticketer)
     {
-
         if (is_null($ticketer)) {
             array_push($this->openAPINullablesSetToNull, 'ticketer');
         } else {
@@ -468,7 +465,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['ticketer'] = $ticketer;
 
         return $this;
@@ -477,7 +473,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets raw_type
      *
-     * @return \Bzzhh\Tzkt\Model\TicketRawType|null
+     * @return \Tzkt\Model\TicketRawType|null
      */
     public function getRawType()
     {
@@ -487,13 +483,12 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets raw_type
      *
-     * @param \Bzzhh\Tzkt\Model\TicketRawType|null $raw_type raw_type
+     * @param \Tzkt\Model\TicketRawType|null $raw_type raw_type
      *
      * @return self
      */
     public function setRawType($raw_type)
     {
-
         if (is_null($raw_type)) {
             array_push($this->openAPINullablesSetToNull, 'raw_type');
         } else {
@@ -504,7 +499,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['raw_type'] = $raw_type;
 
         return $this;
@@ -513,7 +507,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets raw_content
      *
-     * @return \Bzzhh\Tzkt\Model\TicketRawContent|null
+     * @return \Tzkt\Model\TicketRawContent|null
      */
     public function getRawContent()
     {
@@ -523,13 +517,12 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets raw_content
      *
-     * @param \Bzzhh\Tzkt\Model\TicketRawContent|null $raw_content raw_content
+     * @param \Tzkt\Model\TicketRawContent|null $raw_content raw_content
      *
      * @return self
      */
     public function setRawContent($raw_content)
     {
-
         if (is_null($raw_content)) {
             array_push($this->openAPINullablesSetToNull, 'raw_content');
         } else {
@@ -540,7 +533,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['raw_content'] = $raw_content;
 
         return $this;
@@ -565,7 +557,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setContent($content)
     {
-
         if (is_null($content)) {
             array_push($this->openAPINullablesSetToNull, 'content');
         } else {
@@ -576,7 +567,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['content'] = $content;
 
         return $this;
@@ -601,11 +591,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTypeHash($type_hash)
     {
-
         if (is_null($type_hash)) {
             throw new \InvalidArgumentException('non-nullable type_hash cannot be null');
         }
-
         $this->container['type_hash'] = $type_hash;
 
         return $this;
@@ -630,11 +618,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setContentHash($content_hash)
     {
-
         if (is_null($content_hash)) {
             throw new \InvalidArgumentException('non-nullable content_hash cannot be null');
         }
-
         $this->container['content_hash'] = $content_hash;
 
         return $this;
@@ -643,7 +629,7 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets first_minter
      *
-     * @return \Bzzhh\Tzkt\Model\TicketFirstMinter|null
+     * @return \Tzkt\Model\TicketFirstMinter|null
      */
     public function getFirstMinter()
     {
@@ -653,13 +639,12 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets first_minter
      *
-     * @param \Bzzhh\Tzkt\Model\TicketFirstMinter|null $first_minter first_minter
+     * @param \Tzkt\Model\TicketFirstMinter|null $first_minter first_minter
      *
      * @return self
      */
     public function setFirstMinter($first_minter)
     {
-
         if (is_null($first_minter)) {
             array_push($this->openAPINullablesSetToNull, 'first_minter');
         } else {
@@ -670,7 +655,6 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['first_minter'] = $first_minter;
 
         return $this;
@@ -695,11 +679,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFirstLevel($first_level)
     {
-
         if (is_null($first_level)) {
             throw new \InvalidArgumentException('non-nullable first_level cannot be null');
         }
-
         $this->container['first_level'] = $first_level;
 
         return $this;
@@ -724,11 +706,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFirstTime($first_time)
     {
-
         if (is_null($first_time)) {
             throw new \InvalidArgumentException('non-nullable first_time cannot be null');
         }
-
         $this->container['first_time'] = $first_time;
 
         return $this;
@@ -753,11 +733,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLastLevel($last_level)
     {
-
         if (is_null($last_level)) {
             throw new \InvalidArgumentException('non-nullable last_level cannot be null');
         }
-
         $this->container['last_level'] = $last_level;
 
         return $this;
@@ -782,11 +760,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLastTime($last_time)
     {
-
         if (is_null($last_time)) {
             throw new \InvalidArgumentException('non-nullable last_time cannot be null');
         }
-
         $this->container['last_time'] = $last_time;
 
         return $this;
@@ -811,11 +787,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTransfersCount($transfers_count)
     {
-
         if (is_null($transfers_count)) {
             throw new \InvalidArgumentException('non-nullable transfers_count cannot be null');
         }
-
         $this->container['transfers_count'] = $transfers_count;
 
         return $this;
@@ -840,11 +814,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBalancesCount($balances_count)
     {
-
         if (is_null($balances_count)) {
             throw new \InvalidArgumentException('non-nullable balances_count cannot be null');
         }
-
         $this->container['balances_count'] = $balances_count;
 
         return $this;
@@ -869,11 +841,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setHoldersCount($holders_count)
     {
-
         if (is_null($holders_count)) {
             throw new \InvalidArgumentException('non-nullable holders_count cannot be null');
         }
-
         $this->container['holders_count'] = $holders_count;
 
         return $this;
@@ -898,11 +868,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTotalMinted($total_minted)
     {
-
         if (is_null($total_minted)) {
             throw new \InvalidArgumentException('non-nullable total_minted cannot be null');
         }
-
         $this->container['total_minted'] = $total_minted;
 
         return $this;
@@ -927,11 +895,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTotalBurned($total_burned)
     {
-
         if (is_null($total_burned)) {
             throw new \InvalidArgumentException('non-nullable total_burned cannot be null');
         }
-
         $this->container['total_burned'] = $total_burned;
 
         return $this;
@@ -956,11 +922,9 @@ class Ticket implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTotalSupply($total_supply)
     {
-
         if (is_null($total_supply)) {
             throw new \InvalidArgumentException('non-nullable total_supply cannot be null');
         }
-
         $this->container['total_supply'] = $total_supply;
 
         return $this;

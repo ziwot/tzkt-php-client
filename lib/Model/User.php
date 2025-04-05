@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -13,12 +13,12 @@
 /**
  * TzKT API
  *
- * # Introduction  TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.  You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community  to help developers build more services and dapps on top of Tezos.  TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service, because you can always clone, build and run it yourself to have full control over all the components.  Feel free to contact us if you have any questions or feature requests. Your feedback is much appreciated!  - Discord: https://discord.gg/aG8XKuwsQd - Telegram: https://t.me/baking_bad_chat - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L - Twitter: https://twitter.com/TezosBakingBad - Email: hello@bakingbad.dev  And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊  # Get Started  There are two API services provided for public use: - **Free TzKT API** with free anonymous access; - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.  You can find more details about differences between available tiers [here](https://tzkt.io/api).  ## Free TzKT API  Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality. It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.  > #### Note: attribution required If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io)) - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io)) - Parisnet: `https://api.parisnet.tzkt.io/` ([view docs](https://api.parisnet.tzkt.io))  ### Sending Requests  To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint (for example, chain's head: `/v1/head`), that's pretty much it:   ```bash curl https://api.tzkt.io/v1/head ```  Read through this documentation to explore available endpoints, query parameters (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.) and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits.  If you exceed the limit, the API will respond with `HTTP 429` status code.  ## TzKT Pro  TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA. TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io)) - Testnets: *let us know if you need TzKT Pro for testnets*  ### Authorization  To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription. This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.  Note that you can have multiple API keys within a single subscription.  Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories. If your key was compromised, just let us know and we will issue a new one.  Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted, but query string is not, so the key can be unintentionally exposed to third parties.  ### Sending Requests  Sending a request with the API key passed as a query string parameter:  ```bash curl https://pro.tzkt.io/v1/head?apikey={your_key} ```  Sending a request with the API key passed via an HTTP header:  ```bash curl https://pro.tzkt.io/v1/head \\     -H 'apikey: {your_key}' ```  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.  Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests and the time remaining (in seconds) until the quota is reset. Here's an example:  ``` RateLimit-Limit: 50 RateLimit-Remaining: 49 RateLimit-Reset: 1 ```  It also sends general information about your rate limits per second and per day:  ``` X-RateLimit-Limit-Second: 50 X-RateLimit-Remaining-Second: 49 X-RateLimit-Limit-Day: 3000000 X-RateLimit-Remaining-Day: 2994953 ```  If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Quebecnet: `https://api.quebecnet.tzkt.io/` ([view docs](https://api.quebecnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.4
+ * The version of the OpenAPI document: 1.14.7
  * Contact: hello@bakingbad.dev
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 6.2.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -27,14 +27,14 @@
  * Do not edit the class manually.
  */
 
-namespace Bzzhh\Tzkt\Model;
-use \Bzzhh\Tzkt\ObjectSerializer;
+namespace Tzkt\Model;
+use \Tzkt\ObjectSerializer;
 
 /**
  * User Class Doc Comment
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -68,9 +68,9 @@ class User extends Account
         'staked_balance' => 'int',
         'staked_pseudotokens' => 'string',
         'unstaked_balance' => 'int',
-        'unstaked_baker' => 'OneOfAlias',
+        'unstaked_baker' => '\Tzkt\Model\UserAllOfUnstakedBaker',
         'counter' => 'int',
-        'delegate' => 'OneOfDelegateInfo',
+        'delegate' => '\Tzkt\Model\UserAllOfDelegate',
         'delegation_level' => 'int',
         'delegation_time' => '\DateTime',
         'num_contracts' => 'int',
@@ -205,70 +205,70 @@ class User extends Account
       */
     protected static array $openAPINullables = [
         'id' => false,
-		'type' => true,
-		'address' => true,
-		'alias' => true,
-		'public_key' => true,
-		'revealed' => false,
-		'balance' => false,
-		'rollup_bonds' => false,
-		'smart_rollup_bonds' => false,
-		'staked_balance' => false,
-		'staked_pseudotokens' => true,
-		'unstaked_balance' => false,
-		'unstaked_baker' => true,
-		'counter' => false,
-		'delegate' => true,
-		'delegation_level' => true,
-		'delegation_time' => true,
-		'num_contracts' => false,
-		'rollups_count' => false,
-		'smart_rollups_count' => false,
-		'active_tokens_count' => false,
-		'token_balances_count' => false,
-		'token_transfers_count' => false,
-		'active_tickets_count' => false,
-		'ticket_balances_count' => false,
-		'ticket_transfers_count' => false,
-		'num_activations' => false,
-		'num_delegations' => false,
-		'num_originations' => false,
-		'num_transactions' => false,
-		'num_reveals' => false,
-		'num_register_constants' => false,
-		'num_set_deposits_limits' => false,
-		'num_migrations' => false,
-		'tx_rollup_origination_count' => false,
-		'tx_rollup_submit_batch_count' => false,
-		'tx_rollup_commit_count' => false,
-		'tx_rollup_return_bond_count' => false,
-		'tx_rollup_finalize_commitment_count' => false,
-		'tx_rollup_remove_commitment_count' => false,
-		'tx_rollup_rejection_count' => false,
-		'tx_rollup_dispatch_tickets_count' => false,
-		'transfer_ticket_count' => false,
-		'increase_paid_storage_count' => false,
-		'drain_delegate_count' => false,
-		'smart_rollup_add_messages_count' => false,
-		'smart_rollup_cement_count' => false,
-		'smart_rollup_execute_count' => false,
-		'smart_rollup_originate_count' => false,
-		'smart_rollup_publish_count' => false,
-		'smart_rollup_recover_bond_count' => false,
-		'smart_rollup_refute_count' => false,
-		'refutation_games_count' => false,
-		'active_refutation_games_count' => false,
-		'staking_ops_count' => false,
-		'staking_updates_count' => false,
-		'set_delegate_parameters_ops_count' => false,
-		'dal_publish_commitment_ops_count' => false,
-		'first_activity' => true,
-		'first_activity_time' => true,
-		'last_activity' => true,
-		'last_activity_time' => true,
-		'extras' => true,
-		'metadata' => true,
-		'lost_balance' => false
+        'type' => true,
+        'address' => true,
+        'alias' => true,
+        'public_key' => true,
+        'revealed' => false,
+        'balance' => false,
+        'rollup_bonds' => false,
+        'smart_rollup_bonds' => false,
+        'staked_balance' => false,
+        'staked_pseudotokens' => true,
+        'unstaked_balance' => false,
+        'unstaked_baker' => true,
+        'counter' => false,
+        'delegate' => true,
+        'delegation_level' => true,
+        'delegation_time' => true,
+        'num_contracts' => false,
+        'rollups_count' => false,
+        'smart_rollups_count' => false,
+        'active_tokens_count' => false,
+        'token_balances_count' => false,
+        'token_transfers_count' => false,
+        'active_tickets_count' => false,
+        'ticket_balances_count' => false,
+        'ticket_transfers_count' => false,
+        'num_activations' => false,
+        'num_delegations' => false,
+        'num_originations' => false,
+        'num_transactions' => false,
+        'num_reveals' => false,
+        'num_register_constants' => false,
+        'num_set_deposits_limits' => false,
+        'num_migrations' => false,
+        'tx_rollup_origination_count' => false,
+        'tx_rollup_submit_batch_count' => false,
+        'tx_rollup_commit_count' => false,
+        'tx_rollup_return_bond_count' => false,
+        'tx_rollup_finalize_commitment_count' => false,
+        'tx_rollup_remove_commitment_count' => false,
+        'tx_rollup_rejection_count' => false,
+        'tx_rollup_dispatch_tickets_count' => false,
+        'transfer_ticket_count' => false,
+        'increase_paid_storage_count' => false,
+        'drain_delegate_count' => false,
+        'smart_rollup_add_messages_count' => false,
+        'smart_rollup_cement_count' => false,
+        'smart_rollup_execute_count' => false,
+        'smart_rollup_originate_count' => false,
+        'smart_rollup_publish_count' => false,
+        'smart_rollup_recover_bond_count' => false,
+        'smart_rollup_refute_count' => false,
+        'refutation_games_count' => false,
+        'active_refutation_games_count' => false,
+        'staking_ops_count' => false,
+        'staking_updates_count' => false,
+        'set_delegate_parameters_ops_count' => false,
+        'dal_publish_commitment_ops_count' => false,
+        'first_activity' => true,
+        'first_activity_time' => true,
+        'last_activity' => true,
+        'last_activity_time' => true,
+        'extras' => true,
+        'metadata' => true,
+        'lost_balance' => false
     ];
 
     /**
@@ -616,10 +616,10 @@ class User extends Account
     /**
      * Constructor
      *
-     * @param mixed[] $data Associated array of property values
+     * @param mixed[]|null $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         parent::__construct($data);
 
@@ -751,11 +751,9 @@ class User extends Account
      */
     public function setId($id)
     {
-
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -780,7 +778,6 @@ class User extends Account
      */
     public function setType($type)
     {
-
         if (is_null($type)) {
             array_push($this->openAPINullablesSetToNull, 'type');
         } else {
@@ -791,7 +788,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['type'] = $type;
 
         return $this;
@@ -816,7 +812,6 @@ class User extends Account
      */
     public function setAddress($address)
     {
-
         if (is_null($address)) {
             array_push($this->openAPINullablesSetToNull, 'address');
         } else {
@@ -827,7 +822,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['address'] = $address;
 
         return $this;
@@ -852,7 +846,6 @@ class User extends Account
      */
     public function setAlias($alias)
     {
-
         if (is_null($alias)) {
             array_push($this->openAPINullablesSetToNull, 'alias');
         } else {
@@ -863,7 +856,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['alias'] = $alias;
 
         return $this;
@@ -888,7 +880,6 @@ class User extends Account
      */
     public function setPublicKey($public_key)
     {
-
         if (is_null($public_key)) {
             array_push($this->openAPINullablesSetToNull, 'public_key');
         } else {
@@ -899,7 +890,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['public_key'] = $public_key;
 
         return $this;
@@ -924,11 +914,9 @@ class User extends Account
      */
     public function setRevealed($revealed)
     {
-
         if (is_null($revealed)) {
             throw new \InvalidArgumentException('non-nullable revealed cannot be null');
         }
-
         $this->container['revealed'] = $revealed;
 
         return $this;
@@ -953,11 +941,9 @@ class User extends Account
      */
     public function setBalance($balance)
     {
-
         if (is_null($balance)) {
             throw new \InvalidArgumentException('non-nullable balance cannot be null');
         }
-
         $this->container['balance'] = $balance;
 
         return $this;
@@ -982,11 +968,9 @@ class User extends Account
      */
     public function setRollupBonds($rollup_bonds)
     {
-
         if (is_null($rollup_bonds)) {
             throw new \InvalidArgumentException('non-nullable rollup_bonds cannot be null');
         }
-
         $this->container['rollup_bonds'] = $rollup_bonds;
 
         return $this;
@@ -1011,11 +995,9 @@ class User extends Account
      */
     public function setSmartRollupBonds($smart_rollup_bonds)
     {
-
         if (is_null($smart_rollup_bonds)) {
             throw new \InvalidArgumentException('non-nullable smart_rollup_bonds cannot be null');
         }
-
         $this->container['smart_rollup_bonds'] = $smart_rollup_bonds;
 
         return $this;
@@ -1040,11 +1022,9 @@ class User extends Account
      */
     public function setStakedBalance($staked_balance)
     {
-
         if (is_null($staked_balance)) {
             throw new \InvalidArgumentException('non-nullable staked_balance cannot be null');
         }
-
         $this->container['staked_balance'] = $staked_balance;
 
         return $this;
@@ -1069,7 +1049,6 @@ class User extends Account
      */
     public function setStakedPseudotokens($staked_pseudotokens)
     {
-
         if (is_null($staked_pseudotokens)) {
             array_push($this->openAPINullablesSetToNull, 'staked_pseudotokens');
         } else {
@@ -1080,7 +1059,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['staked_pseudotokens'] = $staked_pseudotokens;
 
         return $this;
@@ -1105,11 +1083,9 @@ class User extends Account
      */
     public function setUnstakedBalance($unstaked_balance)
     {
-
         if (is_null($unstaked_balance)) {
             throw new \InvalidArgumentException('non-nullable unstaked_balance cannot be null');
         }
-
         $this->container['unstaked_balance'] = $unstaked_balance;
 
         return $this;
@@ -1118,7 +1094,7 @@ class User extends Account
     /**
      * Gets unstaked_baker
      *
-     * @return OneOfAlias|null
+     * @return \Tzkt\Model\UserAllOfUnstakedBaker|null
      */
     public function getUnstakedBaker()
     {
@@ -1128,13 +1104,12 @@ class User extends Account
     /**
      * Sets unstaked_baker
      *
-     * @param OneOfAlias|null $unstaked_baker Information about the baker, for which there are pending unstake requests
+     * @param \Tzkt\Model\UserAllOfUnstakedBaker|null $unstaked_baker unstaked_baker
      *
      * @return self
      */
     public function setUnstakedBaker($unstaked_baker)
     {
-
         if (is_null($unstaked_baker)) {
             array_push($this->openAPINullablesSetToNull, 'unstaked_baker');
         } else {
@@ -1145,7 +1120,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['unstaked_baker'] = $unstaked_baker;
 
         return $this;
@@ -1170,11 +1144,9 @@ class User extends Account
      */
     public function setCounter($counter)
     {
-
         if (is_null($counter)) {
             throw new \InvalidArgumentException('non-nullable counter cannot be null');
         }
-
         $this->container['counter'] = $counter;
 
         return $this;
@@ -1183,7 +1155,7 @@ class User extends Account
     /**
      * Gets delegate
      *
-     * @return OneOfDelegateInfo|null
+     * @return \Tzkt\Model\UserAllOfDelegate|null
      */
     public function getDelegate()
     {
@@ -1193,13 +1165,12 @@ class User extends Account
     /**
      * Sets delegate
      *
-     * @param OneOfDelegateInfo|null $delegate Information about the current delegate of the account. `null` if it's not delegated
+     * @param \Tzkt\Model\UserAllOfDelegate|null $delegate delegate
      *
      * @return self
      */
     public function setDelegate($delegate)
     {
-
         if (is_null($delegate)) {
             array_push($this->openAPINullablesSetToNull, 'delegate');
         } else {
@@ -1210,7 +1181,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['delegate'] = $delegate;
 
         return $this;
@@ -1235,7 +1205,6 @@ class User extends Account
      */
     public function setDelegationLevel($delegation_level)
     {
-
         if (is_null($delegation_level)) {
             array_push($this->openAPINullablesSetToNull, 'delegation_level');
         } else {
@@ -1246,7 +1215,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['delegation_level'] = $delegation_level;
 
         return $this;
@@ -1271,7 +1239,6 @@ class User extends Account
      */
     public function setDelegationTime($delegation_time)
     {
-
         if (is_null($delegation_time)) {
             array_push($this->openAPINullablesSetToNull, 'delegation_time');
         } else {
@@ -1282,7 +1249,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['delegation_time'] = $delegation_time;
 
         return $this;
@@ -1307,11 +1273,9 @@ class User extends Account
      */
     public function setNumContracts($num_contracts)
     {
-
         if (is_null($num_contracts)) {
             throw new \InvalidArgumentException('non-nullable num_contracts cannot be null');
         }
-
         $this->container['num_contracts'] = $num_contracts;
 
         return $this;
@@ -1336,11 +1300,9 @@ class User extends Account
      */
     public function setRollupsCount($rollups_count)
     {
-
         if (is_null($rollups_count)) {
             throw new \InvalidArgumentException('non-nullable rollups_count cannot be null');
         }
-
         $this->container['rollups_count'] = $rollups_count;
 
         return $this;
@@ -1365,11 +1327,9 @@ class User extends Account
      */
     public function setSmartRollupsCount($smart_rollups_count)
     {
-
         if (is_null($smart_rollups_count)) {
             throw new \InvalidArgumentException('non-nullable smart_rollups_count cannot be null');
         }
-
         $this->container['smart_rollups_count'] = $smart_rollups_count;
 
         return $this;
@@ -1394,11 +1354,9 @@ class User extends Account
      */
     public function setActiveTokensCount($active_tokens_count)
     {
-
         if (is_null($active_tokens_count)) {
             throw new \InvalidArgumentException('non-nullable active_tokens_count cannot be null');
         }
-
         $this->container['active_tokens_count'] = $active_tokens_count;
 
         return $this;
@@ -1423,11 +1381,9 @@ class User extends Account
      */
     public function setTokenBalancesCount($token_balances_count)
     {
-
         if (is_null($token_balances_count)) {
             throw new \InvalidArgumentException('non-nullable token_balances_count cannot be null');
         }
-
         $this->container['token_balances_count'] = $token_balances_count;
 
         return $this;
@@ -1452,11 +1408,9 @@ class User extends Account
      */
     public function setTokenTransfersCount($token_transfers_count)
     {
-
         if (is_null($token_transfers_count)) {
             throw new \InvalidArgumentException('non-nullable token_transfers_count cannot be null');
         }
-
         $this->container['token_transfers_count'] = $token_transfers_count;
 
         return $this;
@@ -1481,11 +1435,9 @@ class User extends Account
      */
     public function setActiveTicketsCount($active_tickets_count)
     {
-
         if (is_null($active_tickets_count)) {
             throw new \InvalidArgumentException('non-nullable active_tickets_count cannot be null');
         }
-
         $this->container['active_tickets_count'] = $active_tickets_count;
 
         return $this;
@@ -1510,11 +1462,9 @@ class User extends Account
      */
     public function setTicketBalancesCount($ticket_balances_count)
     {
-
         if (is_null($ticket_balances_count)) {
             throw new \InvalidArgumentException('non-nullable ticket_balances_count cannot be null');
         }
-
         $this->container['ticket_balances_count'] = $ticket_balances_count;
 
         return $this;
@@ -1539,11 +1489,9 @@ class User extends Account
      */
     public function setTicketTransfersCount($ticket_transfers_count)
     {
-
         if (is_null($ticket_transfers_count)) {
             throw new \InvalidArgumentException('non-nullable ticket_transfers_count cannot be null');
         }
-
         $this->container['ticket_transfers_count'] = $ticket_transfers_count;
 
         return $this;
@@ -1568,11 +1516,9 @@ class User extends Account
      */
     public function setNumActivations($num_activations)
     {
-
         if (is_null($num_activations)) {
             throw new \InvalidArgumentException('non-nullable num_activations cannot be null');
         }
-
         $this->container['num_activations'] = $num_activations;
 
         return $this;
@@ -1597,11 +1543,9 @@ class User extends Account
      */
     public function setNumDelegations($num_delegations)
     {
-
         if (is_null($num_delegations)) {
             throw new \InvalidArgumentException('non-nullable num_delegations cannot be null');
         }
-
         $this->container['num_delegations'] = $num_delegations;
 
         return $this;
@@ -1626,11 +1570,9 @@ class User extends Account
      */
     public function setNumOriginations($num_originations)
     {
-
         if (is_null($num_originations)) {
             throw new \InvalidArgumentException('non-nullable num_originations cannot be null');
         }
-
         $this->container['num_originations'] = $num_originations;
 
         return $this;
@@ -1655,11 +1597,9 @@ class User extends Account
      */
     public function setNumTransactions($num_transactions)
     {
-
         if (is_null($num_transactions)) {
             throw new \InvalidArgumentException('non-nullable num_transactions cannot be null');
         }
-
         $this->container['num_transactions'] = $num_transactions;
 
         return $this;
@@ -1684,11 +1624,9 @@ class User extends Account
      */
     public function setNumReveals($num_reveals)
     {
-
         if (is_null($num_reveals)) {
             throw new \InvalidArgumentException('non-nullable num_reveals cannot be null');
         }
-
         $this->container['num_reveals'] = $num_reveals;
 
         return $this;
@@ -1713,11 +1651,9 @@ class User extends Account
      */
     public function setNumRegisterConstants($num_register_constants)
     {
-
         if (is_null($num_register_constants)) {
             throw new \InvalidArgumentException('non-nullable num_register_constants cannot be null');
         }
-
         $this->container['num_register_constants'] = $num_register_constants;
 
         return $this;
@@ -1742,11 +1678,9 @@ class User extends Account
      */
     public function setNumSetDepositsLimits($num_set_deposits_limits)
     {
-
         if (is_null($num_set_deposits_limits)) {
             throw new \InvalidArgumentException('non-nullable num_set_deposits_limits cannot be null');
         }
-
         $this->container['num_set_deposits_limits'] = $num_set_deposits_limits;
 
         return $this;
@@ -1771,11 +1705,9 @@ class User extends Account
      */
     public function setNumMigrations($num_migrations)
     {
-
         if (is_null($num_migrations)) {
             throw new \InvalidArgumentException('non-nullable num_migrations cannot be null');
         }
-
         $this->container['num_migrations'] = $num_migrations;
 
         return $this;
@@ -1800,11 +1732,9 @@ class User extends Account
      */
     public function setTxRollupOriginationCount($tx_rollup_origination_count)
     {
-
         if (is_null($tx_rollup_origination_count)) {
             throw new \InvalidArgumentException('non-nullable tx_rollup_origination_count cannot be null');
         }
-
         $this->container['tx_rollup_origination_count'] = $tx_rollup_origination_count;
 
         return $this;
@@ -1829,11 +1759,9 @@ class User extends Account
      */
     public function setTxRollupSubmitBatchCount($tx_rollup_submit_batch_count)
     {
-
         if (is_null($tx_rollup_submit_batch_count)) {
             throw new \InvalidArgumentException('non-nullable tx_rollup_submit_batch_count cannot be null');
         }
-
         $this->container['tx_rollup_submit_batch_count'] = $tx_rollup_submit_batch_count;
 
         return $this;
@@ -1858,11 +1786,9 @@ class User extends Account
      */
     public function setTxRollupCommitCount($tx_rollup_commit_count)
     {
-
         if (is_null($tx_rollup_commit_count)) {
             throw new \InvalidArgumentException('non-nullable tx_rollup_commit_count cannot be null');
         }
-
         $this->container['tx_rollup_commit_count'] = $tx_rollup_commit_count;
 
         return $this;
@@ -1887,11 +1813,9 @@ class User extends Account
      */
     public function setTxRollupReturnBondCount($tx_rollup_return_bond_count)
     {
-
         if (is_null($tx_rollup_return_bond_count)) {
             throw new \InvalidArgumentException('non-nullable tx_rollup_return_bond_count cannot be null');
         }
-
         $this->container['tx_rollup_return_bond_count'] = $tx_rollup_return_bond_count;
 
         return $this;
@@ -1916,11 +1840,9 @@ class User extends Account
      */
     public function setTxRollupFinalizeCommitmentCount($tx_rollup_finalize_commitment_count)
     {
-
         if (is_null($tx_rollup_finalize_commitment_count)) {
             throw new \InvalidArgumentException('non-nullable tx_rollup_finalize_commitment_count cannot be null');
         }
-
         $this->container['tx_rollup_finalize_commitment_count'] = $tx_rollup_finalize_commitment_count;
 
         return $this;
@@ -1945,11 +1867,9 @@ class User extends Account
      */
     public function setTxRollupRemoveCommitmentCount($tx_rollup_remove_commitment_count)
     {
-
         if (is_null($tx_rollup_remove_commitment_count)) {
             throw new \InvalidArgumentException('non-nullable tx_rollup_remove_commitment_count cannot be null');
         }
-
         $this->container['tx_rollup_remove_commitment_count'] = $tx_rollup_remove_commitment_count;
 
         return $this;
@@ -1974,11 +1894,9 @@ class User extends Account
      */
     public function setTxRollupRejectionCount($tx_rollup_rejection_count)
     {
-
         if (is_null($tx_rollup_rejection_count)) {
             throw new \InvalidArgumentException('non-nullable tx_rollup_rejection_count cannot be null');
         }
-
         $this->container['tx_rollup_rejection_count'] = $tx_rollup_rejection_count;
 
         return $this;
@@ -2003,11 +1921,9 @@ class User extends Account
      */
     public function setTxRollupDispatchTicketsCount($tx_rollup_dispatch_tickets_count)
     {
-
         if (is_null($tx_rollup_dispatch_tickets_count)) {
             throw new \InvalidArgumentException('non-nullable tx_rollup_dispatch_tickets_count cannot be null');
         }
-
         $this->container['tx_rollup_dispatch_tickets_count'] = $tx_rollup_dispatch_tickets_count;
 
         return $this;
@@ -2032,11 +1948,9 @@ class User extends Account
      */
     public function setTransferTicketCount($transfer_ticket_count)
     {
-
         if (is_null($transfer_ticket_count)) {
             throw new \InvalidArgumentException('non-nullable transfer_ticket_count cannot be null');
         }
-
         $this->container['transfer_ticket_count'] = $transfer_ticket_count;
 
         return $this;
@@ -2061,11 +1975,9 @@ class User extends Account
      */
     public function setIncreasePaidStorageCount($increase_paid_storage_count)
     {
-
         if (is_null($increase_paid_storage_count)) {
             throw new \InvalidArgumentException('non-nullable increase_paid_storage_count cannot be null');
         }
-
         $this->container['increase_paid_storage_count'] = $increase_paid_storage_count;
 
         return $this;
@@ -2090,11 +2002,9 @@ class User extends Account
      */
     public function setDrainDelegateCount($drain_delegate_count)
     {
-
         if (is_null($drain_delegate_count)) {
             throw new \InvalidArgumentException('non-nullable drain_delegate_count cannot be null');
         }
-
         $this->container['drain_delegate_count'] = $drain_delegate_count;
 
         return $this;
@@ -2119,11 +2029,9 @@ class User extends Account
      */
     public function setSmartRollupAddMessagesCount($smart_rollup_add_messages_count)
     {
-
         if (is_null($smart_rollup_add_messages_count)) {
             throw new \InvalidArgumentException('non-nullable smart_rollup_add_messages_count cannot be null');
         }
-
         $this->container['smart_rollup_add_messages_count'] = $smart_rollup_add_messages_count;
 
         return $this;
@@ -2148,11 +2056,9 @@ class User extends Account
      */
     public function setSmartRollupCementCount($smart_rollup_cement_count)
     {
-
         if (is_null($smart_rollup_cement_count)) {
             throw new \InvalidArgumentException('non-nullable smart_rollup_cement_count cannot be null');
         }
-
         $this->container['smart_rollup_cement_count'] = $smart_rollup_cement_count;
 
         return $this;
@@ -2177,11 +2083,9 @@ class User extends Account
      */
     public function setSmartRollupExecuteCount($smart_rollup_execute_count)
     {
-
         if (is_null($smart_rollup_execute_count)) {
             throw new \InvalidArgumentException('non-nullable smart_rollup_execute_count cannot be null');
         }
-
         $this->container['smart_rollup_execute_count'] = $smart_rollup_execute_count;
 
         return $this;
@@ -2206,11 +2110,9 @@ class User extends Account
      */
     public function setSmartRollupOriginateCount($smart_rollup_originate_count)
     {
-
         if (is_null($smart_rollup_originate_count)) {
             throw new \InvalidArgumentException('non-nullable smart_rollup_originate_count cannot be null');
         }
-
         $this->container['smart_rollup_originate_count'] = $smart_rollup_originate_count;
 
         return $this;
@@ -2235,11 +2137,9 @@ class User extends Account
      */
     public function setSmartRollupPublishCount($smart_rollup_publish_count)
     {
-
         if (is_null($smart_rollup_publish_count)) {
             throw new \InvalidArgumentException('non-nullable smart_rollup_publish_count cannot be null');
         }
-
         $this->container['smart_rollup_publish_count'] = $smart_rollup_publish_count;
 
         return $this;
@@ -2264,11 +2164,9 @@ class User extends Account
      */
     public function setSmartRollupRecoverBondCount($smart_rollup_recover_bond_count)
     {
-
         if (is_null($smart_rollup_recover_bond_count)) {
             throw new \InvalidArgumentException('non-nullable smart_rollup_recover_bond_count cannot be null');
         }
-
         $this->container['smart_rollup_recover_bond_count'] = $smart_rollup_recover_bond_count;
 
         return $this;
@@ -2293,11 +2191,9 @@ class User extends Account
      */
     public function setSmartRollupRefuteCount($smart_rollup_refute_count)
     {
-
         if (is_null($smart_rollup_refute_count)) {
             throw new \InvalidArgumentException('non-nullable smart_rollup_refute_count cannot be null');
         }
-
         $this->container['smart_rollup_refute_count'] = $smart_rollup_refute_count;
 
         return $this;
@@ -2322,11 +2218,9 @@ class User extends Account
      */
     public function setRefutationGamesCount($refutation_games_count)
     {
-
         if (is_null($refutation_games_count)) {
             throw new \InvalidArgumentException('non-nullable refutation_games_count cannot be null');
         }
-
         $this->container['refutation_games_count'] = $refutation_games_count;
 
         return $this;
@@ -2351,11 +2245,9 @@ class User extends Account
      */
     public function setActiveRefutationGamesCount($active_refutation_games_count)
     {
-
         if (is_null($active_refutation_games_count)) {
             throw new \InvalidArgumentException('non-nullable active_refutation_games_count cannot be null');
         }
-
         $this->container['active_refutation_games_count'] = $active_refutation_games_count;
 
         return $this;
@@ -2380,11 +2272,9 @@ class User extends Account
      */
     public function setStakingOpsCount($staking_ops_count)
     {
-
         if (is_null($staking_ops_count)) {
             throw new \InvalidArgumentException('non-nullable staking_ops_count cannot be null');
         }
-
         $this->container['staking_ops_count'] = $staking_ops_count;
 
         return $this;
@@ -2409,11 +2299,9 @@ class User extends Account
      */
     public function setStakingUpdatesCount($staking_updates_count)
     {
-
         if (is_null($staking_updates_count)) {
             throw new \InvalidArgumentException('non-nullable staking_updates_count cannot be null');
         }
-
         $this->container['staking_updates_count'] = $staking_updates_count;
 
         return $this;
@@ -2438,11 +2326,9 @@ class User extends Account
      */
     public function setSetDelegateParametersOpsCount($set_delegate_parameters_ops_count)
     {
-
         if (is_null($set_delegate_parameters_ops_count)) {
             throw new \InvalidArgumentException('non-nullable set_delegate_parameters_ops_count cannot be null');
         }
-
         $this->container['set_delegate_parameters_ops_count'] = $set_delegate_parameters_ops_count;
 
         return $this;
@@ -2467,11 +2353,9 @@ class User extends Account
      */
     public function setDalPublishCommitmentOpsCount($dal_publish_commitment_ops_count)
     {
-
         if (is_null($dal_publish_commitment_ops_count)) {
             throw new \InvalidArgumentException('non-nullable dal_publish_commitment_ops_count cannot be null');
         }
-
         $this->container['dal_publish_commitment_ops_count'] = $dal_publish_commitment_ops_count;
 
         return $this;
@@ -2496,7 +2380,6 @@ class User extends Account
      */
     public function setFirstActivity($first_activity)
     {
-
         if (is_null($first_activity)) {
             array_push($this->openAPINullablesSetToNull, 'first_activity');
         } else {
@@ -2507,7 +2390,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['first_activity'] = $first_activity;
 
         return $this;
@@ -2532,7 +2414,6 @@ class User extends Account
      */
     public function setFirstActivityTime($first_activity_time)
     {
-
         if (is_null($first_activity_time)) {
             array_push($this->openAPINullablesSetToNull, 'first_activity_time');
         } else {
@@ -2543,7 +2424,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['first_activity_time'] = $first_activity_time;
 
         return $this;
@@ -2568,7 +2448,6 @@ class User extends Account
      */
     public function setLastActivity($last_activity)
     {
-
         if (is_null($last_activity)) {
             array_push($this->openAPINullablesSetToNull, 'last_activity');
         } else {
@@ -2579,7 +2458,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['last_activity'] = $last_activity;
 
         return $this;
@@ -2604,7 +2482,6 @@ class User extends Account
      */
     public function setLastActivityTime($last_activity_time)
     {
-
         if (is_null($last_activity_time)) {
             array_push($this->openAPINullablesSetToNull, 'last_activity_time');
         } else {
@@ -2615,7 +2492,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['last_activity_time'] = $last_activity_time;
 
         return $this;
@@ -2640,7 +2516,6 @@ class User extends Account
      */
     public function setExtras($extras)
     {
-
         if (is_null($extras)) {
             array_push($this->openAPINullablesSetToNull, 'extras');
         } else {
@@ -2651,7 +2526,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['extras'] = $extras;
 
         return $this;
@@ -2676,7 +2550,6 @@ class User extends Account
      */
     public function setMetadata($metadata)
     {
-
         if (is_null($metadata)) {
             array_push($this->openAPINullablesSetToNull, 'metadata');
         } else {
@@ -2687,7 +2560,6 @@ class User extends Account
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['metadata'] = $metadata;
 
         return $this;
@@ -2712,11 +2584,9 @@ class User extends Account
      */
     public function setLostBalance($lost_balance)
     {
-
         if (is_null($lost_balance)) {
             throw new \InvalidArgumentException('non-nullable lost_balance cannot be null');
         }
-
         $this->container['lost_balance'] = $lost_balance;
 
         return $this;

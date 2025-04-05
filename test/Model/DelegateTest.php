@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -13,12 +13,12 @@
 /**
  * TzKT API
  *
- * # Introduction  TzKT Explorer provides free REST API and WebSocket API for accessing detailed Tezos blockchain data and helps developers build more services and applications on top of Tezos. TzKT is an open-source project, so you can easily clone and build it and use it as a self-hosted service to avoid any risks of depending on third-party services.  TzKT API is available for the following Tezos networks with the following base URLs:  - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io)) - Kathmandunet: `https://api.kathmandunet.tzkt.io/` ([view docs](https://api.kathmandunet.tzkt.io)) - Limanet: `https://api.limanet.tzkt.io/` ([view docs](https://api.limanet.tzkt.io))  We also provide a staging environment for testing newest features and pre-updating client applications before deploying to production:  - Mainnet staging: `https://staging.api.tzkt.io/` or `https://staging.api.mainnet.tzkt.io/` ([view docs](https://staging.api.tzkt.io))  Feel free to contact us if you have any questions or feature requests. Your feedback really helps us make TzKT better!  - Discord: https://discord.gg/aG8XKuwsQd - Telegram: https://t.me/baking_bad_chat - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L - Twitter: https://twitter.com/TezosBakingBad - Email: hello@baking-bad.org  And don't forget to star TzKT project [on GitHub](https://github.com/baking-bad/tzkt) ;)  # Terms of Use  TzKT API is free for everyone and for both commercial and non-commercial usage.  If your application or service uses the TzKT API in any forms: directly on frontend or indirectly on backend, you must mention that fact on your website or application by placing the label **\"Powered by TzKT API\"** or **\"Built with TzKT API\"** with a direct link to [tzkt.io](https://tzkt.io).   # Rate Limits  There will be no rate limits as long as our servers can handle the load without additional infrastructure costs. However, any apparent abuse will be prevented by setting targeted rate limits.  Check out [Tezos Explorer API Best Practices](https://baking-bad.org/blog/tag/TzKT/) and in particular [how to optimize requests count](https://baking-bad.org/blog/2020/07/29/tezos-explorer-api-tzkt-how-often-to-make-requests/).  ---
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Quebecnet: `https://api.quebecnet.tzkt.io/` ([view docs](https://api.quebecnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: v1.11.0
- * Contact: hello@baking-bad.org
+ * The version of the OpenAPI document: 1.14.7
+ * Contact: hello@bakingbad.dev
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 6.2.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Bzzhh\Tzkt\Test\Model;
+namespace Tzkt\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description Delegate
- * @package     Bzzhh\Tzkt
+ * @package     Tzkt
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
@@ -77,7 +77,7 @@ class DelegateTest extends TestCase
     public function testDelegate()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -86,7 +86,7 @@ class DelegateTest extends TestCase
     public function testPropertyId()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -95,7 +95,7 @@ class DelegateTest extends TestCase
     public function testPropertyType()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -104,7 +104,7 @@ class DelegateTest extends TestCase
     public function testPropertyAddress()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -113,7 +113,7 @@ class DelegateTest extends TestCase
     public function testPropertyActive()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -122,7 +122,7 @@ class DelegateTest extends TestCase
     public function testPropertyAlias()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -131,7 +131,7 @@ class DelegateTest extends TestCase
     public function testPropertyPublicKey()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -140,7 +140,7 @@ class DelegateTest extends TestCase
     public function testPropertyRevealed()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -149,7 +149,7 @@ class DelegateTest extends TestCase
     public function testPropertyBalance()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -158,16 +158,97 @@ class DelegateTest extends TestCase
     public function testPropertyRollupBonds()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "frozen_deposit"
+     * Test attribute "smart_rollup_bonds"
      */
-    public function testPropertyFrozenDeposit()
+    public function testPropertySmartRollupBonds()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "staked_balance"
+     */
+    public function testPropertyStakedBalance()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "unstaked_balance"
+     */
+    public function testPropertyUnstakedBalance()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "unstaked_baker"
+     */
+    public function testPropertyUnstakedBaker()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "external_staked_balance"
+     */
+    public function testPropertyExternalStakedBalance()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "external_unstaked_balance"
+     */
+    public function testPropertyExternalUnstakedBalance()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "rounding_error"
+     */
+    public function testPropertyRoundingError()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "total_staked_balance"
+     */
+    public function testPropertyTotalStakedBalance()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "issued_pseudotokens"
+     */
+    public function testPropertyIssuedPseudotokens()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "stakers_count"
+     */
+    public function testPropertyStakersCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -176,7 +257,25 @@ class DelegateTest extends TestCase
     public function testPropertyFrozenDepositLimit()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "limit_of_staking_over_baking"
+     */
+    public function testPropertyLimitOfStakingOverBaking()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "edge_of_baking_over_staking"
+     */
+    public function testPropertyEdgeOfBakingOverStaking()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -185,7 +284,7 @@ class DelegateTest extends TestCase
     public function testPropertyCounter()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -194,7 +293,7 @@ class DelegateTest extends TestCase
     public function testPropertyActivationLevel()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -203,7 +302,7 @@ class DelegateTest extends TestCase
     public function testPropertyActivationTime()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -212,7 +311,7 @@ class DelegateTest extends TestCase
     public function testPropertyDeactivationLevel()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -221,7 +320,7 @@ class DelegateTest extends TestCase
     public function testPropertyDeactivationTime()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -230,7 +329,7 @@ class DelegateTest extends TestCase
     public function testPropertyStakingBalance()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -239,7 +338,7 @@ class DelegateTest extends TestCase
     public function testPropertyDelegatedBalance()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -248,7 +347,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumContracts()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -257,7 +356,16 @@ class DelegateTest extends TestCase
     public function testPropertyRollupsCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollups_count"
+     */
+    public function testPropertySmartRollupsCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -266,7 +374,7 @@ class DelegateTest extends TestCase
     public function testPropertyActiveTokensCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -275,7 +383,7 @@ class DelegateTest extends TestCase
     public function testPropertyTokenBalancesCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -284,7 +392,34 @@ class DelegateTest extends TestCase
     public function testPropertyTokenTransfersCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "active_tickets_count"
+     */
+    public function testPropertyActiveTicketsCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ticket_balances_count"
+     */
+    public function testPropertyTicketBalancesCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ticket_transfers_count"
+     */
+    public function testPropertyTicketTransfersCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -293,7 +428,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumDelegators()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -302,7 +437,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumBlocks()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -311,7 +446,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumEndorsements()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -320,7 +455,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumPreendorsements()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -329,7 +464,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumBallots()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -338,7 +473,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumProposals()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -347,7 +482,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumActivations()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -356,7 +491,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumDoubleBaking()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -365,7 +500,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumDoubleEndorsing()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -374,7 +509,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumDoublePreendorsing()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -383,7 +518,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumNonceRevelations()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -392,7 +527,7 @@ class DelegateTest extends TestCase
     public function testPropertyVdfRevelationsCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -401,7 +536,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumRevelationPenalties()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -410,7 +545,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumEndorsingRewards()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -419,7 +554,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumDelegations()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -428,7 +563,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumOriginations()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -437,7 +572,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumTransactions()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -446,7 +581,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumReveals()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -455,7 +590,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumRegisterConstants()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -464,7 +599,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumSetDepositsLimits()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -473,7 +608,7 @@ class DelegateTest extends TestCase
     public function testPropertyNumMigrations()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -482,7 +617,7 @@ class DelegateTest extends TestCase
     public function testPropertyTxRollupOriginationCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -491,7 +626,7 @@ class DelegateTest extends TestCase
     public function testPropertyTxRollupSubmitBatchCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -500,7 +635,7 @@ class DelegateTest extends TestCase
     public function testPropertyTxRollupCommitCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -509,7 +644,7 @@ class DelegateTest extends TestCase
     public function testPropertyTxRollupReturnBondCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -518,7 +653,7 @@ class DelegateTest extends TestCase
     public function testPropertyTxRollupFinalizeCommitmentCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -527,7 +662,7 @@ class DelegateTest extends TestCase
     public function testPropertyTxRollupRemoveCommitmentCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -536,7 +671,7 @@ class DelegateTest extends TestCase
     public function testPropertyTxRollupRejectionCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -545,7 +680,7 @@ class DelegateTest extends TestCase
     public function testPropertyTxRollupDispatchTicketsCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -554,7 +689,7 @@ class DelegateTest extends TestCase
     public function testPropertyTransferTicketCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -563,7 +698,7 @@ class DelegateTest extends TestCase
     public function testPropertyIncreasePaidStorageCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -572,7 +707,7 @@ class DelegateTest extends TestCase
     public function testPropertyUpdateConsensusKeyCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -581,7 +716,133 @@ class DelegateTest extends TestCase
     public function testPropertyDrainDelegateCount()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollup_add_messages_count"
+     */
+    public function testPropertySmartRollupAddMessagesCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollup_cement_count"
+     */
+    public function testPropertySmartRollupCementCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollup_execute_count"
+     */
+    public function testPropertySmartRollupExecuteCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollup_originate_count"
+     */
+    public function testPropertySmartRollupOriginateCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollup_publish_count"
+     */
+    public function testPropertySmartRollupPublishCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollup_recover_bond_count"
+     */
+    public function testPropertySmartRollupRecoverBondCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "smart_rollup_refute_count"
+     */
+    public function testPropertySmartRollupRefuteCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "refutation_games_count"
+     */
+    public function testPropertyRefutationGamesCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "active_refutation_games_count"
+     */
+    public function testPropertyActiveRefutationGamesCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "staking_ops_count"
+     */
+    public function testPropertyStakingOpsCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "autostaking_ops_count"
+     */
+    public function testPropertyAutostakingOpsCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "staking_updates_count"
+     */
+    public function testPropertyStakingUpdatesCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "set_delegate_parameters_ops_count"
+     */
+    public function testPropertySetDelegateParametersOpsCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "dal_publish_commitment_ops_count"
+     */
+    public function testPropertyDalPublishCommitmentOpsCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -590,7 +851,7 @@ class DelegateTest extends TestCase
     public function testPropertyFirstActivity()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -599,7 +860,7 @@ class DelegateTest extends TestCase
     public function testPropertyFirstActivityTime()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -608,7 +869,7 @@ class DelegateTest extends TestCase
     public function testPropertyLastActivity()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -617,16 +878,16 @@ class DelegateTest extends TestCase
     public function testPropertyLastActivityTime()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "metadata"
+     * Test attribute "extras"
      */
-    public function testPropertyMetadata()
+    public function testPropertyExtras()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -635,7 +896,25 @@ class DelegateTest extends TestCase
     public function testPropertySoftware()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lost_balance"
+     */
+    public function testPropertyLostBalance()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "frozen_deposit"
+     */
+    public function testPropertyFrozenDeposit()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -644,7 +923,7 @@ class DelegateTest extends TestCase
     public function testPropertyFrozenDeposits()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -653,7 +932,7 @@ class DelegateTest extends TestCase
     public function testPropertyFrozenRewards()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
     }
 
     /**
@@ -662,6 +941,15 @@ class DelegateTest extends TestCase
     public function testPropertyFrozenFees()
     {
         // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "metadata"
+     */
+    public function testPropertyMetadata()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
     }
 }

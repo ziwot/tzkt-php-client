@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Internal TzKT id.   **[sortable]** | [optional]
-**account** | [**\Bzzhh\Tzkt\Model\TicketBalanceAccount**](TicketBalanceAccount.md) |  | [optional]
-**token** | [**\Bzzhh\Tzkt\Model\TokenBalanceToken**](TokenBalanceToken.md) |  | [optional]
+**account** | [**\Tzkt\Model\TicketBalanceAccount**](TicketBalanceAccount.md) |  | [optional]
+**token** | [**\Tzkt\Model\TokenBalanceToken**](TokenBalanceToken.md) |  | [optional]
 **balance** | **string** | Balance (raw value, not divided by &#x60;decimals&#x60;).   **[sortable]** | [optional]
 **balance_value** | **string** | Balance value in mutez, based on the current token price.   **[sortable]** | [optional]
 **transfers_count** | **int** | Total number of transfers, affecting the token balance.   **[sortable]** | [optional]

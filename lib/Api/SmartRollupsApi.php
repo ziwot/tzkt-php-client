@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -12,12 +12,12 @@
 /**
  * TzKT API
  *
- * # Introduction  TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.  You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community  to help developers build more services and dapps on top of Tezos.  TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service, because you can always clone, build and run it yourself to have full control over all the components.  Feel free to contact us if you have any questions or feature requests. Your feedback is much appreciated!  - Discord: https://discord.gg/aG8XKuwsQd - Telegram: https://t.me/baking_bad_chat - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L - Twitter: https://twitter.com/TezosBakingBad - Email: hello@bakingbad.dev  And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊  # Get Started  There are two API services provided for public use: - **Free TzKT API** with free anonymous access; - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.  You can find more details about differences between available tiers [here](https://tzkt.io/api).  ## Free TzKT API  Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality. It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.  > #### Note: attribution required If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io)) - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io)) - Parisnet: `https://api.parisnet.tzkt.io/` ([view docs](https://api.parisnet.tzkt.io))  ### Sending Requests  To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint (for example, chain's head: `/v1/head`), that's pretty much it:   ```bash curl https://api.tzkt.io/v1/head ```  Read through this documentation to explore available endpoints, query parameters (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.) and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits.  If you exceed the limit, the API will respond with `HTTP 429` status code.  ## TzKT Pro  TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA. TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io)) - Testnets: *let us know if you need TzKT Pro for testnets*  ### Authorization  To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription. This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.  Note that you can have multiple API keys within a single subscription.  Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories. If your key was compromised, just let us know and we will issue a new one.  Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted, but query string is not, so the key can be unintentionally exposed to third parties.  ### Sending Requests  Sending a request with the API key passed as a query string parameter:  ```bash curl https://pro.tzkt.io/v1/head?apikey={your_key} ```  Sending a request with the API key passed via an HTTP header:  ```bash curl https://pro.tzkt.io/v1/head \\     -H 'apikey: {your_key}' ```  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.  Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests and the time remaining (in seconds) until the quota is reset. Here's an example:  ``` RateLimit-Limit: 50 RateLimit-Remaining: 49 RateLimit-Reset: 1 ```  It also sends general information about your rate limits per second and per day:  ``` X-RateLimit-Limit-Second: 50 X-RateLimit-Remaining-Second: 49 X-RateLimit-Limit-Day: 3000000 X-RateLimit-Remaining-Day: 2994953 ```  If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Quebecnet: `https://api.quebecnet.tzkt.io/` ([view docs](https://api.quebecnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.4
+ * The version of the OpenAPI document: 1.14.7
  * Contact: hello@bakingbad.dev
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 6.2.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Bzzhh\Tzkt\Api;
+namespace Tzkt\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Bzzhh\Tzkt\ApiException;
-use Bzzhh\Tzkt\Configuration;
-use Bzzhh\Tzkt\HeaderSelector;
-use Bzzhh\Tzkt\ObjectSerializer;
+use Tzkt\ApiException;
+use Tzkt\Configuration;
+use Tzkt\HeaderSelector;
+use Tzkt\ObjectSerializer;
 
 /**
  * SmartRollupsApi Class Doc Comment
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -110,20 +110,20 @@ class SmartRollupsApi
         ],
     ];
 
-/**
+    /**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null,
-        $hostIndex = 0
+        ?ClientInterface $client = null,
+        ?Configuration $config = null,
+        ?HeaderSelector $selector = null,
+        int $hostIndex = 0
     ) {
         $this->client = $client ?: new Client();
-        $this->config = $config ?: new Configuration();
+        $this->config = $config ?: Configuration::getDefaultConfiguration();
         $this->headerSelector = $selector ?: new HeaderSelector();
         $this->hostIndex = $hostIndex;
     }
@@ -162,15 +162,15 @@ class SmartRollupsApi
      * Get smart rollup entrypoints
      *
      * @param  string $address Smart rollup address (starting with sr1) (required)
-     * @param  bool $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
-     * @param  bool $json Include parameters schema in human-readable JSON format (optional, default to true)
-     * @param  bool $micheline Include parameters schema in micheline format (optional, default to false)
-     * @param  bool $michelson Include parameters schema in michelson format (optional, default to false)
+     * @param  bool|null $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
+     * @param  bool|null $json Include parameters schema in human-readable JSON format (optional, default to true)
+     * @param  bool|null $micheline Include parameters schema in micheline format (optional, default to false)
+     * @param  bool|null $michelson Include parameters schema in michelson format (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetEntrypoints'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Bzzhh\Tzkt\Model\Entrypoint[]
+     * @return \Tzkt\Model\Entrypoint[]
      */
     public function smartRollupsGetEntrypoints($address, $all = false, $json = true, $micheline = false, $michelson = false, string $contentType = self::contentTypes['smartRollupsGetEntrypoints'][0])
     {
@@ -184,15 +184,15 @@ class SmartRollupsApi
      * Get smart rollup entrypoints
      *
      * @param  string $address Smart rollup address (starting with sr1) (required)
-     * @param  bool $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
-     * @param  bool $json Include parameters schema in human-readable JSON format (optional, default to true)
-     * @param  bool $micheline Include parameters schema in micheline format (optional, default to false)
-     * @param  bool $michelson Include parameters schema in michelson format (optional, default to false)
+     * @param  bool|null $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
+     * @param  bool|null $json Include parameters schema in human-readable JSON format (optional, default to true)
+     * @param  bool|null $micheline Include parameters schema in micheline format (optional, default to false)
+     * @param  bool|null $michelson Include parameters schema in michelson format (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetEntrypoints'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Bzzhh\Tzkt\Model\Entrypoint[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\Entrypoint[], HTTP status code, HTTP response headers (array of strings)
      */
     public function smartRollupsGetEntrypointsWithHttpInfo($address, $all = false, $json = true, $micheline = false, $michelson = false, string $contentType = self::contentTypes['smartRollupsGetEntrypoints'][0])
     {
@@ -220,6 +220,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Tzkt\Model\Entrypoint[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\Entrypoint[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\Entrypoint[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -233,31 +264,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Bzzhh\Tzkt\Model\Entrypoint[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Bzzhh\Tzkt\Model\Entrypoint[]' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Bzzhh\Tzkt\Model\Entrypoint[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Bzzhh\Tzkt\Model\Entrypoint[]';
+            $returnType = '\Tzkt\Model\Entrypoint[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -272,7 +297,7 @@ class SmartRollupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Bzzhh\Tzkt\Model\Entrypoint[]',
+                        '\Tzkt\Model\Entrypoint[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -288,10 +313,10 @@ class SmartRollupsApi
      * Get smart rollup entrypoints
      *
      * @param  string $address Smart rollup address (starting with sr1) (required)
-     * @param  bool $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
-     * @param  bool $json Include parameters schema in human-readable JSON format (optional, default to true)
-     * @param  bool $micheline Include parameters schema in micheline format (optional, default to false)
-     * @param  bool $michelson Include parameters schema in michelson format (optional, default to false)
+     * @param  bool|null $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
+     * @param  bool|null $json Include parameters schema in human-readable JSON format (optional, default to true)
+     * @param  bool|null $micheline Include parameters schema in micheline format (optional, default to false)
+     * @param  bool|null $michelson Include parameters schema in michelson format (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetEntrypoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -313,10 +338,10 @@ class SmartRollupsApi
      * Get smart rollup entrypoints
      *
      * @param  string $address Smart rollup address (starting with sr1) (required)
-     * @param  bool $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
-     * @param  bool $json Include parameters schema in human-readable JSON format (optional, default to true)
-     * @param  bool $micheline Include parameters schema in micheline format (optional, default to false)
-     * @param  bool $michelson Include parameters schema in michelson format (optional, default to false)
+     * @param  bool|null $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
+     * @param  bool|null $json Include parameters schema in human-readable JSON format (optional, default to true)
+     * @param  bool|null $micheline Include parameters schema in micheline format (optional, default to false)
+     * @param  bool|null $michelson Include parameters schema in michelson format (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetEntrypoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -324,7 +349,7 @@ class SmartRollupsApi
      */
     public function smartRollupsGetEntrypointsAsyncWithHttpInfo($address, $all = false, $json = true, $micheline = false, $michelson = false, string $contentType = self::contentTypes['smartRollupsGetEntrypoints'][0])
     {
-        $returnType = '\Bzzhh\Tzkt\Model\Entrypoint[]';
+        $returnType = '\Tzkt\Model\Entrypoint[]';
         $request = $this->smartRollupsGetEntrypointsRequest($address, $all, $json, $micheline, $michelson, $contentType);
 
         return $this->client
@@ -367,10 +392,10 @@ class SmartRollupsApi
      * Create request for operation 'smartRollupsGetEntrypoints'
      *
      * @param  string $address Smart rollup address (starting with sr1) (required)
-     * @param  bool $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
-     * @param  bool $json Include parameters schema in human-readable JSON format (optional, default to true)
-     * @param  bool $micheline Include parameters schema in micheline format (optional, default to false)
-     * @param  bool $michelson Include parameters schema in michelson format (optional, default to false)
+     * @param  bool|null $all If true, returns all entrypoints, including unused ones.             Unused means that the entrypoint can be normalized to a more specific one.             For example here &#x60;(or %entry1 (unit %entry2) (nat %entry3))&#x60; the &#x60;%entry1&#x60; is unused entrypoint             because it can be normalized to &#x60;%entry2&#x60; or &#x60;%entry3&#x60; (optional, default to false)
+     * @param  bool|null $json Include parameters schema in human-readable JSON format (optional, default to true)
+     * @param  bool|null $micheline Include parameters schema in micheline format (optional, default to false)
+     * @param  bool|null $michelson Include parameters schema in michelson format (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetEntrypoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -470,7 +495,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -504,20 +529,20 @@ class SmartRollupsApi
      *
      * Get inbox messages
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  AccountsGetOperationsMichelineParameter $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessages'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Bzzhh\Tzkt\Model\SrMessage[]
+     * @return \Tzkt\Model\SrMessage[]
      */
     public function smartRollupsGetInboxMessages($id = null, $level = null, $timestamp = null, $type = null, $sort = null, $offset = null, $limit = null, $select = null, $micheline = null, string $contentType = self::contentTypes['smartRollupsGetInboxMessages'][0])
     {
@@ -530,20 +555,20 @@ class SmartRollupsApi
      *
      * Get inbox messages
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  AccountsGetOperationsMichelineParameter $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessages'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Bzzhh\Tzkt\Model\SrMessage[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\SrMessage[], HTTP status code, HTTP response headers (array of strings)
      */
     public function smartRollupsGetInboxMessagesWithHttpInfo($id = null, $level = null, $timestamp = null, $type = null, $sort = null, $offset = null, $limit = null, $select = null, $micheline = null, string $contentType = self::contentTypes['smartRollupsGetInboxMessages'][0])
     {
@@ -571,6 +596,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Tzkt\Model\SrMessage[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\SrMessage[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\SrMessage[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -584,31 +640,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Bzzhh\Tzkt\Model\SrMessage[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Bzzhh\Tzkt\Model\SrMessage[]' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Bzzhh\Tzkt\Model\SrMessage[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Bzzhh\Tzkt\Model\SrMessage[]';
+            $returnType = '\Tzkt\Model\SrMessage[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -623,7 +673,7 @@ class SmartRollupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Bzzhh\Tzkt\Model\SrMessage[]',
+                        '\Tzkt\Model\SrMessage[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -638,15 +688,15 @@ class SmartRollupsApi
      *
      * Get inbox messages
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  AccountsGetOperationsMichelineParameter $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -667,15 +717,15 @@ class SmartRollupsApi
      *
      * Get inbox messages
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  AccountsGetOperationsMichelineParameter $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -683,7 +733,7 @@ class SmartRollupsApi
      */
     public function smartRollupsGetInboxMessagesAsyncWithHttpInfo($id = null, $level = null, $timestamp = null, $type = null, $sort = null, $offset = null, $limit = null, $select = null, $micheline = null, string $contentType = self::contentTypes['smartRollupsGetInboxMessages'][0])
     {
-        $returnType = '\Bzzhh\Tzkt\Model\SrMessage[]';
+        $returnType = '\Tzkt\Model\SrMessage[]';
         $request = $this->smartRollupsGetInboxMessagesRequest($id, $level, $timestamp, $type, $sort, $offset, $limit, $select, $micheline, $contentType);
 
         return $this->client
@@ -725,15 +775,15 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetInboxMessages'
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  AccountsGetOperationsMichelineParameter $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessages'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -769,7 +819,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -778,7 +828,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $level,
             'level', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -787,7 +837,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $timestamp,
             'timestamp', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -796,7 +846,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $type,
             'type', // param base name
-            'OneOfSrMessageTypeParameter', // openApiType
+            '\Tzkt\Model\SrMessageTypeParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -805,7 +855,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $sort,
             'sort', // param base name
-            'OneOfSortParameter', // openApiType
+            '\Tzkt\Model\SortParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -814,7 +864,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $offset,
             'offset', // param base name
-            'OneOfOffsetParameter', // openApiType
+            '\Tzkt\Model\OffsetParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -832,7 +882,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $select,
             'select', // param base name
-            'OneOfSelectionParameter', // openApiType
+            '\Tzkt\Model\SelectionParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -841,7 +891,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $micheline,
             'micheline', // param base name
-            'OneOfMichelineFormat', // openApiType
+            '\Tzkt\Model\MichelineFormat', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -874,7 +924,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -908,13 +958,13 @@ class SmartRollupsApi
      *
      * Get inbox messages count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessagesCount'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -929,13 +979,13 @@ class SmartRollupsApi
      *
      * Get inbox messages count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessagesCount'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -965,6 +1015,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('int' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('int' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'int', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -978,31 +1059,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('int' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('int' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'int', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
             $returnType = 'int';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -1032,10 +1107,10 @@ class SmartRollupsApi
      *
      * Get inbox messages count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessagesCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1056,10 +1131,10 @@ class SmartRollupsApi
      *
      * Get inbox messages count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessagesCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1109,10 +1184,10 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetInboxMessagesCount'
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetInboxMessagesCountTypeParameter $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter|null $type Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInboxMessagesCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1137,7 +1212,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1146,7 +1221,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $level,
             'level', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1155,7 +1230,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $timestamp,
             'timestamp', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1164,7 +1239,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $type,
             'type', // param base name
-            'OneOfSrMessageTypeParameter', // openApiType
+            '\Tzkt\Model\SrMessageTypeParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1197,7 +1272,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1234,9 +1309,9 @@ class SmartRollupsApi
      * @param  string $address Smart rollup address (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInterface'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Bzzhh\Tzkt\Model\ContractInterface
+     * @return \Tzkt\Model\ContractInterface
      */
     public function smartRollupsGetInterface($address, string $contentType = self::contentTypes['smartRollupsGetInterface'][0])
     {
@@ -1252,9 +1327,9 @@ class SmartRollupsApi
      * @param  string $address Smart rollup address (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetInterface'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Bzzhh\Tzkt\Model\ContractInterface, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\ContractInterface, HTTP status code, HTTP response headers (array of strings)
      */
     public function smartRollupsGetInterfaceWithHttpInfo($address, string $contentType = self::contentTypes['smartRollupsGetInterface'][0])
     {
@@ -1282,6 +1357,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Tzkt\Model\ContractInterface' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\ContractInterface' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\ContractInterface', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -1295,31 +1401,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Bzzhh\Tzkt\Model\ContractInterface' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Bzzhh\Tzkt\Model\ContractInterface' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Bzzhh\Tzkt\Model\ContractInterface', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Bzzhh\Tzkt\Model\ContractInterface';
+            $returnType = '\Tzkt\Model\ContractInterface';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -1334,7 +1434,7 @@ class SmartRollupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Bzzhh\Tzkt\Model\ContractInterface',
+                        '\Tzkt\Model\ContractInterface',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1378,7 +1478,7 @@ class SmartRollupsApi
      */
     public function smartRollupsGetInterfaceAsyncWithHttpInfo($address, string $contentType = self::contentTypes['smartRollupsGetInterface'][0])
     {
-        $returnType = '\Bzzhh\Tzkt\Model\ContractInterface';
+        $returnType = '\Tzkt\Model\ContractInterface';
         $request = $this->smartRollupsGetInterfaceRequest($address, $contentType);
 
         return $this->client
@@ -1480,7 +1580,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1517,9 +1617,9 @@ class SmartRollupsApi
      * @param  string $address Smart rollup address (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollup'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Bzzhh\Tzkt\Model\SmartRollup
+     * @return \Tzkt\Model\SmartRollup
      */
     public function smartRollupsGetSmartRollup($address, string $contentType = self::contentTypes['smartRollupsGetSmartRollup'][0])
     {
@@ -1535,9 +1635,9 @@ class SmartRollupsApi
      * @param  string $address Smart rollup address (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollup'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Bzzhh\Tzkt\Model\SmartRollup, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\SmartRollup, HTTP status code, HTTP response headers (array of strings)
      */
     public function smartRollupsGetSmartRollupWithHttpInfo($address, string $contentType = self::contentTypes['smartRollupsGetSmartRollup'][0])
     {
@@ -1565,6 +1665,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Tzkt\Model\SmartRollup' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\SmartRollup' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\SmartRollup', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -1578,31 +1709,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Bzzhh\Tzkt\Model\SmartRollup' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Bzzhh\Tzkt\Model\SmartRollup' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Bzzhh\Tzkt\Model\SmartRollup', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Bzzhh\Tzkt\Model\SmartRollup';
+            $returnType = '\Tzkt\Model\SmartRollup';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -1617,7 +1742,7 @@ class SmartRollupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Bzzhh\Tzkt\Model\SmartRollup',
+                        '\Tzkt\Model\SmartRollup',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1661,7 +1786,7 @@ class SmartRollupsApi
      */
     public function smartRollupsGetSmartRollupAsyncWithHttpInfo($address, string $contentType = self::contentTypes['smartRollupsGetSmartRollup'][0])
     {
-        $returnType = '\Bzzhh\Tzkt\Model\SmartRollup';
+        $returnType = '\Tzkt\Model\SmartRollup';
         $request = $this->smartRollupsGetSmartRollupRequest($address, $contentType);
 
         return $this->client
@@ -1763,7 +1888,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1797,27 +1922,27 @@ class SmartRollupsApi
      *
      * Get smart rollup commitments
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitments'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Bzzhh\Tzkt\Model\SrCommitment[]
+     * @return \Tzkt\Model\SrCommitment[]
      */
     public function smartRollupsGetSmartRollupCommitments($id = null, $initiator = null, $rollup = null, $inbox_level = null, $hash = null, $first_level = null, $first_time = null, $last_level = null, $last_time = null, $status = null, $predecessor_id = null, $predecessor_hash = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupCommitments'][0])
     {
@@ -1830,27 +1955,27 @@ class SmartRollupsApi
      *
      * Get smart rollup commitments
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitments'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Bzzhh\Tzkt\Model\SrCommitment[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\SrCommitment[], HTTP status code, HTTP response headers (array of strings)
      */
     public function smartRollupsGetSmartRollupCommitmentsWithHttpInfo($id = null, $initiator = null, $rollup = null, $inbox_level = null, $hash = null, $first_level = null, $first_time = null, $last_level = null, $last_time = null, $status = null, $predecessor_id = null, $predecessor_hash = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupCommitments'][0])
     {
@@ -1878,6 +2003,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Tzkt\Model\SrCommitment[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\SrCommitment[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\SrCommitment[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -1891,31 +2047,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Bzzhh\Tzkt\Model\SrCommitment[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Bzzhh\Tzkt\Model\SrCommitment[]' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Bzzhh\Tzkt\Model\SrCommitment[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Bzzhh\Tzkt\Model\SrCommitment[]';
+            $returnType = '\Tzkt\Model\SrCommitment[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -1930,7 +2080,7 @@ class SmartRollupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Bzzhh\Tzkt\Model\SrCommitment[]',
+                        '\Tzkt\Model\SrCommitment[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1945,22 +2095,22 @@ class SmartRollupsApi
      *
      * Get smart rollup commitments
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1981,22 +2131,22 @@ class SmartRollupsApi
      *
      * Get smart rollup commitments
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2004,7 +2154,7 @@ class SmartRollupsApi
      */
     public function smartRollupsGetSmartRollupCommitmentsAsyncWithHttpInfo($id = null, $initiator = null, $rollup = null, $inbox_level = null, $hash = null, $first_level = null, $first_time = null, $last_level = null, $last_time = null, $status = null, $predecessor_id = null, $predecessor_hash = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupCommitments'][0])
     {
-        $returnType = '\Bzzhh\Tzkt\Model\SrCommitment[]';
+        $returnType = '\Tzkt\Model\SrCommitment[]';
         $request = $this->smartRollupsGetSmartRollupCommitmentsRequest($id, $initiator, $rollup, $inbox_level, $hash, $first_level, $first_time, $last_level, $last_time, $status, $predecessor_id, $predecessor_hash, $sort, $offset, $limit, $select, $contentType);
 
         return $this->client
@@ -2046,22 +2196,22 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetSmartRollupCommitments'
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2104,7 +2254,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2113,7 +2263,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $initiator,
             'initiator', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2122,7 +2272,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $rollup,
             'rollup', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2131,7 +2281,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $inbox_level,
             'inboxLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2140,7 +2290,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $hash,
             'hash', // param base name
-            'OneOfSrc1HashParameter', // openApiType
+            '\Tzkt\Model\Src1HashParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2149,7 +2299,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_level,
             'firstLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2158,7 +2308,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_time,
             'firstTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2167,7 +2317,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_level,
             'lastLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2176,7 +2326,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_time,
             'lastTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2185,7 +2335,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $status,
             'status', // param base name
-            'OneOfSrCommitmentStatusParameter', // openApiType
+            '\Tzkt\Model\SrCommitmentStatusParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2194,7 +2344,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $predecessor_id,
             'predecessor.id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2203,7 +2353,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $predecessor_hash,
             'predecessor.hash', // param base name
-            'OneOfSrc1HashParameter', // openApiType
+            '\Tzkt\Model\Src1HashParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2212,7 +2362,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $sort,
             'sort', // param base name
-            'OneOfSortParameter', // openApiType
+            '\Tzkt\Model\SortParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2221,7 +2371,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $offset,
             'offset', // param base name
-            'OneOfOffsetParameter', // openApiType
+            '\Tzkt\Model\OffsetParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2239,7 +2389,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $select,
             'select', // param base name
-            'OneOfSelectionParameter', // openApiType
+            '\Tzkt\Model\SelectionParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2272,7 +2422,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2306,21 +2456,21 @@ class SmartRollupsApi
      *
      * Get smart rollup commitments count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitmentsCount'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -2335,21 +2485,21 @@ class SmartRollupsApi
      *
      * Get smart rollup commitments count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitmentsCount'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2379,6 +2529,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('int' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('int' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'int', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -2392,31 +2573,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('int' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('int' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'int', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
             $returnType = 'int';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -2446,18 +2621,18 @@ class SmartRollupsApi
      *
      * Get smart rollup commitments count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitmentsCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2478,18 +2653,18 @@ class SmartRollupsApi
      *
      * Get smart rollup commitments count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitmentsCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2539,18 +2714,18 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetSmartRollupCommitmentsCount'
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupCommitmentsCountStatusParameter $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (an account published the commitment first).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $inbox_level Filter by inbox level.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter|null $status Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $predecessor_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $predecessor_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupCommitmentsCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2583,7 +2758,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2592,7 +2767,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $initiator,
             'initiator', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2601,7 +2776,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $rollup,
             'rollup', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2610,7 +2785,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $inbox_level,
             'inboxLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2619,7 +2794,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $hash,
             'hash', // param base name
-            'OneOfSrc1HashParameter', // openApiType
+            '\Tzkt\Model\Src1HashParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2628,7 +2803,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_level,
             'firstLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2637,7 +2812,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_time,
             'firstTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2646,7 +2821,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_level,
             'lastLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2655,7 +2830,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_time,
             'lastTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2664,7 +2839,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $status,
             'status', // param base name
-            'OneOfSrCommitmentStatusParameter', // openApiType
+            '\Tzkt\Model\SrCommitmentStatusParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2673,7 +2848,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $predecessor_id,
             'predecessor.id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2682,7 +2857,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $predecessor_hash,
             'predecessor.hash', // param base name
-            'OneOfSrc1HashParameter', // openApiType
+            '\Tzkt\Model\Src1HashParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2715,7 +2890,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2749,27 +2924,27 @@ class SmartRollupsApi
      *
      * Get smart rollup games
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGames'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Bzzhh\Tzkt\Model\SrGame[]
+     * @return \Tzkt\Model\SrGame[]
      */
     public function smartRollupsGetSmartRollupGames($id = null, $rollup = null, $initiator = null, $initiator_commitment_id = null, $initiator_commitment_hash = null, $opponent = null, $opponent_commitment_id = null, $opponent_commitment_hash = null, $first_level = null, $first_time = null, $last_level = null, $last_time = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupGames'][0])
     {
@@ -2782,27 +2957,27 @@ class SmartRollupsApi
      *
      * Get smart rollup games
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGames'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Bzzhh\Tzkt\Model\SrGame[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\SrGame[], HTTP status code, HTTP response headers (array of strings)
      */
     public function smartRollupsGetSmartRollupGamesWithHttpInfo($id = null, $rollup = null, $initiator = null, $initiator_commitment_id = null, $initiator_commitment_hash = null, $opponent = null, $opponent_commitment_id = null, $opponent_commitment_hash = null, $first_level = null, $first_time = null, $last_level = null, $last_time = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupGames'][0])
     {
@@ -2830,6 +3005,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Tzkt\Model\SrGame[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\SrGame[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\SrGame[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -2843,31 +3049,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Bzzhh\Tzkt\Model\SrGame[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Bzzhh\Tzkt\Model\SrGame[]' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Bzzhh\Tzkt\Model\SrGame[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Bzzhh\Tzkt\Model\SrGame[]';
+            $returnType = '\Tzkt\Model\SrGame[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -2882,7 +3082,7 @@ class SmartRollupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Bzzhh\Tzkt\Model\SrGame[]',
+                        '\Tzkt\Model\SrGame[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2897,22 +3097,22 @@ class SmartRollupsApi
      *
      * Get smart rollup games
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2933,22 +3133,22 @@ class SmartRollupsApi
      *
      * Get smart rollup games
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2956,7 +3156,7 @@ class SmartRollupsApi
      */
     public function smartRollupsGetSmartRollupGamesAsyncWithHttpInfo($id = null, $rollup = null, $initiator = null, $initiator_commitment_id = null, $initiator_commitment_hash = null, $opponent = null, $opponent_commitment_id = null, $opponent_commitment_hash = null, $first_level = null, $first_time = null, $last_level = null, $last_time = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupGames'][0])
     {
-        $returnType = '\Bzzhh\Tzkt\Model\SrGame[]';
+        $returnType = '\Tzkt\Model\SrGame[]';
         $request = $this->smartRollupsGetSmartRollupGamesRequest($id, $rollup, $initiator, $initiator_commitment_id, $initiator_commitment_hash, $opponent, $opponent_commitment_id, $opponent_commitment_hash, $first_level, $first_time, $last_level, $last_time, $sort, $offset, $limit, $select, $contentType);
 
         return $this->client
@@ -2998,22 +3198,22 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetSmartRollupGames'
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3056,7 +3256,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3065,7 +3265,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $rollup,
             'rollup', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3074,7 +3274,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $initiator,
             'initiator', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3083,7 +3283,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $initiator_commitment_id,
             'initiatorCommitment.id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3092,7 +3292,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $initiator_commitment_hash,
             'initiatorCommitment.hash', // param base name
-            'OneOfSrc1HashParameter', // openApiType
+            '\Tzkt\Model\Src1HashParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3101,7 +3301,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $opponent,
             'opponent', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3110,7 +3310,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $opponent_commitment_id,
             'opponentCommitment.id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3119,7 +3319,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $opponent_commitment_hash,
             'opponentCommitment.hash', // param base name
-            'OneOfSrc1HashParameter', // openApiType
+            '\Tzkt\Model\Src1HashParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3128,7 +3328,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_level,
             'firstLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3137,7 +3337,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_time,
             'firstTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3146,7 +3346,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_level,
             'lastLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3155,7 +3355,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_time,
             'lastTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3164,7 +3364,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $sort,
             'sort', // param base name
-            'OneOfSortParameter', // openApiType
+            '\Tzkt\Model\SortParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3173,7 +3373,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $offset,
             'offset', // param base name
-            'OneOfOffsetParameter', // openApiType
+            '\Tzkt\Model\OffsetParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3191,7 +3391,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $select,
             'select', // param base name
-            'OneOfSelectionParameter', // openApiType
+            '\Tzkt\Model\SelectionParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3224,7 +3424,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3258,21 +3458,21 @@ class SmartRollupsApi
      *
      * Get smart rollup games count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGamesCount'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -3287,21 +3487,21 @@ class SmartRollupsApi
      *
      * Get smart rollup games count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGamesCount'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3331,6 +3531,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('int' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('int' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'int', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -3344,31 +3575,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('int' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('int' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'int', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
             $returnType = 'int';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -3398,18 +3623,18 @@ class SmartRollupsApi
      *
      * Get smart rollup games count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGamesCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3430,18 +3655,18 @@ class SmartRollupsApi
      *
      * Get smart rollup games count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGamesCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3491,18 +3716,18 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetSmartRollupGamesCount'
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  OperationsGetSmartRollupPublishOpsCommitmentHashParameter $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $rollup Filter by smart rollup.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $initiator Filter by initiator (who found a wrong commitment and started the refutation game).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $initiator_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $initiator_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $opponent Filter by opponent (who was accused in publishing a wrong commitment).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $opponent_commitment_id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter|null $opponent_commitment_hash Filter by commitment hash.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupGamesCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3535,7 +3760,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3544,7 +3769,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $rollup,
             'rollup', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3553,7 +3778,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $initiator,
             'initiator', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3562,7 +3787,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $initiator_commitment_id,
             'initiatorCommitment.id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3571,7 +3796,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $initiator_commitment_hash,
             'initiatorCommitment.hash', // param base name
-            'OneOfSrc1HashParameter', // openApiType
+            '\Tzkt\Model\Src1HashParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3580,7 +3805,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $opponent,
             'opponent', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3589,7 +3814,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $opponent_commitment_id,
             'opponentCommitment.id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3598,7 +3823,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $opponent_commitment_hash,
             'opponentCommitment.hash', // param base name
-            'OneOfSrc1HashParameter', // openApiType
+            '\Tzkt\Model\Src1HashParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3607,7 +3832,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_level,
             'firstLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3616,7 +3841,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_time,
             'firstTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3625,7 +3850,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_level,
             'lastLevel', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3634,7 +3859,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_time,
             'lastTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3667,7 +3892,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3701,18 +3926,18 @@ class SmartRollupsApi
      *
      * Get smart rollup stakers
      *
-     * @param  AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupStakersBondStatusParameter $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupStakersBondStatusParameter|null $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupStakers'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Bzzhh\Tzkt\Model\SrStaker[]
+     * @return \Tzkt\Model\SrStaker[]
      */
     public function smartRollupsGetSmartRollupStakers($address, $id = null, $bond_status = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupStakers'][0])
     {
@@ -3725,18 +3950,18 @@ class SmartRollupsApi
      *
      * Get smart rollup stakers
      *
-     * @param  AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupStakersBondStatusParameter $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupStakersBondStatusParameter|null $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupStakers'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Bzzhh\Tzkt\Model\SrStaker[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\SrStaker[], HTTP status code, HTTP response headers (array of strings)
      */
     public function smartRollupsGetSmartRollupStakersWithHttpInfo($address, $id = null, $bond_status = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupStakers'][0])
     {
@@ -3764,6 +3989,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Tzkt\Model\SrStaker[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\SrStaker[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\SrStaker[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -3777,31 +4033,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Bzzhh\Tzkt\Model\SrStaker[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Bzzhh\Tzkt\Model\SrStaker[]' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Bzzhh\Tzkt\Model\SrStaker[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Bzzhh\Tzkt\Model\SrStaker[]';
+            $returnType = '\Tzkt\Model\SrStaker[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -3816,7 +4066,7 @@ class SmartRollupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Bzzhh\Tzkt\Model\SrStaker[]',
+                        '\Tzkt\Model\SrStaker[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3831,13 +4081,13 @@ class SmartRollupsApi
      *
      * Get smart rollup stakers
      *
-     * @param  AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupStakersBondStatusParameter $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupStakersBondStatusParameter|null $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupStakers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3858,13 +4108,13 @@ class SmartRollupsApi
      *
      * Get smart rollup stakers
      *
-     * @param  AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupStakersBondStatusParameter $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupStakersBondStatusParameter|null $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupStakers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3872,7 +4122,7 @@ class SmartRollupsApi
      */
     public function smartRollupsGetSmartRollupStakersAsyncWithHttpInfo($address, $id = null, $bond_status = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollupStakers'][0])
     {
-        $returnType = '\Bzzhh\Tzkt\Model\SrStaker[]';
+        $returnType = '\Tzkt\Model\SrStaker[]';
         $request = $this->smartRollupsGetSmartRollupStakersRequest($address, $id, $bond_status, $sort, $offset, $limit, $select, $contentType);
 
         return $this->client
@@ -3914,13 +4164,13 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetSmartRollupStakers'
      *
-     * @param  AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  SmartRollupsGetSmartRollupStakersBondStatusParameter $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AddressParameter $address Filter by smart rollup staker address.   Click on the parameter to expand more details. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\SmartRollupsGetSmartRollupStakersBondStatusParameter|null $bond_status Filter by staker bond status (&#x60;active&#x60;, &#x60;returned&#x60;, or &#x60;lost&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupStakers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3960,7 +4210,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3969,7 +4219,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $bond_status,
             'bondStatus', // param base name
-            'OneOfSrBondStatusParameter', // openApiType
+            '\Tzkt\Model\SrBondStatusParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3978,7 +4228,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $sort,
             'sort', // param base name
-            'OneOfSortParameter', // openApiType
+            '\Tzkt\Model\SortParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3987,7 +4237,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $offset,
             'offset', // param base name
-            'OneOfOffsetParameter', // openApiType
+            '\Tzkt\Model\OffsetParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4005,7 +4255,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $select,
             'select', // param base name
-            'OneOfSelectionParameter', // openApiType
+            '\Tzkt\Model\SelectionParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4046,7 +4296,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4080,22 +4330,22 @@ class SmartRollupsApi
      *
      * Get smart rollups
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollups'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Bzzhh\Tzkt\Model\SmartRollup[]
+     * @return \Tzkt\Model\SmartRollup[]
      */
     public function smartRollupsGetSmartRollups($id = null, $address = null, $creator = null, $first_activity = null, $first_activity_time = null, $last_activity = null, $last_activity_time = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollups'][0])
     {
@@ -4108,22 +4358,22 @@ class SmartRollupsApi
      *
      * Get smart rollups
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollups'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Bzzhh\Tzkt\Model\SmartRollup[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\SmartRollup[], HTTP status code, HTTP response headers (array of strings)
      */
     public function smartRollupsGetSmartRollupsWithHttpInfo($id = null, $address = null, $creator = null, $first_activity = null, $first_activity_time = null, $last_activity = null, $last_activity_time = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollups'][0])
     {
@@ -4151,6 +4401,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Tzkt\Model\SmartRollup[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\SmartRollup[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\SmartRollup[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -4164,31 +4445,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Bzzhh\Tzkt\Model\SmartRollup[]' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Bzzhh\Tzkt\Model\SmartRollup[]' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Bzzhh\Tzkt\Model\SmartRollup[]', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Bzzhh\Tzkt\Model\SmartRollup[]';
+            $returnType = '\Tzkt\Model\SmartRollup[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -4203,7 +4478,7 @@ class SmartRollupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Bzzhh\Tzkt\Model\SmartRollup[]',
+                        '\Tzkt\Model\SmartRollup[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4218,17 +4493,17 @@ class SmartRollupsApi
      *
      * Get smart rollups
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollups'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4249,17 +4524,17 @@ class SmartRollupsApi
      *
      * Get smart rollups
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollups'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4267,7 +4542,7 @@ class SmartRollupsApi
      */
     public function smartRollupsGetSmartRollupsAsyncWithHttpInfo($id = null, $address = null, $creator = null, $first_activity = null, $first_activity_time = null, $last_activity = null, $last_activity_time = null, $sort = null, $offset = null, $limit = null, $select = null, string $contentType = self::contentTypes['smartRollupsGetSmartRollups'][0])
     {
-        $returnType = '\Bzzhh\Tzkt\Model\SmartRollup[]';
+        $returnType = '\Tzkt\Model\SmartRollup[]';
         $request = $this->smartRollupsGetSmartRollupsRequest($id, $address, $creator, $first_activity, $first_activity_time, $last_activity, $last_activity_time, $sort, $offset, $limit, $select, $contentType);
 
         return $this->client
@@ -4309,17 +4584,17 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetSmartRollups'
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetSortParameter $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetOffsetParameter $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
-     * @param  int $limit Maximum number of items to return. (optional)
-     * @param  BigMapsGetBigMapKeysSelectParameter $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollups'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4357,7 +4632,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4366,7 +4641,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $address,
             'address', // param base name
-            'OneOfAddressParameter', // openApiType
+            '\Tzkt\Model\AddressParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4375,7 +4650,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $creator,
             'creator', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4384,7 +4659,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_activity,
             'firstActivity', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4393,7 +4668,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_activity_time,
             'firstActivityTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4402,7 +4677,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_activity,
             'lastActivity', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4411,7 +4686,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_activity_time,
             'lastActivityTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4420,7 +4695,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $sort,
             'sort', // param base name
-            'OneOfSortParameter', // openApiType
+            '\Tzkt\Model\SortParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4429,7 +4704,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $offset,
             'offset', // param base name
-            'OneOfOffsetParameter', // openApiType
+            '\Tzkt\Model\OffsetParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4447,7 +4722,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $select,
             'select', // param base name
-            'OneOfSelectionParameter', // openApiType
+            '\Tzkt\Model\SelectionParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4480,7 +4755,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4514,16 +4789,16 @@ class SmartRollupsApi
      *
      * Get smart rollups count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupsCount'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return int
      */
@@ -4538,16 +4813,16 @@ class SmartRollupsApi
      *
      * Get smart rollups count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupsCount'] to see the possible values for this operation
      *
-     * @throws \Bzzhh\Tzkt\ApiException on non-2xx response
+     * @throws \Tzkt\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4577,6 +4852,37 @@ class SmartRollupsApi
 
             $statusCode = $response->getStatusCode();
 
+
+            switch($statusCode) {
+                case 200:
+                    if ('int' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('int' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'int', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
@@ -4590,31 +4896,25 @@ class SmartRollupsApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('int' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('int' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, 'int', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
             $returnType = 'int';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
                 if ($returnType !== 'string') {
-                    $content = json_decode($content);
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
                 }
             }
 
@@ -4644,13 +4944,13 @@ class SmartRollupsApi
      *
      * Get smart rollups count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupsCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4671,13 +4971,13 @@ class SmartRollupsApi
      *
      * Get smart rollups count
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupsCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4727,13 +5027,13 @@ class SmartRollupsApi
     /**
      * Create request for operation 'smartRollupsGetSmartRollupsCount'
      *
-     * @param  AccountsGetIdParameter $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetAddressParameter $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetDelegateParameter $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  AccountsGetIdParameter $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  BigMapsGetBigMapKeysFirstTimeParameter $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetAddressParameter|null $address Filter by smart rollup address.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $creator Filter by smart rollup creator.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_activity Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_activity_time Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_activity Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_activity_time Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['smartRollupsGetSmartRollupsCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4761,7 +5061,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4770,7 +5070,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $address,
             'address', // param base name
-            'OneOfAddressParameter', // openApiType
+            '\Tzkt\Model\AddressParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4779,7 +5079,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $creator,
             'creator', // param base name
-            'OneOfAccountParameter', // openApiType
+            '\Tzkt\Model\AccountParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4788,7 +5088,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_activity,
             'firstActivity', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4797,7 +5097,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $first_activity_time,
             'firstActivityTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4806,7 +5106,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_activity,
             'lastActivity', // param base name
-            'OneOfInt32Parameter', // openApiType
+            '\Tzkt\Model\Int32Parameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4815,7 +5115,7 @@ class SmartRollupsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $last_activity_time,
             'lastActivityTime', // param base name
-            'OneOfTimestampParameter', // openApiType
+            '\Tzkt\Model\TimestampParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4848,7 +5148,7 @@ class SmartRollupsApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

@@ -1,4 +1,4 @@
-# Bzzhh\Tzkt\RewardsApi
+# Tzkt\RewardsApi
 
 All URIs are relative to https://api.tzkt.io, except if the operation defines another base path.
 
@@ -15,7 +15,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `rewardsGetBakerRewards()`
 
 ```php
-rewardsGetBakerRewards($address, $cycle, $select, $sort, $offset, $limit, $quote): \Bzzhh\Tzkt\Model\BakerRewards[]
+rewardsGetBakerRewards($address, $cycle, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\BakerRewards[]
 ```
 
 Get baker cycle rewards
@@ -30,18 +30,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\RewardsApi(
+$apiInstance = new Tzkt\Api\RewardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Baker address.
-$cycle = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters rewards by cycle.
-$select = new \Bzzhh\Tzkt\Model\AccountsGetSelectParameter(); // AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts cycle rewards by specified field. Supported fields: `cycle` (default, desc).
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters rewards by cycle.
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts cycle rewards by specified field. Supported fields: `cycle` (default, desc).
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Bzzhh\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->rewardsGetBakerRewards($address, $cycle, $select, $sort, $offset, $limit, $quote);
@@ -56,16 +56,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | **string**| Baker address. | |
-| **cycle** | [**AccountsGetIdParameter**](../Model/.md)| Filters rewards by cycle. | [optional] |
-| **select** | [**AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters rewards by cycle. | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\BakerRewards[]**](../Model/BakerRewards.md)
+[**\Tzkt\Model\BakerRewards[]**](../Model/BakerRewards.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\RewardsApi(
+$apiInstance = new Tzkt\Api\RewardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -139,7 +139,7 @@ No authorization required
 ## `rewardsGetDelegatorRewards()`
 
 ```php
-rewardsGetDelegatorRewards($address, $cycle, $select, $sort, $offset, $limit, $quote): \Bzzhh\Tzkt\Model\DelegatorRewards[]
+rewardsGetDelegatorRewards($address, $cycle, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\DelegatorRewards[]
 ```
 
 Get delegator cycle rewards
@@ -154,18 +154,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\RewardsApi(
+$apiInstance = new Tzkt\Api\RewardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Delegator address.
-$cycle = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters rewards by cycle.
-$select = new \Bzzhh\Tzkt\Model\AccountsGetSelectParameter(); // AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts cycle rewards by specified field. Supported fields: `cycle` (default, desc).
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters rewards by cycle.
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts cycle rewards by specified field. Supported fields: `cycle` (default, desc).
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Bzzhh\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->rewardsGetDelegatorRewards($address, $cycle, $select, $sort, $offset, $limit, $quote);
@@ -180,16 +180,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | **string**| Delegator address. | |
-| **cycle** | [**AccountsGetIdParameter**](../Model/.md)| Filters rewards by cycle. | [optional] |
-| **select** | [**AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters rewards by cycle. | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\DelegatorRewards[]**](../Model/DelegatorRewards.md)
+[**\Tzkt\Model\DelegatorRewards[]**](../Model/DelegatorRewards.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\RewardsApi(
+$apiInstance = new Tzkt\Api\RewardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -263,7 +263,7 @@ No authorization required
 ## `rewardsGetRewardSplit()`
 
 ```php
-rewardsGetRewardSplit($baker, $cycle, $offset, $limit): \Bzzhh\Tzkt\Model\RewardSplit
+rewardsGetRewardSplit($baker, $cycle, $offset, $limit): \Tzkt\Model\RewardSplit
 ```
 
 Get reward split
@@ -278,7 +278,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\RewardsApi(
+$apiInstance = new Tzkt\Api\RewardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -307,7 +307,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\RewardSplit**](../Model/RewardSplit.md)
+[**\Tzkt\Model\RewardSplit**](../Model/RewardSplit.md)
 
 ### Authorization
 
@@ -325,7 +325,7 @@ No authorization required
 ## `rewardsGetRewardSplitDelegator()`
 
 ```php
-rewardsGetRewardSplitDelegator($baker, $cycle, $delegator): \Bzzhh\Tzkt\Model\SplitDelegator
+rewardsGetRewardSplitDelegator($baker, $cycle, $delegator): \Tzkt\Model\SplitDelegator
 ```
 
 Get reward split delegator
@@ -340,7 +340,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\RewardsApi(
+$apiInstance = new Tzkt\Api\RewardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -367,7 +367,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\SplitDelegator**](../Model/SplitDelegator.md)
+[**\Tzkt\Model\SplitDelegator**](../Model/SplitDelegator.md)
 
 ### Authorization
 

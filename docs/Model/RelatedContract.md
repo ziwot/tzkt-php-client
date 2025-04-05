@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **alias** | **string** | Name of the project behind the contract or contract description | [optional]
 **address** | **string** | Public key hash of the contract | [optional]
 **balance** | **int** | Contract balance (micro tez) | [optional]
-**delegate** | [**\Bzzhh\Tzkt\Model\RelatedContractDelegate**](RelatedContractDelegate.md) |  | [optional]
+**delegate** | [**\Tzkt\Model\RelatedContractDelegate**](RelatedContractDelegate.md) |  | [optional]
 **creation_level** | **int** | Height of the block where the contract was created | [optional]
 **creation_time** | **\DateTime** | Datetime of the block where the contract was created (ISO 8601, e.g. &#x60;2020-02-20T02:40:57Z&#x60;) | [optional]
 

@@ -1,4 +1,4 @@
-# Bzzhh\Tzkt\DelegatesApi
+# Tzkt\DelegatesApi
 
 All URIs are relative to https://api.tzkt.io, except if the operation defines another base path.
 
@@ -12,7 +12,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `delegatesGet()`
 
 ```php
-delegatesGet($active, $last_activity, $select, $sort, $offset, $limit): \Bzzhh\Tzkt\Model\Delegate[]
+delegatesGet($active, $last_activity, $select, $sort, $offset, $limit): \Tzkt\Model\Delegate[]
 ```
 
 Get delegates
@@ -27,16 +27,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\DelegatesApi(
+$apiInstance = new Tzkt\Api\DelegatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$active = new \Bzzhh\Tzkt\Model\AccountsGetStakedParameter(); // AccountsGetStakedParameter | Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates)
-$last_activity = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters delegates by last activity level (where the delegate was updated)
-$select = new \Bzzhh\Tzkt\Model\AccountsGetSelectParameter(); // AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `id` (default), `activationLevel`, `deactivationLevel`, `stakingBalance`, `balance`, `numDelegators`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$active = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates)
+$last_activity = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters delegates by last activity level (where the delegate was updated)
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `id` (default), `activationLevel`, `deactivationLevel`, `stakingBalance`, `balance`, `numDelegators`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
@@ -51,16 +51,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **active** | [**AccountsGetStakedParameter**](../Model/.md)| Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates) | [optional] |
-| **last_activity** | [**AccountsGetIdParameter**](../Model/.md)| Filters delegates by last activity level (where the delegate was updated) | [optional] |
-| **select** | [**AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;activationLevel&#x60;, &#x60;deactivationLevel&#x60;, &#x60;stakingBalance&#x60;, &#x60;balance&#x60;, &#x60;numDelegators&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **active** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates) | [optional] |
+| **last_activity** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters delegates by last activity level (where the delegate was updated) | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;activationLevel&#x60;, &#x60;deactivationLevel&#x60;, &#x60;stakingBalance&#x60;, &#x60;balance&#x60;, &#x60;numDelegators&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Delegate[]**](../Model/Delegate.md)
+[**\Tzkt\Model\Delegate[]**](../Model/Delegate.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ No authorization required
 ## `delegatesGetByAddress()`
 
 ```php
-delegatesGetByAddress($address): \Bzzhh\Tzkt\Model\Delegate
+delegatesGetByAddress($address): \Tzkt\Model\Delegate
 ```
 
 Get delegate by address
@@ -93,7 +93,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\DelegatesApi(
+$apiInstance = new Tzkt\Api\DelegatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -116,7 +116,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Delegate**](../Model/Delegate.md)
+[**\Tzkt\Model\Delegate**](../Model/Delegate.md)
 
 ### Authorization
 
@@ -149,12 +149,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\DelegatesApi(
+$apiInstance = new Tzkt\Api\DelegatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$active = new \Bzzhh\Tzkt\Model\AccountsGetStakedParameter(); // AccountsGetStakedParameter | Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates)
+$active = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates)
 
 try {
     $result = $apiInstance->delegatesGetCount($active);
@@ -168,7 +168,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **active** | [**AccountsGetStakedParameter**](../Model/.md)| Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates) | [optional] |
+| **active** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates) | [optional] |
 
 ### Return type
 

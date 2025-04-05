@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **value** | **mixed** | Constant value (either micheline, michelson or bytes, depending on the &#x60;format&#x60; parameter) | [optional]
 **size** | **int** | Constant size in bytes | [optional]
 **refs** | **int** | Number of contracts referencing this constant | [optional]
-**creator** | [**\Bzzhh\Tzkt\Model\ConstantCreator**](ConstantCreator.md) |  | [optional]
+**creator** | [**\Tzkt\Model\ConstantCreator**](ConstantCreator.md) |  | [optional]
 **creation_level** | **int** | Level of the first block baked with this software | [optional]
 **creation_time** | **\DateTime** | Datetime of the first block baked with this software | [optional]
 **extras** | **mixed** | Off-chain extras | [optional]

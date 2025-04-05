@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**prim** | [**\Bzzhh\Tzkt\Model\PrimType**](PrimType.md) |  | [optional]
-**args** | [**\Bzzhh\Tzkt\Model\IMicheline[]**](IMicheline.md) |  | [optional]
-**annots** | [**\Bzzhh\Tzkt\Model\IAnnotation[]**](IAnnotation.md) |  | [optional]
+**prim** | [**\Tzkt\Model\PrimType**](PrimType.md) |  | [optional]
+**args** | [**\Tzkt\Model\IMicheline[]**](IMicheline.md) |  | [optional]
+**annots** | [**\Tzkt\Model\IAnnotation[]**](IAnnotation.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

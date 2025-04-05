@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **string** | Type of the account | [optional]
 **address** | **string** | Address of the account | [optional]
 **alias** | **string** | Name of the account | [optional]
-**creator** | [**OneOfAlias**](OneOfAlias.md) | Information about the account, which has deployed the rollup to the blockchain | [optional]
+**creator** | [**\Tzkt\Model\SmartRollupAllOfCreator**](SmartRollupAllOfCreator.md) |  | [optional]
 **pvm_kind** | **string** | PVM kind: &#x60;arith&#x60; or &#x60;wasm&#x60; | [optional]
 **genesis_commitment** | **string** | Genesis commitment hash | [optional]
 **last_commitment** | **string** | The most recent cemented commitment hash | [optional]

@@ -1,4 +1,4 @@
-# Bzzhh\Tzkt\ConstantsApi
+# Tzkt\ConstantsApi
 
 All URIs are relative to https://api.tzkt.io, except if the operation defines another base path.
 
@@ -12,7 +12,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `constantsGet()`
 
 ```php
-constantsGet($address, $creation_level, $creation_time, $creator, $refs, $size, $select, $sort, $offset, $limit, $format): \Bzzhh\Tzkt\Model\Constant[]
+constantsGet($address, $creation_level, $creation_time, $creator, $refs, $size, $select, $sort, $offset, $limit, $format): \Tzkt\Model\Constant[]
 ```
 
 Get global constants
@@ -27,20 +27,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ConstantsApi(
+$apiInstance = new Tzkt\Api\ConstantsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$address = new \Bzzhh\Tzkt\Model\BigMapsGetBigMapKeysHashParameter(); // BigMapsGetBigMapKeysHashParameter | Filters constants by global address (starts with `expr..`).
-$creation_level = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters constants by creation level.
-$creation_time = new \Bzzhh\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // BigMapsGetBigMapKeysFirstTimeParameter | Filters constants by creation time.
-$creator = new \Bzzhh\Tzkt\Model\AccountsGetDelegateParameter(); // AccountsGetDelegateParameter | Filters constants by creator.
-$refs = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters constants by number of refs.
-$size = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters constants by size in bytes.
-$select = new \Bzzhh\Tzkt\Model\AccountsGetSelectParameter(); // AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `id` (default), `creationLevel`, `size`, `refs`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$address = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysHashParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysHashParameter | Filters constants by global address (starts with `expr..`).
+$creation_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters constants by creation level.
+$creation_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filters constants by creation time.
+$creator = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters constants by creator.
+$refs = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters constants by number of refs.
+$size = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters constants by size in bytes.
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `id` (default), `creationLevel`, `size`, `refs`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 $format = 0; // int | Constant value format (`0` - micheline, `1` - michelson, `2` - bytes (base64))
 
@@ -56,21 +56,21 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **address** | [**BigMapsGetBigMapKeysHashParameter**](../Model/.md)| Filters constants by global address (starts with &#x60;expr..&#x60;). | [optional] |
-| **creation_level** | [**AccountsGetIdParameter**](../Model/.md)| Filters constants by creation level. | [optional] |
-| **creation_time** | [**BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filters constants by creation time. | [optional] |
-| **creator** | [**AccountsGetDelegateParameter**](../Model/.md)| Filters constants by creator. | [optional] |
-| **refs** | [**AccountsGetIdParameter**](../Model/.md)| Filters constants by number of refs. | [optional] |
-| **size** | [**AccountsGetIdParameter**](../Model/.md)| Filters constants by size in bytes. | [optional] |
-| **select** | [**AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;creationLevel&#x60;, &#x60;size&#x60;, &#x60;refs&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **address** | [**\Tzkt\Model\BigMapsGetBigMapKeysHashParameter**](../Model/.md)| Filters constants by global address (starts with &#x60;expr..&#x60;). | [optional] |
+| **creation_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters constants by creation level. | [optional] |
+| **creation_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filters constants by creation time. | [optional] |
+| **creator** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters constants by creator. | [optional] |
+| **refs** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters constants by number of refs. | [optional] |
+| **size** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters constants by size in bytes. | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;creationLevel&#x60;, &#x60;size&#x60;, &#x60;refs&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 | **format** | **int**| Constant value format (&#x60;0&#x60; - micheline, &#x60;1&#x60; - michelson, &#x60;2&#x60; - bytes (base64)) | [optional] [default to 0] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Constant[]**](../Model/Constant.md)
+[**\Tzkt\Model\Constant[]**](../Model/Constant.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ No authorization required
 ## `constantsGetByAddress()`
 
 ```php
-constantsGetByAddress($address, $format): \Bzzhh\Tzkt\Model\Constant
+constantsGetByAddress($address, $format): \Tzkt\Model\Constant
 ```
 
 Get global constant by address
@@ -103,7 +103,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ConstantsApi(
+$apiInstance = new Tzkt\Api\ConstantsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -128,7 +128,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Constant**](../Model/Constant.md)
+[**\Tzkt\Model\Constant**](../Model/Constant.md)
 
 ### Authorization
 
@@ -161,12 +161,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\ConstantsApi(
+$apiInstance = new Tzkt\Api\ConstantsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$refs = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters constants by number of refs.
+$refs = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters constants by number of refs.
 
 try {
     $result = $apiInstance->constantsGetCount($refs);
@@ -180,7 +180,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **refs** | [**AccountsGetIdParameter**](../Model/.md)| Filters constants by number of refs. | [optional] |
+| **refs** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters constants by number of refs. | [optional] |
 
 ### Return type
 

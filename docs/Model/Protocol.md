@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **first_cycle** | **int** | Index of the first cycle started with the protocol | [optional]
 **first_cycle_level** | **int** | Level of the first block of the first cycle started with the protocol | [optional]
 **last_level** | **int** | Block height where the protocol ends. &#x60;null&#x60; if the protocol is active | [optional]
-**constants** | [**\Bzzhh\Tzkt\Model\ProtocolConstants**](ProtocolConstants.md) |  | [optional]
+**constants** | [**\Tzkt\Model\ProtocolConstants**](ProtocolConstants.md) |  | [optional]
 **extras** | **mixed** | Off-chain extras | [optional]
 **metadata** | **mixed** | [DEPRECATED] | [optional]
 

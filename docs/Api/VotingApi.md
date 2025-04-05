@@ -1,4 +1,4 @@
-# Bzzhh\Tzkt\VotingApi
+# Tzkt\VotingApi
 
 All URIs are relative to https://api.tzkt.io, except if the operation defines another base path.
 
@@ -23,7 +23,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `votingGetCurrentEpoch()`
 
 ```php
-votingGetCurrentEpoch(): \Bzzhh\Tzkt\Model\VotingEpoch
+votingGetCurrentEpoch(): \Tzkt\Model\VotingEpoch
 ```
 
 Get current voting epoch
@@ -38,7 +38,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VotingEpoch**](../Model/VotingEpoch.md)
+[**\Tzkt\Model\VotingEpoch**](../Model/VotingEpoch.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ No authorization required
 ## `votingGetCurrentPeriod()`
 
 ```php
-votingGetCurrentPeriod(): \Bzzhh\Tzkt\Model\VotingPeriod
+votingGetCurrentPeriod(): \Tzkt\Model\VotingPeriod
 ```
 
 Get current voting period
@@ -91,7 +91,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -111,7 +111,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VotingPeriod**](../Model/VotingPeriod.md)
+[**\Tzkt\Model\VotingPeriod**](../Model/VotingPeriod.md)
 
 ### Authorization
 
@@ -129,7 +129,7 @@ No authorization required
 ## `votingGetEpoch()`
 
 ```php
-votingGetEpoch($index): \Bzzhh\Tzkt\Model\VotingEpoch
+votingGetEpoch($index): \Tzkt\Model\VotingEpoch
 ```
 
 Get voting epoch by index
@@ -144,7 +144,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -167,7 +167,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VotingEpoch**](../Model/VotingEpoch.md)
+[**\Tzkt\Model\VotingEpoch**](../Model/VotingEpoch.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ No authorization required
 ## `votingGetEpochs()`
 
 ```php
-votingGetEpochs($sort, $offset, $limit): \Bzzhh\Tzkt\Model\VotingEpoch[]
+votingGetEpochs($status, $sort, $offset, $limit): \Tzkt\Model\VotingEpoch[]
 ```
 
 Get voting epochs
@@ -200,17 +200,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts voting epochs by specified field. Supported fields: `id` (default).
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$status = new \Tzkt\Model\\Tzkt\Model\VotingGetEpochsStatusParameter(); // \Tzkt\Model\VotingGetEpochsStatusParameter | Filter by voting epoch status (`no_proposals`, `voting`, `completed`, `failed`).
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts voting epochs by specified field. Supported fields: `index` (default).
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
-    $result = $apiInstance->votingGetEpochs($sort, $offset, $limit);
+    $result = $apiInstance->votingGetEpochs($status, $sort, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VotingApi->votingGetEpochs: ', $e->getMessage(), PHP_EOL;
@@ -221,13 +222,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts voting epochs by specified field. Supported fields: &#x60;id&#x60; (default). | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **status** | [**\Tzkt\Model\VotingGetEpochsStatusParameter**](../Model/.md)| Filter by voting epoch status (&#x60;no_proposals&#x60;, &#x60;voting&#x60;, &#x60;completed&#x60;, &#x60;failed&#x60;). | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts voting epochs by specified field. Supported fields: &#x60;index&#x60; (default). | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VotingEpoch[]**](../Model/VotingEpoch.md)
+[**\Tzkt\Model\VotingEpoch[]**](../Model/VotingEpoch.md)
 
 ### Authorization
 
@@ -245,7 +247,7 @@ No authorization required
 ## `votingGetLatestVoting()`
 
 ```php
-votingGetLatestVoting(): \Bzzhh\Tzkt\Model\VotingEpoch
+votingGetLatestVoting(): \Tzkt\Model\VotingEpoch
 ```
 
 Get latest voting
@@ -260,7 +262,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -280,7 +282,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VotingEpoch**](../Model/VotingEpoch.md)
+[**\Tzkt\Model\VotingEpoch**](../Model/VotingEpoch.md)
 
 ### Authorization
 
@@ -298,7 +300,7 @@ No authorization required
 ## `votingGetPeriod()`
 
 ```php
-votingGetPeriod($index): \Bzzhh\Tzkt\Model\VotingPeriod
+votingGetPeriod($index): \Tzkt\Model\VotingPeriod
 ```
 
 Get voting period by index
@@ -313,7 +315,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -336,7 +338,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VotingPeriod**](../Model/VotingPeriod.md)
+[**\Tzkt\Model\VotingPeriod**](../Model/VotingPeriod.md)
 
 ### Authorization
 
@@ -354,7 +356,7 @@ No authorization required
 ## `votingGetPeriodVoter()`
 
 ```php
-votingGetPeriodVoter($index, $address): \Bzzhh\Tzkt\Model\VoterSnapshot
+votingGetPeriodVoter($index, $address): \Tzkt\Model\VoterSnapshot
 ```
 
 Get period voter
@@ -369,7 +371,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -394,7 +396,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VoterSnapshot**](../Model/VoterSnapshot.md)
+[**\Tzkt\Model\VoterSnapshot**](../Model/VoterSnapshot.md)
 
 ### Authorization
 
@@ -412,7 +414,7 @@ No authorization required
 ## `votingGetPeriodVoter2()`
 
 ```php
-votingGetPeriodVoter2($address): \Bzzhh\Tzkt\Model\VoterSnapshot
+votingGetPeriodVoter2($address): \Tzkt\Model\VoterSnapshot
 ```
 
 Get current period voter
@@ -427,7 +429,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -450,7 +452,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VoterSnapshot**](../Model/VoterSnapshot.md)
+[**\Tzkt\Model\VoterSnapshot**](../Model/VoterSnapshot.md)
 
 ### Authorization
 
@@ -468,7 +470,7 @@ No authorization required
 ## `votingGetPeriodVoters()`
 
 ```php
-votingGetPeriodVoters($index, $status, $sort, $offset, $limit): \Bzzhh\Tzkt\Model\VoterSnapshot[]
+votingGetPeriodVoters($index, $status, $sort, $offset, $limit): \Tzkt\Model\VoterSnapshot[]
 ```
 
 Get period voters
@@ -483,15 +485,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $index = 56; // int | Voting period index starting from zero
-$status = new \Bzzhh\Tzkt\Model\VotingGetPeriodVotersStatusParameter(); // VotingGetPeriodVotersStatusParameter | Filters voters by status (`none`, `upvoted`, `voted_yay`, `voted_nay`, `voted_pass`)
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts voters by specified field. Supported fields: `id` (default), `votingPower`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$status = new \Tzkt\Model\\Tzkt\Model\VotingGetPeriodVotersStatusParameter(); // \Tzkt\Model\VotingGetPeriodVotersStatusParameter | Filters voters by status (`none`, `upvoted`, `voted_yay`, `voted_nay`, `voted_pass`)
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts voters by specified field. Supported fields: `id` (default), `votingPower`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
@@ -507,14 +509,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **index** | **int**| Voting period index starting from zero | |
-| **status** | [**VotingGetPeriodVotersStatusParameter**](../Model/.md)| Filters voters by status (&#x60;none&#x60;, &#x60;upvoted&#x60;, &#x60;voted_yay&#x60;, &#x60;voted_nay&#x60;, &#x60;voted_pass&#x60;) | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts voters by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;votingPower&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **status** | [**\Tzkt\Model\VotingGetPeriodVotersStatusParameter**](../Model/.md)| Filters voters by status (&#x60;none&#x60;, &#x60;upvoted&#x60;, &#x60;voted_yay&#x60;, &#x60;voted_nay&#x60;, &#x60;voted_pass&#x60;) | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts voters by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;votingPower&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VoterSnapshot[]**](../Model/VoterSnapshot.md)
+[**\Tzkt\Model\VoterSnapshot[]**](../Model/VoterSnapshot.md)
 
 ### Authorization
 
@@ -532,7 +534,7 @@ No authorization required
 ## `votingGetPeriodVoters2()`
 
 ```php
-votingGetPeriodVoters2($status, $sort, $offset, $limit): \Bzzhh\Tzkt\Model\VoterSnapshot[]
+votingGetPeriodVoters2($status, $sort, $offset, $limit): \Tzkt\Model\VoterSnapshot[]
 ```
 
 Get current period voters
@@ -547,14 +549,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$status = new \Bzzhh\Tzkt\Model\VotingGetPeriodVotersStatusParameter(); // VotingGetPeriodVotersStatusParameter | Filters voters by status (`none`, `upvoted`, `voted_yay`, `voted_nay`, `voted_pass`)
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts voters by specified field. Supported fields: `id` (default), `votingPower`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$status = new \Tzkt\Model\\Tzkt\Model\VotingGetPeriodVotersStatusParameter(); // \Tzkt\Model\VotingGetPeriodVotersStatusParameter | Filters voters by status (`none`, `upvoted`, `voted_yay`, `voted_nay`, `voted_pass`)
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts voters by specified field. Supported fields: `id` (default), `votingPower`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
@@ -569,14 +571,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **status** | [**VotingGetPeriodVotersStatusParameter**](../Model/.md)| Filters voters by status (&#x60;none&#x60;, &#x60;upvoted&#x60;, &#x60;voted_yay&#x60;, &#x60;voted_nay&#x60;, &#x60;voted_pass&#x60;) | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts voters by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;votingPower&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **status** | [**\Tzkt\Model\VotingGetPeriodVotersStatusParameter**](../Model/.md)| Filters voters by status (&#x60;none&#x60;, &#x60;upvoted&#x60;, &#x60;voted_yay&#x60;, &#x60;voted_nay&#x60;, &#x60;voted_pass&#x60;) | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts voters by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;votingPower&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VoterSnapshot[]**](../Model/VoterSnapshot.md)
+[**\Tzkt\Model\VoterSnapshot[]**](../Model/VoterSnapshot.md)
 
 ### Authorization
 
@@ -594,7 +596,7 @@ No authorization required
 ## `votingGetPeriods()`
 
 ```php
-votingGetPeriods($first_level, $last_level, $select, $sort, $offset, $limit): \Bzzhh\Tzkt\Model\VotingPeriod[]
+votingGetPeriods($first_level, $last_level, $epoch, $select, $sort, $offset, $limit): \Tzkt\Model\VotingPeriod[]
 ```
 
 Get voting periods
@@ -609,20 +611,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$first_level = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filter by level of the first block of the period.
-$last_level = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filter by level of the last block of the period.
-$select = new \Bzzhh\Tzkt\Model\AccountsGetSelectParameter(); // AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts voting periods by specified field. Supported fields: `id` (default).
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the first block of the period.
+$last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the last block of the period.
+$epoch = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by voting epoch
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts voting periods by specified field. Supported fields: `id` (default).
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
-    $result = $apiInstance->votingGetPeriods($first_level, $last_level, $select, $sort, $offset, $limit);
+    $result = $apiInstance->votingGetPeriods($first_level, $last_level, $epoch, $select, $sort, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VotingApi->votingGetPeriods: ', $e->getMessage(), PHP_EOL;
@@ -633,16 +636,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **first_level** | [**AccountsGetIdParameter**](../Model/.md)| Filter by level of the first block of the period. | [optional] |
-| **last_level** | [**AccountsGetIdParameter**](../Model/.md)| Filter by level of the last block of the period. | [optional] |
-| **select** | [**AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts voting periods by specified field. Supported fields: &#x60;id&#x60; (default). | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the first block of the period. | [optional] |
+| **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the last block of the period. | [optional] |
+| **epoch** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by voting epoch | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts voting periods by specified field. Supported fields: &#x60;id&#x60; (default). | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\VotingPeriod[]**](../Model/VotingPeriod.md)
+[**\Tzkt\Model\VotingPeriod[]**](../Model/VotingPeriod.md)
 
 ### Authorization
 
@@ -660,7 +664,7 @@ No authorization required
 ## `votingGetProposalByHash()`
 
 ```php
-votingGetProposalByHash($hash): \Bzzhh\Tzkt\Model\Proposal
+votingGetProposalByHash($hash): \Tzkt\Model\Proposal
 ```
 
 Get proposal by hash
@@ -675,7 +679,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -698,7 +702,7 @@ try {
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Proposal**](../Model/Proposal.md)
+[**\Tzkt\Model\Proposal**](../Model/Proposal.md)
 
 ### Authorization
 
@@ -716,7 +720,7 @@ No authorization required
 ## `votingGetProposals()`
 
 ```php
-votingGetProposals($hash, $epoch, $select, $sort, $offset, $limit): \Bzzhh\Tzkt\Model\Proposal[]
+votingGetProposals($hash, $epoch, $select, $sort, $offset, $limit): \Tzkt\Model\Proposal[]
 ```
 
 Get proposals
@@ -731,16 +735,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$hash = new \Bzzhh\Tzkt\Model\OperationsGetBallotsProposalParameter(); // OperationsGetBallotsProposalParameter | Filters proposals by hash
-$epoch = new \Bzzhh\Tzkt\Model\AccountsGetIdParameter(); // AccountsGetIdParameter | Filters proposals by voting epoch
-$select = new \Bzzhh\Tzkt\Model\AccountsGetSelectParameter(); // AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Bzzhh\Tzkt\Model\AccountsGetSortParameter(); // AccountsGetSortParameter | Sorts proposals by specified field. Supported fields: `id` (default), `upvotes`, `votingPower`.
-$offset = new \Bzzhh\Tzkt\Model\AccountsGetOffsetParameter(); // AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetBallotsProposalParameter(); // \Tzkt\Model\OperationsGetBallotsProposalParameter | Filters proposals by hash
+$epoch = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters proposals by voting epoch
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts proposals by specified field. Supported fields: `id` (default), `upvotes`, `votingPower`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
 try {
@@ -755,16 +759,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **hash** | [**OperationsGetBallotsProposalParameter**](../Model/.md)| Filters proposals by hash | [optional] |
-| **epoch** | [**AccountsGetIdParameter**](../Model/.md)| Filters proposals by voting epoch | [optional] |
-| **select** | [**AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**AccountsGetSortParameter**](../Model/.md)| Sorts proposals by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;upvotes&#x60;, &#x60;votingPower&#x60;. | [optional] |
-| **offset** | [**AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **hash** | [**\Tzkt\Model\OperationsGetBallotsProposalParameter**](../Model/.md)| Filters proposals by hash | [optional] |
+| **epoch** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters proposals by voting epoch | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts proposals by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;upvotes&#x60;, &#x60;votingPower&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 
 ### Return type
 
-[**\Bzzhh\Tzkt\Model\Proposal[]**](../Model/Proposal.md)
+[**\Tzkt\Model\Proposal[]**](../Model/Proposal.md)
 
 ### Authorization
 
@@ -797,7 +801,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Bzzhh\Tzkt\Api\VotingApi(
+$apiInstance = new Tzkt\Api\VotingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()

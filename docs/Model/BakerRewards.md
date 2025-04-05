@@ -59,7 +59,7 @@ Name | Type | Description | Notes
 **nonce_revelation_rewards_staked_edge** | **int** | Rewards, corresponding to baker&#39;s edge from external stake, for including seed nonce revelations, received on baker&#39;s own staked balance (it is frozen and belongs to the baker). | [optional]
 **nonce_revelation_rewards_staked_shared** | **int** | Rewards, corresponding to baker&#39;s external stake, for including seed nonce revelations, received on baker&#39;s external staked balance (it is frozen and belongs to baker&#39;s stakers). | [optional]
 **nonce_revelation_losses** | **int** | Amount of frozen deposits lost due to missing seed nonce revelation (always zero after Ithaca). | [optional]
-**quote** | [**\Bzzhh\Tzkt\Model\CycleQuote**](CycleQuote.md) |  | [optional]
+**quote** | [**\Tzkt\Model\CycleQuote**](CycleQuote.md) |  | [optional]
 **block_rewards_liquid** | **int** | [DEPRECATED] | [optional]
 **endorsement_rewards_liquid** | **int** | [DEPRECATED] | [optional]
 **nonce_revelation_rewards_liquid** | **int** | [DEPRECATED] | [optional]

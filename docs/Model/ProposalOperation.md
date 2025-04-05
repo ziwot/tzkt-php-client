@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **timestamp** | **\DateTime** | Datetime of the block, in which the operation was included (ISO 8601, e.g. &#x60;2020-02-20T02:40:57Z&#x60;) | [optional]
 **block** | **string** | Hash of the block, in which the operation was included | [optional]
 **hash** | **string** | Hash of the operation | [optional]
-**period** | [**OneOfPeriodInfo**](OneOfPeriodInfo.md) | Information about the proposal period for which the proposal was submitted (upvoted) | [optional]
-**proposal** | [**OneOfProposalAlias**](OneOfProposalAlias.md) | Information about the submitted (upvoted) proposal | [optional]
-**delegate** | [**OneOfAlias**](OneOfAlias.md) | Information about the baker (delegate), submitted (upvoted) the proposal operation | [optional]
+**period** | [**\Tzkt\Model\ProposalOperationAllOfPeriod**](ProposalOperationAllOfPeriod.md) |  | [optional]
+**proposal** | [**\Tzkt\Model\ProposalOperationAllOfProposal**](ProposalOperationAllOfProposal.md) |  | [optional]
+**delegate** | [**\Tzkt\Model\ProposalOperationAllOfDelegate**](ProposalOperationAllOfDelegate.md) |  | [optional]
 **voting_power** | **int** | Baker&#39;s voting power | [optional]
 **duplicated** | **bool** | Indicates whether proposal upvote has already been pushed. Duplicated proposal operations are not counted when selecting proposal-winner. | [optional]
-**quote** | [**OneOfQuoteShort**](OneOfQuoteShort.md) | Injected historical quote at the time of operation | [optional]
+**quote** | [**\Tzkt\Model\ProposalOperationAllOfQuote**](ProposalOperationAllOfQuote.md) |  | [optional]
 **rolls** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

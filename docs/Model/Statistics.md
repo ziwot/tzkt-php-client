@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **total_rollup_bonds** | **int** | Total amount of tokens locked as rollup bonds | [optional]
 **total_smart_rollup_bonds** | **int** | Total amount of tokens locked as smart rollup bonds | [optional]
 **total_lost** | **int** | Total amount lost due to inaccuracy of the economic protocol introduced in Oxford. This amount is literally lost, because it is no longer available for the account in any mean, but for some reason it is counted as delegated. | [optional]
-**quote** | [**\Bzzhh\Tzkt\Model\StatisticsQuote**](StatisticsQuote.md) |  | [optional]
+**quote** | [**\Tzkt\Model\StatisticsQuote**](StatisticsQuote.md) |  | [optional]
 **total_vested** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

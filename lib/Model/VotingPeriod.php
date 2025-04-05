@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -13,12 +13,12 @@
 /**
  * TzKT API
  *
- * # Introduction  TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.  You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community  to help developers build more services and dapps on top of Tezos.  TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service, because you can always clone, build and run it yourself to have full control over all the components.  Feel free to contact us if you have any questions or feature requests. Your feedback is much appreciated!  - Discord: https://discord.gg/aG8XKuwsQd - Telegram: https://t.me/baking_bad_chat - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L - Twitter: https://twitter.com/TezosBakingBad - Email: hello@bakingbad.dev  And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊  # Get Started  There are two API services provided for public use: - **Free TzKT API** with free anonymous access; - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.  You can find more details about differences between available tiers [here](https://tzkt.io/api).  ## Free TzKT API  Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality. It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.  > #### Note: attribution required If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io)) - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io)) - Parisnet: `https://api.parisnet.tzkt.io/` ([view docs](https://api.parisnet.tzkt.io))  ### Sending Requests  To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint (for example, chain's head: `/v1/head`), that's pretty much it:   ```bash curl https://api.tzkt.io/v1/head ```  Read through this documentation to explore available endpoints, query parameters (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.) and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits.  If you exceed the limit, the API will respond with `HTTP 429` status code.  ## TzKT Pro  TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA. TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.  It's available for the following Tezos networks with the following base URLs:  - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io)) - Testnets: *let us know if you need TzKT Pro for testnets*  ### Authorization  To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription. This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.  Note that you can have multiple API keys within a single subscription.  Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories. If your key was compromised, just let us know and we will issue a new one.  Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted, but query string is not, so the key can be unintentionally exposed to third parties.  ### Sending Requests  Sending a request with the API key passed as a query string parameter:  ```bash curl https://pro.tzkt.io/v1/head?apikey={your_key} ```  Sending a request with the API key passed via an HTTP header:  ```bash curl https://pro.tzkt.io/v1/head \\     -H 'apikey: {your_key}' ```  ### Rate Limits  Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.  Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests and the time remaining (in seconds) until the quota is reset. Here's an example:  ``` RateLimit-Limit: 50 RateLimit-Remaining: 49 RateLimit-Reset: 1 ```  It also sends general information about your rate limits per second and per day:  ``` X-RateLimit-Limit-Second: 50 X-RateLimit-Remaining-Second: 49 X-RateLimit-Limit-Day: 3000000 X-RateLimit-Remaining-Day: 2994953 ```  If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Quebecnet: `https://api.quebecnet.tzkt.io/` ([view docs](https://api.quebecnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.4
+ * The version of the OpenAPI document: 1.14.7
  * Contact: hello@bakingbad.dev
  * Generated by: https://openapi-generator.tech
- * OpenAPI Generator version: 6.2.1
+ * Generator version: 7.12.0
  */
 
 /**
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Bzzhh\Tzkt\Model;
+namespace Tzkt\Model;
 
 use \ArrayAccess;
-use \Bzzhh\Tzkt\ObjectSerializer;
+use \Tzkt\ObjectSerializer;
 
 /**
  * VotingPeriod Class Doc Comment
  *
  * @category Class
- * @package  Bzzhh\Tzkt
+ * @package  Tzkt
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -133,33 +133,33 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'index' => false,
-		'epoch' => false,
-		'first_level' => false,
-		'start_time' => false,
-		'last_level' => false,
-		'end_time' => false,
-		'kind' => true,
-		'status' => true,
-		'dictator' => true,
-		'total_bakers' => false,
-		'total_voting_power' => false,
-		'upvotes_quorum' => true,
-		'proposals_count' => true,
-		'top_upvotes' => true,
-		'top_voting_power' => true,
-		'ballots_quorum' => true,
-		'supermajority' => true,
-		'yay_ballots' => true,
-		'yay_voting_power' => true,
-		'nay_ballots' => true,
-		'nay_voting_power' => true,
-		'pass_ballots' => true,
-		'pass_voting_power' => true,
-		'total_rolls' => false,
-		'top_rolls' => true,
-		'yay_rolls' => true,
-		'nay_rolls' => true,
-		'pass_rolls' => true
+        'epoch' => false,
+        'first_level' => false,
+        'start_time' => false,
+        'last_level' => false,
+        'end_time' => false,
+        'kind' => true,
+        'status' => true,
+        'dictator' => true,
+        'total_bakers' => false,
+        'total_voting_power' => false,
+        'upvotes_quorum' => true,
+        'proposals_count' => true,
+        'top_upvotes' => true,
+        'top_voting_power' => true,
+        'ballots_quorum' => true,
+        'supermajority' => true,
+        'yay_ballots' => true,
+        'yay_voting_power' => true,
+        'nay_ballots' => true,
+        'nay_voting_power' => true,
+        'pass_ballots' => true,
+        'pass_voting_power' => true,
+        'total_rolls' => false,
+        'top_rolls' => true,
+        'yay_rolls' => true,
+        'nay_rolls' => true,
+        'pass_rolls' => true
     ];
 
     /**
@@ -402,10 +402,10 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[] $data Associated array of property values
+     * @param mixed[]|null $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->setIfExists('index', $data ?? [], null);
         $this->setIfExists('epoch', $data ?? [], null);
@@ -498,11 +498,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIndex($index)
     {
-
         if (is_null($index)) {
             throw new \InvalidArgumentException('non-nullable index cannot be null');
         }
-
         $this->container['index'] = $index;
 
         return $this;
@@ -527,11 +525,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEpoch($epoch)
     {
-
         if (is_null($epoch)) {
             throw new \InvalidArgumentException('non-nullable epoch cannot be null');
         }
-
         $this->container['epoch'] = $epoch;
 
         return $this;
@@ -556,11 +552,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFirstLevel($first_level)
     {
-
         if (is_null($first_level)) {
             throw new \InvalidArgumentException('non-nullable first_level cannot be null');
         }
-
         $this->container['first_level'] = $first_level;
 
         return $this;
@@ -585,11 +579,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setStartTime($start_time)
     {
-
         if (is_null($start_time)) {
             throw new \InvalidArgumentException('non-nullable start_time cannot be null');
         }
-
         $this->container['start_time'] = $start_time;
 
         return $this;
@@ -614,11 +606,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setLastLevel($last_level)
     {
-
         if (is_null($last_level)) {
             throw new \InvalidArgumentException('non-nullable last_level cannot be null');
         }
-
         $this->container['last_level'] = $last_level;
 
         return $this;
@@ -643,11 +633,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEndTime($end_time)
     {
-
         if (is_null($end_time)) {
             throw new \InvalidArgumentException('non-nullable end_time cannot be null');
         }
-
         $this->container['end_time'] = $end_time;
 
         return $this;
@@ -672,7 +660,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setKind($kind)
     {
-
         if (is_null($kind)) {
             array_push($this->openAPINullablesSetToNull, 'kind');
         } else {
@@ -683,7 +670,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['kind'] = $kind;
 
         return $this;
@@ -708,7 +694,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setStatus($status)
     {
-
         if (is_null($status)) {
             array_push($this->openAPINullablesSetToNull, 'status');
         } else {
@@ -719,7 +704,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['status'] = $status;
 
         return $this;
@@ -744,7 +728,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDictator($dictator)
     {
-
         if (is_null($dictator)) {
             array_push($this->openAPINullablesSetToNull, 'dictator');
         } else {
@@ -755,7 +738,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['dictator'] = $dictator;
 
         return $this;
@@ -780,11 +762,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTotalBakers($total_bakers)
     {
-
         if (is_null($total_bakers)) {
             throw new \InvalidArgumentException('non-nullable total_bakers cannot be null');
         }
-
         $this->container['total_bakers'] = $total_bakers;
 
         return $this;
@@ -809,11 +789,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTotalVotingPower($total_voting_power)
     {
-
         if (is_null($total_voting_power)) {
             throw new \InvalidArgumentException('non-nullable total_voting_power cannot be null');
         }
-
         $this->container['total_voting_power'] = $total_voting_power;
 
         return $this;
@@ -838,7 +816,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setUpvotesQuorum($upvotes_quorum)
     {
-
         if (is_null($upvotes_quorum)) {
             array_push($this->openAPINullablesSetToNull, 'upvotes_quorum');
         } else {
@@ -849,7 +826,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['upvotes_quorum'] = $upvotes_quorum;
 
         return $this;
@@ -874,7 +850,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setProposalsCount($proposals_count)
     {
-
         if (is_null($proposals_count)) {
             array_push($this->openAPINullablesSetToNull, 'proposals_count');
         } else {
@@ -885,7 +860,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['proposals_count'] = $proposals_count;
 
         return $this;
@@ -910,7 +884,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTopUpvotes($top_upvotes)
     {
-
         if (is_null($top_upvotes)) {
             array_push($this->openAPINullablesSetToNull, 'top_upvotes');
         } else {
@@ -921,7 +894,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['top_upvotes'] = $top_upvotes;
 
         return $this;
@@ -946,7 +918,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTopVotingPower($top_voting_power)
     {
-
         if (is_null($top_voting_power)) {
             array_push($this->openAPINullablesSetToNull, 'top_voting_power');
         } else {
@@ -957,7 +928,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['top_voting_power'] = $top_voting_power;
 
         return $this;
@@ -982,7 +952,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setBallotsQuorum($ballots_quorum)
     {
-
         if (is_null($ballots_quorum)) {
             array_push($this->openAPINullablesSetToNull, 'ballots_quorum');
         } else {
@@ -993,7 +962,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['ballots_quorum'] = $ballots_quorum;
 
         return $this;
@@ -1018,7 +986,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSupermajority($supermajority)
     {
-
         if (is_null($supermajority)) {
             array_push($this->openAPINullablesSetToNull, 'supermajority');
         } else {
@@ -1029,7 +996,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['supermajority'] = $supermajority;
 
         return $this;
@@ -1054,7 +1020,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setYayBallots($yay_ballots)
     {
-
         if (is_null($yay_ballots)) {
             array_push($this->openAPINullablesSetToNull, 'yay_ballots');
         } else {
@@ -1065,7 +1030,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['yay_ballots'] = $yay_ballots;
 
         return $this;
@@ -1090,7 +1054,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setYayVotingPower($yay_voting_power)
     {
-
         if (is_null($yay_voting_power)) {
             array_push($this->openAPINullablesSetToNull, 'yay_voting_power');
         } else {
@@ -1101,7 +1064,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['yay_voting_power'] = $yay_voting_power;
 
         return $this;
@@ -1126,7 +1088,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNayBallots($nay_ballots)
     {
-
         if (is_null($nay_ballots)) {
             array_push($this->openAPINullablesSetToNull, 'nay_ballots');
         } else {
@@ -1137,7 +1098,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['nay_ballots'] = $nay_ballots;
 
         return $this;
@@ -1162,7 +1122,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNayVotingPower($nay_voting_power)
     {
-
         if (is_null($nay_voting_power)) {
             array_push($this->openAPINullablesSetToNull, 'nay_voting_power');
         } else {
@@ -1173,7 +1132,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['nay_voting_power'] = $nay_voting_power;
 
         return $this;
@@ -1198,7 +1156,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPassBallots($pass_ballots)
     {
-
         if (is_null($pass_ballots)) {
             array_push($this->openAPINullablesSetToNull, 'pass_ballots');
         } else {
@@ -1209,7 +1166,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['pass_ballots'] = $pass_ballots;
 
         return $this;
@@ -1234,7 +1190,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPassVotingPower($pass_voting_power)
     {
-
         if (is_null($pass_voting_power)) {
             array_push($this->openAPINullablesSetToNull, 'pass_voting_power');
         } else {
@@ -1245,7 +1200,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['pass_voting_power'] = $pass_voting_power;
 
         return $this;
@@ -1270,11 +1224,9 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTotalRolls($total_rolls)
     {
-
         if (is_null($total_rolls)) {
             throw new \InvalidArgumentException('non-nullable total_rolls cannot be null');
         }
-
         $this->container['total_rolls'] = $total_rolls;
 
         return $this;
@@ -1299,7 +1251,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setTopRolls($top_rolls)
     {
-
         if (is_null($top_rolls)) {
             array_push($this->openAPINullablesSetToNull, 'top_rolls');
         } else {
@@ -1310,7 +1261,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['top_rolls'] = $top_rolls;
 
         return $this;
@@ -1335,7 +1285,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setYayRolls($yay_rolls)
     {
-
         if (is_null($yay_rolls)) {
             array_push($this->openAPINullablesSetToNull, 'yay_rolls');
         } else {
@@ -1346,7 +1295,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['yay_rolls'] = $yay_rolls;
 
         return $this;
@@ -1371,7 +1319,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setNayRolls($nay_rolls)
     {
-
         if (is_null($nay_rolls)) {
             array_push($this->openAPINullablesSetToNull, 'nay_rolls');
         } else {
@@ -1382,7 +1329,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['nay_rolls'] = $nay_rolls;
 
         return $this;
@@ -1407,7 +1353,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPassRolls($pass_rolls)
     {
-
         if (is_null($pass_rolls)) {
             array_push($this->openAPINullablesSetToNull, 'pass_rolls');
         } else {
@@ -1418,7 +1363,6 @@ class VotingPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-
         $this->container['pass_rolls'] = $pass_rolls;
 
         return $this;
