@@ -8,7 +8,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use Psr\Http\Message\RequestInterface;
 
-function get_client()
+function get_client(): Client
 {
     $handler = new CurlHandler();
     $stack = HandlerStack::create($handler);
