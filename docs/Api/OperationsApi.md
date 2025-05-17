@@ -18,6 +18,12 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 | [**operationsGetByHash()**](OperationsApi.md#operationsGetByHash) | **GET** /v1/operations/{hash} | Get operations by hash |
 | [**operationsGetByHashCounter()**](OperationsApi.md#operationsGetByHashCounter) | **GET** /v1/operations/{hash}/{counter} | Get operations by hash and counter |
 | [**operationsGetByHashCounterNonce()**](OperationsApi.md#operationsGetByHashCounterNonce) | **GET** /v1/operations/{hash}/{counter}/{nonce} | Get operations by hash, counter and nonce |
+| [**operationsGetDalAttestationRewardById()**](OperationsApi.md#operationsGetDalAttestationRewardById) | **GET** /v1/operations/dal_attestation_reward/{id} | Get dal attestation reward by id |
+| [**operationsGetDalAttestationRewards()**](OperationsApi.md#operationsGetDalAttestationRewards) | **GET** /v1/operations/dal_attestation_reward | Get dal attestation rewards |
+| [**operationsGetDalAttestationRewardsCount()**](OperationsApi.md#operationsGetDalAttestationRewardsCount) | **GET** /v1/operations/dal_attestation_reward/count | Get dal attestation rewards count |
+| [**operationsGetDalEntrapmentEvidenceOps()**](OperationsApi.md#operationsGetDalEntrapmentEvidenceOps) | **GET** /v1/operations/dal_entrapment_evidence | Get dal entrapment evidences |
+| [**operationsGetDalEntrapmentEvidenceOpsByHash()**](OperationsApi.md#operationsGetDalEntrapmentEvidenceOpsByHash) | **GET** /v1/operations/dal_entrapment_evidence/{hash} | Get dal entrapment evidence by hash |
+| [**operationsGetDalEntrapmentEvidenceOpsCount()**](OperationsApi.md#operationsGetDalEntrapmentEvidenceOpsCount) | **GET** /v1/operations/dal_entrapment_evidence/count | Get dal entrapment evidences count |
 | [**operationsGetDalPublishCommitmentOps()**](OperationsApi.md#operationsGetDalPublishCommitmentOps) | **GET** /v1/operations/dal_publish_commitment | Get dal_publish_commitment ops |
 | [**operationsGetDalPublishCommitmentOpsCount()**](OperationsApi.md#operationsGetDalPublishCommitmentOpsCount) | **GET** /v1/operations/dal_publish_commitment/count | Get dal_publish_commitment ops count |
 | [**operationsGetDelegationByHash()**](OperationsApi.md#operationsGetDelegationByHash) | **GET** /v1/operations/delegations/{hash} | Get delegation by hash |
@@ -1037,6 +1043,386 @@ try {
 ### Return type
 
 [**\Tzkt\Model\Operation[]**](../Model/Operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetDalAttestationRewardById()`
+
+```php
+operationsGetDalAttestationRewardById($id, $quote): \Tzkt\Model\DalAttestationRewardOperation
+```
+
+Get dal attestation reward by id
+
+Returns dal attestation reward operation with specified id.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 56; // int | Operation id
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+
+try {
+    $result = $apiInstance->operationsGetDalAttestationRewardById($id, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetDalAttestationRewardById: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| Operation id | |
+| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\DalAttestationRewardOperation**](../Model/DalAttestationRewardOperation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetDalAttestationRewards()`
+
+```php
+operationsGetDalAttestationRewards($id, $baker, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\DalAttestationRewardOperation[]
+```
+
+Get dal attestation rewards
+
+Returns a list of dal attestation reward operations (synthetic type).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
+$baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by baker. Allowed fields for `.eqx` mode: none.
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$limit = 100; // int | Maximum number of items to return
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+
+try {
+    $result = $apiInstance->operationsGetDalAttestationRewards($id, $baker, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetDalAttestationRewards: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
+| **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
+| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\DalAttestationRewardOperation[]**](../Model/DalAttestationRewardOperation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetDalAttestationRewardsCount()`
+
+```php
+operationsGetDalAttestationRewardsCount($level, $timestamp): int
+```
+
+Get dal attestation rewards count
+
+Returns the total number of dal attestation reward operations (synthetic type).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+
+try {
+    $result = $apiInstance->operationsGetDalAttestationRewardsCount($level, $timestamp);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetDalAttestationRewardsCount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetDalEntrapmentEvidenceOps()`
+
+```php
+operationsGetDalEntrapmentEvidenceOps($anyof, $accuser, $offender, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\DalEntrapmentEvidenceOperation[]
+```
+
+Get dal entrapment evidences
+
+Returns a list of dal entrapment evidence operations.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filters by any of the specified fields. Example: `anyof.accuser.offender=tz1...` will return operations where `accuser` OR `offender` is equal to the specified value. This parameter is useful when you need to retrieve all operations associated with a specified account.
+$accuser = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by accuser. Allowed fields for `.eqx` mode: `offender`.
+$offender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by offender. Allowed fields for `.eqx` mode: `accuser`.
+$id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `trapLevel`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$limit = 100; // int | Maximum number of items to return
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+
+try {
+    $result = $apiInstance->operationsGetDalEntrapmentEvidenceOps($anyof, $accuser, $offender, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetDalEntrapmentEvidenceOps: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filters by any of the specified fields. Example: &#x60;anyof.accuser.offender&#x3D;tz1...&#x60; will return operations where &#x60;accuser&#x60; OR &#x60;offender&#x60; is equal to the specified value. This parameter is useful when you need to retrieve all operations associated with a specified account. | [optional] |
+| **accuser** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by accuser. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;offender&#x60;. | [optional] |
+| **offender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by offender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;accuser&#x60;. | [optional] |
+| **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;trapLevel&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
+| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\DalEntrapmentEvidenceOperation[]**](../Model/DalEntrapmentEvidenceOperation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetDalEntrapmentEvidenceOpsByHash()`
+
+```php
+operationsGetDalEntrapmentEvidenceOpsByHash($hash, $quote): \Tzkt\Model\DalEntrapmentEvidenceOperation[]
+```
+
+Get dal entrapment evidence by hash
+
+Returns dal entrapment evidence operations with specified hash.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$hash = 'hash_example'; // string | Operation hash
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+
+try {
+    $result = $apiInstance->operationsGetDalEntrapmentEvidenceOpsByHash($hash, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetDalEntrapmentEvidenceOpsByHash: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **hash** | **string**| Operation hash | |
+| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\DalEntrapmentEvidenceOperation[]**](../Model/DalEntrapmentEvidenceOperation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetDalEntrapmentEvidenceOpsCount()`
+
+```php
+operationsGetDalEntrapmentEvidenceOpsCount($level, $timestamp): int
+```
+
+Get dal entrapment evidences count
+
+Returns the total number of dal entrapment evidence operations.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+
+try {
+    $result = $apiInstance->operationsGetDalEntrapmentEvidenceOpsCount($level, $timestamp);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetDalEntrapmentEvidenceOpsCount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+
+### Return type
+
+**int**
 
 ### Authorization
 
@@ -8910,7 +9296,7 @@ No authorization required
 ## `operationsGetUpdateConsensusKeyOps()`
 
 ```php
-operationsGetUpdateConsensusKeyOps($sender, $activation_cycle, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\UpdateConsensusKeyOperation[]
+operationsGetUpdateConsensusKeyOps($sender, $activation_cycle, $public_key_hash, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\UpdateConsensusKeyOperation[]
 ```
 
 Get update consensus key
@@ -8932,6 +9318,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $activation_cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by activation cycle. Allowed fields for `.eqx` mode: none.
+$public_key_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetAddressParameter(); // \Tzkt\Model\AccountsGetAddressParameter | Filters by pkh (tz address).
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
 $timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
 $status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
@@ -8942,7 +9329,7 @@ $limit = 100; // int | Maximum number of items to return
 $quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetUpdateConsensusKeyOps($sender, $activation_cycle, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
+    $result = $apiInstance->operationsGetUpdateConsensusKeyOps($sender, $activation_cycle, $public_key_hash, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetUpdateConsensusKeyOps: ', $e->getMessage(), PHP_EOL;
@@ -8955,6 +9342,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **activation_cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by activation cycle. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **public_key_hash** | [**\Tzkt\Model\AccountsGetAddressParameter**](../Model/.md)| Filters by pkh (tz address). | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
 | **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 | **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |

@@ -1,3 +1,5 @@
 inputSpec: https://api.tzkt.io/v1/swagger.json
-generatorName: php
+generatorName: php-nextgen
+
+composerPackageName: ziwot/tzkt-php-client
 invokerPackage: Tzkt

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **endorsement_reward_per_slot** | **int** | Reward for endorsing in this cycle (micro tez) | [optional]
 **nonce_revelation_reward** | **int** | Reward for seed nonce revelation in this cycle (micro tez) | [optional]
 **vdf_revelation_reward** | **int** | Reward for vdf revelation in this cycle (micro tez) | [optional]
+**dal_attestation_reward_per_shard** | **int** | Reward for dal attestation in this cycle (micro tez) | [optional]
 **quote** | [**\Tzkt\Model\CycleQuote**](CycleQuote.md) |  | [optional]
 **snapshot_index** | **int** | [DEPRECATED] | [optional]
 **lb_subsidy** | **int** | [DEPRECATED] | [optional]

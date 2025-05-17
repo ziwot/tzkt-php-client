@@ -89,6 +89,8 @@ Name | Type | Description | Notes
 **staking_updates_count** | **int** | Number of staking updates related to the account | [optional]
 **set_delegate_parameters_ops_count** | **int** | Number of set delegate parameters operations related to the account | [optional]
 **dal_publish_commitment_ops_count** | **int** | Number of DAL publish commitment operations related to the account | [optional]
+**dal_entrapment_evidence_ops_count** | **int** | Number of DAL entrapment evidences related to the account | [optional]
+**dal_attestation_rewards_count** | **int** | Number of DAL attestation rewards related to the account | [optional]
 **first_activity** | **int** | Block height of the first operation, related to the delegate (baker) | [optional]
 **first_activity_time** | **\DateTime** | Block datetime of the first operation, related to the delegate (ISO 8601, e.g. &#x60;2020-02-20T02:40:57Z&#x60;) | [optional]
 **last_activity** | **int** | Height of the block in which the account state was changed last time | [optional]
