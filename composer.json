@@ -33,7 +33,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Tzkt\": "src/"
+      "Tzkt\\": "src/"
     },
     "files": [
       "src/_bootstrap.php"
@@ -41,7 +41,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tzkt\Test\": "tests/"
+      "Tzkt\\Test\\": "tests/"
     }
   },
   "scripts": {
