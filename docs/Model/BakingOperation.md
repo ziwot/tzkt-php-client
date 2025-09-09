@@ -24,11 +24,5 @@ Name | Type | Description | Notes
 **bonus_staked_shared** | **int** | Portion of fixed reward, corresponding to baker&#39;s external stake, paid to block producer&#39;s external staked balance (micro tez) (it is frozen and belongs to baker&#39;s stakers). | [optional]
 **fees** | **int** | Total fee gathered from operations, included into the block | [optional]
 **quote** | [**\Tzkt\Model\BakingOperationAllOfQuote**](BakingOperationAllOfQuote.md) |  | [optional]
-**reward_liquid** | **int** | [DEPRECATED] | [optional]
-**bonus_liquid** | **int** | [DEPRECATED] | [optional]
-**reward** | **int** | [DEPRECATED] | [optional]
-**bonus** | **int** | [DEPRECATED] | [optional]
-**baker** | [**\Tzkt\Model\BakingOperationAllOfBaker**](BakingOperationAllOfBaker.md) |  | [optional]
-**priority** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

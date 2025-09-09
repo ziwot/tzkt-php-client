@@ -26,8 +26,5 @@ Name | Type | Description | Notes
 **status** | **string** | Operation status (&#x60;applied&#x60; - an operation applied by the node and successfully added to the blockchain, &#x60;failed&#x60; - an operation which failed with some particular error (not enough balance, gas limit, etc), &#x60;backtracked&#x60; - an operation which was successful but reverted due to one of the following operations in the same operation group was failed, &#x60;skipped&#x60; - all operations after the failed one in an operation group) | [optional]
 **errors** | [**\Tzkt\Model\OperationError[]**](OperationError.md) | List of errors provided by the node, injected the operation to the blockchain. &#x60;null&#x60; if there is no errors | [optional]
 **quote** | [**\Tzkt\Model\DelegationOperationAllOfQuote**](DelegationOperationAllOfQuote.md) |  | [optional]
-**unstaked_pseudotokens** | **int** | [DEPRECATED] | [optional]
-**unstaked_balance** | **int** | [DEPRECATED] | [optional]
-**unstaked_rewards** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

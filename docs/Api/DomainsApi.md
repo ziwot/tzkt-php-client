@@ -34,16 +34,16 @@ $apiInstance = new Tzkt\Api\DomainsApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$name = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // \Tzkt\Model\AccountsGetOperationsEntrypointParameter | Filter by the domain name.   Click on the parameter to expand more details.
+$name = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapsPathParameter(); // \Tzkt\Model\BigMapsGetBigMapsPathParameter | Filter by the domain name.   Click on the parameter to expand more details.
 $owner = new \Tzkt\Model\\Tzkt\Model\DomainsGetCountOwnerParameter(); // \Tzkt\Model\DomainsGetCountOwnerParameter | Filter by the domain owner.   Click on the parameter to expand more details.
 $address = new \Tzkt\Model\\Tzkt\Model\DomainsGetCountOwnerParameter(); // \Tzkt\Model\DomainsGetCountOwnerParameter | Filter by the address the domain points to.   Click on the parameter to expand more details.
 $reverse = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Filter by the 'reverse' flag.   Click on the parameter to expand more details.
-$expiration = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filter by the domain expiration.   Click on the parameter to expand more details.
-$data = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsParameterParameter(); // \Tzkt\Model\AccountsGetOperationsParameterParameter | Filter by the domain data.   Note, this parameter supports the following format: `data{.path?}{.mode?}=...`, so you can specify a path to a particular field to filter by (for example, `?data.foo=bar`).   Click on the parameter to expand more details.
+$expiration = new \Tzkt\Model\\Tzkt\Model\BlocksGetTimestampParameter(); // \Tzkt\Model\BlocksGetTimestampParameter | Filter by the domain expiration.   Click on the parameter to expand more details.
+$data = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter | Filter by the domain data.   Note, this parameter supports the following format: `data{.path?}{.mode?}=...`, so you can specify a path to a particular field to filter by (for example, `?data.foo=bar`).   Click on the parameter to expand more details.
 $first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the domain was first seen.   Click on the parameter to expand more details.
-$first_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the domain was first seen.   Click on the parameter to expand more details.
+$first_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the domain was first seen.   Click on the parameter to expand more details.
 $last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the domain was last seen.   Click on the parameter to expand more details.
-$last_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the domain was last seen.   Click on the parameter to expand more details.
+$last_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the domain was last seen.   Click on the parameter to expand more details.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
@@ -63,16 +63,16 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **name** | [**\Tzkt\Model\AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filter by the domain name.   Click on the parameter to expand more details. | [optional] |
+| **name** | [**\Tzkt\Model\BigMapsGetBigMapsPathParameter**](../Model/.md)| Filter by the domain name.   Click on the parameter to expand more details. | [optional] |
 | **owner** | [**\Tzkt\Model\DomainsGetCountOwnerParameter**](../Model/.md)| Filter by the domain owner.   Click on the parameter to expand more details. | [optional] |
 | **address** | [**\Tzkt\Model\DomainsGetCountOwnerParameter**](../Model/.md)| Filter by the address the domain points to.   Click on the parameter to expand more details. | [optional] |
 | **reverse** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Filter by the &#39;reverse&#39; flag.   Click on the parameter to expand more details. | [optional] |
-| **expiration** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filter by the domain expiration.   Click on the parameter to expand more details. | [optional] |
-| **data** | [**\Tzkt\Model\AccountsGetOperationsParameterParameter**](../Model/.md)| Filter by the domain data.   Note, this parameter supports the following format: &#x60;data{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?data.foo&#x3D;bar&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **expiration** | [**\Tzkt\Model\BlocksGetTimestampParameter**](../Model/.md)| Filter by the domain expiration.   Click on the parameter to expand more details. | [optional] |
+| **data** | [**\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter**](../Model/.md)| Filter by the domain data.   Note, this parameter supports the following format: &#x60;data{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?data.foo&#x3D;bar&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the domain was first seen.   Click on the parameter to expand more details. | [optional] |
-| **first_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the domain was first seen.   Click on the parameter to expand more details. | [optional] |
+| **first_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the domain was first seen.   Click on the parameter to expand more details. | [optional] |
 | **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the domain was last seen.   Click on the parameter to expand more details. | [optional] |
-| **last_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the domain was last seen.   Click on the parameter to expand more details. | [optional] |
+| **last_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the domain was last seen.   Click on the parameter to expand more details. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
@@ -176,16 +176,16 @@ $apiInstance = new Tzkt\Api\DomainsApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$name = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // \Tzkt\Model\AccountsGetOperationsEntrypointParameter | Filter by the domain name.   Click on the parameter to expand more details.
+$name = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapsPathParameter(); // \Tzkt\Model\BigMapsGetBigMapsPathParameter | Filter by the domain name.   Click on the parameter to expand more details.
 $owner = new \Tzkt\Model\\Tzkt\Model\DomainsGetCountOwnerParameter(); // \Tzkt\Model\DomainsGetCountOwnerParameter | Filter by the domain owner.   Click on the parameter to expand more details.
 $address = new \Tzkt\Model\\Tzkt\Model\DomainsGetCountOwnerParameter(); // \Tzkt\Model\DomainsGetCountOwnerParameter | Filter by the address the domain points to.   Click on the parameter to expand more details.
 $reverse = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Filter by the 'reverse' flag.   Click on the parameter to expand more details.
-$expiration = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filter by the domain expiration.   Click on the parameter to expand more details.
-$data = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsParameterParameter(); // \Tzkt\Model\AccountsGetOperationsParameterParameter | Filter by the domain data.   Note, this parameter supports the following format: `data{.path?}{.mode?}=...`, so you can specify a path to a particular field to filter by (for example, `?data.foo=bar`).   Click on the parameter to expand more details.
+$expiration = new \Tzkt\Model\\Tzkt\Model\BlocksGetTimestampParameter(); // \Tzkt\Model\BlocksGetTimestampParameter | Filter by the domain expiration.   Click on the parameter to expand more details.
+$data = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter | Filter by the domain data.   Note, this parameter supports the following format: `data{.path?}{.mode?}=...`, so you can specify a path to a particular field to filter by (for example, `?data.foo=bar`).   Click on the parameter to expand more details.
 $first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the domain was first seen.   Click on the parameter to expand more details.
-$first_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the domain was first seen.   Click on the parameter to expand more details.
+$first_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the domain was first seen.   Click on the parameter to expand more details.
 $last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the domain was last seen.   Click on the parameter to expand more details.
-$last_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the domain was last seen.   Click on the parameter to expand more details.
+$last_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the domain was last seen.   Click on the parameter to expand more details.
 
 try {
     $result = $apiInstance->domainsGetCount($id, $level, $name, $owner, $address, $reverse, $expiration, $data, $first_level, $first_time, $last_level, $last_time);
@@ -201,16 +201,16 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **name** | [**\Tzkt\Model\AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filter by the domain name.   Click on the parameter to expand more details. | [optional] |
+| **name** | [**\Tzkt\Model\BigMapsGetBigMapsPathParameter**](../Model/.md)| Filter by the domain name.   Click on the parameter to expand more details. | [optional] |
 | **owner** | [**\Tzkt\Model\DomainsGetCountOwnerParameter**](../Model/.md)| Filter by the domain owner.   Click on the parameter to expand more details. | [optional] |
 | **address** | [**\Tzkt\Model\DomainsGetCountOwnerParameter**](../Model/.md)| Filter by the address the domain points to.   Click on the parameter to expand more details. | [optional] |
 | **reverse** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Filter by the &#39;reverse&#39; flag.   Click on the parameter to expand more details. | [optional] |
-| **expiration** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filter by the domain expiration.   Click on the parameter to expand more details. | [optional] |
-| **data** | [**\Tzkt\Model\AccountsGetOperationsParameterParameter**](../Model/.md)| Filter by the domain data.   Note, this parameter supports the following format: &#x60;data{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?data.foo&#x3D;bar&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **expiration** | [**\Tzkt\Model\BlocksGetTimestampParameter**](../Model/.md)| Filter by the domain expiration.   Click on the parameter to expand more details. | [optional] |
+| **data** | [**\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter**](../Model/.md)| Filter by the domain data.   Note, this parameter supports the following format: &#x60;data{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?data.foo&#x3D;bar&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the domain was first seen.   Click on the parameter to expand more details. | [optional] |
-| **first_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the domain was first seen.   Click on the parameter to expand more details. | [optional] |
+| **first_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the domain was first seen.   Click on the parameter to expand more details. | [optional] |
 | **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the domain was last seen.   Click on the parameter to expand more details. | [optional] |
-| **last_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the domain was last seen.   Click on the parameter to expand more details. | [optional] |
+| **last_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the domain was last seen.   Click on the parameter to expand more details. | [optional] |
 
 ### Return type
 

@@ -16,6 +16,5 @@ Name | Type | Description | Notes
 **voting_power** | **int** | Baker&#39;s voting power | [optional]
 **duplicated** | **bool** | Indicates whether proposal upvote has already been pushed. Duplicated proposal operations are not counted when selecting proposal-winner. | [optional]
 **quote** | [**\Tzkt\Model\ProposalOperationAllOfQuote**](ProposalOperationAllOfQuote.md) |  | [optional]
-**rolls** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

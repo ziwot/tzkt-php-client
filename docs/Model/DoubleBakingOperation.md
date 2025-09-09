@@ -21,12 +21,5 @@ Name | Type | Description | Notes
 **lost_external_unstaked** | **int** | Amount slashed from baker&#39;s external unstaked balance | [optional]
 **staking_updates_count** | **int** | Number of staking updates happened internally | [optional]
 **quote** | [**\Tzkt\Model\DoubleBakingOperationAllOfQuote**](DoubleBakingOperationAllOfQuote.md) |  | [optional]
-**rounding_loss** | **int** | [DEPRECATED] | [optional]
-**offender_loss** | **int** | [DEPRECATED] | [optional]
-**accuser_reward** | **int** | [DEPRECATED] | [optional]
-**accuser_rewards** | **int** | [DEPRECATED] | [optional]
-**offender_lost_deposits** | **int** | [DEPRECATED] | [optional]
-**offender_lost_rewards** | **int** | [DEPRECATED] | [optional]
-**offender_lost_fees** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

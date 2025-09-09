@@ -107,13 +107,13 @@ $apiInstance = new Tzkt\Api\SmartRollupsApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details.
 $type = new \Tzkt\Model\\Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter(); // \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter | Filter by inbox message type (`level_start`, `level_info`, `level_end`, `transfer`, `external`, `migration`).   Click on the parameter to expand more details.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of smart rollup call parameters: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of smart rollup call parameters: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
 
 try {
     $result = $apiInstance->smartRollupsGetInboxMessages($id, $level, $timestamp, $type, $sort, $offset, $limit, $select, $micheline);
@@ -129,13 +129,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. | [optional] |
 | **type** | [**\Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter**](../Model/.md)| Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of smart rollup call parameters: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
 
 ### Return type
 
@@ -179,7 +179,7 @@ $apiInstance = new Tzkt\Api\SmartRollupsApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details.
 $type = new \Tzkt\Model\\Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter(); // \Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter | Filter by inbox message type (`level_start`, `level_info`, `level_end`, `transfer`, `external`, `migration`).   Click on the parameter to expand more details.
 
 try {
@@ -196,7 +196,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the message was pushed.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the message was pushed.   Click on the parameter to expand more details. | [optional] |
 | **type** | [**\Tzkt\Model\SmartRollupsGetInboxMessagesCountTypeParameter**](../Model/.md)| Filter by inbox message type (&#x60;level_start&#x60;, &#x60;level_info&#x60;, &#x60;level_end&#x60;, &#x60;transfer&#x60;, &#x60;external&#x60;, &#x60;migration&#x60;).   Click on the parameter to expand more details. | [optional] |
 
 ### Return type
@@ -219,7 +219,7 @@ No authorization required
 ## `smartRollupsGetInterface()`
 
 ```php
-smartRollupsGetInterface($address): \Tzkt\Model\ContractInterface
+smartRollupsGetInterface($address): mixed
 ```
 
 Get JSON Schema [2020-12] interface for the smart rollup
@@ -257,7 +257,7 @@ try {
 
 ### Return type
 
-[**\Tzkt\Model\ContractInterface**](../Model/ContractInterface.md)
+**mixed**
 
 ### Authorization
 
@@ -357,9 +357,9 @@ $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\M
 $inbox_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by inbox level.   Click on the parameter to expand more details.
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter | Filter by commitment hash.   Click on the parameter to expand more details.
 $first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details.
-$first_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details.
+$first_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details.
 $last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details.
-$last_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details.
+$last_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details.
 $status = new \Tzkt\Model\\Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter(); // \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter | Filter by commitment status (`pending`, `cemented`, `executed`, `refuted`, or `orphan`).   Click on the parameter to expand more details.
 $predecessor_id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $predecessor_hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter | Filter by commitment hash.   Click on the parameter to expand more details.
@@ -386,9 +386,9 @@ try {
 | **inbox_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by inbox level.   Click on the parameter to expand more details. | [optional] |
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter**](../Model/.md)| Filter by commitment hash.   Click on the parameter to expand more details. | [optional] |
 | **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. | [optional] |
-| **first_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. | [optional] |
+| **first_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. | [optional] |
 | **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. | [optional] |
-| **last_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. | [optional] |
+| **last_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. | [optional] |
 | **status** | [**\Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter**](../Model/.md)| Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **predecessor_id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **predecessor_hash** | [**\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter**](../Model/.md)| Filter by commitment hash.   Click on the parameter to expand more details. | [optional] |
@@ -443,9 +443,9 @@ $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\M
 $inbox_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by inbox level.   Click on the parameter to expand more details.
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter | Filter by commitment hash.   Click on the parameter to expand more details.
 $first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details.
-$first_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details.
+$first_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details.
 $last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details.
-$last_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details.
+$last_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details.
 $status = new \Tzkt\Model\\Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter(); // \Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter | Filter by commitment status (`pending`, `cemented`, `executed`, `refuted`, or `orphan`).   Click on the parameter to expand more details.
 $predecessor_id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $predecessor_hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter | Filter by commitment hash.   Click on the parameter to expand more details.
@@ -468,9 +468,9 @@ try {
 | **inbox_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by inbox level.   Click on the parameter to expand more details. | [optional] |
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter**](../Model/.md)| Filter by commitment hash.   Click on the parameter to expand more details. | [optional] |
 | **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the commitment was first seen.   Click on the parameter to expand more details. | [optional] |
-| **first_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. | [optional] |
+| **first_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the commitment was first seen.   Click on the parameter to expand more details. | [optional] |
 | **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the commitment was last seen.   Click on the parameter to expand more details. | [optional] |
-| **last_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. | [optional] |
+| **last_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the commitment was last seen.   Click on the parameter to expand more details. | [optional] |
 | **status** | [**\Tzkt\Model\SmartRollupsGetSmartRollupCommitmentsCountStatusParameter**](../Model/.md)| Filter by commitment status (&#x60;pending&#x60;, &#x60;cemented&#x60;, &#x60;executed&#x60;, &#x60;refuted&#x60;, or &#x60;orphan&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **predecessor_id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **predecessor_hash** | [**\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter**](../Model/.md)| Filter by commitment hash.   Click on the parameter to expand more details. | [optional] |
@@ -524,9 +524,9 @@ $opponent = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt
 $opponent_commitment_id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $opponent_commitment_hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter | Filter by commitment hash.   Click on the parameter to expand more details.
 $first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details.
-$first_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details.
+$first_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details.
 $last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details.
-$last_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details.
+$last_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
@@ -553,9 +553,9 @@ try {
 | **opponent_commitment_id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **opponent_commitment_hash** | [**\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter**](../Model/.md)| Filter by commitment hash.   Click on the parameter to expand more details. | [optional] |
 | **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. | [optional] |
-| **first_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. | [optional] |
+| **first_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. | [optional] |
 | **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. | [optional] |
-| **last_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. | [optional] |
+| **last_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
@@ -610,9 +610,9 @@ $opponent = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt
 $opponent_commitment_id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $opponent_commitment_hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter | Filter by commitment hash.   Click on the parameter to expand more details.
 $first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details.
-$first_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details.
+$first_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details.
 $last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details.
-$last_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details.
+$last_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details.
 
 try {
     $result = $apiInstance->smartRollupsGetSmartRollupGamesCount($id, $rollup, $initiator, $initiator_commitment_id, $initiator_commitment_hash, $opponent, $opponent_commitment_id, $opponent_commitment_hash, $first_level, $first_time, $last_level, $last_time);
@@ -635,9 +635,9 @@ try {
 | **opponent_commitment_id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **opponent_commitment_hash** | [**\Tzkt\Model\OperationsGetSmartRollupPublishOpsCommitmentHashParameter**](../Model/.md)| Filter by commitment hash.   Click on the parameter to expand more details. | [optional] |
 | **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the refutation game was started.   Click on the parameter to expand more details. | [optional] |
-| **first_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. | [optional] |
+| **first_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the refutation game was started.   Click on the parameter to expand more details. | [optional] |
 | **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the refutation game was last updated.   Click on the parameter to expand more details. | [optional] |
-| **last_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. | [optional] |
+| **last_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the refutation game was last updated.   Click on the parameter to expand more details. | [optional] |
 
 ### Return type
 
@@ -751,9 +751,9 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\Accou
 $address = new \Tzkt\Model\\Tzkt\Model\AccountsGetAddressParameter(); // \Tzkt\Model\AccountsGetAddressParameter | Filter by smart rollup address.   Click on the parameter to expand more details.
 $creator = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by smart rollup creator.   Click on the parameter to expand more details.
 $first_activity = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details.
-$first_activity_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details.
+$first_activity_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details.
 $last_activity = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details.
-$last_activity_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details.
+$last_activity_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
@@ -775,9 +775,9 @@ try {
 | **address** | [**\Tzkt\Model\AccountsGetAddressParameter**](../Model/.md)| Filter by smart rollup address.   Click on the parameter to expand more details. | [optional] |
 | **creator** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by smart rollup creator.   Click on the parameter to expand more details. | [optional] |
 | **first_activity** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. | [optional] |
-| **first_activity_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. | [optional] |
+| **first_activity_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. | [optional] |
 | **last_activity** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. | [optional] |
-| **last_activity_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. | [optional] |
+| **last_activity_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
@@ -827,9 +827,9 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\Accou
 $address = new \Tzkt\Model\\Tzkt\Model\AccountsGetAddressParameter(); // \Tzkt\Model\AccountsGetAddressParameter | Filter by smart rollup address.   Click on the parameter to expand more details.
 $creator = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by smart rollup creator.   Click on the parameter to expand more details.
 $first_activity = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details.
-$first_activity_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details.
+$first_activity_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details.
 $last_activity = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details.
-$last_activity_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details.
+$last_activity_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details.
 
 try {
     $result = $apiInstance->smartRollupsGetSmartRollupsCount($id, $address, $creator, $first_activity, $first_activity_time, $last_activity, $last_activity_time);
@@ -847,9 +847,9 @@ try {
 | **address** | [**\Tzkt\Model\AccountsGetAddressParameter**](../Model/.md)| Filter by smart rollup address.   Click on the parameter to expand more details. | [optional] |
 | **creator** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by smart rollup creator.   Click on the parameter to expand more details. | [optional] |
 | **first_activity** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the rollup was first seen.   Click on the parameter to expand more details. | [optional] |
-| **first_activity_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. | [optional] |
+| **first_activity_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the rollup was first seen.   Click on the parameter to expand more details. | [optional] |
 | **last_activity** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the rollup was last seen.   Click on the parameter to expand more details. | [optional] |
-| **last_activity_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. | [optional] |
+| **last_activity_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the rollup was last seen.   Click on the parameter to expand more details. | [optional] |
 
 ### Return type
 

@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **storage_fee** | **int** | The amount of funds burned from the sender account for contract storage in the blockchain (micro tez) | [optional]
 **allocation_fee** | **int** | The amount of funds burned from the sender account for contract account creation (micro tez) | [optional]
 **contract_balance** | **int** | The contract origination balance (micro tez) | [optional]
-**contract_manager** | [**\Tzkt\Model\OriginationOperationAllOfContractManager**](OriginationOperationAllOfContractManager.md) |  | [optional]
 **contract_delegate** | [**\Tzkt\Model\OriginationOperationAllOfContractDelegate**](OriginationOperationAllOfContractDelegate.md) |  | [optional]
 **code** | **mixed** | Contract code. Note: you can configure code format by setting &#x60;micheline&#x60; query parameter (&#x60;0 | 2&#x60; - raw micheline, &#x60;1 | 3&#x60; - raw micheline string). | [optional]
 **storage** | **mixed** | Initial contract storage value converted to human-readable JSON. Note: you can configure storage format by setting &#x60;micheline&#x60; query parameter. | [optional]

@@ -16,7 +16,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `blocksGet()`
 
 ```php
-blocksGet($baker, $anyof, $proposer, $producer, $level, $timestamp, $priority, $block_round, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\Block[]
+blocksGet($anyof, $proposer, $producer, $level, $timestamp, $block_round, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\Block[]
 ```
 
 Get blocks
@@ -36,22 +36,20 @@ $apiInstance = new Tzkt\Api\BlocksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | [DEPRECATED]
 $anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filters by any of the specified fields. Example: `anyof.proposer.producer=tz1...`.
 $proposer = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters blocks by block proposer. Allowed fields for `.eqx` mode: none.
 $producer = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters blocks by block producer. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters blocks by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters blocks by timestamp.
-$priority = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | [DEPRECATED]
+$timestamp = new \Tzkt\Model\\Tzkt\Model\BlocksGetTimestampParameter(); // \Tzkt\Model\BlocksGetTimestampParameter | Filters blocks by timestamp.
 $block_round = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters blocks by block round.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts blocks by specified field. Supported fields: `id` (default), `level`, `payloadRound`, `blockRound`, `validations`, `reward`, `bonus`, `fees`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->blocksGet($baker, $anyof, $proposer, $producer, $level, $timestamp, $priority, $block_round, $select, $sort, $offset, $limit, $quote);
+    $result = $apiInstance->blocksGet($anyof, $proposer, $producer, $level, $timestamp, $block_round, $select, $sort, $offset, $limit, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlocksApi->blocksGet: ', $e->getMessage(), PHP_EOL;
@@ -62,19 +60,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| [DEPRECATED] | [optional] |
 | **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filters by any of the specified fields. Example: &#x60;anyof.proposer.producer&#x3D;tz1...&#x60;. | [optional] |
 | **proposer** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters blocks by block proposer. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **producer** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters blocks by block producer. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters blocks by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters blocks by timestamp. | [optional] |
-| **priority** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| [DEPRECATED] | [optional] |
+| **timestamp** | [**\Tzkt\Model\BlocksGetTimestampParameter**](../Model/.md)| Filters blocks by timestamp. | [optional] |
 | **block_round** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters blocks by block round. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts blocks by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;payloadRound&#x60;, &#x60;blockRound&#x60;, &#x60;validations&#x60;, &#x60;reward&#x60;, &#x60;bonus&#x60;, &#x60;fees&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -118,8 +114,8 @@ $apiInstance = new Tzkt\Api\BlocksApi(
 );
 $timestamp = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Timestamp, e.g. `2020-01-01T00:00:00Z`
 $operations = false; // bool | Flag indicating whether to include block operations into returned object or not
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->blocksGetByDate($timestamp, $operations, $micheline, $quote);
@@ -135,8 +131,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **timestamp** | **\DateTime**| Timestamp, e.g. &#x60;2020-01-01T00:00:00Z&#x60; | |
 | **operations** | **bool**| Flag indicating whether to include block operations into returned object or not | [optional] [default to false] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -236,8 +232,8 @@ $apiInstance = new Tzkt\Api\BlocksApi(
 );
 $hash = 'hash_example'; // string | Block hash
 $operations = false; // bool | Flag indicating whether to include block operations into returned object or not
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->blocksGetByHash($hash, $operations, $micheline, $quote);
@@ -253,8 +249,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Block hash | |
 | **operations** | **bool**| Flag indicating whether to include block operations into returned object or not | [optional] [default to false] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -298,8 +294,8 @@ $apiInstance = new Tzkt\Api\BlocksApi(
 );
 $level = 56; // int | Block level
 $operations = false; // bool | Flag indicating whether to include block operations into returned object or not
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->blocksGetByLevel($level, $operations, $micheline, $quote);
@@ -315,8 +311,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | **int**| Block level | |
 | **operations** | **bool**| Flag indicating whether to include block operations into returned object or not | [optional] [default to false] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 

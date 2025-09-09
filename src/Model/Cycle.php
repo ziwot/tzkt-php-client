@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Rionet: `https://api.rionet.tzkt.io/` ([view docs](https://api.rionet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.9
+ * The version of the OpenAPI document: 1.16.0
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -70,19 +70,12 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_baking_power' => 'int',
         'block_reward' => 'int',
         'block_bonus_per_slot' => 'int',
-        'endorsement_reward_per_slot' => 'int',
+        'attestation_reward_per_slot' => 'int',
         'nonce_revelation_reward' => 'int',
         'vdf_revelation_reward' => 'int',
         'dal_attestation_reward_per_shard' => 'int',
         'quote' => '\Tzkt\Model\CycleQuote',
-        'snapshot_index' => 'int',
-        'lb_subsidy' => 'int',
-        'total_staking' => 'int',
-        'total_delegators' => 'int',
-        'total_delegated' => 'int',
-        'selected_bakers' => 'int',
-        'selected_stake' => 'int',
-        'total_rolls' => 'int'
+        'endorsement_reward_per_slot' => 'int'
     ];
 
     /**
@@ -102,19 +95,12 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_baking_power' => 'int64',
         'block_reward' => 'int64',
         'block_bonus_per_slot' => 'int64',
-        'endorsement_reward_per_slot' => 'int64',
+        'attestation_reward_per_slot' => 'int64',
         'nonce_revelation_reward' => 'int64',
         'vdf_revelation_reward' => 'int64',
         'dal_attestation_reward_per_shard' => 'int64',
         'quote' => null,
-        'snapshot_index' => 'int32',
-        'lb_subsidy' => 'int64',
-        'total_staking' => 'int64',
-        'total_delegators' => 'int32',
-        'total_delegated' => 'int64',
-        'selected_bakers' => 'int32',
-        'selected_stake' => 'int64',
-        'total_rolls' => 'int32'
+        'endorsement_reward_per_slot' => 'int64'
     ];
 
     /**
@@ -129,24 +115,17 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'last_level' => false,
         'end_time' => false,
         'snapshot_level' => false,
-        'random_seed' => true,
+        'random_seed' => false,
         'total_bakers' => false,
         'total_baking_power' => false,
         'block_reward' => false,
         'block_bonus_per_slot' => false,
-        'endorsement_reward_per_slot' => false,
+        'attestation_reward_per_slot' => false,
         'nonce_revelation_reward' => false,
         'vdf_revelation_reward' => false,
         'dal_attestation_reward_per_shard' => false,
         'quote' => true,
-        'snapshot_index' => false,
-        'lb_subsidy' => false,
-        'total_staking' => false,
-        'total_delegators' => false,
-        'total_delegated' => false,
-        'selected_bakers' => false,
-        'selected_stake' => false,
-        'total_rolls' => false
+        'endorsement_reward_per_slot' => false
     ];
 
     /**
@@ -246,19 +225,12 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_baking_power' => 'totalBakingPower',
         'block_reward' => 'blockReward',
         'block_bonus_per_slot' => 'blockBonusPerSlot',
-        'endorsement_reward_per_slot' => 'endorsementRewardPerSlot',
+        'attestation_reward_per_slot' => 'attestationRewardPerSlot',
         'nonce_revelation_reward' => 'nonceRevelationReward',
         'vdf_revelation_reward' => 'vdfRevelationReward',
         'dal_attestation_reward_per_shard' => 'dalAttestationRewardPerShard',
         'quote' => 'quote',
-        'snapshot_index' => 'snapshotIndex',
-        'lb_subsidy' => 'lbSubsidy',
-        'total_staking' => 'totalStaking',
-        'total_delegators' => 'totalDelegators',
-        'total_delegated' => 'totalDelegated',
-        'selected_bakers' => 'selectedBakers',
-        'selected_stake' => 'selectedStake',
-        'total_rolls' => 'totalRolls'
+        'endorsement_reward_per_slot' => 'endorsementRewardPerSlot'
     ];
 
     /**
@@ -278,19 +250,12 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_baking_power' => 'setTotalBakingPower',
         'block_reward' => 'setBlockReward',
         'block_bonus_per_slot' => 'setBlockBonusPerSlot',
-        'endorsement_reward_per_slot' => 'setEndorsementRewardPerSlot',
+        'attestation_reward_per_slot' => 'setAttestationRewardPerSlot',
         'nonce_revelation_reward' => 'setNonceRevelationReward',
         'vdf_revelation_reward' => 'setVdfRevelationReward',
         'dal_attestation_reward_per_shard' => 'setDalAttestationRewardPerShard',
         'quote' => 'setQuote',
-        'snapshot_index' => 'setSnapshotIndex',
-        'lb_subsidy' => 'setLbSubsidy',
-        'total_staking' => 'setTotalStaking',
-        'total_delegators' => 'setTotalDelegators',
-        'total_delegated' => 'setTotalDelegated',
-        'selected_bakers' => 'setSelectedBakers',
-        'selected_stake' => 'setSelectedStake',
-        'total_rolls' => 'setTotalRolls'
+        'endorsement_reward_per_slot' => 'setEndorsementRewardPerSlot'
     ];
 
     /**
@@ -310,19 +275,12 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_baking_power' => 'getTotalBakingPower',
         'block_reward' => 'getBlockReward',
         'block_bonus_per_slot' => 'getBlockBonusPerSlot',
-        'endorsement_reward_per_slot' => 'getEndorsementRewardPerSlot',
+        'attestation_reward_per_slot' => 'getAttestationRewardPerSlot',
         'nonce_revelation_reward' => 'getNonceRevelationReward',
         'vdf_revelation_reward' => 'getVdfRevelationReward',
         'dal_attestation_reward_per_shard' => 'getDalAttestationRewardPerShard',
         'quote' => 'getQuote',
-        'snapshot_index' => 'getSnapshotIndex',
-        'lb_subsidy' => 'getLbSubsidy',
-        'total_staking' => 'getTotalStaking',
-        'total_delegators' => 'getTotalDelegators',
-        'total_delegated' => 'getTotalDelegated',
-        'selected_bakers' => 'getSelectedBakers',
-        'selected_stake' => 'getSelectedStake',
-        'total_rolls' => 'getTotalRolls'
+        'endorsement_reward_per_slot' => 'getEndorsementRewardPerSlot'
     ];
 
     /**
@@ -392,19 +350,12 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('total_baking_power', $data ?? [], null);
         $this->setIfExists('block_reward', $data ?? [], null);
         $this->setIfExists('block_bonus_per_slot', $data ?? [], null);
-        $this->setIfExists('endorsement_reward_per_slot', $data ?? [], null);
+        $this->setIfExists('attestation_reward_per_slot', $data ?? [], null);
         $this->setIfExists('nonce_revelation_reward', $data ?? [], null);
         $this->setIfExists('vdf_revelation_reward', $data ?? [], null);
         $this->setIfExists('dal_attestation_reward_per_shard', $data ?? [], null);
         $this->setIfExists('quote', $data ?? [], null);
-        $this->setIfExists('snapshot_index', $data ?? [], null);
-        $this->setIfExists('lb_subsidy', $data ?? [], null);
-        $this->setIfExists('total_staking', $data ?? [], null);
-        $this->setIfExists('total_delegators', $data ?? [], null);
-        $this->setIfExists('total_delegated', $data ?? [], null);
-        $this->setIfExists('selected_bakers', $data ?? [], null);
-        $this->setIfExists('selected_stake', $data ?? [], null);
-        $this->setIfExists('total_rolls', $data ?? [], null);
+        $this->setIfExists('endorsement_reward_per_slot', $data ?? [], null);
     }
 
     /**
@@ -631,14 +582,7 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
     public function setRandomSeed(?string $random_seed): static
     {
         if (is_null($random_seed)) {
-            array_push($this->openAPINullablesSetToNull, 'random_seed');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('random_seed', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new InvalidArgumentException('non-nullable random_seed cannot be null');
         }
         $this->container['random_seed'] = $random_seed;
 
@@ -754,28 +698,28 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets endorsement_reward_per_slot
+     * Gets attestation_reward_per_slot
      *
      * @return int|null
      */
-    public function getEndorsementRewardPerSlot(): ?int
+    public function getAttestationRewardPerSlot(): ?int
     {
-        return $this->container['endorsement_reward_per_slot'];
+        return $this->container['attestation_reward_per_slot'];
     }
 
     /**
-     * Sets endorsement_reward_per_slot
+     * Sets attestation_reward_per_slot
      *
-     * @param int|null $endorsement_reward_per_slot Reward for endorsing in this cycle (micro tez)
+     * @param int|null $attestation_reward_per_slot Reward for attestation in this cycle (micro tez)
      *
      * @return $this
      */
-    public function setEndorsementRewardPerSlot(?int $endorsement_reward_per_slot): static
+    public function setAttestationRewardPerSlot(?int $attestation_reward_per_slot): static
     {
-        if (is_null($endorsement_reward_per_slot)) {
-            throw new InvalidArgumentException('non-nullable endorsement_reward_per_slot cannot be null');
+        if (is_null($attestation_reward_per_slot)) {
+            throw new InvalidArgumentException('non-nullable attestation_reward_per_slot cannot be null');
         }
-        $this->container['endorsement_reward_per_slot'] = $endorsement_reward_per_slot;
+        $this->container['attestation_reward_per_slot'] = $attestation_reward_per_slot;
 
         return $this;
     }
@@ -896,217 +840,28 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets snapshot_index
+     * Gets endorsement_reward_per_slot
      *
      * @return int|null
      */
-    public function getSnapshotIndex(): ?int
+    public function getEndorsementRewardPerSlot(): ?int
     {
-        return $this->container['snapshot_index'];
+        return $this->container['endorsement_reward_per_slot'];
     }
 
     /**
-     * Sets snapshot_index
+     * Sets endorsement_reward_per_slot
      *
-     * @param int|null $snapshot_index [DEPRECATED]
+     * @param int|null $endorsement_reward_per_slot **DEPRECATED**
      *
      * @return $this
      */
-    public function setSnapshotIndex(?int $snapshot_index): static
+    public function setEndorsementRewardPerSlot(?int $endorsement_reward_per_slot): static
     {
-        if (is_null($snapshot_index)) {
-            throw new InvalidArgumentException('non-nullable snapshot_index cannot be null');
+        if (is_null($endorsement_reward_per_slot)) {
+            throw new InvalidArgumentException('non-nullable endorsement_reward_per_slot cannot be null');
         }
-        $this->container['snapshot_index'] = $snapshot_index;
-
-        return $this;
-    }
-
-    /**
-     * Gets lb_subsidy
-     *
-     * @return int|null
-     */
-    public function getLbSubsidy(): ?int
-    {
-        return $this->container['lb_subsidy'];
-    }
-
-    /**
-     * Sets lb_subsidy
-     *
-     * @param int|null $lb_subsidy [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setLbSubsidy(?int $lb_subsidy): static
-    {
-        if (is_null($lb_subsidy)) {
-            throw new InvalidArgumentException('non-nullable lb_subsidy cannot be null');
-        }
-        $this->container['lb_subsidy'] = $lb_subsidy;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_staking
-     *
-     * @return int|null
-     */
-    public function getTotalStaking(): ?int
-    {
-        return $this->container['total_staking'];
-    }
-
-    /**
-     * Sets total_staking
-     *
-     * @param int|null $total_staking [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setTotalStaking(?int $total_staking): static
-    {
-        if (is_null($total_staking)) {
-            throw new InvalidArgumentException('non-nullable total_staking cannot be null');
-        }
-        $this->container['total_staking'] = $total_staking;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_delegators
-     *
-     * @return int|null
-     */
-    public function getTotalDelegators(): ?int
-    {
-        return $this->container['total_delegators'];
-    }
-
-    /**
-     * Sets total_delegators
-     *
-     * @param int|null $total_delegators [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setTotalDelegators(?int $total_delegators): static
-    {
-        if (is_null($total_delegators)) {
-            throw new InvalidArgumentException('non-nullable total_delegators cannot be null');
-        }
-        $this->container['total_delegators'] = $total_delegators;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_delegated
-     *
-     * @return int|null
-     */
-    public function getTotalDelegated(): ?int
-    {
-        return $this->container['total_delegated'];
-    }
-
-    /**
-     * Sets total_delegated
-     *
-     * @param int|null $total_delegated [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setTotalDelegated(?int $total_delegated): static
-    {
-        if (is_null($total_delegated)) {
-            throw new InvalidArgumentException('non-nullable total_delegated cannot be null');
-        }
-        $this->container['total_delegated'] = $total_delegated;
-
-        return $this;
-    }
-
-    /**
-     * Gets selected_bakers
-     *
-     * @return int|null
-     */
-    public function getSelectedBakers(): ?int
-    {
-        return $this->container['selected_bakers'];
-    }
-
-    /**
-     * Sets selected_bakers
-     *
-     * @param int|null $selected_bakers [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setSelectedBakers(?int $selected_bakers): static
-    {
-        if (is_null($selected_bakers)) {
-            throw new InvalidArgumentException('non-nullable selected_bakers cannot be null');
-        }
-        $this->container['selected_bakers'] = $selected_bakers;
-
-        return $this;
-    }
-
-    /**
-     * Gets selected_stake
-     *
-     * @return int|null
-     */
-    public function getSelectedStake(): ?int
-    {
-        return $this->container['selected_stake'];
-    }
-
-    /**
-     * Sets selected_stake
-     *
-     * @param int|null $selected_stake [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setSelectedStake(?int $selected_stake): static
-    {
-        if (is_null($selected_stake)) {
-            throw new InvalidArgumentException('non-nullable selected_stake cannot be null');
-        }
-        $this->container['selected_stake'] = $selected_stake;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_rolls
-     *
-     * @return int|null
-     */
-    public function getTotalRolls(): ?int
-    {
-        return $this->container['total_rolls'];
-    }
-
-    /**
-     * Sets total_rolls
-     *
-     * @param int|null $total_rolls [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setTotalRolls(?int $total_rolls): static
-    {
-        if (is_null($total_rolls)) {
-            throw new InvalidArgumentException('non-nullable total_rolls cannot be null');
-        }
-        $this->container['total_rolls'] = $total_rolls;
+        $this->container['endorsement_reward_per_slot'] = $endorsement_reward_per_slot;
 
         return $this;
     }

@@ -13,6 +13,5 @@ Name | Type | Description | Notes
 **amount** | **int** | Amount (micro tez) | [optional]
 **staking_updates_count** | **int** | Number of staking updates happened internally | [optional]
 **quote** | [**\Tzkt\Model\AutostakingOperationAllOfQuote**](AutostakingOperationAllOfQuote.md) |  | [optional]
-**cycle** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

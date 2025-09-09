@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Rionet: `https://api.rionet.tzkt.io/` ([view docs](https://api.rionet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.9
+ * The version of the OpenAPI document: 1.16.0
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -69,7 +69,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'blocks_per_snapshot' => 'int',
         'blocks_per_voting' => 'int',
         'time_between_blocks' => 'int',
-        'endorsers_per_block' => 'int',
+        'attesters_per_block' => 'int',
         'hard_operation_gas_limit' => 'int',
         'hard_operation_storage_limit' => 'int',
         'hard_block_gas_limit' => 'int',
@@ -77,8 +77,8 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'minimal_frozen_stake' => 'int',
         'block_deposit' => 'int',
         'block_reward' => 'int[]',
-        'endorsement_deposit' => 'int',
-        'endorsement_reward' => 'int[]',
+        'attestation_deposit' => 'int',
+        'attestation_reward' => 'int[]',
         'origination_size' => 'int',
         'byte_cost' => 'int',
         'proposal_quorum' => 'float',
@@ -99,19 +99,9 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'smart_rollup_timeout_period' => 'int',
         'dal_number_of_shards' => 'int',
         'dictator' => 'string',
-        'max_slashing_period' => 'int',
-        'preserved_cycles' => 'int',
-        'lb_escape_threshold' => 'int',
-        'lb_sunset_level' => 'int',
-        'frozen_deposits_percentage' => 'int',
-        'tx_rollup_origination_size' => 'int',
-        'tx_rollup_commitment_bond' => 'int',
-        'double_baking_punishment' => 'int',
-        'double_endorsing_punishment_numerator' => 'int',
-        'double_endorsing_punishment_denominator' => 'int',
-        'revelation_reward' => 'int',
-        'lb_subsidy' => 'int',
-        'tokens_per_roll' => 'int'
+        'endorsers_per_block' => 'int',
+        'endorsement_deposit' => 'int',
+        'endorsement_reward' => 'int[]'
     ];
 
     /**
@@ -129,7 +119,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'blocks_per_snapshot' => 'int32',
         'blocks_per_voting' => 'int32',
         'time_between_blocks' => 'int32',
-        'endorsers_per_block' => 'int32',
+        'attesters_per_block' => 'int32',
         'hard_operation_gas_limit' => 'int32',
         'hard_operation_storage_limit' => 'int32',
         'hard_block_gas_limit' => 'int32',
@@ -137,8 +127,8 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'minimal_frozen_stake' => 'int64',
         'block_deposit' => 'int64',
         'block_reward' => 'int64',
-        'endorsement_deposit' => 'int64',
-        'endorsement_reward' => 'int64',
+        'attestation_deposit' => 'int64',
+        'attestation_reward' => 'int64',
         'origination_size' => 'int32',
         'byte_cost' => 'int32',
         'proposal_quorum' => 'double',
@@ -159,19 +149,9 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'smart_rollup_timeout_period' => 'int32',
         'dal_number_of_shards' => 'int32',
         'dictator' => null,
-        'max_slashing_period' => 'int32',
-        'preserved_cycles' => 'int32',
-        'lb_escape_threshold' => 'int32',
-        'lb_sunset_level' => 'int32',
-        'frozen_deposits_percentage' => 'int32',
-        'tx_rollup_origination_size' => 'int32',
-        'tx_rollup_commitment_bond' => 'int64',
-        'double_baking_punishment' => 'int64',
-        'double_endorsing_punishment_numerator' => 'int32',
-        'double_endorsing_punishment_denominator' => 'int32',
-        'revelation_reward' => 'int64',
-        'lb_subsidy' => 'int32',
-        'tokens_per_roll' => 'int64'
+        'endorsers_per_block' => 'int32',
+        'endorsement_deposit' => 'int64',
+        'endorsement_reward' => 'int64'
     ];
 
     /**
@@ -189,16 +169,16 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'blocks_per_snapshot' => false,
         'blocks_per_voting' => false,
         'time_between_blocks' => false,
-        'endorsers_per_block' => false,
+        'attesters_per_block' => false,
         'hard_operation_gas_limit' => false,
         'hard_operation_storage_limit' => false,
         'hard_block_gas_limit' => false,
         'minimal_stake' => false,
         'minimal_frozen_stake' => false,
         'block_deposit' => false,
-        'block_reward' => true,
-        'endorsement_deposit' => false,
-        'endorsement_reward' => true,
+        'block_reward' => false,
+        'attestation_deposit' => false,
+        'attestation_reward' => false,
         'origination_size' => false,
         'byte_cost' => false,
         'proposal_quorum' => false,
@@ -219,19 +199,9 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'smart_rollup_timeout_period' => false,
         'dal_number_of_shards' => false,
         'dictator' => true,
-        'max_slashing_period' => false,
-        'preserved_cycles' => false,
-        'lb_escape_threshold' => false,
-        'lb_sunset_level' => false,
-        'frozen_deposits_percentage' => false,
-        'tx_rollup_origination_size' => false,
-        'tx_rollup_commitment_bond' => false,
-        'double_baking_punishment' => false,
-        'double_endorsing_punishment_numerator' => false,
-        'double_endorsing_punishment_denominator' => false,
-        'revelation_reward' => false,
-        'lb_subsidy' => false,
-        'tokens_per_roll' => false
+        'endorsers_per_block' => false,
+        'endorsement_deposit' => false,
+        'endorsement_reward' => false
     ];
 
     /**
@@ -329,7 +299,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'blocks_per_snapshot' => 'blocksPerSnapshot',
         'blocks_per_voting' => 'blocksPerVoting',
         'time_between_blocks' => 'timeBetweenBlocks',
-        'endorsers_per_block' => 'endorsersPerBlock',
+        'attesters_per_block' => 'attestersPerBlock',
         'hard_operation_gas_limit' => 'hardOperationGasLimit',
         'hard_operation_storage_limit' => 'hardOperationStorageLimit',
         'hard_block_gas_limit' => 'hardBlockGasLimit',
@@ -337,8 +307,8 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'minimal_frozen_stake' => 'minimalFrozenStake',
         'block_deposit' => 'blockDeposit',
         'block_reward' => 'blockReward',
-        'endorsement_deposit' => 'endorsementDeposit',
-        'endorsement_reward' => 'endorsementReward',
+        'attestation_deposit' => 'attestationDeposit',
+        'attestation_reward' => 'attestationReward',
         'origination_size' => 'originationSize',
         'byte_cost' => 'byteCost',
         'proposal_quorum' => 'proposalQuorum',
@@ -359,19 +329,9 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'smart_rollup_timeout_period' => 'smartRollupTimeoutPeriod',
         'dal_number_of_shards' => 'dalNumberOfShards',
         'dictator' => 'dictator',
-        'max_slashing_period' => 'maxSlashingPeriod',
-        'preserved_cycles' => 'preservedCycles',
-        'lb_escape_threshold' => 'lbEscapeThreshold',
-        'lb_sunset_level' => 'lbSunsetLevel',
-        'frozen_deposits_percentage' => 'frozenDepositsPercentage',
-        'tx_rollup_origination_size' => 'txRollupOriginationSize',
-        'tx_rollup_commitment_bond' => 'txRollupCommitmentBond',
-        'double_baking_punishment' => 'doubleBakingPunishment',
-        'double_endorsing_punishment_numerator' => 'doubleEndorsingPunishmentNumerator',
-        'double_endorsing_punishment_denominator' => 'doubleEndorsingPunishmentDenominator',
-        'revelation_reward' => 'revelationReward',
-        'lb_subsidy' => 'lbSubsidy',
-        'tokens_per_roll' => 'tokensPerRoll'
+        'endorsers_per_block' => 'endorsersPerBlock',
+        'endorsement_deposit' => 'endorsementDeposit',
+        'endorsement_reward' => 'endorsementReward'
     ];
 
     /**
@@ -389,7 +349,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'blocks_per_snapshot' => 'setBlocksPerSnapshot',
         'blocks_per_voting' => 'setBlocksPerVoting',
         'time_between_blocks' => 'setTimeBetweenBlocks',
-        'endorsers_per_block' => 'setEndorsersPerBlock',
+        'attesters_per_block' => 'setAttestersPerBlock',
         'hard_operation_gas_limit' => 'setHardOperationGasLimit',
         'hard_operation_storage_limit' => 'setHardOperationStorageLimit',
         'hard_block_gas_limit' => 'setHardBlockGasLimit',
@@ -397,8 +357,8 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'minimal_frozen_stake' => 'setMinimalFrozenStake',
         'block_deposit' => 'setBlockDeposit',
         'block_reward' => 'setBlockReward',
-        'endorsement_deposit' => 'setEndorsementDeposit',
-        'endorsement_reward' => 'setEndorsementReward',
+        'attestation_deposit' => 'setAttestationDeposit',
+        'attestation_reward' => 'setAttestationReward',
         'origination_size' => 'setOriginationSize',
         'byte_cost' => 'setByteCost',
         'proposal_quorum' => 'setProposalQuorum',
@@ -419,19 +379,9 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'smart_rollup_timeout_period' => 'setSmartRollupTimeoutPeriod',
         'dal_number_of_shards' => 'setDalNumberOfShards',
         'dictator' => 'setDictator',
-        'max_slashing_period' => 'setMaxSlashingPeriod',
-        'preserved_cycles' => 'setPreservedCycles',
-        'lb_escape_threshold' => 'setLbEscapeThreshold',
-        'lb_sunset_level' => 'setLbSunsetLevel',
-        'frozen_deposits_percentage' => 'setFrozenDepositsPercentage',
-        'tx_rollup_origination_size' => 'setTxRollupOriginationSize',
-        'tx_rollup_commitment_bond' => 'setTxRollupCommitmentBond',
-        'double_baking_punishment' => 'setDoubleBakingPunishment',
-        'double_endorsing_punishment_numerator' => 'setDoubleEndorsingPunishmentNumerator',
-        'double_endorsing_punishment_denominator' => 'setDoubleEndorsingPunishmentDenominator',
-        'revelation_reward' => 'setRevelationReward',
-        'lb_subsidy' => 'setLbSubsidy',
-        'tokens_per_roll' => 'setTokensPerRoll'
+        'endorsers_per_block' => 'setEndorsersPerBlock',
+        'endorsement_deposit' => 'setEndorsementDeposit',
+        'endorsement_reward' => 'setEndorsementReward'
     ];
 
     /**
@@ -449,7 +399,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'blocks_per_snapshot' => 'getBlocksPerSnapshot',
         'blocks_per_voting' => 'getBlocksPerVoting',
         'time_between_blocks' => 'getTimeBetweenBlocks',
-        'endorsers_per_block' => 'getEndorsersPerBlock',
+        'attesters_per_block' => 'getAttestersPerBlock',
         'hard_operation_gas_limit' => 'getHardOperationGasLimit',
         'hard_operation_storage_limit' => 'getHardOperationStorageLimit',
         'hard_block_gas_limit' => 'getHardBlockGasLimit',
@@ -457,8 +407,8 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'minimal_frozen_stake' => 'getMinimalFrozenStake',
         'block_deposit' => 'getBlockDeposit',
         'block_reward' => 'getBlockReward',
-        'endorsement_deposit' => 'getEndorsementDeposit',
-        'endorsement_reward' => 'getEndorsementReward',
+        'attestation_deposit' => 'getAttestationDeposit',
+        'attestation_reward' => 'getAttestationReward',
         'origination_size' => 'getOriginationSize',
         'byte_cost' => 'getByteCost',
         'proposal_quorum' => 'getProposalQuorum',
@@ -479,19 +429,9 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         'smart_rollup_timeout_period' => 'getSmartRollupTimeoutPeriod',
         'dal_number_of_shards' => 'getDalNumberOfShards',
         'dictator' => 'getDictator',
-        'max_slashing_period' => 'getMaxSlashingPeriod',
-        'preserved_cycles' => 'getPreservedCycles',
-        'lb_escape_threshold' => 'getLbEscapeThreshold',
-        'lb_sunset_level' => 'getLbSunsetLevel',
-        'frozen_deposits_percentage' => 'getFrozenDepositsPercentage',
-        'tx_rollup_origination_size' => 'getTxRollupOriginationSize',
-        'tx_rollup_commitment_bond' => 'getTxRollupCommitmentBond',
-        'double_baking_punishment' => 'getDoubleBakingPunishment',
-        'double_endorsing_punishment_numerator' => 'getDoubleEndorsingPunishmentNumerator',
-        'double_endorsing_punishment_denominator' => 'getDoubleEndorsingPunishmentDenominator',
-        'revelation_reward' => 'getRevelationReward',
-        'lb_subsidy' => 'getLbSubsidy',
-        'tokens_per_roll' => 'getTokensPerRoll'
+        'endorsers_per_block' => 'getEndorsersPerBlock',
+        'endorsement_deposit' => 'getEndorsementDeposit',
+        'endorsement_reward' => 'getEndorsementReward'
     ];
 
     /**
@@ -559,7 +499,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('blocks_per_snapshot', $data ?? [], null);
         $this->setIfExists('blocks_per_voting', $data ?? [], null);
         $this->setIfExists('time_between_blocks', $data ?? [], null);
-        $this->setIfExists('endorsers_per_block', $data ?? [], null);
+        $this->setIfExists('attesters_per_block', $data ?? [], null);
         $this->setIfExists('hard_operation_gas_limit', $data ?? [], null);
         $this->setIfExists('hard_operation_storage_limit', $data ?? [], null);
         $this->setIfExists('hard_block_gas_limit', $data ?? [], null);
@@ -567,8 +507,8 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('minimal_frozen_stake', $data ?? [], null);
         $this->setIfExists('block_deposit', $data ?? [], null);
         $this->setIfExists('block_reward', $data ?? [], null);
-        $this->setIfExists('endorsement_deposit', $data ?? [], null);
-        $this->setIfExists('endorsement_reward', $data ?? [], null);
+        $this->setIfExists('attestation_deposit', $data ?? [], null);
+        $this->setIfExists('attestation_reward', $data ?? [], null);
         $this->setIfExists('origination_size', $data ?? [], null);
         $this->setIfExists('byte_cost', $data ?? [], null);
         $this->setIfExists('proposal_quorum', $data ?? [], null);
@@ -589,19 +529,9 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('smart_rollup_timeout_period', $data ?? [], null);
         $this->setIfExists('dal_number_of_shards', $data ?? [], null);
         $this->setIfExists('dictator', $data ?? [], null);
-        $this->setIfExists('max_slashing_period', $data ?? [], null);
-        $this->setIfExists('preserved_cycles', $data ?? [], null);
-        $this->setIfExists('lb_escape_threshold', $data ?? [], null);
-        $this->setIfExists('lb_sunset_level', $data ?? [], null);
-        $this->setIfExists('frozen_deposits_percentage', $data ?? [], null);
-        $this->setIfExists('tx_rollup_origination_size', $data ?? [], null);
-        $this->setIfExists('tx_rollup_commitment_bond', $data ?? [], null);
-        $this->setIfExists('double_baking_punishment', $data ?? [], null);
-        $this->setIfExists('double_endorsing_punishment_numerator', $data ?? [], null);
-        $this->setIfExists('double_endorsing_punishment_denominator', $data ?? [], null);
-        $this->setIfExists('revelation_reward', $data ?? [], null);
-        $this->setIfExists('lb_subsidy', $data ?? [], null);
-        $this->setIfExists('tokens_per_roll', $data ?? [], null);
+        $this->setIfExists('endorsers_per_block', $data ?? [], null);
+        $this->setIfExists('endorsement_deposit', $data ?? [], null);
+        $this->setIfExists('endorsement_reward', $data ?? [], null);
     }
 
     /**
@@ -890,28 +820,28 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets endorsers_per_block
+     * Gets attesters_per_block
      *
      * @return int|null
      */
-    public function getEndorsersPerBlock(): ?int
+    public function getAttestersPerBlock(): ?int
     {
-        return $this->container['endorsers_per_block'];
+        return $this->container['attesters_per_block'];
     }
 
     /**
-     * Sets endorsers_per_block
+     * Sets attesters_per_block
      *
-     * @param int|null $endorsers_per_block Number of bakers that assigned to endorse a block
+     * @param int|null $attesters_per_block Number of bakers that assigned to attest a block
      *
      * @return $this
      */
-    public function setEndorsersPerBlock(?int $endorsers_per_block): static
+    public function setAttestersPerBlock(?int $attesters_per_block): static
     {
-        if (is_null($endorsers_per_block)) {
-            throw new InvalidArgumentException('non-nullable endorsers_per_block cannot be null');
+        if (is_null($attesters_per_block)) {
+            throw new InvalidArgumentException('non-nullable attesters_per_block cannot be null');
         }
-        $this->container['endorsers_per_block'] = $endorsers_per_block;
+        $this->container['attesters_per_block'] = $attesters_per_block;
 
         return $this;
     }
@@ -1098,14 +1028,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     public function setBlockReward(?array $block_reward): static
     {
         if (is_null($block_reward)) {
-            array_push($this->openAPINullablesSetToNull, 'block_reward');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('block_reward', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new InvalidArgumentException('non-nullable block_reward cannot be null');
         }
         $this->container['block_reward'] = $block_reward;
 
@@ -1113,62 +1036,55 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets endorsement_deposit
+     * Gets attestation_deposit
      *
      * @return int|null
      */
-    public function getEndorsementDeposit(): ?int
+    public function getAttestationDeposit(): ?int
     {
-        return $this->container['endorsement_deposit'];
+        return $this->container['attestation_deposit'];
     }
 
     /**
-     * Sets endorsement_deposit
+     * Sets attestation_deposit
      *
-     * @param int|null $endorsement_deposit Security deposit for sending an endorsement operation (micro tez)
+     * @param int|null $attestation_deposit Security deposit for sending an attestation operation (micro tez)
      *
      * @return $this
      */
-    public function setEndorsementDeposit(?int $endorsement_deposit): static
+    public function setAttestationDeposit(?int $attestation_deposit): static
     {
-        if (is_null($endorsement_deposit)) {
-            throw new InvalidArgumentException('non-nullable endorsement_deposit cannot be null');
+        if (is_null($attestation_deposit)) {
+            throw new InvalidArgumentException('non-nullable attestation_deposit cannot be null');
         }
-        $this->container['endorsement_deposit'] = $endorsement_deposit;
+        $this->container['attestation_deposit'] = $attestation_deposit;
 
         return $this;
     }
 
     /**
-     * Gets endorsement_reward
+     * Gets attestation_reward
      *
      * @return int[]|null
      */
-    public function getEndorsementReward(): ?array
+    public function getAttestationReward(): ?array
     {
-        return $this->container['endorsement_reward'];
+        return $this->container['attestation_reward'];
     }
 
     /**
-     * Sets endorsement_reward
+     * Sets attestation_reward
      *
-     * @param int[]|null $endorsement_reward Reward for sending an endorsement operation (micro tez)
+     * @param int[]|null $attestation_reward Reward for sending an attestation operation (micro tez)
      *
      * @return $this
      */
-    public function setEndorsementReward(?array $endorsement_reward): static
+    public function setAttestationReward(?array $attestation_reward): static
     {
-        if (is_null($endorsement_reward)) {
-            array_push($this->openAPINullablesSetToNull, 'endorsement_reward');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('endorsement_reward', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($attestation_reward)) {
+            throw new InvalidArgumentException('non-nullable attestation_reward cannot be null');
         }
-        $this->container['endorsement_reward'] = $endorsement_reward;
+        $this->container['attestation_reward'] = $attestation_reward;
 
         return $this;
     }
@@ -1348,7 +1264,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets consensus_threshold
      *
-     * @param int|null $consensus_threshold Endorsement quorum
+     * @param int|null $consensus_threshold Attestation quorum
      *
      * @return $this
      */
@@ -1375,7 +1291,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets min_participation_numerator
      *
-     * @param int|null $min_participation_numerator Number of endorsed slots needed to receive endorsing rewards
+     * @param int|null $min_participation_numerator Number of attested slots needed to receive attestation rewards
      *
      * @return $this
      */
@@ -1402,7 +1318,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets min_participation_denominator
      *
-     * @param int|null $min_participation_denominator Number of endorsed slots needed to receive endorsing rewards
+     * @param int|null $min_participation_denominator Number of attested slots needed to receive attestation rewards
      *
      * @return $this
      */
@@ -1429,7 +1345,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets denunciation_period
      *
-     * @param int|null $denunciation_period Number of cycles after double baking/(pre)endorsing where an accusation operation can be injected
+     * @param int|null $denunciation_period Number of cycles after double baking/(pre)attestation where an accusation operation can be injected
      *
      * @return $this
      */
@@ -1456,7 +1372,7 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets slashing_delay
      *
-     * @param int|null $slashing_delay Number of cycles after double baking/(pre)endorsing evidence where slashing happens
+     * @param int|null $slashing_delay Number of cycles after double baking/(pre)attestation evidence where slashing happens
      *
      * @return $this
      */
@@ -1721,352 +1637,82 @@ class ProtocolConstants implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets max_slashing_period
+     * Gets endorsers_per_block
      *
      * @return int|null
      */
-    public function getMaxSlashingPeriod(): ?int
+    public function getEndorsersPerBlock(): ?int
     {
-        return $this->container['max_slashing_period'];
+        return $this->container['endorsers_per_block'];
     }
 
     /**
-     * Sets max_slashing_period
+     * Sets endorsers_per_block
      *
-     * @param int|null $max_slashing_period [DEPRECATED]
+     * @param int|null $endorsers_per_block **DEPRECATED**
      *
      * @return $this
      */
-    public function setMaxSlashingPeriod(?int $max_slashing_period): static
+    public function setEndorsersPerBlock(?int $endorsers_per_block): static
     {
-        if (is_null($max_slashing_period)) {
-            throw new InvalidArgumentException('non-nullable max_slashing_period cannot be null');
+        if (is_null($endorsers_per_block)) {
+            throw new InvalidArgumentException('non-nullable endorsers_per_block cannot be null');
         }
-        $this->container['max_slashing_period'] = $max_slashing_period;
+        $this->container['endorsers_per_block'] = $endorsers_per_block;
 
         return $this;
     }
 
     /**
-     * Gets preserved_cycles
+     * Gets endorsement_deposit
      *
      * @return int|null
      */
-    public function getPreservedCycles(): ?int
+    public function getEndorsementDeposit(): ?int
     {
-        return $this->container['preserved_cycles'];
+        return $this->container['endorsement_deposit'];
     }
 
     /**
-     * Sets preserved_cycles
+     * Sets endorsement_deposit
      *
-     * @param int|null $preserved_cycles [DEPRECATED]
+     * @param int|null $endorsement_deposit **DEPRECATED**
      *
      * @return $this
      */
-    public function setPreservedCycles(?int $preserved_cycles): static
+    public function setEndorsementDeposit(?int $endorsement_deposit): static
     {
-        if (is_null($preserved_cycles)) {
-            throw new InvalidArgumentException('non-nullable preserved_cycles cannot be null');
+        if (is_null($endorsement_deposit)) {
+            throw new InvalidArgumentException('non-nullable endorsement_deposit cannot be null');
         }
-        $this->container['preserved_cycles'] = $preserved_cycles;
+        $this->container['endorsement_deposit'] = $endorsement_deposit;
 
         return $this;
     }
 
     /**
-     * Gets lb_escape_threshold
+     * Gets endorsement_reward
      *
-     * @return int|null
+     * @return int[]|null
      */
-    public function getLbEscapeThreshold(): ?int
+    public function getEndorsementReward(): ?array
     {
-        return $this->container['lb_escape_threshold'];
+        return $this->container['endorsement_reward'];
     }
 
     /**
-     * Sets lb_escape_threshold
+     * Sets endorsement_reward
      *
-     * @param int|null $lb_escape_threshold [DEPRECATED]
+     * @param int[]|null $endorsement_reward **DEPRECATED**
      *
      * @return $this
      */
-    public function setLbEscapeThreshold(?int $lb_escape_threshold): static
+    public function setEndorsementReward(?array $endorsement_reward): static
     {
-        if (is_null($lb_escape_threshold)) {
-            throw new InvalidArgumentException('non-nullable lb_escape_threshold cannot be null');
+        if (is_null($endorsement_reward)) {
+            throw new InvalidArgumentException('non-nullable endorsement_reward cannot be null');
         }
-        $this->container['lb_escape_threshold'] = $lb_escape_threshold;
-
-        return $this;
-    }
-
-    /**
-     * Gets lb_sunset_level
-     *
-     * @return int|null
-     */
-    public function getLbSunsetLevel(): ?int
-    {
-        return $this->container['lb_sunset_level'];
-    }
-
-    /**
-     * Sets lb_sunset_level
-     *
-     * @param int|null $lb_sunset_level [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setLbSunsetLevel(?int $lb_sunset_level): static
-    {
-        if (is_null($lb_sunset_level)) {
-            throw new InvalidArgumentException('non-nullable lb_sunset_level cannot be null');
-        }
-        $this->container['lb_sunset_level'] = $lb_sunset_level;
-
-        return $this;
-    }
-
-    /**
-     * Gets frozen_deposits_percentage
-     *
-     * @return int|null
-     */
-    public function getFrozenDepositsPercentage(): ?int
-    {
-        return $this->container['frozen_deposits_percentage'];
-    }
-
-    /**
-     * Sets frozen_deposits_percentage
-     *
-     * @param int|null $frozen_deposits_percentage [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setFrozenDepositsPercentage(?int $frozen_deposits_percentage): static
-    {
-        if (is_null($frozen_deposits_percentage)) {
-            throw new InvalidArgumentException('non-nullable frozen_deposits_percentage cannot be null');
-        }
-        $this->container['frozen_deposits_percentage'] = $frozen_deposits_percentage;
-
-        return $this;
-    }
-
-    /**
-     * Gets tx_rollup_origination_size
-     *
-     * @return int|null
-     */
-    public function getTxRollupOriginationSize(): ?int
-    {
-        return $this->container['tx_rollup_origination_size'];
-    }
-
-    /**
-     * Sets tx_rollup_origination_size
-     *
-     * @param int|null $tx_rollup_origination_size [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setTxRollupOriginationSize(?int $tx_rollup_origination_size): static
-    {
-        if (is_null($tx_rollup_origination_size)) {
-            throw new InvalidArgumentException('non-nullable tx_rollup_origination_size cannot be null');
-        }
-        $this->container['tx_rollup_origination_size'] = $tx_rollup_origination_size;
-
-        return $this;
-    }
-
-    /**
-     * Gets tx_rollup_commitment_bond
-     *
-     * @return int|null
-     */
-    public function getTxRollupCommitmentBond(): ?int
-    {
-        return $this->container['tx_rollup_commitment_bond'];
-    }
-
-    /**
-     * Sets tx_rollup_commitment_bond
-     *
-     * @param int|null $tx_rollup_commitment_bond [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setTxRollupCommitmentBond(?int $tx_rollup_commitment_bond): static
-    {
-        if (is_null($tx_rollup_commitment_bond)) {
-            throw new InvalidArgumentException('non-nullable tx_rollup_commitment_bond cannot be null');
-        }
-        $this->container['tx_rollup_commitment_bond'] = $tx_rollup_commitment_bond;
-
-        return $this;
-    }
-
-    /**
-     * Gets double_baking_punishment
-     *
-     * @return int|null
-     */
-    public function getDoubleBakingPunishment(): ?int
-    {
-        return $this->container['double_baking_punishment'];
-    }
-
-    /**
-     * Sets double_baking_punishment
-     *
-     * @param int|null $double_baking_punishment [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setDoubleBakingPunishment(?int $double_baking_punishment): static
-    {
-        if (is_null($double_baking_punishment)) {
-            throw new InvalidArgumentException('non-nullable double_baking_punishment cannot be null');
-        }
-        $this->container['double_baking_punishment'] = $double_baking_punishment;
-
-        return $this;
-    }
-
-    /**
-     * Gets double_endorsing_punishment_numerator
-     *
-     * @return int|null
-     */
-    public function getDoubleEndorsingPunishmentNumerator(): ?int
-    {
-        return $this->container['double_endorsing_punishment_numerator'];
-    }
-
-    /**
-     * Sets double_endorsing_punishment_numerator
-     *
-     * @param int|null $double_endorsing_punishment_numerator [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setDoubleEndorsingPunishmentNumerator(?int $double_endorsing_punishment_numerator): static
-    {
-        if (is_null($double_endorsing_punishment_numerator)) {
-            throw new InvalidArgumentException('non-nullable double_endorsing_punishment_numerator cannot be null');
-        }
-        $this->container['double_endorsing_punishment_numerator'] = $double_endorsing_punishment_numerator;
-
-        return $this;
-    }
-
-    /**
-     * Gets double_endorsing_punishment_denominator
-     *
-     * @return int|null
-     */
-    public function getDoubleEndorsingPunishmentDenominator(): ?int
-    {
-        return $this->container['double_endorsing_punishment_denominator'];
-    }
-
-    /**
-     * Sets double_endorsing_punishment_denominator
-     *
-     * @param int|null $double_endorsing_punishment_denominator [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setDoubleEndorsingPunishmentDenominator(?int $double_endorsing_punishment_denominator): static
-    {
-        if (is_null($double_endorsing_punishment_denominator)) {
-            throw new InvalidArgumentException('non-nullable double_endorsing_punishment_denominator cannot be null');
-        }
-        $this->container['double_endorsing_punishment_denominator'] = $double_endorsing_punishment_denominator;
-
-        return $this;
-    }
-
-    /**
-     * Gets revelation_reward
-     *
-     * @return int|null
-     */
-    public function getRevelationReward(): ?int
-    {
-        return $this->container['revelation_reward'];
-    }
-
-    /**
-     * Sets revelation_reward
-     *
-     * @param int|null $revelation_reward [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setRevelationReward(?int $revelation_reward): static
-    {
-        if (is_null($revelation_reward)) {
-            throw new InvalidArgumentException('non-nullable revelation_reward cannot be null');
-        }
-        $this->container['revelation_reward'] = $revelation_reward;
-
-        return $this;
-    }
-
-    /**
-     * Gets lb_subsidy
-     *
-     * @return int|null
-     */
-    public function getLbSubsidy(): ?int
-    {
-        return $this->container['lb_subsidy'];
-    }
-
-    /**
-     * Sets lb_subsidy
-     *
-     * @param int|null $lb_subsidy [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setLbSubsidy(?int $lb_subsidy): static
-    {
-        if (is_null($lb_subsidy)) {
-            throw new InvalidArgumentException('non-nullable lb_subsidy cannot be null');
-        }
-        $this->container['lb_subsidy'] = $lb_subsidy;
-
-        return $this;
-    }
-
-    /**
-     * Gets tokens_per_roll
-     *
-     * @return int|null
-     */
-    public function getTokensPerRoll(): ?int
-    {
-        return $this->container['tokens_per_roll'];
-    }
-
-    /**
-     * Sets tokens_per_roll
-     *
-     * @param int|null $tokens_per_roll [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setTokensPerRoll(?int $tokens_per_roll): static
-    {
-        if (is_null($tokens_per_roll)) {
-            throw new InvalidArgumentException('non-nullable tokens_per_roll cannot be null');
-        }
-        $this->container['tokens_per_roll'] = $tokens_per_roll;
+        $this->container['endorsement_reward'] = $endorsement_reward;
 
         return $this;
     }

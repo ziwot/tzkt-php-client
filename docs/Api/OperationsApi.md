@@ -7,6 +7,12 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 | [**operationsGetActivationByHash()**](OperationsApi.md#operationsGetActivationByHash) | **GET** /v1/operations/activations/{hash} | Get activation by hash |
 | [**operationsGetActivations()**](OperationsApi.md#operationsGetActivations) | **GET** /v1/operations/activations | Get activations |
 | [**operationsGetActivationsCount()**](OperationsApi.md#operationsGetActivationsCount) | **GET** /v1/operations/activations/count | Get activations count |
+| [**operationsGetAttestationByHash()**](OperationsApi.md#operationsGetAttestationByHash) | **GET** /v1/operations/attestations/{hash} | Get attestation by hash |
+| [**operationsGetAttestationRewardById()**](OperationsApi.md#operationsGetAttestationRewardById) | **GET** /v1/operations/attestation_rewards/{id} | Get attestation reward by id |
+| [**operationsGetAttestationRewards()**](OperationsApi.md#operationsGetAttestationRewards) | **GET** /v1/operations/attestation_rewards | Get attestation rewards |
+| [**operationsGetAttestationRewardsCount()**](OperationsApi.md#operationsGetAttestationRewardsCount) | **GET** /v1/operations/attestation_rewards/count | Get attestation rewards count |
+| [**operationsGetAttestations()**](OperationsApi.md#operationsGetAttestations) | **GET** /v1/operations/attestations | Get attestations |
+| [**operationsGetAttestationsCount()**](OperationsApi.md#operationsGetAttestationsCount) | **GET** /v1/operations/attestations/count | Get attestations count |
 | [**operationsGetAutostakingOps()**](OperationsApi.md#operationsGetAutostakingOps) | **GET** /v1/operations/autostaking | Get autostaking ops |
 | [**operationsGetAutostakingOpsCount()**](OperationsApi.md#operationsGetAutostakingOpsCount) | **GET** /v1/operations/autostaking/count | Get autostaking ops count |
 | [**operationsGetBaking()**](OperationsApi.md#operationsGetBaking) | **GET** /v1/operations/baking | Get baking |
@@ -33,21 +39,12 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 | [**operationsGetDoubleBaking()**](OperationsApi.md#operationsGetDoubleBaking) | **GET** /v1/operations/double_baking | Get double baking |
 | [**operationsGetDoubleBakingByHash()**](OperationsApi.md#operationsGetDoubleBakingByHash) | **GET** /v1/operations/double_baking/{hash} | Get double baking by hash |
 | [**operationsGetDoubleBakingCount()**](OperationsApi.md#operationsGetDoubleBakingCount) | **GET** /v1/operations/double_baking/count | Get double baking count |
-| [**operationsGetDoubleEndorsing()**](OperationsApi.md#operationsGetDoubleEndorsing) | **GET** /v1/operations/double_endorsing | Get double endorsing |
-| [**operationsGetDoubleEndorsingByHash()**](OperationsApi.md#operationsGetDoubleEndorsingByHash) | **GET** /v1/operations/double_endorsing/{hash} | Get double endorsing by hash |
-| [**operationsGetDoubleEndorsingCount()**](OperationsApi.md#operationsGetDoubleEndorsingCount) | **GET** /v1/operations/double_endorsing/count | Get double endorsing count |
-| [**operationsGetDoublePreendorsing()**](OperationsApi.md#operationsGetDoublePreendorsing) | **GET** /v1/operations/double_preendorsing | Get double preendorsing |
-| [**operationsGetDoublePreendorsingByHash()**](OperationsApi.md#operationsGetDoublePreendorsingByHash) | **GET** /v1/operations/double_preendorsing/{hash} | Get double preendorsing by hash |
-| [**operationsGetDoublePreendorsingCount()**](OperationsApi.md#operationsGetDoublePreendorsingCount) | **GET** /v1/operations/double_preendorsing/count | Get double preendorsing count |
+| [**operationsGetDoubleConsensus()**](OperationsApi.md#operationsGetDoubleConsensus) | **GET** /v1/operations/double_consensus | Get double consensus |
+| [**operationsGetDoubleConsensusByHash()**](OperationsApi.md#operationsGetDoubleConsensusByHash) | **GET** /v1/operations/double_consensus/{hash} | Get double consensus by hash |
+| [**operationsGetDoubleConsensusCount()**](OperationsApi.md#operationsGetDoubleConsensusCount) | **GET** /v1/operations/double_consensus/count | Get double consensus count |
 | [**operationsGetDrainDelegateByHash()**](OperationsApi.md#operationsGetDrainDelegateByHash) | **GET** /v1/operations/drain_delegate/{hash} | Get drain delegate by hash |
 | [**operationsGetDrainDelegateOps()**](OperationsApi.md#operationsGetDrainDelegateOps) | **GET** /v1/operations/drain_delegate | Get drain delegate |
 | [**operationsGetDrainDelegateOpsCount()**](OperationsApi.md#operationsGetDrainDelegateOpsCount) | **GET** /v1/operations/drain_delegate/count | Get drain delegate count |
-| [**operationsGetEndorsementByHash()**](OperationsApi.md#operationsGetEndorsementByHash) | **GET** /v1/operations/endorsements/{hash} | Get endorsement by hash |
-| [**operationsGetEndorsements()**](OperationsApi.md#operationsGetEndorsements) | **GET** /v1/operations/endorsements | Get endorsements |
-| [**operationsGetEndorsementsCount()**](OperationsApi.md#operationsGetEndorsementsCount) | **GET** /v1/operations/endorsements/count | Get endorsements count |
-| [**operationsGetEndorsingRewardById()**](OperationsApi.md#operationsGetEndorsingRewardById) | **GET** /v1/operations/endorsing_rewards/{id} | Get endorsing reward by id |
-| [**operationsGetEndorsingRewards()**](OperationsApi.md#operationsGetEndorsingRewards) | **GET** /v1/operations/endorsing_rewards | Get endorsing rewards |
-| [**operationsGetEndorsingRewardsCount()**](OperationsApi.md#operationsGetEndorsingRewardsCount) | **GET** /v1/operations/endorsing_rewards/count | Get endorsing rewards count |
 | [**operationsGetIncreasePaidStorageByHash()**](OperationsApi.md#operationsGetIncreasePaidStorageByHash) | **GET** /v1/operations/increase_paid_storage/{hash} | Get increase paid storage by hash |
 | [**operationsGetIncreasePaidStorageCount()**](OperationsApi.md#operationsGetIncreasePaidStorageCount) | **GET** /v1/operations/increase_paid_storage/count | Get increase paid storage count |
 | [**operationsGetIncreasePaidStorageOps()**](OperationsApi.md#operationsGetIncreasePaidStorageOps) | **GET** /v1/operations/increase_paid_storage | Get increase paid storage |
@@ -61,9 +58,9 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 | [**operationsGetOriginationStatus()**](OperationsApi.md#operationsGetOriginationStatus) | **GET** /v1/operations/originations/{hash}/status | Get origination status |
 | [**operationsGetOriginations()**](OperationsApi.md#operationsGetOriginations) | **GET** /v1/operations/originations | Get originations |
 | [**operationsGetOriginationsCount()**](OperationsApi.md#operationsGetOriginationsCount) | **GET** /v1/operations/originations/count | Get originations count |
-| [**operationsGetPreendorsementByHash()**](OperationsApi.md#operationsGetPreendorsementByHash) | **GET** /v1/operations/preendorsements/{hash} | Get preendorsement by hash |
-| [**operationsGetPreendorsements()**](OperationsApi.md#operationsGetPreendorsements) | **GET** /v1/operations/preendorsements | Get preendorsements |
-| [**operationsGetPreendorsementsCount()**](OperationsApi.md#operationsGetPreendorsementsCount) | **GET** /v1/operations/preendorsements/count | Get preendorsements count |
+| [**operationsGetPreattestationByHash()**](OperationsApi.md#operationsGetPreattestationByHash) | **GET** /v1/operations/preattestations/{hash} | Get preattestation by hash |
+| [**operationsGetPreattestations()**](OperationsApi.md#operationsGetPreattestations) | **GET** /v1/operations/preattestations | Get preattestations |
+| [**operationsGetPreattestationsCount()**](OperationsApi.md#operationsGetPreattestationsCount) | **GET** /v1/operations/preattestations/count | Get preattestations count |
 | [**operationsGetProposalByHash()**](OperationsApi.md#operationsGetProposalByHash) | **GET** /v1/operations/proposals/{hash} | Get proposal by hash |
 | [**operationsGetProposals()**](OperationsApi.md#operationsGetProposals) | **GET** /v1/operations/proposals | Get proposals |
 | [**operationsGetProposalsCount()**](OperationsApi.md#operationsGetProposalsCount) | **GET** /v1/operations/proposals/count | Get proposals count |
@@ -143,9 +140,9 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 | [**operationsGetTxRollupSubmitBatchOpsByHash()**](OperationsApi.md#operationsGetTxRollupSubmitBatchOpsByHash) | **GET** /v1/operations/tx_rollup_submit_batch/{hash} | Get tx rollup submit batch by hash |
 | [**operationsGetTxRollupSubmitBatchOpsCount()**](OperationsApi.md#operationsGetTxRollupSubmitBatchOpsCount) | **GET** /v1/operations/tx_rollup_submit_batch/count | Get tx rollup submit batch count |
 | [**operationsGetTxRollupSubmitBatchStatus()**](OperationsApi.md#operationsGetTxRollupSubmitBatchStatus) | **GET** /v1/operations/tx_rollup_submit_batch/{hash}/status | Get tx rollup submit batch status |
-| [**operationsGetUpdateConsensusKeyByHash()**](OperationsApi.md#operationsGetUpdateConsensusKeyByHash) | **GET** /v1/operations/update_consensus_key/{hash} | Get update consensus key by hash |
-| [**operationsGetUpdateConsensusKeyOps()**](OperationsApi.md#operationsGetUpdateConsensusKeyOps) | **GET** /v1/operations/update_consensus_key | Get update consensus key |
-| [**operationsGetUpdateConsensusKeyOpsCount()**](OperationsApi.md#operationsGetUpdateConsensusKeyOpsCount) | **GET** /v1/operations/update_consensus_key/count | Get update consensus key count |
+| [**operationsGetUpdateSecondaryKeyByHash()**](OperationsApi.md#operationsGetUpdateSecondaryKeyByHash) | **GET** /v1/operations/update_secondary_key/{hash} | Get update secondary key by hash |
+| [**operationsGetUpdateSecondaryKeyOps()**](OperationsApi.md#operationsGetUpdateSecondaryKeyOps) | **GET** /v1/operations/update_secondary_key | Get update secondary key |
+| [**operationsGetUpdateSecondaryKeyOpsCount()**](OperationsApi.md#operationsGetUpdateSecondaryKeyOpsCount) | **GET** /v1/operations/update_secondary_key/count | Get update secondary key count |
 | [**operationsGetVdfRevelationByHash()**](OperationsApi.md#operationsGetVdfRevelationByHash) | **GET** /v1/operations/vdf_revelations/{hash} | Get vdf revelation by hash |
 | [**operationsGetVdfRevelations()**](OperationsApi.md#operationsGetVdfRevelations) | **GET** /v1/operations/vdf_revelations | Get vdf revelations |
 | [**operationsGetVdfRevelationsCount()**](OperationsApi.md#operationsGetVdfRevelationsCount) | **GET** /v1/operations/vdf_revelations/count | Get vdf revelations count |
@@ -175,7 +172,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetActivationByHash($hash, $quote);
@@ -190,7 +187,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -234,12 +231,12 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $account = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters activations by account. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters activations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters activations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters activations by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts activations by specified field. Supported fields: `id` (default), `level`, `balance`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetActivations($account, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
@@ -255,12 +252,12 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **account** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters activations by account. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters activations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters activations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters activations by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts activations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;balance&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -303,7 +300,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters activations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters activations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters activations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetActivationsCount($level, $timestamp);
@@ -318,7 +315,381 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters activations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters activations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters activations by timestamp. | [optional] |
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetAttestationByHash()`
+
+```php
+operationsGetAttestationByHash($hash, $quote): \Tzkt\Model\AttestationOperation[]
+```
+
+Get attestation by hash
+
+Returns an attestation operation with specified hash.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$hash = 'hash_example'; // string | Operation hash
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+
+try {
+    $result = $apiInstance->operationsGetAttestationByHash($hash, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetAttestationByHash: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **hash** | **string**| Operation hash | |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\AttestationOperation[]**](../Model/AttestationOperation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetAttestationRewardById()`
+
+```php
+operationsGetAttestationRewardById($id, $quote): \Tzkt\Model\AttestationRewardOperation
+```
+
+Get attestation reward by id
+
+Returns attestation reward operation with specified id.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 56; // int | Operation id
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+
+try {
+    $result = $apiInstance->operationsGetAttestationRewardById($id, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetAttestationRewardById: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| Operation id | |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\AttestationRewardOperation**](../Model/AttestationRewardOperation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetAttestationRewards()`
+
+```php
+operationsGetAttestationRewards($id, $baker, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\AttestationRewardOperation[]
+```
+
+Get attestation rewards
+
+Returns a list of attestation reward operations (synthetic type).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
+$baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by baker. Allowed fields for `.eqx` mode: none.
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$limit = 100; // int | Maximum number of items to return
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+
+try {
+    $result = $apiInstance->operationsGetAttestationRewards($id, $baker, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetAttestationRewards: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
+| **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\AttestationRewardOperation[]**](../Model/AttestationRewardOperation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetAttestationRewardsCount()`
+
+```php
+operationsGetAttestationRewardsCount($level, $timestamp): int
+```
+
+Get attestation rewards count
+
+Returns the total number of attestation reward operations (synthetic type).
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+
+try {
+    $result = $apiInstance->operationsGetAttestationRewardsCount($level, $timestamp);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetAttestationRewardsCount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetAttestations()`
+
+```php
+operationsGetAttestations($delegate, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\AttestationOperation[]
+```
+
+Get attestations
+
+Returns a list of attestation operations.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters attestations by delegate. Allowed fields for `.eqx` mode: none.
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters attestations by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters attestations by timestamp.
+$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts attestations by specified field. Supported fields: `id` (default), `level`.
+$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
+$limit = 100; // int | Maximum number of items to return
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+
+try {
+    $result = $apiInstance->operationsGetAttestations($delegate, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetAttestations: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters attestations by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters attestations by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters attestations by timestamp. | [optional] |
+| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts attestations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
+| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
+| **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\AttestationOperation[]**](../Model/AttestationOperation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `operationsGetAttestationsCount()`
+
+```php
+operationsGetAttestationsCount($level, $timestamp): int
+```
+
+Get attestations count
+
+Returns the total number of attestation operations.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters attestations by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters attestations by timestamp.
+
+try {
+    $result = $apiInstance->operationsGetAttestationsCount($level, $timestamp);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->operationsGetAttestationsCount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters attestations by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters attestations by timestamp. | [optional] |
 
 ### Return type
 
@@ -340,7 +711,7 @@ No authorization required
 ## `operationsGetAutostakingOps()`
 
 ```php
-operationsGetAutostakingOps($id, $level, $timestamp, $baker, $action, $amount, $staking_updates_count, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\AutostakingOperation[]
+operationsGetAutostakingOps($id, $level, $timestamp, $baker, $action, $amount, $staking_updates_count, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\AutostakingOperation[]
 ```
 
 Get autostaking ops
@@ -362,19 +733,20 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the operation happened.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the operation happened.   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the operation happened.   Click on the parameter to expand more details.
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by baker.   Click on the parameter to expand more details.
 $action = new \Tzkt\Model\\Tzkt\Model\OperationsGetStakingOpsActionParameter(); // \Tzkt\Model\OperationsGetStakingOpsActionParameter | Filter by autostaking action.   Click on the parameter to expand more details.
 $amount = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by amount.   Click on the parameter to expand more details.
 $staking_updates_count = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by number of staking updates.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetAutostakingOps($id, $level, $timestamp, $baker, $action, $amount, $staking_updates_count, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetAutostakingOps($id, $level, $timestamp, $baker, $action, $amount, $staking_updates_count, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetAutostakingOps: ', $e->getMessage(), PHP_EOL;
@@ -387,16 +759,17 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the operation happened.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the operation happened.   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the operation happened.   Click on the parameter to expand more details. | [optional] |
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by baker.   Click on the parameter to expand more details. | [optional] |
 | **action** | [**\Tzkt\Model\OperationsGetStakingOpsActionParameter**](../Model/.md)| Filter by autostaking action.   Click on the parameter to expand more details. | [optional] |
 | **amount** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by amount.   Click on the parameter to expand more details. | [optional] |
 | **staking_updates_count** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by number of staking updates.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -418,7 +791,7 @@ No authorization required
 ## `operationsGetAutostakingOpsCount()`
 
 ```php
-operationsGetAutostakingOpsCount($id, $level, $timestamp, $baker, $action, $amount, $staking_updates_count): int
+operationsGetAutostakingOpsCount($id, $level, $timestamp, $baker, $action, $amount, $staking_updates_count, $or_cols_and_vals): int
 ```
 
 Get autostaking ops count
@@ -440,14 +813,15 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the operation happened.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the operation happened.   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the operation happened.   Click on the parameter to expand more details.
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by baker.   Click on the parameter to expand more details.
 $action = new \Tzkt\Model\\Tzkt\Model\OperationsGetStakingOpsActionParameter(); // \Tzkt\Model\OperationsGetStakingOpsActionParameter | Filter by autostaking action.   Click on the parameter to expand more details.
 $amount = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by amount.   Click on the parameter to expand more details.
 $staking_updates_count = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by number of staking updates.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetAutostakingOpsCount($id, $level, $timestamp, $baker, $action, $amount, $staking_updates_count);
+    $result = $apiInstance->operationsGetAutostakingOpsCount($id, $level, $timestamp, $baker, $action, $amount, $staking_updates_count, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetAutostakingOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -460,11 +834,12 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the operation happened.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the operation happened.   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the operation happened.   Click on the parameter to expand more details. | [optional] |
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by baker.   Click on the parameter to expand more details. | [optional] |
 | **action** | [**\Tzkt\Model\OperationsGetStakingOpsActionParameter**](../Model/.md)| Filter by autostaking action.   Click on the parameter to expand more details. | [optional] |
 | **amount** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by amount.   Click on the parameter to expand more details. | [optional] |
 | **staking_updates_count** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by number of staking updates.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -486,7 +861,7 @@ No authorization required
 ## `operationsGetBaking()`
 
 ```php
-operationsGetBaking($baker, $anyof, $proposer, $producer, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\BakingOperation[]
+operationsGetBaking($anyof, $proposer, $producer, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\BakingOperation[]
 ```
 
 Get baking
@@ -506,21 +881,20 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | [DEPRECATED]
 $anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filters by any of the specified fields. Example: `anyof.proposer.producer=tz1...`.
 $proposer = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by block proposer. Allowed fields for `.eqx` mode: none.
 $producer = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by block producer. Allowed fields for `.eqx` mode: none.
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters baking operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters baking operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters baking operations by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts baking operations by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetBaking($baker, $anyof, $proposer, $producer, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
+    $result = $apiInstance->operationsGetBaking($anyof, $proposer, $producer, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetBaking: ', $e->getMessage(), PHP_EOL;
@@ -531,18 +905,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| [DEPRECATED] | [optional] |
 | **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filters by any of the specified fields. Example: &#x60;anyof.proposer.producer&#x3D;tz1...&#x60;. | [optional] |
 | **proposer** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by block proposer. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **producer** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by block producer. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters baking operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters baking operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters baking operations by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts baking operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -585,7 +958,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 56; // int | Operation id
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetBakingById($id, $quote);
@@ -600,7 +973,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Operation id | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -643,7 +1016,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters baking operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters baking operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters baking operations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetBakingCount($level, $timestamp);
@@ -658,7 +1031,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters baking operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters baking operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters baking operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -701,7 +1074,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetBallotByHash($hash, $quote);
@@ -716,7 +1089,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -760,7 +1133,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters ballots by delegate. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters ballots by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters ballots by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters ballots by timestamp.
 $epoch = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters ballots by voting epoch.
 $period = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters ballots by voting period.
 $proposal = new \Tzkt\Model\\Tzkt\Model\OperationsGetBallotsProposalParameter(); // \Tzkt\Model\OperationsGetBallotsProposalParameter | Filters ballots by proposal hash.
@@ -769,7 +1142,7 @@ $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Mod
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts ballots by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetBallots($delegate, $level, $timestamp, $epoch, $period, $proposal, $vote, $select, $sort, $offset, $limit, $quote);
@@ -785,7 +1158,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters ballots by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters ballots by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters ballots by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters ballots by timestamp. | [optional] |
 | **epoch** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters ballots by voting epoch. | [optional] |
 | **period** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters ballots by voting period. | [optional] |
 | **proposal** | [**\Tzkt\Model\OperationsGetBallotsProposalParameter**](../Model/.md)| Filters ballots by proposal hash. | [optional] |
@@ -794,7 +1167,7 @@ try {
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts ballots by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -837,7 +1210,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters ballot operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters ballot operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters ballot operations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetBallotsCount($level, $timestamp);
@@ -852,7 +1225,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters ballot operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters ballot operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters ballot operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -895,8 +1268,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetByHash($hash, $micheline, $quote);
@@ -911,8 +1284,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -956,8 +1329,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $hash = 'hash_example'; // string | Operation hash
 $counter = 56; // int | Operation counter
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetByHashCounter($hash, $counter, $micheline, $quote);
@@ -973,8 +1346,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
 | **counter** | **int**| Operation counter | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1019,8 +1392,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $hash = 'hash_example'; // string | Operation hash
 $counter = 56; // int | Operation counter
 $nonce = 56; // int | Operation nonce (internal)
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetByHashCounterNonce($hash, $counter, $nonce, $micheline, $quote);
@@ -1037,8 +1410,8 @@ try {
 | **hash** | **string**| Operation hash | |
 | **counter** | **int**| Operation counter | |
 | **nonce** | **int**| Operation nonce (internal) | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1081,7 +1454,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 56; // int | Operation id
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDalAttestationRewardById($id, $quote);
@@ -1096,7 +1469,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Operation id | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1141,12 +1514,12 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by baker. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDalAttestationRewards($id, $baker, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
@@ -1163,12 +1536,12 @@ try {
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1211,7 +1584,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetDalAttestationRewardsCount($level, $timestamp);
@@ -1226,7 +1599,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -1273,12 +1646,12 @@ $accuser = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\
 $offender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by offender. Allowed fields for `.eqx` mode: `accuser`.
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `trapLevel`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDalEntrapmentEvidenceOps($anyof, $accuser, $offender, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
@@ -1297,12 +1670,12 @@ try {
 | **offender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by offender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;accuser&#x60;. | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;trapLevel&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1345,7 +1718,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDalEntrapmentEvidenceOpsByHash($hash, $quote);
@@ -1360,7 +1733,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1403,7 +1776,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetDalEntrapmentEvidenceOpsCount($level, $timestamp);
@@ -1418,7 +1791,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -1440,7 +1813,7 @@ No authorization required
 ## `operationsGetDalPublishCommitmentOps()`
 
 ```php
-operationsGetDalPublishCommitmentOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\DalPublishCommitmentOperation[]
+operationsGetDalPublishCommitmentOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\DalPublishCommitmentOperation[]
 ```
 
 Get dal_publish_commitment ops
@@ -1464,17 +1837,18 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetDalPublishCommitmentOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetDalPublishCommitmentOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetDalPublishCommitmentOps: ', $e->getMessage(), PHP_EOL;
@@ -1489,14 +1863,15 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1518,7 +1893,7 @@ No authorization required
 ## `operationsGetDalPublishCommitmentOpsCount()`
 
 ```php
-operationsGetDalPublishCommitmentOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetDalPublishCommitmentOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get dal_publish_commitment ops count
@@ -1542,12 +1917,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetDalPublishCommitmentOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetDalPublishCommitmentOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetDalPublishCommitmentOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -1562,9 +1938,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -1607,7 +1984,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDelegationByHash($hash, $quote);
@@ -1622,7 +1999,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1727,14 +2104,14 @@ $prev_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // 
 $new_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters delegations by new delegate. Allowed fields for `.eqx` mode: `initiator`, `sender`, `prevDelegate`.
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters delegations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters delegations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters delegations by timestamp.
 $sender_code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by `senderCodeHash`.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters delegations by operation status (`applied`, `failed`, `backtracked`, `skipped`).
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters delegations by operation status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts delegations by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDelegations($anyof, $initiator, $sender, $prev_delegate, $new_delegate, $id, $level, $timestamp, $sender_code_hash, $status, $select, $sort, $offset, $limit, $quote);
@@ -1755,14 +2132,14 @@ try {
 | **new_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters delegations by new delegate. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;initiator&#x60;, &#x60;sender&#x60;, &#x60;prevDelegate&#x60;. | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters delegations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters delegations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters delegations by timestamp. | [optional] |
 | **sender_code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by &#x60;senderCodeHash&#x60;. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters delegations by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters delegations by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts delegations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1805,7 +2182,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters delegations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters delegations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters delegations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetDelegationsCount($level, $timestamp);
@@ -1820,7 +2197,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters delegations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters delegations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters delegations by timestamp. | [optional] |
 
 ### Return type
 
@@ -1867,12 +2244,12 @@ $accuser = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\
 $offender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters double baking operations by offender. Allowed fields for `.eqx` mode: `accuser`.
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters double baking operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters double baking operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters double baking operations by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts double baking operations by specified field. Supported fields: `id` (default), `level`, `accusedLevel`, `accuserRewards`, `offenderLostDeposits`, `offenderLostRewards`, `offenderLostFees`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDoubleBaking($anyof, $accuser, $offender, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
@@ -1891,12 +2268,12 @@ try {
 | **offender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters double baking operations by offender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;accuser&#x60;. | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters double baking operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters double baking operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters double baking operations by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts double baking operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;accusedLevel&#x60;, &#x60;accuserRewards&#x60;, &#x60;offenderLostDeposits&#x60;, &#x60;offenderLostRewards&#x60;, &#x60;offenderLostFees&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1939,7 +2316,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDoubleBakingByHash($hash, $quote);
@@ -1954,7 +2331,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -1997,7 +2374,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters double baking operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters double baking operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters double baking operations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetDoubleBakingCount($level, $timestamp);
@@ -2012,7 +2389,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters double baking operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters double baking operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters double baking operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -2031,15 +2408,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetDoubleEndorsing()`
+## `operationsGetDoubleConsensus()`
 
 ```php
-operationsGetDoubleEndorsing($anyof, $accuser, $offender, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\DoubleEndorsingOperation[]
+operationsGetDoubleConsensus($anyof, $accuser, $offender, $id, $kind, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\DoubleConsensusOperation[]
 ```
 
-Get double endorsing
+Get double consensus
 
-Returns a list of double endorsing operations.
+Returns a list of double consensus operations.
 
 ### Example
 
@@ -2054,23 +2431,24 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filters double endorsing operations by any of the specified fields. Example: `anyof.accuser.offender=tz1...` will return operations where `accuser` OR `offender` is equal to the specified value. This parameter is useful when you need to retrieve all operations associated with a specified account.
-$accuser = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters double endorsing operations by accuser. Allowed fields for `.eqx` mode: `offender`.
-$offender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters double endorsing operations by offender. Allowed fields for `.eqx` mode: `accuser`.
-$id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters double endorsing operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters double endorsing operations by timestamp.
+$anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filter by any of the specified fields. Example: `anyof.accuser.offender=tz1...` will return operations where `accuser` OR `offender` is equal to the specified value. This parameter is useful when you need to retrieve all operations associated with a specified account.
+$accuser = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by accuser. Allowed fields for `.eqx` mode: `offender`.
+$offender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by offender. Allowed fields for `.eqx` mode: `accuser`.
+$id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by internal TzKT id.
+$kind = new \Tzkt\Model\\Tzkt\Model\OperationsGetDoubleConsensusKindParameter(); // \Tzkt\Model\OperationsGetDoubleConsensusKindParameter | Filter by misbehaviour kind (`double_attestation` or `double_preattestation`).
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts double endorsing operations by specified field. Supported fields: `id` (default), `level`, `accusedLevel`, `accuserRewards`, `offenderLostDeposits`, `offenderLostRewards`, `offenderLostFees`.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sort by specified field. Supported fields: `id` (default), `level`, `accusedLevel`, `accuserRewards`, `offenderLostDeposits`, `offenderLostRewards`, `offenderLostFees`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetDoubleEndorsing($anyof, $accuser, $offender, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
+    $result = $apiInstance->operationsGetDoubleConsensus($anyof, $accuser, $offender, $id, $kind, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetDoubleEndorsing: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetDoubleConsensus: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -2078,21 +2456,22 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filters double endorsing operations by any of the specified fields. Example: &#x60;anyof.accuser.offender&#x3D;tz1...&#x60; will return operations where &#x60;accuser&#x60; OR &#x60;offender&#x60; is equal to the specified value. This parameter is useful when you need to retrieve all operations associated with a specified account. | [optional] |
-| **accuser** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters double endorsing operations by accuser. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;offender&#x60;. | [optional] |
-| **offender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters double endorsing operations by offender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;accuser&#x60;. | [optional] |
-| **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters double endorsing operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters double endorsing operations by timestamp. | [optional] |
+| **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filter by any of the specified fields. Example: &#x60;anyof.accuser.offender&#x3D;tz1...&#x60; will return operations where &#x60;accuser&#x60; OR &#x60;offender&#x60; is equal to the specified value. This parameter is useful when you need to retrieve all operations associated with a specified account. | [optional] |
+| **accuser** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by accuser. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;offender&#x60;. | [optional] |
+| **offender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by offender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;accuser&#x60;. | [optional] |
+| **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by internal TzKT id. | [optional] |
+| **kind** | [**\Tzkt\Model\OperationsGetDoubleConsensusKindParameter**](../Model/.md)| Filter by misbehaviour kind (&#x60;double_attestation&#x60; or &#x60;double_preattestation&#x60;). | [optional] |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts double endorsing operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;accusedLevel&#x60;, &#x60;accuserRewards&#x60;, &#x60;offenderLostDeposits&#x60;, &#x60;offenderLostRewards&#x60;, &#x60;offenderLostFees&#x60;. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sort by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;accusedLevel&#x60;, &#x60;accuserRewards&#x60;, &#x60;offenderLostDeposits&#x60;, &#x60;offenderLostRewards&#x60;, &#x60;offenderLostFees&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Tzkt\Model\DoubleEndorsingOperation[]**](../Model/DoubleEndorsingOperation.md)
+[**\Tzkt\Model\DoubleConsensusOperation[]**](../Model/DoubleConsensusOperation.md)
 
 ### Authorization
 
@@ -2107,15 +2486,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetDoubleEndorsingByHash()`
+## `operationsGetDoubleConsensusByHash()`
 
 ```php
-operationsGetDoubleEndorsingByHash($hash, $quote): \Tzkt\Model\DoubleEndorsingOperation[]
+operationsGetDoubleConsensusByHash($hash, $quote): \Tzkt\Model\DoubleConsensusOperation[]
 ```
 
-Get double endorsing by hash
+Get double consensus by hash
 
-Returns a double endorsing operation with specified hash.
+Returns a double consensus operation with specified hash.
 
 ### Example
 
@@ -2131,13 +2510,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetDoubleEndorsingByHash($hash, $quote);
+    $result = $apiInstance->operationsGetDoubleConsensusByHash($hash, $quote);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetDoubleEndorsingByHash: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetDoubleConsensusByHash: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -2146,11 +2525,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Tzkt\Model\DoubleEndorsingOperation[]**](../Model/DoubleEndorsingOperation.md)
+[**\Tzkt\Model\DoubleConsensusOperation[]**](../Model/DoubleConsensusOperation.md)
 
 ### Authorization
 
@@ -2165,15 +2544,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetDoubleEndorsingCount()`
+## `operationsGetDoubleConsensusCount()`
 
 ```php
-operationsGetDoubleEndorsingCount($level, $timestamp): int
+operationsGetDoubleConsensusCount($kind, $level, $timestamp): int
 ```
 
-Get double endorsing count
+Get double consensus count
 
-Returns the total number of double endorsing operations.
+Returns the total number of double consensus operations.
 
 ### Example
 
@@ -2188,14 +2567,15 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters double endorsing operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters double endorsing operations by timestamp.
+$kind = new \Tzkt\Model\\Tzkt\Model\OperationsGetDoubleConsensusKindParameter(); // \Tzkt\Model\OperationsGetDoubleConsensusKindParameter | Filter by misbehaviour kind (`double_attestation` or `double_preattestation`).
+$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp.
 
 try {
-    $result = $apiInstance->operationsGetDoubleEndorsingCount($level, $timestamp);
+    $result = $apiInstance->operationsGetDoubleConsensusCount($kind, $level, $timestamp);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetDoubleEndorsingCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetDoubleConsensusCount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -2203,200 +2583,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters double endorsing operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters double endorsing operations by timestamp. | [optional] |
-
-### Return type
-
-**int**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetDoublePreendorsing()`
-
-```php
-operationsGetDoublePreendorsing($anyof, $accuser, $offender, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\DoublePreendorsingOperation[]
-```
-
-Get double preendorsing
-
-Returns a list of double preendorsing operations.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filters by any of the specified fields. Example: `anyof.accuser.offender=tz1...` will return operations where `accuser` OR `offender` is equal to the specified value. This parameter is useful when you need to retrieve all operations associated with a specified account.
-$accuser = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by accuser. Allowed fields for `.eqx` mode: `offender`.
-$offender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by offender. Allowed fields for `.eqx` mode: `accuser`.
-$id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `accusedLevel`, `accuserRewards`, `offenderLostDeposits`, `offenderLostRewards`, `offenderLostFees`.
-$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
-$limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
-
-try {
-    $result = $apiInstance->operationsGetDoublePreendorsing($anyof, $accuser, $offender, $id, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetDoublePreendorsing: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filters by any of the specified fields. Example: &#x60;anyof.accuser.offender&#x3D;tz1...&#x60; will return operations where &#x60;accuser&#x60; OR &#x60;offender&#x60; is equal to the specified value. This parameter is useful when you need to retrieve all operations associated with a specified account. | [optional] |
-| **accuser** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by accuser. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;offender&#x60;. | [optional] |
-| **offender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by offender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;accuser&#x60;. | [optional] |
-| **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;accusedLevel&#x60;, &#x60;accuserRewards&#x60;, &#x60;offenderLostDeposits&#x60;, &#x60;offenderLostRewards&#x60;, &#x60;offenderLostFees&#x60;. | [optional] |
-| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
-| **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
-
-### Return type
-
-[**\Tzkt\Model\DoublePreendorsingOperation[]**](../Model/DoublePreendorsingOperation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetDoublePreendorsingByHash()`
-
-```php
-operationsGetDoublePreendorsingByHash($hash, $quote): \Tzkt\Model\DoublePreendorsingOperation[]
-```
-
-Get double preendorsing by hash
-
-Returns a double preendorsing operation with specified hash.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
-
-try {
-    $result = $apiInstance->operationsGetDoublePreendorsingByHash($hash, $quote);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetDoublePreendorsingByHash: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
-
-### Return type
-
-[**\Tzkt\Model\DoublePreendorsingOperation[]**](../Model/DoublePreendorsingOperation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetDoublePreendorsingCount()`
-
-```php
-operationsGetDoublePreendorsingCount($level, $timestamp): int
-```
-
-Get double preendorsing count
-
-Returns the total number of double preendorsing operations.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-
-try {
-    $result = $apiInstance->operationsGetDoublePreendorsingCount($level, $timestamp);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetDoublePreendorsingCount: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **kind** | [**\Tzkt\Model\OperationsGetDoubleConsensusKindParameter**](../Model/.md)| Filter by misbehaviour kind (&#x60;double_attestation&#x60; or &#x60;double_preattestation&#x60;). | [optional] |
+| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp. | [optional] |
 
 ### Return type
 
@@ -2439,7 +2628,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDrainDelegateByHash($hash, $quote);
@@ -2454,7 +2643,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -2500,12 +2689,12 @@ $anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\B
 $delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by drained baker. Allowed fields for `.eqx` mode: none.
 $target = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by target. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetDrainDelegateOps($anyof, $delegate, $target, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
@@ -2523,12 +2712,12 @@ try {
 | **delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by drained baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **target** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by target. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -2571,7 +2760,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetDrainDelegateOpsCount($level, $timestamp);
@@ -2586,381 +2775,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-
-### Return type
-
-**int**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetEndorsementByHash()`
-
-```php
-operationsGetEndorsementByHash($hash, $quote): \Tzkt\Model\EndorsementOperation[]
-```
-
-Get endorsement by hash
-
-Returns an endorsement operation with specified hash.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
-
-try {
-    $result = $apiInstance->operationsGetEndorsementByHash($hash, $quote);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetEndorsementByHash: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
-
-### Return type
-
-[**\Tzkt\Model\EndorsementOperation[]**](../Model/EndorsementOperation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetEndorsements()`
-
-```php
-operationsGetEndorsements($delegate, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\EndorsementOperation[]
-```
-
-Get endorsements
-
-Returns a list of endorsement operations.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters endorsements by delegate. Allowed fields for `.eqx` mode: none.
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters endorsements by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters endorsements by timestamp.
-$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts endorsements by specified field. Supported fields: `id` (default), `level`.
-$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
-$limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
-
-try {
-    $result = $apiInstance->operationsGetEndorsements($delegate, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetEndorsements: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters endorsements by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters endorsements by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters endorsements by timestamp. | [optional] |
-| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts endorsements by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
-| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
-| **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
-
-### Return type
-
-[**\Tzkt\Model\EndorsementOperation[]**](../Model/EndorsementOperation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetEndorsementsCount()`
-
-```php
-operationsGetEndorsementsCount($level, $timestamp): int
-```
-
-Get endorsements count
-
-Returns the total number of endorsement operations.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters endorsements by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters endorsements by timestamp.
-
-try {
-    $result = $apiInstance->operationsGetEndorsementsCount($level, $timestamp);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetEndorsementsCount: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters endorsements by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters endorsements by timestamp. | [optional] |
-
-### Return type
-
-**int**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetEndorsingRewardById()`
-
-```php
-operationsGetEndorsingRewardById($id, $quote): \Tzkt\Model\EndorsingRewardOperation
-```
-
-Get endorsing reward by id
-
-Returns endorsing reward operation with specified id.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$id = 56; // int | Operation id
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
-
-try {
-    $result = $apiInstance->operationsGetEndorsingRewardById($id, $quote);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetEndorsingRewardById: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| Operation id | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
-
-### Return type
-
-[**\Tzkt\Model\EndorsingRewardOperation**](../Model/EndorsingRewardOperation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetEndorsingRewards()`
-
-```php
-operationsGetEndorsingRewards($id, $baker, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\EndorsingRewardOperation[]
-```
-
-Get endorsing rewards
-
-Returns a list of endorsing reward operations (synthetic type).
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
-$baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by baker. Allowed fields for `.eqx` mode: none.
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`.
-$offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
-$limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
-
-try {
-    $result = $apiInstance->operationsGetEndorsingRewards($id, $baker, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetEndorsingRewards: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
-| **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
-| **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
-| **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
-
-### Return type
-
-[**\Tzkt\Model\EndorsingRewardOperation[]**](../Model/EndorsingRewardOperation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `operationsGetEndorsingRewardsCount()`
-
-```php
-operationsGetEndorsingRewardsCount($level, $timestamp): int
-```
-
-Get endorsing rewards count
-
-Returns the total number of endorsing reward operations (synthetic type).
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-
-try {
-    $result = $apiInstance->operationsGetEndorsingRewardsCount($level, $timestamp);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetEndorsingRewardsCount: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -3003,7 +2818,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetIncreasePaidStorageByHash($hash, $quote);
@@ -3018,7 +2833,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -3061,7 +2876,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters operations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetIncreasePaidStorageCount($level, $timestamp);
@@ -3076,7 +2891,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -3121,13 +2936,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $contract = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by contract. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts operations by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `storageUsed`, `bakerFee`, `storageFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetIncreasePaidStorageOps($sender, $contract, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -3144,13 +2959,13 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **contract** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by contract. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;storageUsed&#x60;, &#x60;bakerFee&#x60;, &#x60;storageFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -3193,8 +3008,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 56; // int | Operation id
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetMigrationById($id, $micheline, $quote);
@@ -3209,8 +3024,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Operation id | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -3257,13 +3072,13 @@ $kind = new \Tzkt\Model\\Tzkt\Model\OperationsGetMigrationsKindParameter(); // \
 $balance_change = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters migration operations by amount.
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters migration operations by internal TzKT id.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters migration operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters migration operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters migration operations by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts migrations by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetMigrations($account, $kind, $balance_change, $id, $level, $timestamp, $select, $sort, $offset, $limit, $micheline, $quote);
@@ -3282,13 +3097,13 @@ try {
 | **balance_change** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters migration operations by amount. | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters migration operations by internal TzKT id. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters migration operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters migration operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters migration operations by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts migrations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -3331,7 +3146,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters migrations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters migrations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters migrations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetMigrationsCount($level, $timestamp);
@@ -3346,7 +3161,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters migrations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters migrations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters migrations by timestamp. | [optional] |
 
 ### Return type
 
@@ -3389,7 +3204,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetNonceRevelationByHash($hash, $quote);
@@ -3404,7 +3219,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -3451,12 +3266,12 @@ $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Mo
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters nonce revelation operations by sender. Allowed fields for `.eqx` mode: `baker`.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters nonce revelation operations by level.
 $revealed_cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by cycle for which the nonce was revealed.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters nonce revelation operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters nonce revelation operations by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts nonce revelation operations by specified field. Supported fields: `id` (default), `level`, `revealedLevel`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetNonceRevelations($anyof, $baker, $sender, $level, $revealed_cycle, $timestamp, $select, $sort, $offset, $limit, $quote);
@@ -3475,12 +3290,12 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters nonce revelation operations by sender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;baker&#x60;. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters nonce revelation operations by level. | [optional] |
 | **revealed_cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by cycle for which the nonce was revealed. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters nonce revelation operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters nonce revelation operations by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts nonce revelation operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;revealedLevel&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -3523,7 +3338,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters seed nonce revelation operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters seed nonce revelation operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters seed nonce revelation operations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetNonceRevelationsCount($level, $timestamp);
@@ -3538,7 +3353,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters seed nonce revelation operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters seed nonce revelation operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters seed nonce revelation operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -3582,7 +3397,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $hash = 'hash_example'; // string | Operation hash
 $micheline = new \Tzkt\Model\\Tzkt\Model\MichelineFormat(); // \Tzkt\Model\MichelineFormat | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetOriginationByHash($hash, $micheline, $quote);
@@ -3598,7 +3413,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
 | **micheline** | [**\Tzkt\Model\MichelineFormat**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -3676,7 +3491,7 @@ No authorization required
 ## `operationsGetOriginations()`
 
 ```php
-operationsGetOriginations($anyof, $initiator, $sender, $contract_manager, $contract_delegate, $originated_contract, $id, $type_hash, $code_hash, $level, $timestamp, $sender_code_hash, $any_code_hash, $status, $select, $sort, $offset, $limit, $micheline, $quote): \Tzkt\Model\OriginationOperation[]
+operationsGetOriginations($anyof, $initiator, $sender, $contract_delegate, $originated_contract, $id, $type_hash, $code_hash, $level, $timestamp, $sender_code_hash, $any_code_hash, $status, $select, $sort, $offset, $limit, $micheline, $quote): \Tzkt\Model\OriginationOperation[]
 ```
 
 Get originations
@@ -3697,28 +3512,27 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filters originations by any of the specified fields. Example: `anyof.sender.initiator=tz1...` will return operations where `sender` OR `initiator` is equal to the specified value. This parameter is useful when you need to retrieve all originations associated with a specified account.
-$initiator = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by initiator. Allowed fields for `.eqx` mode: `contractManager`, `contractDelegate`.
-$sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by sender. Allowed fields for `.eqx` mode: `contractManager`, `contractDelegate`.
-$contract_manager = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by manager. Allowed fields for `.eqx` mode: `initiator`, `sender`, `contractDelegate`.
-$contract_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by delegate. Allowed fields for `.eqx` mode: `initiator`, `sender`, `contractManager`.
+$initiator = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by initiator. Allowed fields for `.eqx` mode: `contractDelegate`.
+$sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by sender. Allowed fields for `.eqx` mode: `contractDelegate`.
+$contract_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by delegate. Allowed fields for `.eqx` mode: `initiator`, `sender`.
 $originated_contract = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by originated contract. Allowed fields for `.eqx` mode: none.
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters origination operations by internal TzKT id
 $type_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters origination operations by 32-bit hash of originated contract parameter and storage types (helpful for searching originations of similar contracts)
 $code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters origination operations by 32-bit hash of originated contract code (helpful for searching originations of same contracts)
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters origination operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filters origination operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters origination operations by timestamp.
 $sender_code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by `senderCodeHash`.
 $any_code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by either `senderCodeHash` or `codeHash`.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters origination operations by operation status (`applied`, `failed`, `backtracked`, `skipped`).
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters origination operations by operation status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts originations by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `storageUsed`, `bakerFee`, `storageFee`, `allocationFee`, `contractBalance`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetOriginations($anyof, $initiator, $sender, $contract_manager, $contract_delegate, $originated_contract, $id, $type_hash, $code_hash, $level, $timestamp, $sender_code_hash, $any_code_hash, $status, $select, $sort, $offset, $limit, $micheline, $quote);
+    $result = $apiInstance->operationsGetOriginations($anyof, $initiator, $sender, $contract_delegate, $originated_contract, $id, $type_hash, $code_hash, $level, $timestamp, $sender_code_hash, $any_code_hash, $status, $select, $sort, $offset, $limit, $micheline, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetOriginations: ', $e->getMessage(), PHP_EOL;
@@ -3730,25 +3544,24 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filters originations by any of the specified fields. Example: &#x60;anyof.sender.initiator&#x3D;tz1...&#x60; will return operations where &#x60;sender&#x60; OR &#x60;initiator&#x60; is equal to the specified value. This parameter is useful when you need to retrieve all originations associated with a specified account. | [optional] |
-| **initiator** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by initiator. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;contractManager&#x60;, &#x60;contractDelegate&#x60;. | [optional] |
-| **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by sender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;contractManager&#x60;, &#x60;contractDelegate&#x60;. | [optional] |
-| **contract_manager** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by manager. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;initiator&#x60;, &#x60;sender&#x60;, &#x60;contractDelegate&#x60;. | [optional] |
-| **contract_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by delegate. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;initiator&#x60;, &#x60;sender&#x60;, &#x60;contractManager&#x60;. | [optional] |
+| **initiator** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by initiator. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;contractDelegate&#x60;. | [optional] |
+| **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by sender. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;contractDelegate&#x60;. | [optional] |
+| **contract_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by delegate. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;initiator&#x60;, &#x60;sender&#x60;. | [optional] |
 | **originated_contract** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by originated contract. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters origination operations by internal TzKT id | [optional] |
 | **type_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters origination operations by 32-bit hash of originated contract parameter and storage types (helpful for searching originations of similar contracts) | [optional] |
 | **code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters origination operations by 32-bit hash of originated contract code (helpful for searching originations of same contracts) | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters origination operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filters origination operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters origination operations by timestamp. | [optional] |
 | **sender_code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by &#x60;senderCodeHash&#x60;. | [optional] |
 | **any_code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by either &#x60;senderCodeHash&#x60; or &#x60;codeHash&#x60;. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters origination operations by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters origination operations by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts originations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;storageUsed&#x60;, &#x60;bakerFee&#x60;, &#x60;storageFee&#x60;, &#x60;allocationFee&#x60;, &#x60;contractBalance&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -3791,7 +3604,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters originations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filters originations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters originations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetOriginationsCount($level, $timestamp);
@@ -3806,7 +3619,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters originations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filters originations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters originations by timestamp. | [optional] |
 
 ### Return type
 
@@ -3825,15 +3638,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetPreendorsementByHash()`
+## `operationsGetPreattestationByHash()`
 
 ```php
-operationsGetPreendorsementByHash($hash, $quote): \Tzkt\Model\PreendorsementOperation[]
+operationsGetPreattestationByHash($hash, $quote): \Tzkt\Model\PreattestationOperation[]
 ```
 
-Get preendorsement by hash
+Get preattestation by hash
 
-Returns an preendorsement operation with specified hash.
+Returns an preattestation operation with specified hash.
 
 ### Example
 
@@ -3849,13 +3662,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetPreendorsementByHash($hash, $quote);
+    $result = $apiInstance->operationsGetPreattestationByHash($hash, $quote);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetPreendorsementByHash: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetPreattestationByHash: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -3864,11 +3677,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Tzkt\Model\PreendorsementOperation[]**](../Model/PreendorsementOperation.md)
+[**\Tzkt\Model\PreattestationOperation[]**](../Model/PreattestationOperation.md)
 
 ### Authorization
 
@@ -3883,15 +3696,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetPreendorsements()`
+## `operationsGetPreattestations()`
 
 ```php
-operationsGetPreendorsements($delegate, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\PreendorsementOperation[]
+operationsGetPreattestations($delegate, $level, $timestamp, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\PreattestationOperation[]
 ```
 
-Get preendorsements
+Get preattestations
 
-Returns a list of preendorsement operations.
+Returns a list of preattestation operations.
 
 ### Example
 
@@ -3908,18 +3721,18 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by delegate. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetPreendorsements($delegate, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
+    $result = $apiInstance->operationsGetPreattestations($delegate, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetPreendorsements: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetPreattestations: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -3929,16 +3742,16 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Tzkt\Model\PreendorsementOperation[]**](../Model/PreendorsementOperation.md)
+[**\Tzkt\Model\PreattestationOperation[]**](../Model/PreattestationOperation.md)
 
 ### Authorization
 
@@ -3953,15 +3766,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetPreendorsementsCount()`
+## `operationsGetPreattestationsCount()`
 
 ```php
-operationsGetPreendorsementsCount($level, $timestamp): int
+operationsGetPreattestationsCount($level, $timestamp): int
 ```
 
-Get preendorsements count
+Get preattestations count
 
-Returns the total number of preendorsement operations.
+Returns the total number of preattestation operations.
 
 ### Example
 
@@ -3977,13 +3790,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
-    $result = $apiInstance->operationsGetPreendorsementsCount($level, $timestamp);
+    $result = $apiInstance->operationsGetPreattestationsCount($level, $timestamp);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetPreendorsementsCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetPreattestationsCount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -3992,7 +3805,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -4035,7 +3848,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetProposalByHash($hash, $quote);
@@ -4050,7 +3863,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4094,7 +3907,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters proposal operations by delegate. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters proposal operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters proposal operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters proposal operations by timestamp.
 $epoch = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters proposal operations by voting epoch.
 $period = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters proposal operations by voting period.
 $proposal = new \Tzkt\Model\\Tzkt\Model\OperationsGetBallotsProposalParameter(); // \Tzkt\Model\OperationsGetBallotsProposalParameter | Filters proposal operations by proposal hash.
@@ -4103,7 +3916,7 @@ $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Mod
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts proposal operations by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetProposals($delegate, $level, $timestamp, $epoch, $period, $proposal, $duplicated, $select, $sort, $offset, $limit, $quote);
@@ -4119,7 +3932,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters proposal operations by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters proposal operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters proposal operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters proposal operations by timestamp. | [optional] |
 | **epoch** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters proposal operations by voting epoch. | [optional] |
 | **period** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters proposal operations by voting period. | [optional] |
 | **proposal** | [**\Tzkt\Model\OperationsGetBallotsProposalParameter**](../Model/.md)| Filters proposal operations by proposal hash. | [optional] |
@@ -4128,7 +3941,7 @@ try {
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts proposal operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4171,7 +3984,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters proposal operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters proposal operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters proposal operations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetProposalsCount($level, $timestamp);
@@ -4186,7 +3999,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters proposal operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters proposal operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters proposal operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -4229,8 +4042,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the constant value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the constant value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetRegisterConstantByHash($hash, $micheline, $quote);
@@ -4245,8 +4058,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the constant value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the constant value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4347,14 +4160,14 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters operations by sender. Allowed fields for `.eqx` mode: none.
 $address = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysHashParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysHashParameter | Filters operations by global address of the created constant (starts with `expr..`).
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters operations by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters operations by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters operations by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters operations by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts operations by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `storageUsed`, `bakerFee`, `storageFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the constant value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the constant value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetRegisterConstants($sender, $address, $level, $timestamp, $status, $select, $sort, $offset, $limit, $micheline, $quote);
@@ -4371,14 +4184,14 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters operations by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **address** | [**\Tzkt\Model\BigMapsGetBigMapKeysHashParameter**](../Model/.md)| Filters operations by global address of the created constant (starts with &#x60;expr..&#x60;). | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters operations by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters operations by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;storageUsed&#x60;, &#x60;bakerFee&#x60;, &#x60;storageFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the constant value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the constant value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4421,7 +4234,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters operations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetRegisterConstantsCount($level, $timestamp);
@@ -4436,7 +4249,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -4479,7 +4292,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetRevealByHash($hash, $quote);
@@ -4494,7 +4307,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4594,13 +4407,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters reveal operations by sender. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters reveal operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters reveal operations by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters reveal operations by operation status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters reveal operations by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters reveal operations by operation status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts reveals by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetReveals($sender, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -4616,13 +4429,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters reveal operations by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters reveal operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters reveal operations by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters reveal operations by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters reveal operations by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters reveal operations by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts reveals by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4665,7 +4478,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters reveals by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters reveals by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters reveals by timestamp.
 
 try {
     $result = $apiInstance->operationsGetRevealsCount($level, $timestamp);
@@ -4680,7 +4493,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters reveals by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters reveals by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters reveals by timestamp. | [optional] |
 
 ### Return type
 
@@ -4725,12 +4538,12 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters operations by internal TzKT id.
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters revelation penalty operations by baker. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters revelation penalty operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters revelation penalty operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters revelation penalty operations by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts revelation penalty operations by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetRevelationPenalties($id, $baker, $level, $timestamp, $select, $sort, $offset, $limit, $quote);
@@ -4747,12 +4560,12 @@ try {
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters operations by internal TzKT id. | [optional] |
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters revelation penalty operations by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters revelation penalty operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters revelation penalty operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters revelation penalty operations by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts revelation penalty operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4795,7 +4608,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters revelation penalty operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters revelation penalty operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters revelation penalty operations by timestamp.
 
 try {
     $result = $apiInstance->operationsGetRevelationPenaltiesCount($level, $timestamp);
@@ -4810,7 +4623,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters revelation penalty operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters revelation penalty operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters revelation penalty operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -4853,7 +4666,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 56; // int | Operation id
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetRevelationPenaltyById($id, $quote);
@@ -4868,7 +4681,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Operation id | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4890,7 +4703,7 @@ No authorization required
 ## `operationsGetSetDelegateParametersOps()`
 
 ```php
-operationsGetSetDelegateParametersOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SetDelegateParametersOperation[]
+operationsGetSetDelegateParametersOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SetDelegateParametersOperation[]
 ```
 
 Get set_delegate_parameters ops
@@ -4914,17 +4727,18 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetSetDelegateParametersOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetSetDelegateParametersOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSetDelegateParametersOps: ', $e->getMessage(), PHP_EOL;
@@ -4939,14 +4753,15 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -4968,7 +4783,7 @@ No authorization required
 ## `operationsGetSetDelegateParametersOpsCount()`
 
 ```php
-operationsGetSetDelegateParametersOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetSetDelegateParametersOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get set_delegate_parameters ops count
@@ -4992,12 +4807,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetSetDelegateParametersOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetSetDelegateParametersOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSetDelegateParametersOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -5012,9 +4828,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -5057,7 +4874,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetSetDepositsLimitByHash($hash, $quote);
@@ -5072,7 +4889,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -5172,13 +4989,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetSetDepositsLimits($sender, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -5194,13 +5011,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -5243,7 +5060,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetSetDepositsLimitsCount($level, $timestamp);
@@ -5258,7 +5075,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -5280,7 +5097,7 @@ No authorization required
 ## `operationsGetSmartRollupAddMessagesOps()`
 
 ```php
-operationsGetSmartRollupAddMessagesOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupAddMessagesOperation[]
+operationsGetSmartRollupAddMessagesOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupAddMessagesOperation[]
 ```
 
 Get smart rollup add messages
@@ -5304,17 +5121,18 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupAddMessagesOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetSmartRollupAddMessagesOps($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupAddMessagesOps: ', $e->getMessage(), PHP_EOL;
@@ -5329,14 +5147,15 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -5358,7 +5177,7 @@ No authorization required
 ## `operationsGetSmartRollupAddMessagesOpsCount()`
 
 ```php
-operationsGetSmartRollupAddMessagesOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetSmartRollupAddMessagesOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get smart rollup add messages count
@@ -5382,12 +5201,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupAddMessagesOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetSmartRollupAddMessagesOpsCount($id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupAddMessagesOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -5402,9 +5222,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -5426,7 +5247,7 @@ No authorization required
 ## `operationsGetSmartRollupCementOps()`
 
 ```php
-operationsGetSmartRollupCementOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupCementOperation[]
+operationsGetSmartRollupCementOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupCementOperation[]
 ```
 
 Get smart rollup cement
@@ -5451,17 +5272,18 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupCementOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetSmartRollupCementOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupCementOps: ', $e->getMessage(), PHP_EOL;
@@ -5477,14 +5299,15 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -5506,7 +5329,7 @@ No authorization required
 ## `operationsGetSmartRollupCementOpsCount()`
 
 ```php
-operationsGetSmartRollupCementOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetSmartRollupCementOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get smart rollup cement count
@@ -5531,12 +5354,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupCementOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetSmartRollupCementOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupCementOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -5552,9 +5376,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -5576,7 +5401,7 @@ No authorization required
 ## `operationsGetSmartRollupExecuteOps()`
 
 ```php
-operationsGetSmartRollupExecuteOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupExecuteOperation[]
+operationsGetSmartRollupExecuteOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupExecuteOperation[]
 ```
 
 Get smart rollup execute
@@ -5601,17 +5426,18 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupExecuteOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetSmartRollupExecuteOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupExecuteOps: ', $e->getMessage(), PHP_EOL;
@@ -5627,14 +5453,15 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -5656,7 +5483,7 @@ No authorization required
 ## `operationsGetSmartRollupExecuteOpsCount()`
 
 ```php
-operationsGetSmartRollupExecuteOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetSmartRollupExecuteOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get smart rollup execute count
@@ -5681,12 +5508,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupExecuteOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetSmartRollupExecuteOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupExecuteOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -5702,9 +5530,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -5726,7 +5555,7 @@ No authorization required
 ## `operationsGetSmartRollupOriginateOps()`
 
 ```php
-operationsGetSmartRollupOriginateOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote, $micheline): \Tzkt\Model\SmartRollupOriginateOperation[]
+operationsGetSmartRollupOriginateOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote, $micheline): \Tzkt\Model\SmartRollupOriginateOperation[]
 ```
 
 Get smart rollup originate
@@ -5751,18 +5580,19 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameter type value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameter type value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupOriginateOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote, $micheline);
+    $result = $apiInstance->operationsGetSmartRollupOriginateOps($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote, $micheline);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupOriginateOps: ', $e->getMessage(), PHP_EOL;
@@ -5778,15 +5608,16 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameter type value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameter type value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
 
 ### Return type
 
@@ -5808,7 +5639,7 @@ No authorization required
 ## `operationsGetSmartRollupOriginateOpsCount()`
 
 ```php
-operationsGetSmartRollupOriginateOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetSmartRollupOriginateOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get smart rollup originate count
@@ -5833,12 +5664,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupOriginateOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetSmartRollupOriginateOpsCount($rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupOriginateOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -5854,9 +5686,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -5878,7 +5711,7 @@ No authorization required
 ## `operationsGetSmartRollupPublishOps()`
 
 ```php
-operationsGetSmartRollupPublishOps($commitment_id, $commitment_hash, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupPublishOperation[]
+operationsGetSmartRollupPublishOps($commitment_id, $commitment_hash, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupPublishOperation[]
 ```
 
 Get smart rollup publish
@@ -5905,17 +5738,18 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupPublishOps($commitment_id, $commitment_hash, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetSmartRollupPublishOps($commitment_id, $commitment_hash, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupPublishOps: ', $e->getMessage(), PHP_EOL;
@@ -5933,14 +5767,15 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -5962,7 +5797,7 @@ No authorization required
 ## `operationsGetSmartRollupPublishOpsCount()`
 
 ```php
-operationsGetSmartRollupPublishOpsCount($commitment_id, $commitment_hash, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetSmartRollupPublishOpsCount($commitment_id, $commitment_hash, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get smart rollup publish count
@@ -5989,12 +5824,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupPublishOpsCount($commitment_id, $commitment_hash, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetSmartRollupPublishOpsCount($commitment_id, $commitment_hash, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupPublishOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -6012,9 +5848,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -6036,7 +5873,7 @@ No authorization required
 ## `operationsGetSmartRollupRecoverBondOps()`
 
 ```php
-operationsGetSmartRollupRecoverBondOps($anyof, $staker, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupRecoverBondOperation[]
+operationsGetSmartRollupRecoverBondOps($anyof, $staker, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupRecoverBondOperation[]
 ```
 
 Get smart rollup recover bond
@@ -6063,17 +5900,18 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupRecoverBondOps($anyof, $staker, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetSmartRollupRecoverBondOps($anyof, $staker, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupRecoverBondOps: ', $e->getMessage(), PHP_EOL;
@@ -6091,14 +5929,15 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -6120,7 +5959,7 @@ No authorization required
 ## `operationsGetSmartRollupRecoverBondOpsCount()`
 
 ```php
-operationsGetSmartRollupRecoverBondOpsCount($anyof, $staker, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetSmartRollupRecoverBondOpsCount($anyof, $staker, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get smart rollup recover bond count
@@ -6147,12 +5986,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupRecoverBondOpsCount($anyof, $staker, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetSmartRollupRecoverBondOpsCount($anyof, $staker, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupRecoverBondOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -6170,9 +6010,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -6194,7 +6035,7 @@ No authorization required
 ## `operationsGetSmartRollupRefuteOps()`
 
 ```php
-operationsGetSmartRollupRefuteOps($anyof, $game_id, $game_initiator, $game_initiator_commitment_id, $game_initiator_commitment_hash, $game_opponent, $game_opponent_commitment_id, $game_opponent_commitment_hash, $move, $game_status, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupRefuteOperation[]
+operationsGetSmartRollupRefuteOps($anyof, $game_id, $game_initiator, $game_initiator_commitment_id, $game_initiator_commitment_hash, $game_opponent, $game_opponent_commitment_id, $game_opponent_commitment_hash, $move, $game_status, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\SmartRollupRefuteOperation[]
 ```
 
 Get smart rollup refute
@@ -6229,17 +6070,18 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupRefuteOps($anyof, $game_id, $game_initiator, $game_initiator_commitment_id, $game_initiator_commitment_hash, $game_opponent, $game_opponent_commitment_id, $game_opponent_commitment_hash, $move, $game_status, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetSmartRollupRefuteOps($anyof, $game_id, $game_initiator, $game_initiator_commitment_id, $game_initiator_commitment_hash, $game_opponent, $game_opponent_commitment_id, $game_opponent_commitment_hash, $move, $game_status, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupRefuteOps: ', $e->getMessage(), PHP_EOL;
@@ -6265,14 +6107,15 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -6294,7 +6137,7 @@ No authorization required
 ## `operationsGetSmartRollupRefuteOpsCount()`
 
 ```php
-operationsGetSmartRollupRefuteOpsCount($anyof, $game_id, $game_initiator, $game_initiator_commitment_id, $game_initiator_commitment_hash, $game_opponent, $game_opponent_commitment_id, $game_opponent_commitment_hash, $move, $game_status, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetSmartRollupRefuteOpsCount($anyof, $game_id, $game_initiator, $game_initiator_commitment_id, $game_initiator_commitment_hash, $game_opponent, $game_opponent_commitment_id, $game_opponent_commitment_hash, $move, $game_status, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get smart rollup refute count
@@ -6329,12 +6172,13 @@ $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetSmartRollupRefuteOpsCount($anyof, $game_id, $game_initiator, $game_initiator_commitment_id, $game_initiator_commitment_hash, $game_opponent, $game_opponent_commitment_id, $game_opponent_commitment_hash, $move, $game_status, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetSmartRollupRefuteOpsCount($anyof, $game_id, $game_initiator, $game_initiator_commitment_id, $game_initiator_commitment_hash, $game_opponent, $game_opponent_commitment_id, $game_opponent_commitment_hash, $move, $game_status, $rollup, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetSmartRollupRefuteOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -6360,9 +6204,10 @@ try {
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -6384,7 +6229,7 @@ No authorization required
 ## `operationsGetStakingOps()`
 
 ```php
-operationsGetStakingOps($anyof, $baker, $action, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\StakingOperation[]
+operationsGetStakingOps($anyof, $staker, $baker, $action, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote): \Tzkt\Model\StakingOperation[]
 ```
 
 Get staking ops
@@ -6405,23 +6250,25 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filter by any of the specified fields (`sender`, or `baker`). Example: `anyof.sender.baker=tz1...` will return operations where `sender` OR `baker` is equal to the specified value. This parameter is useful when you need to get all operations somehow related to the account in a single request.   Click on the parameter to expand more details.
+$staker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by staker address.   Click on the parameter to expand more details.
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by baker address.   Click on the parameter to expand more details.
 $action = new \Tzkt\Model\\Tzkt\Model\OperationsGetStakingOpsActionParameter(); // \Tzkt\Model\OperationsGetStakingOpsActionParameter | Filter by staking action (`stake`, `unstake`, `finalize`).   Click on the parameter to expand more details.
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetStakingOps($anyof, $baker, $action, $id, $hash, $counter, $level, $timestamp, $status, $sender, $sort, $offset, $limit, $select, $quote);
+    $result = $apiInstance->operationsGetStakingOps($anyof, $staker, $baker, $action, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals, $sort, $offset, $limit, $select, $quote);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetStakingOps: ', $e->getMessage(), PHP_EOL;
@@ -6433,20 +6280,22 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filter by any of the specified fields (&#x60;sender&#x60;, or &#x60;baker&#x60;). Example: &#x60;anyof.sender.baker&#x3D;tz1...&#x60; will return operations where &#x60;sender&#x60; OR &#x60;baker&#x60; is equal to the specified value. This parameter is useful when you need to get all operations somehow related to the account in a single request.   Click on the parameter to expand more details. | [optional] |
+| **staker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by staker address.   Click on the parameter to expand more details. | [optional] |
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by baker address.   Click on the parameter to expand more details. | [optional] |
 | **action** | [**\Tzkt\Model\OperationsGetStakingOpsActionParameter**](../Model/.md)| Filter by staking action (&#x60;stake&#x60;, &#x60;unstake&#x60;, &#x60;finalize&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
 | **select** | [**\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter**](../Model/.md)| Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -6468,7 +6317,7 @@ No authorization required
 ## `operationsGetStakingOpsCount()`
 
 ```php
-operationsGetStakingOpsCount($anyof, $baker, $action, $id, $hash, $counter, $level, $timestamp, $status, $sender): int
+operationsGetStakingOpsCount($anyof, $staker, $baker, $action, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals): int
 ```
 
 Get staking ops count
@@ -6489,18 +6338,20 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $anyof = new \Tzkt\Model\\Tzkt\Model\BlocksGetAnyofParameter(); // \Tzkt\Model\BlocksGetAnyofParameter | Filter by any of the specified fields (`sender`, or `baker`). Example: `anyof.sender.baker=tz1...` will return operations where `sender` OR `baker` is equal to the specified value. This parameter is useful when you need to get all operations somehow related to the account in a single request.   Click on the parameter to expand more details.
+$staker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by staker address.   Click on the parameter to expand more details.
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by baker address.   Click on the parameter to expand more details.
 $action = new \Tzkt\Model\\Tzkt\Model\OperationsGetStakingOpsActionParameter(); // \Tzkt\Model\OperationsGetStakingOpsActionParameter | Filter by staking action (`stake`, `unstake`, `finalize`).   Click on the parameter to expand more details.
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $hash = new \Tzkt\Model\\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter(); // \Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter | Filter by operation hash.   Click on the parameter to expand more details.
 $counter = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by operation counter.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by the domain level.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filter by operation status (`applied`, `failed`, `backtracked`, `skipped`).   Click on the parameter to expand more details.
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by operation sender address.   Click on the parameter to expand more details.
+$or_cols_and_vals = array(new \stdClass); // object[]
 
 try {
-    $result = $apiInstance->operationsGetStakingOpsCount($anyof, $baker, $action, $id, $hash, $counter, $level, $timestamp, $status, $sender);
+    $result = $apiInstance->operationsGetStakingOpsCount($anyof, $staker, $baker, $action, $id, $hash, $counter, $level, $timestamp, $status, $sender, $or_cols_and_vals);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->operationsGetStakingOpsCount: ', $e->getMessage(), PHP_EOL;
@@ -6512,15 +6363,17 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **anyof** | [**\Tzkt\Model\BlocksGetAnyofParameter**](../Model/.md)| Filter by any of the specified fields (&#x60;sender&#x60;, or &#x60;baker&#x60;). Example: &#x60;anyof.sender.baker&#x3D;tz1...&#x60; will return operations where &#x60;sender&#x60; OR &#x60;baker&#x60; is equal to the specified value. This parameter is useful when you need to get all operations somehow related to the account in a single request.   Click on the parameter to expand more details. | [optional] |
+| **staker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by staker address.   Click on the parameter to expand more details. | [optional] |
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by baker address.   Click on the parameter to expand more details. | [optional] |
 | **action** | [**\Tzkt\Model\OperationsGetStakingOpsActionParameter**](../Model/.md)| Filter by staking action (&#x60;stake&#x60;, &#x60;unstake&#x60;, &#x60;finalize&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **hash** | [**\Tzkt\Model\OperationsGetSmartRollupAddMessagesOpsHashParameter**](../Model/.md)| Filter by operation hash.   Click on the parameter to expand more details. | [optional] |
 | **counter** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by operation counter.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by the domain level.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the operation.   Click on the parameter to expand more details. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filter by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by operation sender address.   Click on the parameter to expand more details. | [optional] |
+| **or_cols_and_vals** | [**object[]**](../Model/object.md)|  | [optional] |
 
 ### Return type
 
@@ -6619,8 +6472,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTransactionByHash($hash, $micheline, $quote);
@@ -6635,8 +6488,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -6680,8 +6533,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 );
 $hash = 'hash_example'; // string | Operation hash
 $counter = 56; // int | Operation counter
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTransactionByHashCounter($hash, $counter, $micheline, $quote);
@@ -6697,8 +6550,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
 | **counter** | **int**| Operation counter | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -6743,8 +6596,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $hash = 'hash_example'; // string | Operation hash
 $counter = 56; // int | Operation counter
 $nonce = 56; // int | Operation nonce (internal)
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTransactionByHashCounterNonce($hash, $counter, $nonce, $micheline, $quote);
@@ -6761,8 +6614,8 @@ try {
 | **hash** | **string**| Operation hash | |
 | **counter** | **int**| Operation counter | |
 | **nonce** | **int**| Operation nonce (internal) | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -6867,20 +6720,20 @@ $target = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\M
 $amount = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters transactions by amount (micro tez).
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters transactions by id.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters transactions by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filters transactions by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters transactions by timestamp.
 $sender_code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by `senderCodeHash`.
 $target_code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by `targetCodeHash`.
 $code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by either `senderCodeHash` or `targetCodeHash`.
-$entrypoint = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // \Tzkt\Model\AccountsGetOperationsEntrypointParameter | Filters transactions by entrypoint called on the target contract.
-$parameter = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsParameterParameter(); // \Tzkt\Model\AccountsGetOperationsParameterParameter | Filters transactions by parameter value. Note, this query parameter supports the following format: `?parameter{.path?}{.mode?}=...`,             so you can specify a path to a particular field to filter by, for example: `?parameter.token_id=...` or `?parameter.sigs.0.ne=...`.             Also, note that `.value` part must be omitted in the path, so, for example, filtering by `parameter.value.foo` must be specified as `?parameter.foo=...`.
+$entrypoint = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapsPathParameter(); // \Tzkt\Model\BigMapsGetBigMapsPathParameter | Filters transactions by entrypoint called on the target contract.
+$parameter = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter | Filters transactions by parameter value. Note, this query parameter supports the following format: `?parameter{.path?}{.mode?}=...`,             so you can specify a path to a particular field to filter by, for example: `?parameter.token_id=...` or `?parameter.sigs.0.ne=...`.             Also, note that `.value` part must be omitted in the path, so, for example, filtering by `parameter.value.foo` must be specified as `?parameter.foo=...`.
 $has_internals = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Filters transactions by presence of internal operations.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters transactions by operation status (`applied`, `failed`, `backtracked`, `skipped`).
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters transactions by operation status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts transactions by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `storageUsed`, `bakerFee`, `storageFee`, `allocationFee`, `amount`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTransactions($anyof, $initiator, $sender, $target, $amount, $id, $level, $timestamp, $sender_code_hash, $target_code_hash, $code_hash, $entrypoint, $parameter, $has_internals, $status, $select, $sort, $offset, $limit, $micheline, $quote);
@@ -6901,20 +6754,20 @@ try {
 | **amount** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters transactions by amount (micro tez). | [optional] |
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters transactions by id. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters transactions by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filters transactions by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters transactions by timestamp. | [optional] |
 | **sender_code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by &#x60;senderCodeHash&#x60;. | [optional] |
 | **target_code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by &#x60;targetCodeHash&#x60;. | [optional] |
 | **code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by either &#x60;senderCodeHash&#x60; or &#x60;targetCodeHash&#x60;. | [optional] |
-| **entrypoint** | [**\Tzkt\Model\AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filters transactions by entrypoint called on the target contract. | [optional] |
-| **parameter** | [**\Tzkt\Model\AccountsGetOperationsParameterParameter**](../Model/.md)| Filters transactions by parameter value. Note, this query parameter supports the following format: &#x60;?parameter{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?parameter.token_id&#x3D;...&#x60; or &#x60;?parameter.sigs.0.ne&#x3D;...&#x60;.             Also, note that &#x60;.value&#x60; part must be omitted in the path, so, for example, filtering by &#x60;parameter.value.foo&#x60; must be specified as &#x60;?parameter.foo&#x3D;...&#x60;. | [optional] |
+| **entrypoint** | [**\Tzkt\Model\BigMapsGetBigMapsPathParameter**](../Model/.md)| Filters transactions by entrypoint called on the target contract. | [optional] |
+| **parameter** | [**\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter**](../Model/.md)| Filters transactions by parameter value. Note, this query parameter supports the following format: &#x60;?parameter{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?parameter.token_id&#x3D;...&#x60; or &#x60;?parameter.sigs.0.ne&#x3D;...&#x60;.             Also, note that &#x60;.value&#x60; part must be omitted in the path, so, for example, filtering by &#x60;parameter.value.foo&#x60; must be specified as &#x60;?parameter.foo&#x3D;...&#x60;. | [optional] |
 | **has_internals** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Filters transactions by presence of internal operations. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters transactions by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters transactions by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts transactions by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;storageUsed&#x60;, &#x60;bakerFee&#x60;, &#x60;storageFee&#x60;, &#x60;allocationFee&#x60;, &#x60;amount&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -6962,10 +6815,10 @@ $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\M
 $target = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters transactions by target. Allowed fields for `.eqx` mode: `sender`, `initiator`.
 $amount = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters transactions by amount (micro tez).
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters transactions by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filters transactions by timestamp.
-$entrypoint = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // \Tzkt\Model\AccountsGetOperationsEntrypointParameter | Filters transactions by entrypoint called on the target contract.
-$parameter = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsParameterParameter(); // \Tzkt\Model\AccountsGetOperationsParameterParameter | Filters transactions by parameter value. Note, this query parameter supports the following format: `?parameter{.path?}{.mode?}=...`,             so you can specify a path to a particular field to filter by, for example: `?parameter.token_id=...` or `?parameter.sigs.0.ne=...`.             Also, note that `.value` part must be omitted in the path, so, for example, filtering by `parameter.value.foo` must be specified as `?parameter.foo=...`.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters transactions by operation status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters transactions by timestamp.
+$entrypoint = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapsPathParameter(); // \Tzkt\Model\BigMapsGetBigMapsPathParameter | Filters transactions by entrypoint called on the target contract.
+$parameter = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter | Filters transactions by parameter value. Note, this query parameter supports the following format: `?parameter{.path?}{.mode?}=...`,             so you can specify a path to a particular field to filter by, for example: `?parameter.token_id=...` or `?parameter.sigs.0.ne=...`.             Also, note that `.value` part must be omitted in the path, so, for example, filtering by `parameter.value.foo` must be specified as `?parameter.foo=...`.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters transactions by operation status (`applied`, `failed`, `backtracked`, `skipped`).
 
 try {
     $result = $apiInstance->operationsGetTransactionsCount($anyof, $initiator, $sender, $target, $amount, $level, $timestamp, $entrypoint, $parameter, $status);
@@ -6985,10 +6838,10 @@ try {
 | **target** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters transactions by target. Allowed fields for &#x60;.eqx&#x60; mode: &#x60;sender&#x60;, &#x60;initiator&#x60;. | [optional] |
 | **amount** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters transactions by amount (micro tez). | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters transactions by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filters transactions by timestamp. | [optional] |
-| **entrypoint** | [**\Tzkt\Model\AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filters transactions by entrypoint called on the target contract. | [optional] |
-| **parameter** | [**\Tzkt\Model\AccountsGetOperationsParameterParameter**](../Model/.md)| Filters transactions by parameter value. Note, this query parameter supports the following format: &#x60;?parameter{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?parameter.token_id&#x3D;...&#x60; or &#x60;?parameter.sigs.0.ne&#x3D;...&#x60;.             Also, note that &#x60;.value&#x60; part must be omitted in the path, so, for example, filtering by &#x60;parameter.value.foo&#x60; must be specified as &#x60;?parameter.foo&#x3D;...&#x60;. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters transactions by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters transactions by timestamp. | [optional] |
+| **entrypoint** | [**\Tzkt\Model\BigMapsGetBigMapsPathParameter**](../Model/.md)| Filters transactions by entrypoint called on the target contract. | [optional] |
+| **parameter** | [**\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter**](../Model/.md)| Filters transactions by parameter value. Note, this query parameter supports the following format: &#x60;?parameter{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?parameter.token_id&#x3D;...&#x60; or &#x60;?parameter.sigs.0.ne&#x3D;...&#x60;.             Also, note that &#x60;.value&#x60; part must be omitted in the path, so, for example, filtering by &#x60;parameter.value.foo&#x60; must be specified as &#x60;?parameter.foo&#x3D;...&#x60;. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters transactions by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 
 ### Return type
 
@@ -7036,14 +6889,14 @@ $target = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\M
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filters by id.
 $ticketer = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by ticketer. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the content value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the content value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTransferTicketOps($anyof, $sender, $target, $id, $ticketer, $level, $timestamp, $status, $select, $sort, $offset, $limit, $micheline, $quote);
@@ -7063,14 +6916,14 @@ try {
 | **id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filters by id. | [optional] |
 | **ticketer** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by ticketer. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the content value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the content value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -7113,8 +6966,8 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the content value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the content value: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTransferTicketOpsByHash($hash, $micheline, $quote);
@@ -7129,8 +6982,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the content value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the content value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -7173,7 +7026,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTransferTicketOpsCount($level, $timestamp);
@@ -7188,7 +7041,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -7289,13 +7142,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by rollup. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupCommitOps($sender, $rollup, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -7312,13 +7165,13 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **rollup** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by rollup. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -7361,7 +7214,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupCommitOpsByHash($hash, $quote);
@@ -7376,7 +7229,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -7419,7 +7272,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTxRollupCommitOpsCount($level, $timestamp);
@@ -7434,7 +7287,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -7535,13 +7388,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by rollup. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupDispatchTicketsOps($sender, $rollup, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -7558,13 +7411,13 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **rollup** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by rollup. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -7607,7 +7460,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupDispatchTicketsOpsByHash($hash, $quote);
@@ -7622,7 +7475,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -7665,7 +7518,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTxRollupDispatchTicketsOpsCount($level, $timestamp);
@@ -7680,7 +7533,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -7781,13 +7634,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by rollup. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupFinalizeCommitmentOps($sender, $rollup, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -7804,13 +7657,13 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **rollup** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by rollup. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -7853,7 +7706,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupFinalizeCommitmentOpsByHash($hash, $quote);
@@ -7868,7 +7721,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -7911,7 +7764,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTxRollupFinalizeCommitmentOpsCount($level, $timestamp);
@@ -7926,7 +7779,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -8027,13 +7880,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by rollup. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupOriginationOps($sender, $rollup, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -8050,13 +7903,13 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **rollup** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by rollup. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -8099,7 +7952,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupOriginationOpsByHash($hash, $quote);
@@ -8114,7 +7967,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -8157,7 +8010,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTxRollupOriginationOpsCount($level, $timestamp);
@@ -8172,7 +8025,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -8275,13 +8128,13 @@ $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\M
 $committer = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by committer. Allowed fields for `.eqx` mode: none.
 $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by rollup. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupRejectionOps($anyof, $sender, $committer, $rollup, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -8300,13 +8153,13 @@ try {
 | **committer** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by committer. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **rollup** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by rollup. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -8349,7 +8202,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupRejectionOpsByHash($hash, $quote);
@@ -8364,7 +8217,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -8407,7 +8260,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTxRollupRejectionOpsCount($level, $timestamp);
@@ -8422,7 +8275,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -8523,13 +8376,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by rollup. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupRemoveCommitmentOps($sender, $rollup, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -8546,13 +8399,13 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **rollup** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by rollup. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -8595,7 +8448,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupRemoveCommitmentOpsByHash($hash, $quote);
@@ -8610,7 +8463,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -8653,7 +8506,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTxRollupRemoveCommitmentOpsCount($level, $timestamp);
@@ -8668,7 +8521,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -8769,13 +8622,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by rollup. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupReturnBondOps($sender, $rollup, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -8792,13 +8645,13 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **rollup** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by rollup. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -8841,7 +8694,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupReturnBondOpsByHash($hash, $quote);
@@ -8856,7 +8709,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -8899,7 +8752,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTxRollupReturnBondOpsCount($level, $timestamp);
@@ -8914,7 +8767,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -9015,13 +8868,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
 $rollup = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by rollup. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `bakerFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupSubmitBatchOps($sender, $rollup, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
@@ -9038,13 +8891,13 @@ try {
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **rollup** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by rollup. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;bakerFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -9087,7 +8940,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetTxRollupSubmitBatchOpsByHash($hash, $quote);
@@ -9102,7 +8955,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -9145,7 +8998,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetTxRollupSubmitBatchOpsCount($level, $timestamp);
@@ -9160,7 +9013,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 
@@ -9235,15 +9088,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetUpdateConsensusKeyByHash()`
+## `operationsGetUpdateSecondaryKeyByHash()`
 
 ```php
-operationsGetUpdateConsensusKeyByHash($hash, $quote): \Tzkt\Model\UpdateConsensusKeyOperation[]
+operationsGetUpdateSecondaryKeyByHash($hash, $quote): \Tzkt\Model\UpdateSecondaryKeyOperation[]
 ```
 
-Get update consensus key by hash
+Get update secondary key by hash
 
-Returns update consensus key operation with specified hash.
+Returns update secondary key operation with specified hash.
 
 ### Example
 
@@ -9259,13 +9112,13 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetUpdateConsensusKeyByHash($hash, $quote);
+    $result = $apiInstance->operationsGetUpdateSecondaryKeyByHash($hash, $quote);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetUpdateConsensusKeyByHash: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetUpdateSecondaryKeyByHash: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -9274,11 +9127,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Tzkt\Model\UpdateConsensusKeyOperation[]**](../Model/UpdateConsensusKeyOperation.md)
+[**\Tzkt\Model\UpdateSecondaryKeyOperation[]**](../Model/UpdateSecondaryKeyOperation.md)
 
 ### Authorization
 
@@ -9293,15 +9146,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetUpdateConsensusKeyOps()`
+## `operationsGetUpdateSecondaryKeyOps()`
 
 ```php
-operationsGetUpdateConsensusKeyOps($sender, $activation_cycle, $public_key_hash, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\UpdateConsensusKeyOperation[]
+operationsGetUpdateSecondaryKeyOps($sender, $key_type, $activation_cycle, $public_key_hash, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote): \Tzkt\Model\UpdateSecondaryKeyOperation[]
 ```
 
-Get update consensus key
+Get update secondary key
 
-Returns a list of update consensus key operations.
+Returns a list of update secondary key operations.
 
 ### Example
 
@@ -9317,22 +9170,23 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by sender. Allowed fields for `.eqx` mode: none.
-$activation_cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by activation cycle. Allowed fields for `.eqx` mode: none.
+$key_type = new \Tzkt\Model\\Tzkt\Model\OperationsGetUpdateSecondaryKeyOpsKeyTypeParameter(); // \Tzkt\Model\OperationsGetUpdateSecondaryKeyOpsKeyTypeParameter | Filters by key type (`consensus` or `companion`).
+$activation_cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by activation cycle.
 $public_key_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetAddressParameter(); // \Tzkt\Model\AccountsGetAddressParameter | Filters by pkh (tz address).
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
+$status = new \Tzkt\Model\\Tzkt\Model\OperationsGetDelegationsStatusParameter(); // \Tzkt\Model\OperationsGetDelegationsStatusParameter | Filters by status (`applied`, `failed`, `backtracked`, `skipped`).
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts operations by specified field. Supported fields: `id` (default), `level`, `gasUsed`, `storageUsed`, `bakerFee`, `storageFee`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
-    $result = $apiInstance->operationsGetUpdateConsensusKeyOps($sender, $activation_cycle, $public_key_hash, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
+    $result = $apiInstance->operationsGetUpdateSecondaryKeyOps($sender, $key_type, $activation_cycle, $public_key_hash, $level, $timestamp, $status, $select, $sort, $offset, $limit, $quote);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetUpdateConsensusKeyOps: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetUpdateSecondaryKeyOps: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -9341,20 +9195,21 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **activation_cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by activation cycle. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
+| **key_type** | [**\Tzkt\Model\OperationsGetUpdateSecondaryKeyOpsKeyTypeParameter**](../Model/.md)| Filters by key type (&#x60;consensus&#x60; or &#x60;companion&#x60;). | [optional] |
+| **activation_cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by activation cycle. | [optional] |
 | **public_key_hash** | [**\Tzkt\Model\AccountsGetAddressParameter**](../Model/.md)| Filters by pkh (tz address). | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **status** | [**\Tzkt\Model\OperationsGetDelegationsStatusParameter**](../Model/.md)| Filters by status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts operations by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;gasUsed&#x60;, &#x60;storageUsed&#x60;, &#x60;bakerFee&#x60;, &#x60;storageFee&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
-[**\Tzkt\Model\UpdateConsensusKeyOperation[]**](../Model/UpdateConsensusKeyOperation.md)
+[**\Tzkt\Model\UpdateSecondaryKeyOperation[]**](../Model/UpdateSecondaryKeyOperation.md)
 
 ### Authorization
 
@@ -9369,15 +9224,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `operationsGetUpdateConsensusKeyOpsCount()`
+## `operationsGetUpdateSecondaryKeyOpsCount()`
 
 ```php
-operationsGetUpdateConsensusKeyOpsCount($level, $timestamp): int
+operationsGetUpdateSecondaryKeyOpsCount($key_type, $level, $timestamp): int
 ```
 
-Get update consensus key count
+Get update secondary key count
 
-Returns the total number of update consensus key operations.
+Returns the total number of update secondary key operations.
 
 ### Example
 
@@ -9392,14 +9247,15 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$key_type = new \Tzkt\Model\\Tzkt\Model\OperationsGetUpdateSecondaryKeyOpsKeyTypeParameter(); // \Tzkt\Model\OperationsGetUpdateSecondaryKeyOpsKeyTypeParameter | Filters operations key type (`consensus` or `companion`).
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters operations by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters operations by timestamp.
 
 try {
-    $result = $apiInstance->operationsGetUpdateConsensusKeyOpsCount($level, $timestamp);
+    $result = $apiInstance->operationsGetUpdateSecondaryKeyOpsCount($key_type, $level, $timestamp);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->operationsGetUpdateConsensusKeyOpsCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->operationsGetUpdateSecondaryKeyOpsCount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -9407,8 +9263,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **key_type** | [**\Tzkt\Model\OperationsGetUpdateSecondaryKeyOpsKeyTypeParameter**](../Model/.md)| Filters operations key type (&#x60;consensus&#x60; or &#x60;companion&#x60;). | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
 
 ### Return type
 
@@ -9451,7 +9308,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $hash = 'hash_example'; // string | Operation hash
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetVdfRevelationByHash($hash, $quote);
@@ -9466,7 +9323,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **hash** | **string**| Operation hash | |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -9511,12 +9368,12 @@ $apiInstance = new Tzkt\Api\OperationsApi(
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters by baker. Allowed fields for `.eqx` mode: none.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
 $cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by cycle in which the operation was included.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts by specified field. Supported fields: `id` (default), `level`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->operationsGetVdfRevelations($baker, $level, $cycle, $timestamp, $select, $sort, $offset, $limit, $quote);
@@ -9533,12 +9390,12 @@ try {
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
 | **cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by cycle in which the operation was included. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -9581,7 +9438,7 @@ $apiInstance = new Tzkt\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters by timestamp.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters by timestamp.
 
 try {
     $result = $apiInstance->operationsGetVdfRevelationsCount($level, $timestamp);
@@ -9596,7 +9453,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters by timestamp. | [optional] |
 
 ### Return type
 

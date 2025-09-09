@@ -34,7 +34,7 @@ $apiInstance = new Tzkt\Api\ConstantsApi(
 );
 $address = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysHashParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysHashParameter | Filters constants by global address (starts with `expr..`).
 $creation_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters constants by creation level.
-$creation_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filters constants by creation time.
+$creation_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filters constants by creation time.
 $creator = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters constants by creator.
 $refs = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters constants by number of refs.
 $size = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters constants by size in bytes.
@@ -58,7 +58,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | [**\Tzkt\Model\BigMapsGetBigMapKeysHashParameter**](../Model/.md)| Filters constants by global address (starts with &#x60;expr..&#x60;). | [optional] |
 | **creation_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters constants by creation level. | [optional] |
-| **creation_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filters constants by creation time. | [optional] |
+| **creation_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filters constants by creation time. | [optional] |
 | **creator** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters constants by creator. | [optional] |
 | **refs** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters constants by number of refs. | [optional] |
 | **size** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters constants by size in bytes. | [optional] |

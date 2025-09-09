@@ -33,11 +33,11 @@ $apiInstance = new Tzkt\Api\EventsApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the event was emitted.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the event was emitted.   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the event was emitted.   Click on the parameter to expand more details.
 $contract = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by contract address.   Click on the parameter to expand more details.
 $code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by hash of the code of the contract emitted the event.   Click on the parameter to expand more details.
-$tag = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // \Tzkt\Model\AccountsGetOperationsEntrypointParameter | Filter by event tag.   Click on the parameter to expand more details.
-$payload = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsParameterParameter(); // \Tzkt\Model\AccountsGetOperationsParameterParameter | Filter by payload.   Note, this parameter supports the following format: `payload{.path?}{.mode?}=...`, so you can specify a path to a particular field to filter by (for example, `?payload.foo.bar.in=1,2,3`).   Click on the parameter to expand more details.
+$tag = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapsPathParameter(); // \Tzkt\Model\BigMapsGetBigMapsPathParameter | Filter by event tag.   Click on the parameter to expand more details.
+$payload = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter | Filter by payload.   Note, this parameter supports the following format: `payload{.path?}{.mode?}=...`, so you can specify a path to a particular field to filter by (for example, `?payload.foo.bar.in=1,2,3`).   Click on the parameter to expand more details.
 $transaction_id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by id of the transaction, in which the event was emitted.   Click on the parameter to expand more details.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
@@ -58,11 +58,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the event was emitted.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the event was emitted.   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the event was emitted.   Click on the parameter to expand more details. | [optional] |
 | **contract** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by contract address.   Click on the parameter to expand more details. | [optional] |
 | **code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by hash of the code of the contract emitted the event.   Click on the parameter to expand more details. | [optional] |
-| **tag** | [**\Tzkt\Model\AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filter by event tag.   Click on the parameter to expand more details. | [optional] |
-| **payload** | [**\Tzkt\Model\AccountsGetOperationsParameterParameter**](../Model/.md)| Filter by payload.   Note, this parameter supports the following format: &#x60;payload{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?payload.foo.bar.in&#x3D;1,2,3&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **tag** | [**\Tzkt\Model\BigMapsGetBigMapsPathParameter**](../Model/.md)| Filter by event tag.   Click on the parameter to expand more details. | [optional] |
+| **payload** | [**\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter**](../Model/.md)| Filter by payload.   Note, this parameter supports the following format: &#x60;payload{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?payload.foo.bar.in&#x3D;1,2,3&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **transaction_id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by id of the transaction, in which the event was emitted.   Click on the parameter to expand more details. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
@@ -111,11 +111,11 @@ $apiInstance = new Tzkt\Api\EventsApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the event was emitted.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the event was emitted.   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the event was emitted.   Click on the parameter to expand more details.
 $contract = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by contract address.   Click on the parameter to expand more details.
 $code_hash = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by hash of the code of the contract emitted the event.   Click on the parameter to expand more details.
-$tag = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // \Tzkt\Model\AccountsGetOperationsEntrypointParameter | Filter by event tag.   Click on the parameter to expand more details.
-$payload = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsParameterParameter(); // \Tzkt\Model\AccountsGetOperationsParameterParameter | Filter by payload.   Note, this parameter supports the following format: `payload{.path?}{.mode?}=...`, so you can specify a path to a particular field to filter by (for example, `?payload.foo.bar.in=1,2,3`).   Click on the parameter to expand more details.
+$tag = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapsPathParameter(); // \Tzkt\Model\BigMapsGetBigMapsPathParameter | Filter by event tag.   Click on the parameter to expand more details.
+$payload = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter | Filter by payload.   Note, this parameter supports the following format: `payload{.path?}{.mode?}=...`, so you can specify a path to a particular field to filter by (for example, `?payload.foo.bar.in=1,2,3`).   Click on the parameter to expand more details.
 $transaction_id = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \Tzkt\Model\AccountsGetBalanceParameter | Filter by id of the transaction, in which the event was emitted.   Click on the parameter to expand more details.
 
 try {
@@ -132,11 +132,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the event was emitted.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the event was emitted.   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the event was emitted.   Click on the parameter to expand more details. | [optional] |
 | **contract** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by contract address.   Click on the parameter to expand more details. | [optional] |
 | **code_hash** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by hash of the code of the contract emitted the event.   Click on the parameter to expand more details. | [optional] |
-| **tag** | [**\Tzkt\Model\AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filter by event tag.   Click on the parameter to expand more details. | [optional] |
-| **payload** | [**\Tzkt\Model\AccountsGetOperationsParameterParameter**](../Model/.md)| Filter by payload.   Note, this parameter supports the following format: &#x60;payload{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?payload.foo.bar.in&#x3D;1,2,3&#x60;).   Click on the parameter to expand more details. | [optional] |
+| **tag** | [**\Tzkt\Model\BigMapsGetBigMapsPathParameter**](../Model/.md)| Filter by event tag.   Click on the parameter to expand more details. | [optional] |
+| **payload** | [**\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter**](../Model/.md)| Filter by payload.   Note, this parameter supports the following format: &#x60;payload{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?payload.foo.bar.in&#x3D;1,2,3&#x60;).   Click on the parameter to expand more details. | [optional] |
 | **transaction_id** | [**\Tzkt\Model\AccountsGetBalanceParameter**](../Model/.md)| Filter by id of the transaction, in which the event was emitted.   Click on the parameter to expand more details. | [optional] |
 
 ### Return type

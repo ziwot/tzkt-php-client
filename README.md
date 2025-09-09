@@ -41,7 +41,7 @@ It's available for the following Tezos networks with the following base URLs:
 
 - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))
 - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))
-- Rionet: `https://api.rionet.tzkt.io/` ([view docs](https://api.rionet.tzkt.io))
+- Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))
 
 ### Sending Requests
 
@@ -209,6 +209,7 @@ All URIs are relative to *https://api.tzkt.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**accountsGet**](docs/Api/AccountsApi.md#accountsget) | **GET** /v1/accounts | Get accounts
+*AccountsApi* | [**accountsGetActivity**](docs/Api/AccountsApi.md#accountsgetactivity) | **GET** /v1/accounts/activity | Get accounts activity
 *AccountsApi* | [**accountsGetBalance**](docs/Api/AccountsApi.md#accountsgetbalance) | **GET** /v1/accounts/{address}/balance | Get balance
 *AccountsApi* | [**accountsGetBalanceAtDate**](docs/Api/AccountsApi.md#accountsgetbalanceatdate) | **GET** /v1/accounts/{address}/balance_history/{datetime} | Get balance at date
 *AccountsApi* | [**accountsGetBalanceAtLevel**](docs/Api/AccountsApi.md#accountsgetbalanceatlevel) | **GET** /v1/accounts/{address}/balance_history/{level} | Get balance at level
@@ -219,7 +220,6 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**accountsGetCount**](docs/Api/AccountsApi.md#accountsgetcount) | **GET** /v1/accounts/count | Get accounts count
 *AccountsApi* | [**accountsGetCounter**](docs/Api/AccountsApi.md#accountsgetcounter) | **GET** /v1/accounts/{address}/counter | Get counter
 *AccountsApi* | [**accountsGetDelegators**](docs/Api/AccountsApi.md#accountsgetdelegators) | **GET** /v1/accounts/{address}/delegators | Get account delegators
-*AccountsApi* | [**accountsGetOperations**](docs/Api/AccountsApi.md#accountsgetoperations) | **GET** /v1/accounts/{address}/operations | Get account operations
 *BigMapsApi* | [**bigMapsGetBigMapById**](docs/Api/BigMapsApi.md#bigmapsgetbigmapbyid) | **GET** /v1/bigmaps/{id} | Get bigmap by Id
 *BigMapsApi* | [**bigMapsGetBigMapKeys**](docs/Api/BigMapsApi.md#bigmapsgetbigmapkeys) | **GET** /v1/bigmaps/keys | Get bigmap keys
 *BigMapsApi* | [**bigMapsGetBigMapType**](docs/Api/BigMapsApi.md#bigmapsgetbigmaptype) | **GET** /v1/bigmaps/{id}/type | Get bigmap type
@@ -288,6 +288,12 @@ Class | Method | HTTP request | Description
 *OperationsApi* | [**operationsGetActivationByHash**](docs/Api/OperationsApi.md#operationsgetactivationbyhash) | **GET** /v1/operations/activations/{hash} | Get activation by hash
 *OperationsApi* | [**operationsGetActivations**](docs/Api/OperationsApi.md#operationsgetactivations) | **GET** /v1/operations/activations | Get activations
 *OperationsApi* | [**operationsGetActivationsCount**](docs/Api/OperationsApi.md#operationsgetactivationscount) | **GET** /v1/operations/activations/count | Get activations count
+*OperationsApi* | [**operationsGetAttestationByHash**](docs/Api/OperationsApi.md#operationsgetattestationbyhash) | **GET** /v1/operations/attestations/{hash} | Get attestation by hash
+*OperationsApi* | [**operationsGetAttestationRewardById**](docs/Api/OperationsApi.md#operationsgetattestationrewardbyid) | **GET** /v1/operations/attestation_rewards/{id} | Get attestation reward by id
+*OperationsApi* | [**operationsGetAttestationRewards**](docs/Api/OperationsApi.md#operationsgetattestationrewards) | **GET** /v1/operations/attestation_rewards | Get attestation rewards
+*OperationsApi* | [**operationsGetAttestationRewardsCount**](docs/Api/OperationsApi.md#operationsgetattestationrewardscount) | **GET** /v1/operations/attestation_rewards/count | Get attestation rewards count
+*OperationsApi* | [**operationsGetAttestations**](docs/Api/OperationsApi.md#operationsgetattestations) | **GET** /v1/operations/attestations | Get attestations
+*OperationsApi* | [**operationsGetAttestationsCount**](docs/Api/OperationsApi.md#operationsgetattestationscount) | **GET** /v1/operations/attestations/count | Get attestations count
 *OperationsApi* | [**operationsGetAutostakingOps**](docs/Api/OperationsApi.md#operationsgetautostakingops) | **GET** /v1/operations/autostaking | Get autostaking ops
 *OperationsApi* | [**operationsGetAutostakingOpsCount**](docs/Api/OperationsApi.md#operationsgetautostakingopscount) | **GET** /v1/operations/autostaking/count | Get autostaking ops count
 *OperationsApi* | [**operationsGetBaking**](docs/Api/OperationsApi.md#operationsgetbaking) | **GET** /v1/operations/baking | Get baking
@@ -314,21 +320,12 @@ Class | Method | HTTP request | Description
 *OperationsApi* | [**operationsGetDoubleBaking**](docs/Api/OperationsApi.md#operationsgetdoublebaking) | **GET** /v1/operations/double_baking | Get double baking
 *OperationsApi* | [**operationsGetDoubleBakingByHash**](docs/Api/OperationsApi.md#operationsgetdoublebakingbyhash) | **GET** /v1/operations/double_baking/{hash} | Get double baking by hash
 *OperationsApi* | [**operationsGetDoubleBakingCount**](docs/Api/OperationsApi.md#operationsgetdoublebakingcount) | **GET** /v1/operations/double_baking/count | Get double baking count
-*OperationsApi* | [**operationsGetDoubleEndorsing**](docs/Api/OperationsApi.md#operationsgetdoubleendorsing) | **GET** /v1/operations/double_endorsing | Get double endorsing
-*OperationsApi* | [**operationsGetDoubleEndorsingByHash**](docs/Api/OperationsApi.md#operationsgetdoubleendorsingbyhash) | **GET** /v1/operations/double_endorsing/{hash} | Get double endorsing by hash
-*OperationsApi* | [**operationsGetDoubleEndorsingCount**](docs/Api/OperationsApi.md#operationsgetdoubleendorsingcount) | **GET** /v1/operations/double_endorsing/count | Get double endorsing count
-*OperationsApi* | [**operationsGetDoublePreendorsing**](docs/Api/OperationsApi.md#operationsgetdoublepreendorsing) | **GET** /v1/operations/double_preendorsing | Get double preendorsing
-*OperationsApi* | [**operationsGetDoublePreendorsingByHash**](docs/Api/OperationsApi.md#operationsgetdoublepreendorsingbyhash) | **GET** /v1/operations/double_preendorsing/{hash} | Get double preendorsing by hash
-*OperationsApi* | [**operationsGetDoublePreendorsingCount**](docs/Api/OperationsApi.md#operationsgetdoublepreendorsingcount) | **GET** /v1/operations/double_preendorsing/count | Get double preendorsing count
+*OperationsApi* | [**operationsGetDoubleConsensus**](docs/Api/OperationsApi.md#operationsgetdoubleconsensus) | **GET** /v1/operations/double_consensus | Get double consensus
+*OperationsApi* | [**operationsGetDoubleConsensusByHash**](docs/Api/OperationsApi.md#operationsgetdoubleconsensusbyhash) | **GET** /v1/operations/double_consensus/{hash} | Get double consensus by hash
+*OperationsApi* | [**operationsGetDoubleConsensusCount**](docs/Api/OperationsApi.md#operationsgetdoubleconsensuscount) | **GET** /v1/operations/double_consensus/count | Get double consensus count
 *OperationsApi* | [**operationsGetDrainDelegateByHash**](docs/Api/OperationsApi.md#operationsgetdraindelegatebyhash) | **GET** /v1/operations/drain_delegate/{hash} | Get drain delegate by hash
 *OperationsApi* | [**operationsGetDrainDelegateOps**](docs/Api/OperationsApi.md#operationsgetdraindelegateops) | **GET** /v1/operations/drain_delegate | Get drain delegate
 *OperationsApi* | [**operationsGetDrainDelegateOpsCount**](docs/Api/OperationsApi.md#operationsgetdraindelegateopscount) | **GET** /v1/operations/drain_delegate/count | Get drain delegate count
-*OperationsApi* | [**operationsGetEndorsementByHash**](docs/Api/OperationsApi.md#operationsgetendorsementbyhash) | **GET** /v1/operations/endorsements/{hash} | Get endorsement by hash
-*OperationsApi* | [**operationsGetEndorsements**](docs/Api/OperationsApi.md#operationsgetendorsements) | **GET** /v1/operations/endorsements | Get endorsements
-*OperationsApi* | [**operationsGetEndorsementsCount**](docs/Api/OperationsApi.md#operationsgetendorsementscount) | **GET** /v1/operations/endorsements/count | Get endorsements count
-*OperationsApi* | [**operationsGetEndorsingRewardById**](docs/Api/OperationsApi.md#operationsgetendorsingrewardbyid) | **GET** /v1/operations/endorsing_rewards/{id} | Get endorsing reward by id
-*OperationsApi* | [**operationsGetEndorsingRewards**](docs/Api/OperationsApi.md#operationsgetendorsingrewards) | **GET** /v1/operations/endorsing_rewards | Get endorsing rewards
-*OperationsApi* | [**operationsGetEndorsingRewardsCount**](docs/Api/OperationsApi.md#operationsgetendorsingrewardscount) | **GET** /v1/operations/endorsing_rewards/count | Get endorsing rewards count
 *OperationsApi* | [**operationsGetIncreasePaidStorageByHash**](docs/Api/OperationsApi.md#operationsgetincreasepaidstoragebyhash) | **GET** /v1/operations/increase_paid_storage/{hash} | Get increase paid storage by hash
 *OperationsApi* | [**operationsGetIncreasePaidStorageCount**](docs/Api/OperationsApi.md#operationsgetincreasepaidstoragecount) | **GET** /v1/operations/increase_paid_storage/count | Get increase paid storage count
 *OperationsApi* | [**operationsGetIncreasePaidStorageOps**](docs/Api/OperationsApi.md#operationsgetincreasepaidstorageops) | **GET** /v1/operations/increase_paid_storage | Get increase paid storage
@@ -342,9 +339,9 @@ Class | Method | HTTP request | Description
 *OperationsApi* | [**operationsGetOriginationStatus**](docs/Api/OperationsApi.md#operationsgetoriginationstatus) | **GET** /v1/operations/originations/{hash}/status | Get origination status
 *OperationsApi* | [**operationsGetOriginations**](docs/Api/OperationsApi.md#operationsgetoriginations) | **GET** /v1/operations/originations | Get originations
 *OperationsApi* | [**operationsGetOriginationsCount**](docs/Api/OperationsApi.md#operationsgetoriginationscount) | **GET** /v1/operations/originations/count | Get originations count
-*OperationsApi* | [**operationsGetPreendorsementByHash**](docs/Api/OperationsApi.md#operationsgetpreendorsementbyhash) | **GET** /v1/operations/preendorsements/{hash} | Get preendorsement by hash
-*OperationsApi* | [**operationsGetPreendorsements**](docs/Api/OperationsApi.md#operationsgetpreendorsements) | **GET** /v1/operations/preendorsements | Get preendorsements
-*OperationsApi* | [**operationsGetPreendorsementsCount**](docs/Api/OperationsApi.md#operationsgetpreendorsementscount) | **GET** /v1/operations/preendorsements/count | Get preendorsements count
+*OperationsApi* | [**operationsGetPreattestationByHash**](docs/Api/OperationsApi.md#operationsgetpreattestationbyhash) | **GET** /v1/operations/preattestations/{hash} | Get preattestation by hash
+*OperationsApi* | [**operationsGetPreattestations**](docs/Api/OperationsApi.md#operationsgetpreattestations) | **GET** /v1/operations/preattestations | Get preattestations
+*OperationsApi* | [**operationsGetPreattestationsCount**](docs/Api/OperationsApi.md#operationsgetpreattestationscount) | **GET** /v1/operations/preattestations/count | Get preattestations count
 *OperationsApi* | [**operationsGetProposalByHash**](docs/Api/OperationsApi.md#operationsgetproposalbyhash) | **GET** /v1/operations/proposals/{hash} | Get proposal by hash
 *OperationsApi* | [**operationsGetProposals**](docs/Api/OperationsApi.md#operationsgetproposals) | **GET** /v1/operations/proposals | Get proposals
 *OperationsApi* | [**operationsGetProposalsCount**](docs/Api/OperationsApi.md#operationsgetproposalscount) | **GET** /v1/operations/proposals/count | Get proposals count
@@ -424,9 +421,9 @@ Class | Method | HTTP request | Description
 *OperationsApi* | [**operationsGetTxRollupSubmitBatchOpsByHash**](docs/Api/OperationsApi.md#operationsgettxrollupsubmitbatchopsbyhash) | **GET** /v1/operations/tx_rollup_submit_batch/{hash} | Get tx rollup submit batch by hash
 *OperationsApi* | [**operationsGetTxRollupSubmitBatchOpsCount**](docs/Api/OperationsApi.md#operationsgettxrollupsubmitbatchopscount) | **GET** /v1/operations/tx_rollup_submit_batch/count | Get tx rollup submit batch count
 *OperationsApi* | [**operationsGetTxRollupSubmitBatchStatus**](docs/Api/OperationsApi.md#operationsgettxrollupsubmitbatchstatus) | **GET** /v1/operations/tx_rollup_submit_batch/{hash}/status | Get tx rollup submit batch status
-*OperationsApi* | [**operationsGetUpdateConsensusKeyByHash**](docs/Api/OperationsApi.md#operationsgetupdateconsensuskeybyhash) | **GET** /v1/operations/update_consensus_key/{hash} | Get update consensus key by hash
-*OperationsApi* | [**operationsGetUpdateConsensusKeyOps**](docs/Api/OperationsApi.md#operationsgetupdateconsensuskeyops) | **GET** /v1/operations/update_consensus_key | Get update consensus key
-*OperationsApi* | [**operationsGetUpdateConsensusKeyOpsCount**](docs/Api/OperationsApi.md#operationsgetupdateconsensuskeyopscount) | **GET** /v1/operations/update_consensus_key/count | Get update consensus key count
+*OperationsApi* | [**operationsGetUpdateSecondaryKeyByHash**](docs/Api/OperationsApi.md#operationsgetupdatesecondarykeybyhash) | **GET** /v1/operations/update_secondary_key/{hash} | Get update secondary key by hash
+*OperationsApi* | [**operationsGetUpdateSecondaryKeyOps**](docs/Api/OperationsApi.md#operationsgetupdatesecondarykeyops) | **GET** /v1/operations/update_secondary_key | Get update secondary key
+*OperationsApi* | [**operationsGetUpdateSecondaryKeyOpsCount**](docs/Api/OperationsApi.md#operationsgetupdatesecondarykeyopscount) | **GET** /v1/operations/update_secondary_key/count | Get update secondary key count
 *OperationsApi* | [**operationsGetVdfRevelationByHash**](docs/Api/OperationsApi.md#operationsgetvdfrevelationbyhash) | **GET** /v1/operations/vdf_revelations/{hash} | Get vdf revelation by hash
 *OperationsApi* | [**operationsGetVdfRevelations**](docs/Api/OperationsApi.md#operationsgetvdfrevelations) | **GET** /v1/operations/vdf_revelations | Get vdf revelations
 *OperationsApi* | [**operationsGetVdfRevelationsCount**](docs/Api/OperationsApi.md#operationsgetvdfrevelationscount) | **GET** /v1/operations/vdf_revelations/count | Get vdf revelations count
@@ -444,7 +441,9 @@ Class | Method | HTTP request | Description
 *RewardsApi* | [**rewardsGetDelegatorRewards**](docs/Api/RewardsApi.md#rewardsgetdelegatorrewards) | **GET** /v1/rewards/delegators/{address} | Get delegator cycle rewards
 *RewardsApi* | [**rewardsGetDelegatorRewardsCount**](docs/Api/RewardsApi.md#rewardsgetdelegatorrewardscount) | **GET** /v1/rewards/delegators/{address}/count | Get delegator cycle rewards count
 *RewardsApi* | [**rewardsGetRewardSplit**](docs/Api/RewardsApi.md#rewardsgetrewardsplit) | **GET** /v1/rewards/split/{baker}/{cycle} | Get reward split
-*RewardsApi* | [**rewardsGetRewardSplitDelegator**](docs/Api/RewardsApi.md#rewardsgetrewardsplitdelegator) | **GET** /v1/rewards/split/{baker}/{cycle}/{delegator} | Get reward split delegator
+*RewardsApi* | [**rewardsGetRewardSplitMember**](docs/Api/RewardsApi.md#rewardsgetrewardsplitmember) | **GET** /v1/rewards/split/{baker}/{cycle}/{member} | Get reward split member
+*RewardsApi* | [**rewardsGetStakerRewards**](docs/Api/RewardsApi.md#rewardsgetstakerrewards) | **GET** /v1/rewards/stakers/{address} | Get staker cycle rewards
+*RewardsApi* | [**rewardsGetStakerRewardsCount**](docs/Api/RewardsApi.md#rewardsgetstakerrewardscount) | **GET** /v1/rewards/stakers/{address}/count | Get staker cycle rewards count
 *RightsApi* | [**rightsGet**](docs/Api/RightsApi.md#rightsget) | **GET** /v1/rights | Get rights
 *RightsApi* | [**rightsGetCount**](docs/Api/RightsApi.md#rightsgetcount) | **GET** /v1/rights/count | Get rights count
 *SmartRollupsApi* | [**smartRollupsGetEntrypoints**](docs/Api/SmartRollupsApi.md#smartrollupsgetentrypoints) | **GET** /v1/smart_rollups/{address}/entrypoints | Get smart rollup entrypoints
@@ -466,8 +465,8 @@ Class | Method | HTTP request | Description
 *StakingApi* | [**stakingGetUnstakeRequests**](docs/Api/StakingApi.md#stakinggetunstakerequests) | **GET** /v1/staking/unstake_requests | Get unstake requests
 *StakingApi* | [**stakingGetUnstakeRequestsCount**](docs/Api/StakingApi.md#stakinggetunstakerequestscount) | **GET** /v1/staking/unstake_requests/count | Get unstake requests count
 *StatisticsApi* | [**statisticsGet**](docs/Api/StatisticsApi.md#statisticsget) | **GET** /v1/statistics | Get statistics
-*StatisticsApi* | [**statisticsGetCycles**](docs/Api/StatisticsApi.md#statisticsgetcycles) | **GET** /v1/statistics/current | Get current statistics
-*StatisticsApi* | [**statisticsGetCyclesAll**](docs/Api/StatisticsApi.md#statisticsgetcyclesall) | **GET** /v1/statistics/cyclic | Get cyclic statistics
+*StatisticsApi* | [**statisticsGetCurrent**](docs/Api/StatisticsApi.md#statisticsgetcurrent) | **GET** /v1/statistics/current | Get current statistics
+*StatisticsApi* | [**statisticsGetCyclic**](docs/Api/StatisticsApi.md#statisticsgetcyclic) | **GET** /v1/statistics/cyclic | Get cyclic statistics
 *StatisticsApi* | [**statisticsGetDaily**](docs/Api/StatisticsApi.md#statisticsgetdaily) | **GET** /v1/statistics/daily | Get daily statistics
 *TicketsApi* | [**ticketsGetHistoricalTicketBalances**](docs/Api/TicketsApi.md#ticketsgethistoricalticketbalances) | **GET** /v1/tickets/historical_balances/{level} | Get historical ticket balances
 *TicketsApi* | [**ticketsGetTicketBalances**](docs/Api/TicketsApi.md#ticketsgetticketbalances) | **GET** /v1/tickets/balances | Get ticket balances
@@ -503,19 +502,16 @@ Class | Method | HTTP request | Description
 - [Account](docs/Model/Account.md)
 - [AccountParameter](docs/Model/AccountParameter.md)
 - [AccountTypeParameter](docs/Model/AccountTypeParameter.md)
+- [AccountsGetActivityMichelineParameter](docs/Model/AccountsGetActivityMichelineParameter.md)
+- [AccountsGetActivityQuoteParameter](docs/Model/AccountsGetActivityQuoteParameter.md)
+- [AccountsGetActivitySortParameter](docs/Model/AccountsGetActivitySortParameter.md)
+- [AccountsGetActivityTimestampParameter](docs/Model/AccountsGetActivityTimestampParameter.md)
 - [AccountsGetAddressParameter](docs/Model/AccountsGetAddressParameter.md)
 - [AccountsGetBalanceParameter](docs/Model/AccountsGetBalanceParameter.md)
 - [AccountsGetDelegateParameter](docs/Model/AccountsGetDelegateParameter.md)
 - [AccountsGetIdParameter](docs/Model/AccountsGetIdParameter.md)
 - [AccountsGetKindParameter](docs/Model/AccountsGetKindParameter.md)
 - [AccountsGetOffsetParameter](docs/Model/AccountsGetOffsetParameter.md)
-- [AccountsGetOperationsEntrypointParameter](docs/Model/AccountsGetOperationsEntrypointParameter.md)
-- [AccountsGetOperationsMichelineParameter](docs/Model/AccountsGetOperationsMichelineParameter.md)
-- [AccountsGetOperationsParameterParameter](docs/Model/AccountsGetOperationsParameterParameter.md)
-- [AccountsGetOperationsQuoteParameter](docs/Model/AccountsGetOperationsQuoteParameter.md)
-- [AccountsGetOperationsSortParameter](docs/Model/AccountsGetOperationsSortParameter.md)
-- [AccountsGetOperationsStatusParameter](docs/Model/AccountsGetOperationsStatusParameter.md)
-- [AccountsGetOperationsTimestampParameter](docs/Model/AccountsGetOperationsTimestampParameter.md)
 - [AccountsGetSelectParameter](docs/Model/AccountsGetSelectParameter.md)
 - [AccountsGetSortParameter](docs/Model/AccountsGetSortParameter.md)
 - [AccountsGetStakedParameter](docs/Model/AccountsGetStakedParameter.md)
@@ -524,17 +520,23 @@ Class | Method | HTTP request | Description
 - [ActivationOperation](docs/Model/ActivationOperation.md)
 - [ActivationOperationAllOfAccount](docs/Model/ActivationOperationAllOfAccount.md)
 - [ActivationOperationAllOfQuote](docs/Model/ActivationOperationAllOfQuote.md)
+- [Activity](docs/Model/Activity.md)
 - [AddressNullParameter](docs/Model/AddressNullParameter.md)
 - [AddressParameter](docs/Model/AddressParameter.md)
 - [Alias](docs/Model/Alias.md)
 - [AnnotationType](docs/Model/AnnotationType.md)
 - [AnyOfParameter](docs/Model/AnyOfParameter.md)
+- [AttestationOperation](docs/Model/AttestationOperation.md)
+- [AttestationOperationAllOfDelegate](docs/Model/AttestationOperationAllOfDelegate.md)
+- [AttestationOperationAllOfQuote](docs/Model/AttestationOperationAllOfQuote.md)
+- [AttestationRewardOperation](docs/Model/AttestationRewardOperation.md)
+- [AttestationRewardOperationAllOfBaker](docs/Model/AttestationRewardOperationAllOfBaker.md)
+- [AttestationRewardOperationAllOfQuote](docs/Model/AttestationRewardOperationAllOfQuote.md)
 - [AutostakingOperation](docs/Model/AutostakingOperation.md)
 - [AutostakingOperationAllOfBaker](docs/Model/AutostakingOperationAllOfBaker.md)
 - [AutostakingOperationAllOfQuote](docs/Model/AutostakingOperationAllOfQuote.md)
 - [BakerRewards](docs/Model/BakerRewards.md)
 - [BakingOperation](docs/Model/BakingOperation.md)
-- [BakingOperationAllOfBaker](docs/Model/BakingOperationAllOfBaker.md)
 - [BakingOperationAllOfProducer](docs/Model/BakingOperationAllOfProducer.md)
 - [BakingOperationAllOfProposer](docs/Model/BakingOperationAllOfProposer.md)
 - [BakingOperationAllOfQuote](docs/Model/BakingOperationAllOfQuote.md)
@@ -564,15 +566,19 @@ Class | Method | HTTP request | Description
 - [BigMapTagsParameter](docs/Model/BigMapTagsParameter.md)
 - [BigMapUpdate](docs/Model/BigMapUpdate.md)
 - [BigMapUpdateContent](docs/Model/BigMapUpdateContent.md)
-- [BigMapsGetBigMapKeysFirstTimeParameter](docs/Model/BigMapsGetBigMapKeysFirstTimeParameter.md)
 - [BigMapsGetBigMapKeysHashParameter](docs/Model/BigMapsGetBigMapKeysHashParameter.md)
+- [BigMapsGetBigMapKeysKeyParameter](docs/Model/BigMapsGetBigMapKeysKeyParameter.md)
 - [BigMapsGetBigMapKeysSelectParameter](docs/Model/BigMapsGetBigMapKeysSelectParameter.md)
 - [BigMapsGetBigMapUpdatesActionParameter](docs/Model/BigMapsGetBigMapUpdatesActionParameter.md)
+- [BigMapsGetBigMapsPathParameter](docs/Model/BigMapsGetBigMapsPathParameter.md)
 - [BigMapsGetBigMapsTagsParameter](docs/Model/BigMapsGetBigMapsTagsParameter.md)
 - [Block](docs/Model/Block.md)
+- [BlockProducer](docs/Model/BlockProducer.md)
+- [BlockProposer](docs/Model/BlockProposer.md)
 - [BlockQuote](docs/Model/BlockQuote.md)
 - [BlockSoftware](docs/Model/BlockSoftware.md)
 - [BlocksGetAnyofParameter](docs/Model/BlocksGetAnyofParameter.md)
+- [BlocksGetTimestampParameter](docs/Model/BlocksGetTimestampParameter.md)
 - [BoolParameter](docs/Model/BoolParameter.md)
 - [Commitment](docs/Model/Commitment.md)
 - [CommitmentActivatedAccount](docs/Model/CommitmentActivatedAccount.md)
@@ -582,7 +588,6 @@ Class | Method | HTTP request | Description
 - [Contract](docs/Model/Contract.md)
 - [ContractAllOfCreator](docs/Model/ContractAllOfCreator.md)
 - [ContractAllOfDelegate](docs/Model/ContractAllOfDelegate.md)
-- [ContractAllOfManager](docs/Model/ContractAllOfManager.md)
 - [ContractEvent](docs/Model/ContractEvent.md)
 - [ContractEventContract](docs/Model/ContractEventContract.md)
 - [ContractInterface](docs/Model/ContractInterface.md)
@@ -592,7 +597,6 @@ Class | Method | HTTP request | Description
 - [ContractViewMichelineParameterType](docs/Model/ContractViewMichelineParameterType.md)
 - [ContractViewMichelineReturnType](docs/Model/ContractViewMichelineReturnType.md)
 - [ContractsGetTzipsParameter](docs/Model/ContractsGetTzipsParameter.md)
-- [CreatorInfo](docs/Model/CreatorInfo.md)
 - [Cycle](docs/Model/Cycle.md)
 - [CycleQuote](docs/Model/CycleQuote.md)
 - [DalAttestationRewardOperation](docs/Model/DalAttestationRewardOperation.md)
@@ -619,6 +623,7 @@ Class | Method | HTTP request | Description
 - [Delegator](docs/Model/Delegator.md)
 - [DelegatorRewards](docs/Model/DelegatorRewards.md)
 - [DelegatorRewardsBaker](docs/Model/DelegatorRewardsBaker.md)
+- [DelegatorRewardsBakerRewards](docs/Model/DelegatorRewardsBakerRewards.md)
 - [Domain](docs/Model/Domain.md)
 - [DomainAddress](docs/Model/DomainAddress.md)
 - [DomainOwner](docs/Model/DomainOwner.md)
@@ -627,25 +632,16 @@ Class | Method | HTTP request | Description
 - [DoubleBakingOperationAllOfAccuser](docs/Model/DoubleBakingOperationAllOfAccuser.md)
 - [DoubleBakingOperationAllOfOffender](docs/Model/DoubleBakingOperationAllOfOffender.md)
 - [DoubleBakingOperationAllOfQuote](docs/Model/DoubleBakingOperationAllOfQuote.md)
-- [DoubleEndorsingOperation](docs/Model/DoubleEndorsingOperation.md)
-- [DoubleEndorsingOperationAllOfAccuser](docs/Model/DoubleEndorsingOperationAllOfAccuser.md)
-- [DoubleEndorsingOperationAllOfOffender](docs/Model/DoubleEndorsingOperationAllOfOffender.md)
-- [DoubleEndorsingOperationAllOfQuote](docs/Model/DoubleEndorsingOperationAllOfQuote.md)
-- [DoublePreendorsingOperation](docs/Model/DoublePreendorsingOperation.md)
-- [DoublePreendorsingOperationAllOfAccuser](docs/Model/DoublePreendorsingOperationAllOfAccuser.md)
-- [DoublePreendorsingOperationAllOfOffender](docs/Model/DoublePreendorsingOperationAllOfOffender.md)
-- [DoublePreendorsingOperationAllOfQuote](docs/Model/DoublePreendorsingOperationAllOfQuote.md)
+- [DoubleConsensusKindParameter](docs/Model/DoubleConsensusKindParameter.md)
+- [DoubleConsensusOperation](docs/Model/DoubleConsensusOperation.md)
+- [DoubleConsensusOperationAllOfAccuser](docs/Model/DoubleConsensusOperationAllOfAccuser.md)
+- [DoubleConsensusOperationAllOfOffender](docs/Model/DoubleConsensusOperationAllOfOffender.md)
+- [DoubleConsensusOperationAllOfQuote](docs/Model/DoubleConsensusOperationAllOfQuote.md)
 - [DrainDelegateOperation](docs/Model/DrainDelegateOperation.md)
 - [DrainDelegateOperationAllOfDelegate](docs/Model/DrainDelegateOperationAllOfDelegate.md)
 - [DrainDelegateOperationAllOfQuote](docs/Model/DrainDelegateOperationAllOfQuote.md)
 - [DrainDelegateOperationAllOfTarget](docs/Model/DrainDelegateOperationAllOfTarget.md)
 - [EmptyAccount](docs/Model/EmptyAccount.md)
-- [EndorsementOperation](docs/Model/EndorsementOperation.md)
-- [EndorsementOperationAllOfDelegate](docs/Model/EndorsementOperationAllOfDelegate.md)
-- [EndorsementOperationAllOfQuote](docs/Model/EndorsementOperationAllOfQuote.md)
-- [EndorsingRewardOperation](docs/Model/EndorsingRewardOperation.md)
-- [EndorsingRewardOperationAllOfBaker](docs/Model/EndorsingRewardOperationAllOfBaker.md)
-- [EndorsingRewardOperationAllOfQuote](docs/Model/EndorsingRewardOperationAllOfQuote.md)
 - [Entrypoint](docs/Model/Entrypoint.md)
 - [EntrypointInterface](docs/Model/EntrypointInterface.md)
 - [EntrypointMichelineParameters](docs/Model/EntrypointMichelineParameters.md)
@@ -667,7 +663,6 @@ Class | Method | HTTP request | Description
 - [Int64NullParameter](docs/Model/Int64NullParameter.md)
 - [Int64Parameter](docs/Model/Int64Parameter.md)
 - [JsonParameter](docs/Model/JsonParameter.md)
-- [ManagerInfo](docs/Model/ManagerInfo.md)
 - [MichelineFormat](docs/Model/MichelineFormat.md)
 - [MichelineParameter](docs/Model/MichelineParameter.md)
 - [MichelineParameterEq](docs/Model/MichelineParameterEq.md)
@@ -691,6 +686,8 @@ Class | Method | HTTP request | Description
 - [OperationStatusParameter](docs/Model/OperationStatusParameter.md)
 - [OperationsGetBallotsProposalParameter](docs/Model/OperationsGetBallotsProposalParameter.md)
 - [OperationsGetBallotsVoteParameter](docs/Model/OperationsGetBallotsVoteParameter.md)
+- [OperationsGetDelegationsStatusParameter](docs/Model/OperationsGetDelegationsStatusParameter.md)
+- [OperationsGetDoubleConsensusKindParameter](docs/Model/OperationsGetDoubleConsensusKindParameter.md)
 - [OperationsGetMigrationsKindParameter](docs/Model/OperationsGetMigrationsKindParameter.md)
 - [OperationsGetSmartRollupAddMessagesOpsHashParameter](docs/Model/OperationsGetSmartRollupAddMessagesOpsHashParameter.md)
 - [OperationsGetSmartRollupCementOpsRollupParameter](docs/Model/OperationsGetSmartRollupCementOpsRollupParameter.md)
@@ -698,18 +695,18 @@ Class | Method | HTTP request | Description
 - [OperationsGetSmartRollupRefuteOpsGameStatusParameter](docs/Model/OperationsGetSmartRollupRefuteOpsGameStatusParameter.md)
 - [OperationsGetSmartRollupRefuteOpsMoveParameter](docs/Model/OperationsGetSmartRollupRefuteOpsMoveParameter.md)
 - [OperationsGetStakingOpsActionParameter](docs/Model/OperationsGetStakingOpsActionParameter.md)
+- [OperationsGetUpdateSecondaryKeyOpsKeyTypeParameter](docs/Model/OperationsGetUpdateSecondaryKeyOpsKeyTypeParameter.md)
 - [OriginatedContract](docs/Model/OriginatedContract.md)
 - [OriginationOperation](docs/Model/OriginationOperation.md)
 - [OriginationOperationAllOfContractDelegate](docs/Model/OriginationOperationAllOfContractDelegate.md)
-- [OriginationOperationAllOfContractManager](docs/Model/OriginationOperationAllOfContractManager.md)
 - [OriginationOperationAllOfInitiator](docs/Model/OriginationOperationAllOfInitiator.md)
 - [OriginationOperationAllOfOriginatedContract](docs/Model/OriginationOperationAllOfOriginatedContract.md)
 - [OriginationOperationAllOfQuote](docs/Model/OriginationOperationAllOfQuote.md)
 - [OriginationOperationAllOfSender](docs/Model/OriginationOperationAllOfSender.md)
 - [PeriodInfo](docs/Model/PeriodInfo.md)
-- [PreendorsementOperation](docs/Model/PreendorsementOperation.md)
-- [PreendorsementOperationAllOfDelegate](docs/Model/PreendorsementOperationAllOfDelegate.md)
-- [PreendorsementOperationAllOfQuote](docs/Model/PreendorsementOperationAllOfQuote.md)
+- [PreattestationOperation](docs/Model/PreattestationOperation.md)
+- [PreattestationOperationAllOfDelegate](docs/Model/PreattestationOperationAllOfDelegate.md)
+- [PreattestationOperationAllOfQuote](docs/Model/PreattestationOperationAllOfQuote.md)
 - [PrimType](docs/Model/PrimType.md)
 - [Proposal](docs/Model/Proposal.md)
 - [ProposalAlias](docs/Model/ProposalAlias.md)
@@ -742,6 +739,7 @@ Class | Method | HTTP request | Description
 - [RightsGetCountTypeParameter](docs/Model/RightsGetCountTypeParameter.md)
 - [Rollup](docs/Model/Rollup.md)
 - [RollupAllOfCreator](docs/Model/RollupAllOfCreator.md)
+- [SecondaryKeyTypeParameter](docs/Model/SecondaryKeyTypeParameter.md)
 - [SelectParameter](docs/Model/SelectParameter.md)
 - [SelectionParameter](docs/Model/SelectionParameter.md)
 - [SetDelegateParametersOperation](docs/Model/SetDelegateParametersOperation.md)
@@ -793,7 +791,10 @@ Class | Method | HTTP request | Description
 - [SortMode](docs/Model/SortMode.md)
 - [SortParameter](docs/Model/SortParameter.md)
 - [SourceOperation](docs/Model/SourceOperation.md)
+- [SplitActualStaker](docs/Model/SplitActualStaker.md)
 - [SplitDelegator](docs/Model/SplitDelegator.md)
+- [SplitMember](docs/Model/SplitMember.md)
+- [SplitStaker](docs/Model/SplitStaker.md)
 - [SrBondStatusParameter](docs/Model/SrBondStatusParameter.md)
 - [SrCommitment](docs/Model/SrCommitment.md)
 - [SrCommitmentInfo](docs/Model/SrCommitmentInfo.md)
@@ -818,6 +819,9 @@ Class | Method | HTTP request | Description
 - [SrMessageTypeParameter](docs/Model/SrMessageTypeParameter.md)
 - [SrStaker](docs/Model/SrStaker.md)
 - [Src1HashParameter](docs/Model/Src1HashParameter.md)
+- [StakerRewards](docs/Model/StakerRewards.md)
+- [StakerRewardsBaker](docs/Model/StakerRewardsBaker.md)
+- [StakerRewardsBakerRewards](docs/Model/StakerRewardsBakerRewards.md)
 - [StakingActionParameter](docs/Model/StakingActionParameter.md)
 - [StakingGetStakingUpdatesCountRoundingErrorParameter](docs/Model/StakingGetStakingUpdatesCountRoundingErrorParameter.md)
 - [StakingGetStakingUpdatesCountTypeParameter](docs/Model/StakingGetStakingUpdatesCountTypeParameter.md)
@@ -826,6 +830,7 @@ Class | Method | HTTP request | Description
 - [StakingOperationAllOfBaker](docs/Model/StakingOperationAllOfBaker.md)
 - [StakingOperationAllOfQuote](docs/Model/StakingOperationAllOfQuote.md)
 - [StakingOperationAllOfSender](docs/Model/StakingOperationAllOfSender.md)
+- [StakingOperationAllOfStaker](docs/Model/StakingOperationAllOfStaker.md)
 - [StakingUpdate](docs/Model/StakingUpdate.md)
 - [StakingUpdateBaker](docs/Model/StakingUpdateBaker.md)
 - [StakingUpdateStaker](docs/Model/StakingUpdateStaker.md)
@@ -842,16 +847,17 @@ Class | Method | HTTP request | Description
 - [TicketBalanceAccount](docs/Model/TicketBalanceAccount.md)
 - [TicketBalanceShort](docs/Model/TicketBalanceShort.md)
 - [TicketBalanceShortTicket](docs/Model/TicketBalanceShortTicket.md)
-- [TicketBalanceTicket](docs/Model/TicketBalanceTicket.md)
 - [TicketFirstMinter](docs/Model/TicketFirstMinter.md)
 - [TicketInfo](docs/Model/TicketInfo.md)
+- [TicketInfoRawContent](docs/Model/TicketInfoRawContent.md)
+- [TicketInfoRawType](docs/Model/TicketInfoRawType.md)
 - [TicketInfoShort](docs/Model/TicketInfoShort.md)
-- [TicketRawContent](docs/Model/TicketRawContent.md)
-- [TicketRawType](docs/Model/TicketRawType.md)
-- [TicketTicketer](docs/Model/TicketTicketer.md)
+- [TicketInfoTicketer](docs/Model/TicketInfoTicketer.md)
 - [TicketTransfer](docs/Model/TicketTransfer.md)
-- [TicketTransferFrom](docs/Model/TicketTransferFrom.md)
-- [TicketTransferTo](docs/Model/TicketTransferTo.md)
+- [TicketTransferActivity](docs/Model/TicketTransferActivity.md)
+- [TicketTransferActivityAllOfFrom](docs/Model/TicketTransferActivityAllOfFrom.md)
+- [TicketTransferActivityAllOfTicket](docs/Model/TicketTransferActivityAllOfTicket.md)
+- [TicketTransferActivityAllOfTo](docs/Model/TicketTransferActivityAllOfTo.md)
 - [TicketsGetTicketBalancesCountBalanceParameter](docs/Model/TicketsGetTicketBalancesCountBalanceParameter.md)
 - [TicketsGetTicketsCountRawTypeParameter](docs/Model/TicketsGetTicketsCountRawTypeParameter.md)
 - [TimestampParameter](docs/Model/TimestampParameter.md)
@@ -859,14 +865,18 @@ Class | Method | HTTP request | Description
 - [TokenBalance](docs/Model/TokenBalance.md)
 - [TokenBalanceShort](docs/Model/TokenBalanceShort.md)
 - [TokenBalanceShortToken](docs/Model/TokenBalanceShortToken.md)
-- [TokenBalanceToken](docs/Model/TokenBalanceToken.md)
-- [TokenContract](docs/Model/TokenContract.md)
 - [TokenFirstMinter](docs/Model/TokenFirstMinter.md)
+- [TokenGlobalIdParameter](docs/Model/TokenGlobalIdParameter.md)
 - [TokenInfo](docs/Model/TokenInfo.md)
+- [TokenInfoContract](docs/Model/TokenInfoContract.md)
 - [TokenInfoShort](docs/Model/TokenInfoShort.md)
 - [TokenStandardParameter](docs/Model/TokenStandardParameter.md)
 - [TokenTransfer](docs/Model/TokenTransfer.md)
-- [TokenTransferTo](docs/Model/TokenTransferTo.md)
+- [TokenTransferActivity](docs/Model/TokenTransferActivity.md)
+- [TokenTransferActivityAllOfFrom](docs/Model/TokenTransferActivityAllOfFrom.md)
+- [TokenTransferActivityAllOfTo](docs/Model/TokenTransferActivityAllOfTo.md)
+- [TokenTransferActivityAllOfToken](docs/Model/TokenTransferActivityAllOfToken.md)
+- [TokensGetTokensCountGlobalIdParameter](docs/Model/TokensGetTokensCountGlobalIdParameter.md)
 - [TokensGetTokensCountStandardParameter](docs/Model/TokensGetTokensCountStandardParameter.md)
 - [TransactionOperation](docs/Model/TransactionOperation.md)
 - [TransactionOperationAllOfInitiator](docs/Model/TransactionOperationAllOfInitiator.md)
@@ -915,10 +925,11 @@ Class | Method | HTTP request | Description
 - [TxRollupSubmitBatchOperationAllOfSender](docs/Model/TxRollupSubmitBatchOperationAllOfSender.md)
 - [UnregisteredDelegateError](docs/Model/UnregisteredDelegateError.md)
 - [UnstakeRequest](docs/Model/UnstakeRequest.md)
+- [UnstakeRequestStaker](docs/Model/UnstakeRequestStaker.md)
 - [UnstakeRequestStatusParameter](docs/Model/UnstakeRequestStatusParameter.md)
-- [UpdateConsensusKeyOperation](docs/Model/UpdateConsensusKeyOperation.md)
-- [UpdateConsensusKeyOperationAllOfQuote](docs/Model/UpdateConsensusKeyOperationAllOfQuote.md)
-- [UpdateConsensusKeyOperationAllOfSender](docs/Model/UpdateConsensusKeyOperationAllOfSender.md)
+- [UpdateSecondaryKeyOperation](docs/Model/UpdateSecondaryKeyOperation.md)
+- [UpdateSecondaryKeyOperationAllOfQuote](docs/Model/UpdateSecondaryKeyOperationAllOfQuote.md)
+- [UpdateSecondaryKeyOperationAllOfSender](docs/Model/UpdateSecondaryKeyOperationAllOfSender.md)
 - [User](docs/Model/User.md)
 - [UserAllOfDelegate](docs/Model/UserAllOfDelegate.md)
 - [UserAllOfUnstakedBaker](docs/Model/UserAllOfUnstakedBaker.md)
@@ -953,6 +964,6 @@ hello@bakingbad.dev
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.14.9`
+- API version: `1.16.0`
     - Generator version: `7.12.0`
 - Build package: `org.openapitools.codegen.languages.PhpNextgenClientCodegen`

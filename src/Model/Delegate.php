@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Rionet: `https://api.rionet.tzkt.io/` ([view docs](https://api.rionet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.9
+ * The version of the OpenAPI document: 1.16.0
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -28,6 +28,12 @@
 
 namespace Tzkt\Model;
 
+use ArrayAccess;
+use JsonSerializable;
+use InvalidArgumentException;
+use ReturnTypeWillChange;
+use Tzkt\ObjectSerializer;
+
 /**
  * Delegate Class Doc Comment
  *
@@ -36,7 +42,7 @@ namespace Tzkt\Model;
  * @link     https://openapi-generator.tech
  * @implements ArrayAccess<string, mixed>
  */
-class Delegate extends Account
+class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -93,18 +99,17 @@ class Delegate extends Account
         'ticket_transfers_count' => 'int',
         'num_delegators' => 'int',
         'num_blocks' => 'int',
-        'num_endorsements' => 'int',
-        'num_preendorsements' => 'int',
+        'num_attestations' => 'int',
+        'num_preattestations' => 'int',
         'num_ballots' => 'int',
         'num_proposals' => 'int',
         'num_activations' => 'int',
         'num_double_baking' => 'int',
-        'num_double_endorsing' => 'int',
-        'num_double_preendorsing' => 'int',
+        'num_double_consensus' => 'int',
         'num_nonce_revelations' => 'int',
         'vdf_revelations_count' => 'int',
         'num_revelation_penalties' => 'int',
-        'num_endorsing_rewards' => 'int',
+        'num_attestation_rewards' => 'int',
         'num_delegations' => 'int',
         'num_originations' => 'int',
         'num_transactions' => 'int',
@@ -122,7 +127,7 @@ class Delegate extends Account
         'tx_rollup_dispatch_tickets_count' => 'int',
         'transfer_ticket_count' => 'int',
         'increase_paid_storage_count' => 'int',
-        'update_consensus_key_count' => 'int',
+        'update_secondary_key_count' => 'int',
         'drain_delegate_count' => 'int',
         'smart_rollup_add_messages_count' => 'int',
         'smart_rollup_cement_count' => 'int',
@@ -146,12 +151,12 @@ class Delegate extends Account
         'last_activity_time' => '\DateTime',
         'extras' => 'mixed',
         'software' => '\Tzkt\Model\DelegateAllOfSoftware',
-        'lost_balance' => 'int',
-        'frozen_deposit' => 'int',
-        'frozen_deposits' => 'int',
-        'frozen_rewards' => 'int',
-        'frozen_fees' => 'int',
-        'metadata' => 'mixed'
+        'update_consensus_key_count' => 'int',
+        'num_endorsements' => 'int',
+        'num_preendorsements' => 'int',
+        'num_double_endorsing' => 'int',
+        'num_double_preendorsing' => 'int',
+        'num_endorsing_rewards' => 'int'
     ];
 
     /**
@@ -200,18 +205,17 @@ class Delegate extends Account
         'ticket_transfers_count' => 'int32',
         'num_delegators' => 'int32',
         'num_blocks' => 'int32',
-        'num_endorsements' => 'int32',
-        'num_preendorsements' => 'int32',
+        'num_attestations' => 'int32',
+        'num_preattestations' => 'int32',
         'num_ballots' => 'int32',
         'num_proposals' => 'int32',
         'num_activations' => 'int32',
         'num_double_baking' => 'int32',
-        'num_double_endorsing' => 'int32',
-        'num_double_preendorsing' => 'int32',
+        'num_double_consensus' => 'int32',
         'num_nonce_revelations' => 'int32',
         'vdf_revelations_count' => 'int32',
         'num_revelation_penalties' => 'int32',
-        'num_endorsing_rewards' => 'int32',
+        'num_attestation_rewards' => 'int32',
         'num_delegations' => 'int32',
         'num_originations' => 'int32',
         'num_transactions' => 'int32',
@@ -229,7 +233,7 @@ class Delegate extends Account
         'tx_rollup_dispatch_tickets_count' => 'int32',
         'transfer_ticket_count' => 'int32',
         'increase_paid_storage_count' => 'int32',
-        'update_consensus_key_count' => 'int32',
+        'update_secondary_key_count' => 'int32',
         'drain_delegate_count' => 'int32',
         'smart_rollup_add_messages_count' => 'int32',
         'smart_rollup_cement_count' => 'int32',
@@ -253,12 +257,12 @@ class Delegate extends Account
         'last_activity_time' => 'date-time',
         'extras' => null,
         'software' => null,
-        'lost_balance' => 'int64',
-        'frozen_deposit' => 'int64',
-        'frozen_deposits' => 'int64',
-        'frozen_rewards' => 'int64',
-        'frozen_fees' => 'int64',
-        'metadata' => null
+        'update_consensus_key_count' => 'int32',
+        'num_endorsements' => 'int32',
+        'num_preendorsements' => 'int32',
+        'num_double_endorsing' => 'int32',
+        'num_double_preendorsing' => 'int32',
+        'num_endorsing_rewards' => 'int32'
     ];
 
     /**
@@ -268,11 +272,11 @@ class Delegate extends Account
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'type' => true,
-        'address' => true,
+        'type' => false,
+        'address' => false,
         'active' => false,
         'alias' => true,
-        'public_key' => true,
+        'public_key' => false,
         'revealed' => false,
         'balance' => false,
         'rollup_bonds' => false,
@@ -307,18 +311,17 @@ class Delegate extends Account
         'ticket_transfers_count' => false,
         'num_delegators' => false,
         'num_blocks' => false,
-        'num_endorsements' => false,
-        'num_preendorsements' => false,
+        'num_attestations' => false,
+        'num_preattestations' => false,
         'num_ballots' => false,
         'num_proposals' => false,
         'num_activations' => false,
         'num_double_baking' => false,
-        'num_double_endorsing' => false,
-        'num_double_preendorsing' => false,
+        'num_double_consensus' => false,
         'num_nonce_revelations' => false,
         'vdf_revelations_count' => false,
         'num_revelation_penalties' => false,
-        'num_endorsing_rewards' => false,
+        'num_attestation_rewards' => false,
         'num_delegations' => false,
         'num_originations' => false,
         'num_transactions' => false,
@@ -336,7 +339,7 @@ class Delegate extends Account
         'tx_rollup_dispatch_tickets_count' => false,
         'transfer_ticket_count' => false,
         'increase_paid_storage_count' => false,
-        'update_consensus_key_count' => false,
+        'update_secondary_key_count' => false,
         'drain_delegate_count' => false,
         'smart_rollup_add_messages_count' => false,
         'smart_rollup_cement_count' => false,
@@ -360,12 +363,12 @@ class Delegate extends Account
         'last_activity_time' => false,
         'extras' => true,
         'software' => true,
-        'lost_balance' => false,
-        'frozen_deposit' => false,
-        'frozen_deposits' => false,
-        'frozen_rewards' => false,
-        'frozen_fees' => false,
-        'metadata' => true
+        'update_consensus_key_count' => false,
+        'num_endorsements' => false,
+        'num_preendorsements' => false,
+        'num_double_endorsing' => false,
+        'num_double_preendorsing' => false,
+        'num_endorsing_rewards' => false
     ];
 
     /**
@@ -382,7 +385,7 @@ class Delegate extends Account
      */
     public static function openAPITypes(): array
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -392,7 +395,7 @@ class Delegate extends Account
      */
     public static function openAPIFormats(): array
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -402,7 +405,7 @@ class Delegate extends Account
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables + parent::openAPINullables();
+        return self::$openAPINullables;
     }
 
     /**
@@ -494,18 +497,17 @@ class Delegate extends Account
         'ticket_transfers_count' => 'ticketTransfersCount',
         'num_delegators' => 'numDelegators',
         'num_blocks' => 'numBlocks',
-        'num_endorsements' => 'numEndorsements',
-        'num_preendorsements' => 'numPreendorsements',
+        'num_attestations' => 'numAttestations',
+        'num_preattestations' => 'numPreattestations',
         'num_ballots' => 'numBallots',
         'num_proposals' => 'numProposals',
         'num_activations' => 'numActivations',
         'num_double_baking' => 'numDoubleBaking',
-        'num_double_endorsing' => 'numDoubleEndorsing',
-        'num_double_preendorsing' => 'numDoublePreendorsing',
+        'num_double_consensus' => 'numDoubleConsensus',
         'num_nonce_revelations' => 'numNonceRevelations',
         'vdf_revelations_count' => 'vdfRevelationsCount',
         'num_revelation_penalties' => 'numRevelationPenalties',
-        'num_endorsing_rewards' => 'numEndorsingRewards',
+        'num_attestation_rewards' => 'numAttestationRewards',
         'num_delegations' => 'numDelegations',
         'num_originations' => 'numOriginations',
         'num_transactions' => 'numTransactions',
@@ -523,7 +525,7 @@ class Delegate extends Account
         'tx_rollup_dispatch_tickets_count' => 'txRollupDispatchTicketsCount',
         'transfer_ticket_count' => 'transferTicketCount',
         'increase_paid_storage_count' => 'increasePaidStorageCount',
-        'update_consensus_key_count' => 'updateConsensusKeyCount',
+        'update_secondary_key_count' => 'updateSecondaryKeyCount',
         'drain_delegate_count' => 'drainDelegateCount',
         'smart_rollup_add_messages_count' => 'smartRollupAddMessagesCount',
         'smart_rollup_cement_count' => 'smartRollupCementCount',
@@ -547,12 +549,12 @@ class Delegate extends Account
         'last_activity_time' => 'lastActivityTime',
         'extras' => 'extras',
         'software' => 'software',
-        'lost_balance' => 'lostBalance',
-        'frozen_deposit' => 'frozenDeposit',
-        'frozen_deposits' => 'frozenDeposits',
-        'frozen_rewards' => 'frozenRewards',
-        'frozen_fees' => 'frozenFees',
-        'metadata' => 'metadata'
+        'update_consensus_key_count' => 'updateConsensusKeyCount',
+        'num_endorsements' => 'numEndorsements',
+        'num_preendorsements' => 'numPreendorsements',
+        'num_double_endorsing' => 'numDoubleEndorsing',
+        'num_double_preendorsing' => 'numDoublePreendorsing',
+        'num_endorsing_rewards' => 'numEndorsingRewards'
     ];
 
     /**
@@ -601,18 +603,17 @@ class Delegate extends Account
         'ticket_transfers_count' => 'setTicketTransfersCount',
         'num_delegators' => 'setNumDelegators',
         'num_blocks' => 'setNumBlocks',
-        'num_endorsements' => 'setNumEndorsements',
-        'num_preendorsements' => 'setNumPreendorsements',
+        'num_attestations' => 'setNumAttestations',
+        'num_preattestations' => 'setNumPreattestations',
         'num_ballots' => 'setNumBallots',
         'num_proposals' => 'setNumProposals',
         'num_activations' => 'setNumActivations',
         'num_double_baking' => 'setNumDoubleBaking',
-        'num_double_endorsing' => 'setNumDoubleEndorsing',
-        'num_double_preendorsing' => 'setNumDoublePreendorsing',
+        'num_double_consensus' => 'setNumDoubleConsensus',
         'num_nonce_revelations' => 'setNumNonceRevelations',
         'vdf_revelations_count' => 'setVdfRevelationsCount',
         'num_revelation_penalties' => 'setNumRevelationPenalties',
-        'num_endorsing_rewards' => 'setNumEndorsingRewards',
+        'num_attestation_rewards' => 'setNumAttestationRewards',
         'num_delegations' => 'setNumDelegations',
         'num_originations' => 'setNumOriginations',
         'num_transactions' => 'setNumTransactions',
@@ -630,7 +631,7 @@ class Delegate extends Account
         'tx_rollup_dispatch_tickets_count' => 'setTxRollupDispatchTicketsCount',
         'transfer_ticket_count' => 'setTransferTicketCount',
         'increase_paid_storage_count' => 'setIncreasePaidStorageCount',
-        'update_consensus_key_count' => 'setUpdateConsensusKeyCount',
+        'update_secondary_key_count' => 'setUpdateSecondaryKeyCount',
         'drain_delegate_count' => 'setDrainDelegateCount',
         'smart_rollup_add_messages_count' => 'setSmartRollupAddMessagesCount',
         'smart_rollup_cement_count' => 'setSmartRollupCementCount',
@@ -654,12 +655,12 @@ class Delegate extends Account
         'last_activity_time' => 'setLastActivityTime',
         'extras' => 'setExtras',
         'software' => 'setSoftware',
-        'lost_balance' => 'setLostBalance',
-        'frozen_deposit' => 'setFrozenDeposit',
-        'frozen_deposits' => 'setFrozenDeposits',
-        'frozen_rewards' => 'setFrozenRewards',
-        'frozen_fees' => 'setFrozenFees',
-        'metadata' => 'setMetadata'
+        'update_consensus_key_count' => 'setUpdateConsensusKeyCount',
+        'num_endorsements' => 'setNumEndorsements',
+        'num_preendorsements' => 'setNumPreendorsements',
+        'num_double_endorsing' => 'setNumDoubleEndorsing',
+        'num_double_preendorsing' => 'setNumDoublePreendorsing',
+        'num_endorsing_rewards' => 'setNumEndorsingRewards'
     ];
 
     /**
@@ -708,18 +709,17 @@ class Delegate extends Account
         'ticket_transfers_count' => 'getTicketTransfersCount',
         'num_delegators' => 'getNumDelegators',
         'num_blocks' => 'getNumBlocks',
-        'num_endorsements' => 'getNumEndorsements',
-        'num_preendorsements' => 'getNumPreendorsements',
+        'num_attestations' => 'getNumAttestations',
+        'num_preattestations' => 'getNumPreattestations',
         'num_ballots' => 'getNumBallots',
         'num_proposals' => 'getNumProposals',
         'num_activations' => 'getNumActivations',
         'num_double_baking' => 'getNumDoubleBaking',
-        'num_double_endorsing' => 'getNumDoubleEndorsing',
-        'num_double_preendorsing' => 'getNumDoublePreendorsing',
+        'num_double_consensus' => 'getNumDoubleConsensus',
         'num_nonce_revelations' => 'getNumNonceRevelations',
         'vdf_revelations_count' => 'getVdfRevelationsCount',
         'num_revelation_penalties' => 'getNumRevelationPenalties',
-        'num_endorsing_rewards' => 'getNumEndorsingRewards',
+        'num_attestation_rewards' => 'getNumAttestationRewards',
         'num_delegations' => 'getNumDelegations',
         'num_originations' => 'getNumOriginations',
         'num_transactions' => 'getNumTransactions',
@@ -737,7 +737,7 @@ class Delegate extends Account
         'tx_rollup_dispatch_tickets_count' => 'getTxRollupDispatchTicketsCount',
         'transfer_ticket_count' => 'getTransferTicketCount',
         'increase_paid_storage_count' => 'getIncreasePaidStorageCount',
-        'update_consensus_key_count' => 'getUpdateConsensusKeyCount',
+        'update_secondary_key_count' => 'getUpdateSecondaryKeyCount',
         'drain_delegate_count' => 'getDrainDelegateCount',
         'smart_rollup_add_messages_count' => 'getSmartRollupAddMessagesCount',
         'smart_rollup_cement_count' => 'getSmartRollupCementCount',
@@ -761,12 +761,12 @@ class Delegate extends Account
         'last_activity_time' => 'getLastActivityTime',
         'extras' => 'getExtras',
         'software' => 'getSoftware',
-        'lost_balance' => 'getLostBalance',
-        'frozen_deposit' => 'getFrozenDeposit',
-        'frozen_deposits' => 'getFrozenDeposits',
-        'frozen_rewards' => 'getFrozenRewards',
-        'frozen_fees' => 'getFrozenFees',
-        'metadata' => 'getMetadata'
+        'update_consensus_key_count' => 'getUpdateConsensusKeyCount',
+        'num_endorsements' => 'getNumEndorsements',
+        'num_preendorsements' => 'getNumPreendorsements',
+        'num_double_endorsing' => 'getNumDoubleEndorsing',
+        'num_double_preendorsing' => 'getNumDoublePreendorsing',
+        'num_endorsing_rewards' => 'getNumEndorsingRewards'
     ];
 
     /**
@@ -777,7 +777,7 @@ class Delegate extends Account
      */
     public static function attributeMap(): array
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -787,7 +787,7 @@ class Delegate extends Account
      */
     public static function setters(): array
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -797,7 +797,7 @@ class Delegate extends Account
      */
     public static function getters(): array
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -811,6 +811,12 @@ class Delegate extends Account
     }
 
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var array
+     */
+    protected array $container = [];
 
     /**
      * Constructor
@@ -819,8 +825,6 @@ class Delegate extends Account
      */
     public function __construct(?array $data = null)
     {
-        parent::__construct($data);
-
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
@@ -861,18 +865,17 @@ class Delegate extends Account
         $this->setIfExists('ticket_transfers_count', $data ?? [], null);
         $this->setIfExists('num_delegators', $data ?? [], null);
         $this->setIfExists('num_blocks', $data ?? [], null);
-        $this->setIfExists('num_endorsements', $data ?? [], null);
-        $this->setIfExists('num_preendorsements', $data ?? [], null);
+        $this->setIfExists('num_attestations', $data ?? [], null);
+        $this->setIfExists('num_preattestations', $data ?? [], null);
         $this->setIfExists('num_ballots', $data ?? [], null);
         $this->setIfExists('num_proposals', $data ?? [], null);
         $this->setIfExists('num_activations', $data ?? [], null);
         $this->setIfExists('num_double_baking', $data ?? [], null);
-        $this->setIfExists('num_double_endorsing', $data ?? [], null);
-        $this->setIfExists('num_double_preendorsing', $data ?? [], null);
+        $this->setIfExists('num_double_consensus', $data ?? [], null);
         $this->setIfExists('num_nonce_revelations', $data ?? [], null);
         $this->setIfExists('vdf_revelations_count', $data ?? [], null);
         $this->setIfExists('num_revelation_penalties', $data ?? [], null);
-        $this->setIfExists('num_endorsing_rewards', $data ?? [], null);
+        $this->setIfExists('num_attestation_rewards', $data ?? [], null);
         $this->setIfExists('num_delegations', $data ?? [], null);
         $this->setIfExists('num_originations', $data ?? [], null);
         $this->setIfExists('num_transactions', $data ?? [], null);
@@ -890,7 +893,7 @@ class Delegate extends Account
         $this->setIfExists('tx_rollup_dispatch_tickets_count', $data ?? [], null);
         $this->setIfExists('transfer_ticket_count', $data ?? [], null);
         $this->setIfExists('increase_paid_storage_count', $data ?? [], null);
-        $this->setIfExists('update_consensus_key_count', $data ?? [], null);
+        $this->setIfExists('update_secondary_key_count', $data ?? [], null);
         $this->setIfExists('drain_delegate_count', $data ?? [], null);
         $this->setIfExists('smart_rollup_add_messages_count', $data ?? [], null);
         $this->setIfExists('smart_rollup_cement_count', $data ?? [], null);
@@ -914,12 +917,12 @@ class Delegate extends Account
         $this->setIfExists('last_activity_time', $data ?? [], null);
         $this->setIfExists('extras', $data ?? [], null);
         $this->setIfExists('software', $data ?? [], null);
-        $this->setIfExists('lost_balance', $data ?? [], null);
-        $this->setIfExists('frozen_deposit', $data ?? [], null);
-        $this->setIfExists('frozen_deposits', $data ?? [], null);
-        $this->setIfExists('frozen_rewards', $data ?? [], null);
-        $this->setIfExists('frozen_fees', $data ?? [], null);
-        $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('update_consensus_key_count', $data ?? [], null);
+        $this->setIfExists('num_endorsements', $data ?? [], null);
+        $this->setIfExists('num_preendorsements', $data ?? [], null);
+        $this->setIfExists('num_double_endorsing', $data ?? [], null);
+        $this->setIfExists('num_double_preendorsing', $data ?? [], null);
+        $this->setIfExists('num_endorsing_rewards', $data ?? [], null);
     }
 
     /**
@@ -947,7 +950,7 @@ class Delegate extends Account
      */
     public function listInvalidProperties(): array
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
@@ -1011,14 +1014,7 @@ class Delegate extends Account
     public function setType(?string $type): static
     {
         if (is_null($type)) {
-            array_push($this->openAPINullablesSetToNull, 'type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('type', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new InvalidArgumentException('non-nullable type cannot be null');
         }
         $this->container['type'] = $type;
 
@@ -1045,14 +1041,7 @@ class Delegate extends Account
     public function setAddress(?string $address): static
     {
         if (is_null($address)) {
-            array_push($this->openAPINullablesSetToNull, 'address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new InvalidArgumentException('non-nullable address cannot be null');
         }
         $this->container['address'] = $address;
 
@@ -1140,14 +1129,7 @@ class Delegate extends Account
     public function setPublicKey(?string $public_key): static
     {
         if (is_null($public_key)) {
-            array_push($this->openAPINullablesSetToNull, 'public_key');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('public_key', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new InvalidArgumentException('non-nullable public_key cannot be null');
         }
         $this->container['public_key'] = $public_key;
 
@@ -2122,55 +2104,55 @@ class Delegate extends Account
     }
 
     /**
-     * Gets num_endorsements
+     * Gets num_attestations
      *
      * @return int|null
      */
-    public function getNumEndorsements(): ?int
+    public function getNumAttestations(): ?int
     {
-        return $this->container['num_endorsements'];
+        return $this->container['num_attestations'];
     }
 
     /**
-     * Sets num_endorsements
+     * Sets num_attestations
      *
-     * @param int|null $num_endorsements Number of given endorsements (approvals) by the delegate (baker)
+     * @param int|null $num_attestations Number of given attestations (approvals) by the delegate (baker)
      *
      * @return $this
      */
-    public function setNumEndorsements(?int $num_endorsements): static
+    public function setNumAttestations(?int $num_attestations): static
     {
-        if (is_null($num_endorsements)) {
-            throw new InvalidArgumentException('non-nullable num_endorsements cannot be null');
+        if (is_null($num_attestations)) {
+            throw new InvalidArgumentException('non-nullable num_attestations cannot be null');
         }
-        $this->container['num_endorsements'] = $num_endorsements;
+        $this->container['num_attestations'] = $num_attestations;
 
         return $this;
     }
 
     /**
-     * Gets num_preendorsements
+     * Gets num_preattestations
      *
      * @return int|null
      */
-    public function getNumPreendorsements(): ?int
+    public function getNumPreattestations(): ?int
     {
-        return $this->container['num_preendorsements'];
+        return $this->container['num_preattestations'];
     }
 
     /**
-     * Sets num_preendorsements
+     * Sets num_preattestations
      *
-     * @param int|null $num_preendorsements Number of given preendorsements (approvals) by the delegate (baker)
+     * @param int|null $num_preattestations Number of given preattestations (approvals) by the delegate (baker)
      *
      * @return $this
      */
-    public function setNumPreendorsements(?int $num_preendorsements): static
+    public function setNumPreattestations(?int $num_preattestations): static
     {
-        if (is_null($num_preendorsements)) {
-            throw new InvalidArgumentException('non-nullable num_preendorsements cannot be null');
+        if (is_null($num_preattestations)) {
+            throw new InvalidArgumentException('non-nullable num_preattestations cannot be null');
         }
-        $this->container['num_preendorsements'] = $num_preendorsements;
+        $this->container['num_preattestations'] = $num_preattestations;
 
         return $this;
     }
@@ -2284,55 +2266,28 @@ class Delegate extends Account
     }
 
     /**
-     * Gets num_double_endorsing
+     * Gets num_double_consensus
      *
      * @return int|null
      */
-    public function getNumDoubleEndorsing(): ?int
+    public function getNumDoubleConsensus(): ?int
     {
-        return $this->container['num_double_endorsing'];
+        return $this->container['num_double_consensus'];
     }
 
     /**
-     * Sets num_double_endorsing
+     * Sets num_double_consensus
      *
-     * @param int|null $num_double_endorsing Number of double endorsement (endorsing two different blocks at the same block height) evidence operations, included in blocks, baked (validated) by the delegate
+     * @param int|null $num_double_consensus Number of double consensus (attestation or preattestation of two different blocks at the same block height) evidence operations, included in blocks, baked (validated) by the delegate
      *
      * @return $this
      */
-    public function setNumDoubleEndorsing(?int $num_double_endorsing): static
+    public function setNumDoubleConsensus(?int $num_double_consensus): static
     {
-        if (is_null($num_double_endorsing)) {
-            throw new InvalidArgumentException('non-nullable num_double_endorsing cannot be null');
+        if (is_null($num_double_consensus)) {
+            throw new InvalidArgumentException('non-nullable num_double_consensus cannot be null');
         }
-        $this->container['num_double_endorsing'] = $num_double_endorsing;
-
-        return $this;
-    }
-
-    /**
-     * Gets num_double_preendorsing
-     *
-     * @return int|null
-     */
-    public function getNumDoublePreendorsing(): ?int
-    {
-        return $this->container['num_double_preendorsing'];
-    }
-
-    /**
-     * Sets num_double_preendorsing
-     *
-     * @param int|null $num_double_preendorsing Number of double preendorsement (preendorsing two different blocks at the same block height) evidence operations, included in blocks, baked (validated) by the delegate
-     *
-     * @return $this
-     */
-    public function setNumDoublePreendorsing(?int $num_double_preendorsing): static
-    {
-        if (is_null($num_double_preendorsing)) {
-            throw new InvalidArgumentException('non-nullable num_double_preendorsing cannot be null');
-        }
-        $this->container['num_double_preendorsing'] = $num_double_preendorsing;
+        $this->container['num_double_consensus'] = $num_double_consensus;
 
         return $this;
     }
@@ -2419,28 +2374,28 @@ class Delegate extends Account
     }
 
     /**
-     * Gets num_endorsing_rewards
+     * Gets num_attestation_rewards
      *
      * @return int|null
      */
-    public function getNumEndorsingRewards(): ?int
+    public function getNumAttestationRewards(): ?int
     {
-        return $this->container['num_endorsing_rewards'];
+        return $this->container['num_attestation_rewards'];
     }
 
     /**
-     * Sets num_endorsing_rewards
+     * Sets num_attestation_rewards
      *
-     * @param int|null $num_endorsing_rewards Number of endorsing rewards received at the end of cycles (synthetic type)
+     * @param int|null $num_attestation_rewards Number of attestation rewards received at the end of cycles (synthetic type)
      *
      * @return $this
      */
-    public function setNumEndorsingRewards(?int $num_endorsing_rewards): static
+    public function setNumAttestationRewards(?int $num_attestation_rewards): static
     {
-        if (is_null($num_endorsing_rewards)) {
-            throw new InvalidArgumentException('non-nullable num_endorsing_rewards cannot be null');
+        if (is_null($num_attestation_rewards)) {
+            throw new InvalidArgumentException('non-nullable num_attestation_rewards cannot be null');
         }
-        $this->container['num_endorsing_rewards'] = $num_endorsing_rewards;
+        $this->container['num_attestation_rewards'] = $num_attestation_rewards;
 
         return $this;
     }
@@ -2905,28 +2860,28 @@ class Delegate extends Account
     }
 
     /**
-     * Gets update_consensus_key_count
+     * Gets update_secondary_key_count
      *
      * @return int|null
      */
-    public function getUpdateConsensusKeyCount(): ?int
+    public function getUpdateSecondaryKeyCount(): ?int
     {
-        return $this->container['update_consensus_key_count'];
+        return $this->container['update_secondary_key_count'];
     }
 
     /**
-     * Sets update_consensus_key_count
+     * Sets update_secondary_key_count
      *
-     * @param int|null $update_consensus_key_count Number of `update_consensus_key` operations sent by the account
+     * @param int|null $update_secondary_key_count Number of `update_secondary_key` operations sent by the account
      *
      * @return $this
      */
-    public function setUpdateConsensusKeyCount(?int $update_consensus_key_count): static
+    public function setUpdateSecondaryKeyCount(?int $update_secondary_key_count): static
     {
-        if (is_null($update_consensus_key_count)) {
-            throw new InvalidArgumentException('non-nullable update_consensus_key_count cannot be null');
+        if (is_null($update_secondary_key_count)) {
+            throw new InvalidArgumentException('non-nullable update_secondary_key_count cannot be null');
         }
-        $this->container['update_consensus_key_count'] = $update_consensus_key_count;
+        $this->container['update_secondary_key_count'] = $update_secondary_key_count;
 
         return $this;
     }
@@ -3567,170 +3522,163 @@ class Delegate extends Account
     }
 
     /**
-     * Gets lost_balance
+     * Gets update_consensus_key_count
      *
      * @return int|null
      */
-    public function getLostBalance(): ?int
+    public function getUpdateConsensusKeyCount(): ?int
     {
-        return $this->container['lost_balance'];
+        return $this->container['update_consensus_key_count'];
     }
 
     /**
-     * Sets lost_balance
+     * Sets update_consensus_key_count
      *
-     * @param int|null $lost_balance [DEPRECATED]
+     * @param int|null $update_consensus_key_count **DEPRECATED**
      *
      * @return $this
      */
-    public function setLostBalance(?int $lost_balance): static
+    public function setUpdateConsensusKeyCount(?int $update_consensus_key_count): static
     {
-        if (is_null($lost_balance)) {
-            throw new InvalidArgumentException('non-nullable lost_balance cannot be null');
+        if (is_null($update_consensus_key_count)) {
+            throw new InvalidArgumentException('non-nullable update_consensus_key_count cannot be null');
         }
-        $this->container['lost_balance'] = $lost_balance;
+        $this->container['update_consensus_key_count'] = $update_consensus_key_count;
 
         return $this;
     }
 
     /**
-     * Gets frozen_deposit
+     * Gets num_endorsements
      *
      * @return int|null
      */
-    public function getFrozenDeposit(): ?int
+    public function getNumEndorsements(): ?int
     {
-        return $this->container['frozen_deposit'];
+        return $this->container['num_endorsements'];
     }
 
     /**
-     * Sets frozen_deposit
+     * Sets num_endorsements
      *
-     * @param int|null $frozen_deposit [DEPRECATED]
+     * @param int|null $num_endorsements **DEPRECATED**
      *
      * @return $this
      */
-    public function setFrozenDeposit(?int $frozen_deposit): static
+    public function setNumEndorsements(?int $num_endorsements): static
     {
-        if (is_null($frozen_deposit)) {
-            throw new InvalidArgumentException('non-nullable frozen_deposit cannot be null');
+        if (is_null($num_endorsements)) {
+            throw new InvalidArgumentException('non-nullable num_endorsements cannot be null');
         }
-        $this->container['frozen_deposit'] = $frozen_deposit;
+        $this->container['num_endorsements'] = $num_endorsements;
 
         return $this;
     }
 
     /**
-     * Gets frozen_deposits
+     * Gets num_preendorsements
      *
      * @return int|null
      */
-    public function getFrozenDeposits(): ?int
+    public function getNumPreendorsements(): ?int
     {
-        return $this->container['frozen_deposits'];
+        return $this->container['num_preendorsements'];
     }
 
     /**
-     * Sets frozen_deposits
+     * Sets num_preendorsements
      *
-     * @param int|null $frozen_deposits [DEPRECATED]
+     * @param int|null $num_preendorsements **DEPRECATED**
      *
      * @return $this
      */
-    public function setFrozenDeposits(?int $frozen_deposits): static
+    public function setNumPreendorsements(?int $num_preendorsements): static
     {
-        if (is_null($frozen_deposits)) {
-            throw new InvalidArgumentException('non-nullable frozen_deposits cannot be null');
+        if (is_null($num_preendorsements)) {
+            throw new InvalidArgumentException('non-nullable num_preendorsements cannot be null');
         }
-        $this->container['frozen_deposits'] = $frozen_deposits;
+        $this->container['num_preendorsements'] = $num_preendorsements;
 
         return $this;
     }
 
     /**
-     * Gets frozen_rewards
+     * Gets num_double_endorsing
      *
      * @return int|null
      */
-    public function getFrozenRewards(): ?int
+    public function getNumDoubleEndorsing(): ?int
     {
-        return $this->container['frozen_rewards'];
+        return $this->container['num_double_endorsing'];
     }
 
     /**
-     * Sets frozen_rewards
+     * Sets num_double_endorsing
      *
-     * @param int|null $frozen_rewards [DEPRECATED]
+     * @param int|null $num_double_endorsing **DEPRECATED**
      *
      * @return $this
      */
-    public function setFrozenRewards(?int $frozen_rewards): static
+    public function setNumDoubleEndorsing(?int $num_double_endorsing): static
     {
-        if (is_null($frozen_rewards)) {
-            throw new InvalidArgumentException('non-nullable frozen_rewards cannot be null');
+        if (is_null($num_double_endorsing)) {
+            throw new InvalidArgumentException('non-nullable num_double_endorsing cannot be null');
         }
-        $this->container['frozen_rewards'] = $frozen_rewards;
+        $this->container['num_double_endorsing'] = $num_double_endorsing;
 
         return $this;
     }
 
     /**
-     * Gets frozen_fees
+     * Gets num_double_preendorsing
      *
      * @return int|null
      */
-    public function getFrozenFees(): ?int
+    public function getNumDoublePreendorsing(): ?int
     {
-        return $this->container['frozen_fees'];
+        return $this->container['num_double_preendorsing'];
     }
 
     /**
-     * Sets frozen_fees
+     * Sets num_double_preendorsing
      *
-     * @param int|null $frozen_fees [DEPRECATED]
+     * @param int|null $num_double_preendorsing **DEPRECATED**
      *
      * @return $this
      */
-    public function setFrozenFees(?int $frozen_fees): static
+    public function setNumDoublePreendorsing(?int $num_double_preendorsing): static
     {
-        if (is_null($frozen_fees)) {
-            throw new InvalidArgumentException('non-nullable frozen_fees cannot be null');
+        if (is_null($num_double_preendorsing)) {
+            throw new InvalidArgumentException('non-nullable num_double_preendorsing cannot be null');
         }
-        $this->container['frozen_fees'] = $frozen_fees;
+        $this->container['num_double_preendorsing'] = $num_double_preendorsing;
 
         return $this;
     }
 
     /**
-     * Gets metadata
+     * Gets num_endorsing_rewards
      *
-     * @return mixed|null
+     * @return int|null
      */
-    public function getMetadata(): mixed
+    public function getNumEndorsingRewards(): ?int
     {
-        return $this->container['metadata'];
+        return $this->container['num_endorsing_rewards'];
     }
 
     /**
-     * Sets metadata
+     * Sets num_endorsing_rewards
      *
-     * @param mixed|null $metadata [DEPRECATED]
+     * @param int|null $num_endorsing_rewards **DEPRECATED**
      *
      * @return $this
      */
-    public function setMetadata(mixed $metadata): static
+    public function setNumEndorsingRewards(?int $num_endorsing_rewards): static
     {
-        if (is_null($metadata)) {
-            array_push($this->openAPINullablesSetToNull, 'metadata');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('metadata', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($num_endorsing_rewards)) {
+            throw new InvalidArgumentException('non-nullable num_endorsing_rewards cannot be null');
         }
-        $this->container['metadata'] = $metadata;
+        $this->container['num_endorsing_rewards'] = $num_endorsing_rewards;
 
         return $this;
     }

@@ -20,8 +20,5 @@ Name | Type | Description | Notes
 **reward_staked_edge** | **int** | Reward, corresponding to baker&#39;s edge from external stake, paid to baker&#39;s own staked balance (micro tez) (it is frozen and belongs to the baker). | [optional]
 **reward_staked_shared** | **int** | Reward, corresponding to baker&#39;s external stake, paid to baker&#39;s external staked balance (micro tez) (it is frozen and belongs to baker&#39;s stakers). | [optional]
 **quote** | [**\Tzkt\Model\NonceRevelationOperationAllOfQuote**](NonceRevelationOperationAllOfQuote.md) |  | [optional]
-**reward_liquid** | **int** | [DEPRECATED] | [optional]
-**reward** | **int** | [DEPRECATED] | [optional]
-**baker_rewards** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

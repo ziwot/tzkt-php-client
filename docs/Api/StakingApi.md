@@ -13,7 +13,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 ## `stakingGetStakingUpdates()`
 
 ```php
-stakingGetStakingUpdates($id, $level, $timestamp, $cycle, $baker, $staker, $type, $amount, $pseudotokens, $rounding_error, $autostaking_op_id, $staking_op_id, $delegation_op_id, $double_baking_op_id, $double_endorsing_op_id, $double_preendorsing_op_id, $sort, $offset, $limit, $select): \Tzkt\Model\StakingUpdate[]
+stakingGetStakingUpdates($id, $level, $timestamp, $cycle, $baker, $staker, $type, $amount, $pseudotokens, $rounding_error, $autostaking_op_id, $staking_op_id, $delegation_op_id, $double_baking_op_id, $double_consensus_op_id, $sort, $offset, $limit, $select): \Tzkt\Model\StakingUpdate[]
 ```
 
 Get staking updates
@@ -35,7 +35,7 @@ $apiInstance = new Tzkt\Api\StakingApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the staking update happened.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the staking update happened.   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the staking update happened.   Click on the parameter to expand more details.
 $cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by freezer or block cycle (depending on the update type).   Click on the parameter to expand more details.
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by related baker.   Click on the parameter to expand more details.
 $staker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by related staker.   Click on the parameter to expand more details.
@@ -47,15 +47,14 @@ $autostaking_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRo
 $staking_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
 $delegation_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
 $double_baking_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
-$double_endorsing_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
-$double_preendorsing_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
+$double_consensus_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
 $select = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter | Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: `{field}{path?}{as alias?}`, so you can do deep selection (for example, `?select=balance,token.metadata.symbol as token,...`).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details.
 
 try {
-    $result = $apiInstance->stakingGetStakingUpdates($id, $level, $timestamp, $cycle, $baker, $staker, $type, $amount, $pseudotokens, $rounding_error, $autostaking_op_id, $staking_op_id, $delegation_op_id, $double_baking_op_id, $double_endorsing_op_id, $double_preendorsing_op_id, $sort, $offset, $limit, $select);
+    $result = $apiInstance->stakingGetStakingUpdates($id, $level, $timestamp, $cycle, $baker, $staker, $type, $amount, $pseudotokens, $rounding_error, $autostaking_op_id, $staking_op_id, $delegation_op_id, $double_baking_op_id, $double_consensus_op_id, $sort, $offset, $limit, $select);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StakingApi->stakingGetStakingUpdates: ', $e->getMessage(), PHP_EOL;
@@ -68,7 +67,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the staking update happened.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the staking update happened.   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the staking update happened.   Click on the parameter to expand more details. | [optional] |
 | **cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by freezer or block cycle (depending on the update type).   Click on the parameter to expand more details. | [optional] |
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by related baker.   Click on the parameter to expand more details. | [optional] |
 | **staker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by related staker.   Click on the parameter to expand more details. | [optional] |
@@ -80,8 +79,7 @@ try {
 | **staking_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
 | **delegation_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
 | **double_baking_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
-| **double_endorsing_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
-| **double_preendorsing_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
+| **double_consensus_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
@@ -107,7 +105,7 @@ No authorization required
 ## `stakingGetStakingUpdatesCount()`
 
 ```php
-stakingGetStakingUpdatesCount($id, $level, $timestamp, $cycle, $baker, $staker, $type, $amount, $pseudotokens, $rounding_error, $autostaking_op_id, $staking_op_id, $delegation_op_id, $double_baking_op_id, $double_endorsing_op_id, $double_preendorsing_op_id): int
+stakingGetStakingUpdatesCount($id, $level, $timestamp, $cycle, $baker, $staker, $type, $amount, $pseudotokens, $rounding_error, $autostaking_op_id, $staking_op_id, $delegation_op_id, $double_baking_op_id, $double_consensus_op_id): int
 ```
 
 Get staking updates count
@@ -129,7 +127,7 @@ $apiInstance = new Tzkt\Api\StakingApi(
 );
 $id = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by internal TzKT id.   Click on the parameter to expand more details.
 $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block, where the staking update happened.   Click on the parameter to expand more details.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp of the block, where the staking update happened.   Click on the parameter to expand more details.
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp of the block, where the staking update happened.   Click on the parameter to expand more details.
 $cycle = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by freezer or block cycle (depending on the update type).   Click on the parameter to expand more details.
 $baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by related baker.   Click on the parameter to expand more details.
 $staker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filter by related staker.   Click on the parameter to expand more details.
@@ -141,11 +139,10 @@ $autostaking_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRo
 $staking_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
 $delegation_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
 $double_baking_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
-$double_endorsing_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
-$double_preendorsing_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
+$double_consensus_op_id = new \Tzkt\Model\\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter(); // \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter | Filter by the ID of the related operation.   Click on the parameter to expand more details.
 
 try {
-    $result = $apiInstance->stakingGetStakingUpdatesCount($id, $level, $timestamp, $cycle, $baker, $staker, $type, $amount, $pseudotokens, $rounding_error, $autostaking_op_id, $staking_op_id, $delegation_op_id, $double_baking_op_id, $double_endorsing_op_id, $double_preendorsing_op_id);
+    $result = $apiInstance->stakingGetStakingUpdatesCount($id, $level, $timestamp, $cycle, $baker, $staker, $type, $amount, $pseudotokens, $rounding_error, $autostaking_op_id, $staking_op_id, $delegation_op_id, $double_baking_op_id, $double_consensus_op_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StakingApi->stakingGetStakingUpdatesCount: ', $e->getMessage(), PHP_EOL;
@@ -158,7 +155,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by internal TzKT id.   Click on the parameter to expand more details. | [optional] |
 | **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block, where the staking update happened.   Click on the parameter to expand more details. | [optional] |
-| **timestamp** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp of the block, where the staking update happened.   Click on the parameter to expand more details. | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp of the block, where the staking update happened.   Click on the parameter to expand more details. | [optional] |
 | **cycle** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by freezer or block cycle (depending on the update type).   Click on the parameter to expand more details. | [optional] |
 | **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by related baker.   Click on the parameter to expand more details. | [optional] |
 | **staker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filter by related staker.   Click on the parameter to expand more details. | [optional] |
@@ -170,8 +167,7 @@ try {
 | **staking_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
 | **delegation_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
 | **double_baking_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
-| **double_endorsing_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
-| **double_preendorsing_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
+| **double_consensus_op_id** | [**\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter**](../Model/.md)| Filter by the ID of the related operation.   Click on the parameter to expand more details. | [optional] |
 
 ### Return type
 
@@ -226,9 +222,9 @@ $actual_amount = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \
 $status = new \Tzkt\Model\\Tzkt\Model\StakingGetUnstakeRequestsCountStatusParameter(); // \Tzkt\Model\StakingGetUnstakeRequestsCountStatusParameter | Filter by status.   Click on the parameter to expand more details.
 $updates_count = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by staking updates count.   Click on the parameter to expand more details.
 $first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the unstake request was created.   Click on the parameter to expand more details.
-$first_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the unstake request was created.   Click on the parameter to expand more details.
+$first_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the unstake request was created.   Click on the parameter to expand more details.
 $last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the unstake request was last updated.   Click on the parameter to expand more details.
-$last_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the unstake request was last updated.   Click on the parameter to expand more details.
+$last_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the unstake request was last updated.   Click on the parameter to expand more details.
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped.   Click on the parameter to expand more details.
 $limit = 56; // int | Maximum number of items to return.
@@ -259,9 +255,9 @@ try {
 | **status** | [**\Tzkt\Model\StakingGetUnstakeRequestsCountStatusParameter**](../Model/.md)| Filter by status.   Click on the parameter to expand more details. | [optional] |
 | **updates_count** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by staking updates count.   Click on the parameter to expand more details. | [optional] |
 | **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the unstake request was created.   Click on the parameter to expand more details. | [optional] |
-| **first_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the unstake request was created.   Click on the parameter to expand more details. | [optional] |
+| **first_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the unstake request was created.   Click on the parameter to expand more details. | [optional] |
 | **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the unstake request was last updated.   Click on the parameter to expand more details. | [optional] |
-| **last_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the unstake request was last updated.   Click on the parameter to expand more details. | [optional] |
+| **last_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the unstake request was last updated.   Click on the parameter to expand more details. | [optional] |
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped.   Click on the parameter to expand more details. | [optional] |
 | **limit** | **int**| Maximum number of items to return. | [optional] |
@@ -320,9 +316,9 @@ $actual_amount = new \Tzkt\Model\\Tzkt\Model\AccountsGetBalanceParameter(); // \
 $status = new \Tzkt\Model\\Tzkt\Model\StakingGetUnstakeRequestsCountStatusParameter(); // \Tzkt\Model\StakingGetUnstakeRequestsCountStatusParameter | Filter by status.   Click on the parameter to expand more details.
 $updates_count = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by staking updates count.   Click on the parameter to expand more details.
 $first_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the unstake request was created.   Click on the parameter to expand more details.
-$first_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the unstake request was created.   Click on the parameter to expand more details.
+$first_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the unstake request was created.   Click on the parameter to expand more details.
 $last_level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filter by level of the block where the unstake request was last updated.   Click on the parameter to expand more details.
-$last_time = new \Tzkt\Model\\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter(); // \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter | Filter by timestamp (ISO 8601) of the block where the unstake request was last updated.   Click on the parameter to expand more details.
+$last_time = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter by timestamp (ISO 8601) of the block where the unstake request was last updated.   Click on the parameter to expand more details.
 
 try {
     $result = $apiInstance->stakingGetUnstakeRequestsCount($id, $cycle, $baker, $staker, $requested_amount, $restaked_amount, $finalized_amount, $slashed_amount, $rounding_error, $actual_amount, $status, $updates_count, $first_level, $first_time, $last_level, $last_time);
@@ -349,9 +345,9 @@ try {
 | **status** | [**\Tzkt\Model\StakingGetUnstakeRequestsCountStatusParameter**](../Model/.md)| Filter by status.   Click on the parameter to expand more details. | [optional] |
 | **updates_count** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by staking updates count.   Click on the parameter to expand more details. | [optional] |
 | **first_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the unstake request was created.   Click on the parameter to expand more details. | [optional] |
-| **first_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the unstake request was created.   Click on the parameter to expand more details. | [optional] |
+| **first_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the unstake request was created.   Click on the parameter to expand more details. | [optional] |
 | **last_level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filter by level of the block where the unstake request was last updated.   Click on the parameter to expand more details. | [optional] |
-| **last_time** | [**\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the unstake request was last updated.   Click on the parameter to expand more details. | [optional] |
+| **last_time** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter by timestamp (ISO 8601) of the block where the unstake request was last updated.   Click on the parameter to expand more details. | [optional] |
 
 ### Return type
 

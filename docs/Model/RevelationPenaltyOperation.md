@@ -13,7 +13,5 @@ Name | Type | Description | Notes
 **missed_level** | **int** | Height of the block, which contains hash of the seed nonce, which was to be revealed | [optional]
 **loss** | **int** | Reward for baking and gathered fees from the block, which were lost due to unrevealed seed nonces (micro tez) | [optional]
 **quote** | [**\Tzkt\Model\RevelationPenaltyOperationAllOfQuote**](RevelationPenaltyOperationAllOfQuote.md) |  | [optional]
-**lost_reward** | **int** | [DEPRECATED] | [optional]
-**lost_fees** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

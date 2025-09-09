@@ -11,9 +11,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Rionet: `https://api.rionet.tzkt.io/` ([view docs](https://api.rionet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.9
+ * The version of the OpenAPI document: 1.16.0
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -162,7 +162,7 @@ class BigMapsApi
      * Get bigmap by Id
      *
      * @param  int $id Bigmap Id (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapById'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -171,7 +171,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapById(
         int $id,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapById'][0]
     ): \Tzkt\Model\BigMap
     {
@@ -185,7 +185,7 @@ class BigMapsApi
      * Get bigmap by Id
      *
      * @param  int $id Bigmap Id (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapById'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -194,7 +194,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapByIdWithHttpInfo(
         int $id,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapById'][0]
     ): array
     {
@@ -315,7 +315,7 @@ class BigMapsApi
      * Get bigmap by Id
      *
      * @param  int $id Bigmap Id (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapById'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -323,7 +323,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapByIdAsync(
         int $id,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapById'][0]
     ): PromiseInterface
     {
@@ -341,7 +341,7 @@ class BigMapsApi
      * Get bigmap by Id
      *
      * @param  int $id Bigmap Id (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapById'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -349,7 +349,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapByIdAsyncWithHttpInfo(
         int $id,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapById'][0]
     ): PromiseInterface
     {
@@ -396,7 +396,7 @@ class BigMapsApi
      * Create request for operation 'bigMapsGetBigMapById'
      *
      * @param  int $id Bigmap Id (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapById'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -404,7 +404,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapByIdRequest(
         int $id,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapById'][0]
     ): Request
     {
@@ -508,18 +508,18 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filter by bigmap ptr.   Click on the parameter to expand more details. (optional)
      * @param  bool|null $active Filters by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysHashParameter|null $hash Filter by key hash.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $updates Filter by number of actions with the bigmap key.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
      * @param  int|null $limit Maximum number of items to return. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapKeys'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -531,18 +531,18 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
         ?bool $active = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysHashParameter $hash = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $updates = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapKeys'][0]
     ): array
     {
@@ -559,18 +559,18 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filter by bigmap ptr.   Click on the parameter to expand more details. (optional)
      * @param  bool|null $active Filters by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysHashParameter|null $hash Filter by key hash.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $updates Filter by number of actions with the bigmap key.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
      * @param  int|null $limit Maximum number of items to return. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapKeys'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -582,18 +582,18 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
         ?bool $active = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysHashParameter $hash = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $updates = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapKeys'][0]
     ): array
     {
@@ -717,18 +717,18 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filter by bigmap ptr.   Click on the parameter to expand more details. (optional)
      * @param  bool|null $active Filters by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysHashParameter|null $hash Filter by key hash.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $updates Filter by number of actions with the bigmap key.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
      * @param  int|null $limit Maximum number of items to return. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -739,18 +739,18 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
         ?bool $active = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysHashParameter $hash = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $updates = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapKeys'][0]
     ): PromiseInterface
     {
@@ -771,18 +771,18 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filter by bigmap ptr.   Click on the parameter to expand more details. (optional)
      * @param  bool|null $active Filters by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysHashParameter|null $hash Filter by key hash.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $updates Filter by number of actions with the bigmap key.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
      * @param  int|null $limit Maximum number of items to return. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -793,18 +793,18 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
         ?bool $active = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysHashParameter $hash = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $updates = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapKeys'][0]
     ): PromiseInterface
     {
@@ -854,18 +854,18 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filter by bigmap ptr.   Click on the parameter to expand more details. (optional)
      * @param  bool|null $active Filters by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysHashParameter|null $hash Filter by key hash.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filter by key.   Note, this parameter supports the following format: &#x60;key{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?key.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filter by value.   Note, this parameter supports the following format: &#x60;value{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?value.foo.in&#x3D;bar,baz&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the key was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the key was last seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $updates Filter by number of actions with the bigmap key.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
      * @param  int|null $limit Maximum number of items to return. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the &#x60;key&#x60; and &#x60;value&#x60; fields: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -876,18 +876,18 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
         ?bool $active = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysHashParameter $hash = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $updates = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = null,
         ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapKeys'][0]
     ): Request
     {
@@ -1452,13 +1452,13 @@ class BigMapsApi
      * Get bigmap updates count
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -1467,13 +1467,13 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdates(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates'][0]
     ): array
     {
@@ -1487,13 +1487,13 @@ class BigMapsApi
      * Get bigmap updates count
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -1502,13 +1502,13 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdatesWithHttpInfo(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates'][0]
     ): array
     {
@@ -1629,13 +1629,13 @@ class BigMapsApi
      * Get bigmap updates count
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1643,13 +1643,13 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdatesAsync(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates'][0]
     ): PromiseInterface
     {
@@ -1667,13 +1667,13 @@ class BigMapsApi
      * Get bigmap updates count
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1681,13 +1681,13 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdatesAsyncWithHttpInfo(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates'][0]
     ): PromiseInterface
     {
@@ -1734,13 +1734,13 @@ class BigMapsApi
      * Create request for operation 'bigMapsGetBigMapUpdates'
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1748,13 +1748,13 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdatesRequest(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates'][0]
     ): Request
     {
@@ -1910,17 +1910,17 @@ class BigMapsApi
      * Get bigmap updates
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates2'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -1929,17 +1929,17 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdates2(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates2'][0]
     ): array
     {
@@ -1953,17 +1953,17 @@ class BigMapsApi
      * Get bigmap updates
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates2'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -1972,17 +1972,17 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdates2WithHttpInfo(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates2'][0]
     ): array
     {
@@ -2103,17 +2103,17 @@ class BigMapsApi
      * Get bigmap updates
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates2'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -2121,17 +2121,17 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdates2Async(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates2'][0]
     ): PromiseInterface
     {
@@ -2149,17 +2149,17 @@ class BigMapsApi
      * Get bigmap updates
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates2'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -2167,17 +2167,17 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdates2AsyncWithHttpInfo(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates2'][0]
     ): PromiseInterface
     {
@@ -2224,17 +2224,17 @@ class BigMapsApi
      * Create request for operation 'bigMapsGetBigMapUpdates2'
      *
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $bigmap Filters by bigmap ptr (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters by bigmap path (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters by bigmap path (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters by bigmap contract (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters by bigmap tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60; (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter|null $action Filters by action (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filters by level (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filters by timestamp (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filters by timestamp (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMapUpdates2'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -2242,17 +2242,17 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapUpdates2Request(
         ?\Tzkt\Model\AccountsGetIdParameter $bigmap = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?\Tzkt\Model\BigMapsGetBigMapUpdatesActionParameter $action = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMapUpdates2'][0]
     ): Request
     {
@@ -2454,7 +2454,7 @@ class BigMapsApi
      * Get bigmaps
      *
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters bigmaps by smart contract address. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters bigmaps by path in the contract storage. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters bigmaps by path in the contract storage. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters bigmaps by tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60;. (optional)
      * @param  bool|null $active Filters bigmaps by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmaps by the last update level. (optional)
@@ -2462,7 +2462,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMaps'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -2471,7 +2471,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMaps(
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?bool $active = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
@@ -2479,7 +2479,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMaps'][0]
     ): array
     {
@@ -2493,7 +2493,7 @@ class BigMapsApi
      * Get bigmaps
      *
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters bigmaps by smart contract address. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters bigmaps by path in the contract storage. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters bigmaps by path in the contract storage. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters bigmaps by tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60;. (optional)
      * @param  bool|null $active Filters bigmaps by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmaps by the last update level. (optional)
@@ -2501,7 +2501,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMaps'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -2510,7 +2510,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapsWithHttpInfo(
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?bool $active = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
@@ -2518,7 +2518,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMaps'][0]
     ): array
     {
@@ -2639,7 +2639,7 @@ class BigMapsApi
      * Get bigmaps
      *
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters bigmaps by smart contract address. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters bigmaps by path in the contract storage. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters bigmaps by path in the contract storage. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters bigmaps by tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60;. (optional)
      * @param  bool|null $active Filters bigmaps by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmaps by the last update level. (optional)
@@ -2647,7 +2647,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMaps'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -2655,7 +2655,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapsAsync(
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?bool $active = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
@@ -2663,7 +2663,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMaps'][0]
     ): PromiseInterface
     {
@@ -2681,7 +2681,7 @@ class BigMapsApi
      * Get bigmaps
      *
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters bigmaps by smart contract address. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters bigmaps by path in the contract storage. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters bigmaps by path in the contract storage. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters bigmaps by tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60;. (optional)
      * @param  bool|null $active Filters bigmaps by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmaps by the last update level. (optional)
@@ -2689,7 +2689,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMaps'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -2697,7 +2697,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapsAsyncWithHttpInfo(
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?bool $active = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
@@ -2705,7 +2705,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMaps'][0]
     ): PromiseInterface
     {
@@ -2752,7 +2752,7 @@ class BigMapsApi
      * Create request for operation 'bigMapsGetBigMaps'
      *
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filters bigmaps by smart contract address. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsEntrypointParameter|null $path Filters bigmaps by path in the contract storage. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapsPathParameter|null $path Filters bigmaps by path in the contract storage. (optional)
      * @param  \Tzkt\Model\BigMapsGetBigMapsTagsParameter|null $tags Filters bigmaps by tags: &#x60;metadata&#x60;, &#x60;token_metadata&#x60;, &#x60;ledger&#x60;. (optional)
      * @param  bool|null $active Filters bigmaps by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmaps by the last update level. (optional)
@@ -2760,7 +2760,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmaps by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;ptr&#x60;, &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;totalKeys&#x60;, &#x60;activeKeys&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value type: &#x60;0&#x60; - JSON, &#x60;2&#x60; - Micheline (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetBigMaps'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -2768,7 +2768,7 @@ class BigMapsApi
      */
     public function bigMapsGetBigMapsRequest(
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
-        ?\Tzkt\Model\AccountsGetOperationsEntrypointParameter $path = null,
+        ?\Tzkt\Model\BigMapsGetBigMapsPathParameter $path = null,
         ?\Tzkt\Model\BigMapsGetBigMapsTagsParameter $tags = null,
         ?bool $active = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
@@ -2776,7 +2776,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetBigMaps'][0]
     ): Request
     {
@@ -3258,13 +3258,13 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap keys (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetHistoricalKeys'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -3275,13 +3275,13 @@ class BigMapsApi
         int $id,
         int $level,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetHistoricalKeys'][0]
     ): array
     {
@@ -3297,13 +3297,13 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap keys (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetHistoricalKeys'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -3314,13 +3314,13 @@ class BigMapsApi
         int $id,
         int $level,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetHistoricalKeys'][0]
     ): array
     {
@@ -3443,13 +3443,13 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap keys (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetHistoricalKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -3459,13 +3459,13 @@ class BigMapsApi
         int $id,
         int $level,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetHistoricalKeys'][0]
     ): PromiseInterface
     {
@@ -3485,13 +3485,13 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap keys (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetHistoricalKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -3501,13 +3501,13 @@ class BigMapsApi
         int $id,
         int $level,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetHistoricalKeys'][0]
     ): PromiseInterface
     {
@@ -3556,13 +3556,13 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap keys (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetHistoricalKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -3572,13 +3572,13 @@ class BigMapsApi
         int $id,
         int $level,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetHistoricalKeys'][0]
     ): Request
     {
@@ -3771,7 +3771,7 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -3781,7 +3781,7 @@ class BigMapsApi
     public function bigMapsGetKey(
         int $id,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey'][0]
     ): \Tzkt\Model\BigMapKey
     {
@@ -3796,7 +3796,7 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -3806,7 +3806,7 @@ class BigMapsApi
     public function bigMapsGetKeyWithHttpInfo(
         int $id,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey'][0]
     ): array
     {
@@ -3928,7 +3928,7 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -3937,7 +3937,7 @@ class BigMapsApi
     public function bigMapsGetKeyAsync(
         int $id,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey'][0]
     ): PromiseInterface
     {
@@ -3956,7 +3956,7 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -3965,7 +3965,7 @@ class BigMapsApi
     public function bigMapsGetKeyAsyncWithHttpInfo(
         int $id,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey'][0]
     ): PromiseInterface
     {
@@ -4013,7 +4013,7 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -4022,7 +4022,7 @@ class BigMapsApi
     public function bigMapsGetKeyRequest(
         int $id,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey'][0]
     ): Request
     {
@@ -4140,7 +4140,7 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap key (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey2'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -4151,7 +4151,7 @@ class BigMapsApi
         int $id,
         int $level,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey2'][0]
     ): \Tzkt\Model\BigMapKeyHistorical
     {
@@ -4167,7 +4167,7 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap key (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey2'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -4178,7 +4178,7 @@ class BigMapsApi
         int $id,
         int $level,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey2'][0]
     ): array
     {
@@ -4301,7 +4301,7 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap key (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey2'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -4311,7 +4311,7 @@ class BigMapsApi
         int $id,
         int $level,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey2'][0]
     ): PromiseInterface
     {
@@ -4331,7 +4331,7 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap key (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey2'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -4341,7 +4341,7 @@ class BigMapsApi
         int $id,
         int $level,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey2'][0]
     ): PromiseInterface
     {
@@ -4390,7 +4390,7 @@ class BigMapsApi
      * @param  int $id Bigmap Id (required)
      * @param  int $level Level of the block at which you want to get bigmap key (required)
      * @param  string $key Either a key hash (&#x60;expr123...&#x60;) or a plain value (&#x60;foo...&#x60;).             Even if the key is complex (an object or an array), you can specify it as is, for example, &#x60;/keys/{\&quot;address\&quot;:\&quot;tz123\&quot;,\&quot;nat\&quot;:\&quot;123\&quot;}&#x60;. (required)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKey2'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -4400,7 +4400,7 @@ class BigMapsApi
         int $id,
         int $level,
         string $key,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKey2'][0]
     ): Request
     {
@@ -4535,7 +4535,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap updates by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeyUpdates'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -4548,7 +4548,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeyUpdates'][0]
     ): array
     {
@@ -4566,7 +4566,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap updates by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeyUpdates'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -4579,7 +4579,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeyUpdates'][0]
     ): array
     {
@@ -4704,7 +4704,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap updates by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeyUpdates'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -4716,7 +4716,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeyUpdates'][0]
     ): PromiseInterface
     {
@@ -4738,7 +4738,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap updates by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeyUpdates'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -4750,7 +4750,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeyUpdates'][0]
     ): PromiseInterface
     {
@@ -4801,7 +4801,7 @@ class BigMapsApi
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap updates by specified field. Supported fields: &#x60;id&#x60; (default). (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the key value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeyUpdates'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -4813,7 +4813,7 @@ class BigMapsApi
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeyUpdates'][0]
     ): Request
     {
@@ -4966,14 +4966,14 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmap keys by the last update level. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeys'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -4983,14 +4983,14 @@ class BigMapsApi
     public function bigMapsGetKeys(
         int $id,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeys'][0]
     ): array
     {
@@ -5005,14 +5005,14 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmap keys by the last update level. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeys'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -5022,14 +5022,14 @@ class BigMapsApi
     public function bigMapsGetKeysWithHttpInfo(
         int $id,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeys'][0]
     ): array
     {
@@ -5151,14 +5151,14 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmap keys by the last update level. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -5167,14 +5167,14 @@ class BigMapsApi
     public function bigMapsGetKeysAsync(
         int $id,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeys'][0]
     ): PromiseInterface
     {
@@ -5193,14 +5193,14 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmap keys by the last update level. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -5209,14 +5209,14 @@ class BigMapsApi
     public function bigMapsGetKeysAsyncWithHttpInfo(
         int $id,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeys'][0]
     ): PromiseInterface
     {
@@ -5264,14 +5264,14 @@ class BigMapsApi
      *
      * @param  int $id Bigmap Id (required)
      * @param  bool|null $active Filters keys by status: &#x60;true&#x60; - active, &#x60;false&#x60; - removed. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $key Filters keys by JSON key. Note, this query parameter supports the following format: &#x60;?key{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?key.token_id&#x3D;...&#x60;. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $value Filters keys by JSON value. Note, this query parameter supports the following format: &#x60;?value{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?value.balance.gt&#x3D;...&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filters bigmap keys by the last update level. (optional)
      * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts bigmap keys by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;firstLevel&#x60;, &#x60;lastLevel&#x60;, &#x60;updates&#x60;. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
      * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityMichelineParameter|null $micheline Format of the bigmap key and value: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - Micheline, &#x60;3&#x60; - Micheline string (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bigMapsGetKeys'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -5280,14 +5280,14 @@ class BigMapsApi
     public function bigMapsGetKeysRequest(
         int $id,
         ?bool $active = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $key = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $value = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $key = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $value = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
         ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
         ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsMichelineParameter $micheline = null,
+        ?\Tzkt\Model\AccountsGetActivityMichelineParameter $micheline = null,
         string $contentType = self::contentTypes['bigMapsGetKeys'][0]
     ): Request
     {

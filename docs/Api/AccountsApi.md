@@ -5,6 +5,7 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**accountsGet()**](AccountsApi.md#accountsGet) | **GET** /v1/accounts | Get accounts |
+| [**accountsGetActivity()**](AccountsApi.md#accountsGetActivity) | **GET** /v1/accounts/activity | Get accounts activity |
 | [**accountsGetBalance()**](AccountsApi.md#accountsGetBalance) | **GET** /v1/accounts/{address}/balance | Get balance |
 | [**accountsGetBalanceAtDate()**](AccountsApi.md#accountsGetBalanceAtDate) | **GET** /v1/accounts/{address}/balance_history/{datetime} | Get balance at date |
 | [**accountsGetBalanceAtLevel()**](AccountsApi.md#accountsGetBalanceAtLevel) | **GET** /v1/accounts/{address}/balance_history/{level} | Get balance at level |
@@ -15,7 +16,6 @@ All URIs are relative to https://api.tzkt.io, except if the operation defines an
 | [**accountsGetCount()**](AccountsApi.md#accountsGetCount) | **GET** /v1/accounts/count | Get accounts count |
 | [**accountsGetCounter()**](AccountsApi.md#accountsGetCounter) | **GET** /v1/accounts/{address}/counter | Get counter |
 | [**accountsGetDelegators()**](AccountsApi.md#accountsGetDelegators) | **GET** /v1/accounts/{address}/delegators | Get account delegators |
-| [**accountsGetOperations()**](AccountsApi.md#accountsGetOperations) | **GET** /v1/accounts/{address}/operations | Get account operations |
 
 
 ## `accountsGet()`
@@ -84,6 +84,76 @@ try {
 ### Return type
 
 [**\Tzkt\Model\Account[]**](../Model/Account.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `accountsGetActivity()`
+
+```php
+accountsGetActivity($addresses, $roles, $types, $timestamp, $sort, $last_id, $limit, $micheline, $quote): \Tzkt\Model\Activity[]
+```
+
+Get accounts activity
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Tzkt\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$addresses = 'addresses_example'; // string | Comma-separated list of account addresses to get activity of.
+$roles = 'roles_example'; // string | Comma-separated list of activity roles (`sender`, `target`, `initiator`, `mention`) to filter activity by.
+$types = 'types_example'; // string | Comma-separated list of activity types (`activation`, `autostaking`, `baking`, `ballot`, `dal_attestation_reward`,             `dal_entrapment_evidence`, `dal_publish_commitment`, `delegation`, `double_baking`, `double_consensus`, `drain_delegate`,              `attestation`, `attestation_reward`, `increase_paid_storage`, `migration`, `nonce_revelation`, `origination`, `preattestation`, `proposal`,             `register_constant`, `reveal`, `revelation_penalty`, `set_delegate_parameters`, `set_deposits_limit`, `sr_add_messages`, `sr_cement`, `sr_execute`,             `sr_originate`, `sr_publish`, `sr_recover_bond`, `sr_refute`, `staking`, `transaction`, `transfer_ticket`, `tx_rollup_commit`, `tx_rollup_dispatch_tickets`,             `tx_rollup_finalize_commitment`, `tx_rollup_origination`, `tx_rollup_rejection`, `tx_rollup_remove_commitment`, `tx_rollup_return_bond`, `tx_rollup_submit_batch`,             `vdf_revelation`, `update_secondary_key`, `ticket_transfer`, `token_transfer`)
+$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityTimestampParameter(); // \Tzkt\Model\AccountsGetActivityTimestampParameter | Filter activity by timestamp.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivitySortParameter(); // \Tzkt\Model\AccountsGetActivitySortParameter | Sort mode: 0 - asc (oldest to newest), 1 - desc (newest to oldest).
+$last_id = 56; // int | Id of the last activity element received, which is used for cursor pagination.
+$limit = 100; // int | Number of elements to return.
+$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityMichelineParameter(); // \Tzkt\Model\AccountsGetActivityMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string.
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response.
+
+try {
+    $result = $apiInstance->accountsGetActivity($addresses, $roles, $types, $timestamp, $sort, $last_id, $limit, $micheline, $quote);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->accountsGetActivity: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **addresses** | **string**| Comma-separated list of account addresses to get activity of. | [optional] |
+| **roles** | **string**| Comma-separated list of activity roles (&#x60;sender&#x60;, &#x60;target&#x60;, &#x60;initiator&#x60;, &#x60;mention&#x60;) to filter activity by. | [optional] |
+| **types** | **string**| Comma-separated list of activity types (&#x60;activation&#x60;, &#x60;autostaking&#x60;, &#x60;baking&#x60;, &#x60;ballot&#x60;, &#x60;dal_attestation_reward&#x60;,             &#x60;dal_entrapment_evidence&#x60;, &#x60;dal_publish_commitment&#x60;, &#x60;delegation&#x60;, &#x60;double_baking&#x60;, &#x60;double_consensus&#x60;, &#x60;drain_delegate&#x60;,              &#x60;attestation&#x60;, &#x60;attestation_reward&#x60;, &#x60;increase_paid_storage&#x60;, &#x60;migration&#x60;, &#x60;nonce_revelation&#x60;, &#x60;origination&#x60;, &#x60;preattestation&#x60;, &#x60;proposal&#x60;,             &#x60;register_constant&#x60;, &#x60;reveal&#x60;, &#x60;revelation_penalty&#x60;, &#x60;set_delegate_parameters&#x60;, &#x60;set_deposits_limit&#x60;, &#x60;sr_add_messages&#x60;, &#x60;sr_cement&#x60;, &#x60;sr_execute&#x60;,             &#x60;sr_originate&#x60;, &#x60;sr_publish&#x60;, &#x60;sr_recover_bond&#x60;, &#x60;sr_refute&#x60;, &#x60;staking&#x60;, &#x60;transaction&#x60;, &#x60;transfer_ticket&#x60;, &#x60;tx_rollup_commit&#x60;, &#x60;tx_rollup_dispatch_tickets&#x60;,             &#x60;tx_rollup_finalize_commitment&#x60;, &#x60;tx_rollup_origination&#x60;, &#x60;tx_rollup_rejection&#x60;, &#x60;tx_rollup_remove_commitment&#x60;, &#x60;tx_rollup_return_bond&#x60;, &#x60;tx_rollup_submit_batch&#x60;,             &#x60;vdf_revelation&#x60;, &#x60;update_secondary_key&#x60;, &#x60;ticket_transfer&#x60;, &#x60;token_transfer&#x60;) | [optional] |
+| **timestamp** | [**\Tzkt\Model\AccountsGetActivityTimestampParameter**](../Model/.md)| Filter activity by timestamp. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetActivitySortParameter**](../Model/.md)| Sort mode: 0 - asc (oldest to newest), 1 - desc (newest to oldest). | [optional] |
+| **last_id** | **int**| Id of the last activity element received, which is used for cursor pagination. | [optional] |
+| **limit** | **int**| Number of elements to return. | [optional] [default to 100] |
+| **micheline** | [**\Tzkt\Model\AccountsGetActivityMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string. | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response. | [optional] |
+
+### Return type
+
+[**\Tzkt\Model\Activity[]**](../Model/Activity.md)
 
 ### Authorization
 
@@ -299,7 +369,7 @@ $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Mod
 $sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts historical balances by specified field. Supported fields: `level`.
 $offset = 0; // int | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
+$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
 
 try {
     $result = $apiInstance->accountsGetBalanceHistory($address, $step, $select, $sort, $offset, $limit, $quote);
@@ -319,7 +389,7 @@ try {
 | **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts historical balances by specified field. Supported fields: &#x60;level&#x60;. | [optional] |
 | **offset** | **int**| Specifies which or how many items should be skipped | [optional] [default to 0] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
+| **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
 
 ### Return type
 
@@ -409,7 +479,7 @@ No authorization required
 ## `accountsGetByAddress()`
 
 ```php
-accountsGetByAddress($address, $legacy): \Tzkt\Model\Account
+accountsGetByAddress($address): \Tzkt\Model\Account
 ```
 
 Get account by address
@@ -430,10 +500,9 @@ $apiInstance = new Tzkt\Api\AccountsApi(
     new GuzzleHttp\Client()
 );
 $address = 'address_example'; // string | Account address
-$legacy = true; // bool | If `true` (by default), the `metadata` field will contain tzkt profile info, or TZIP-16 metadata otherwise. This is a part of a deprecation mechanism, allowing smooth migration.
 
 try {
-    $result = $apiInstance->accountsGetByAddress($address, $legacy);
+    $result = $apiInstance->accountsGetByAddress($address);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->accountsGetByAddress: ', $e->getMessage(), PHP_EOL;
@@ -445,7 +514,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **address** | **string**| Account address | |
-| **legacy** | **bool**| If &#x60;true&#x60; (by default), the &#x60;metadata&#x60; field will contain tzkt profile info, or TZIP-16 metadata otherwise. This is a part of a deprecation mechanism, allowing smooth migration. | [optional] [default to true] |
 
 ### Return type
 
@@ -700,108 +768,6 @@ try {
 ### Return type
 
 [**\Tzkt\Model\Delegator[]**](../Model/Delegator.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `accountsGetOperations()`
-
-```php
-accountsGetOperations($address, $type, $initiator, $sender, $target, $prev_delegate, $new_delegate, $contract_manager, $contract_delegate, $originated_contract, $accuser, $offender, $baker, $level, $timestamp, $entrypoint, $parameter, $has_internals, $status, $sort, $last_id, $limit, $micheline, $quote): \Tzkt\Model\Operation[]
-```
-
-Get account operations
-
-Returns a list of operations related to the specified account. Note: for better flexibility this endpoint accumulates query parameters (filters) of each `/operations/{type}` endpoint, so a particular filter may affect several operation types containing this filter. For example, if you specify an `initiator` it will affect all transactions, delegations and originations, because all these types have an `initiator` field.   **NOTE: if you know in advance what operation type you want to get (e.g. transactions), prefer using `/v1/operations/{type}` (e.g. [/v1/operations/transactions](#operation/Operations_GetTransactions)) instead, because it's much more efficient and way more flexible.**
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Tzkt\Api\AccountsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$address = 'address_example'; // string | Account address
-$type = 'type_example'; // string | Comma separated list of operation types to return (`endorsement`, `preendorsement`, `ballot`, `proposal`, `activation`, `double_baking`,             `double_endorsing`, `double_preendorsing`, `nonce_revelation`, `vdf_revelation`, `delegation`, `origination`, `transaction`, `reveal`, `register_constant`,             `set_deposits_limit`, `increase_paid_storage`, `tx_rollup_origination`, `tx_rollup_submit_batch`, `tx_rollup_commit`, `tx_rollup_return_bond`,             `tx_rollup_finalize_commitment`, `tx_rollup_remove_commitment`, `tx_rollup_rejection`, `tx_rollup_dispatch_tickets`, `transfer_ticket`, `migration`,             `update_consensus_key`, `drain_delegate`, `sr_add_messages`, `sr_cement`, `sr_execute`, `sr_originate`, `sr_publish`, `sr_recover_bond`, `sr_refute`,             `revelation_penalty`, `baking`, `endorsing_reward`). If not specified then the default set will be returned.
-$initiator = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters transactions, delegations and originations by initiator. Allowed fields for `.eqx` mode: none.
-$sender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters transactions, delegations, originations, reveals and seed nonce revelations by sender. Allowed fields for `.eqx` mode: none.
-$target = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters transactions by target. Allowed fields for `.eqx` mode: none.
-$prev_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters delegations by prev delegate. Allowed fields for `.eqx` mode: none.
-$new_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters delegations by new delegate. Allowed fields for `.eqx` mode: none.
-$contract_manager = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by manager. Allowed fields for `.eqx` mode: none.
-$contract_delegate = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by delegate. Allowed fields for `.eqx` mode: none.
-$originated_contract = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters origination operations by originated contract. Allowed fields for `.eqx` mode: none.
-$accuser = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters double baking and double endorsing by accuser. Allowed fields for `.eqx` mode: none.
-$offender = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters double baking and double endorsing by offender. Allowed fields for `.eqx` mode: none.
-$baker = new \Tzkt\Model\\Tzkt\Model\AccountsGetDelegateParameter(); // \Tzkt\Model\AccountsGetDelegateParameter | Filters seed nonce revelation operations by baker. Allowed fields for `.eqx` mode: none.
-$level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters operations by level.
-$timestamp = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsTimestampParameter(); // \Tzkt\Model\AccountsGetOperationsTimestampParameter | Filters operations by timestamp.
-$entrypoint = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsEntrypointParameter(); // \Tzkt\Model\AccountsGetOperationsEntrypointParameter | Filters transactions by entrypoint called on the target contract.
-$parameter = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsParameterParameter(); // \Tzkt\Model\AccountsGetOperationsParameterParameter | Filters transactions by parameter value. Note, this query parameter supports the following format: `?parameter{.path?}{.mode?}=...`,             so you can specify a path to a particular field to filter by, for example: `?parameter.token_id=...` or `?parameter.sigs.0.ne=...`.
-$has_internals = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Filters transactions by presence of internal operations.
-$status = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsStatusParameter(); // \Tzkt\Model\AccountsGetOperationsStatusParameter | Filters transactions, delegations, originations and reveals by operation status (`applied`, `failed`, `backtracked`, `skipped`).
-$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsSortParameter(); // \Tzkt\Model\AccountsGetOperationsSortParameter | Sort mode (0 - ascending, 1 - descending), operations of different types can only be sorted by ID.
-$last_id = 56; // int | Id of the last operation received, which is used as an offset for pagination
-$limit = 100; // int | Number of items to return
-$micheline = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsMichelineParameter(); // \Tzkt\Model\AccountsGetOperationsMichelineParameter | Format of the parameters, storage and diffs: `0` - JSON, `1` - JSON string, `2` - raw micheline, `3` - raw micheline string
-$quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetOperationsQuoteParameter(); // \Tzkt\Model\AccountsGetOperationsQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
-
-try {
-    $result = $apiInstance->accountsGetOperations($address, $type, $initiator, $sender, $target, $prev_delegate, $new_delegate, $contract_manager, $contract_delegate, $originated_contract, $accuser, $offender, $baker, $level, $timestamp, $entrypoint, $parameter, $has_internals, $status, $sort, $last_id, $limit, $micheline, $quote);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->accountsGetOperations: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **address** | **string**| Account address | |
-| **type** | **string**| Comma separated list of operation types to return (&#x60;endorsement&#x60;, &#x60;preendorsement&#x60;, &#x60;ballot&#x60;, &#x60;proposal&#x60;, &#x60;activation&#x60;, &#x60;double_baking&#x60;,             &#x60;double_endorsing&#x60;, &#x60;double_preendorsing&#x60;, &#x60;nonce_revelation&#x60;, &#x60;vdf_revelation&#x60;, &#x60;delegation&#x60;, &#x60;origination&#x60;, &#x60;transaction&#x60;, &#x60;reveal&#x60;, &#x60;register_constant&#x60;,             &#x60;set_deposits_limit&#x60;, &#x60;increase_paid_storage&#x60;, &#x60;tx_rollup_origination&#x60;, &#x60;tx_rollup_submit_batch&#x60;, &#x60;tx_rollup_commit&#x60;, &#x60;tx_rollup_return_bond&#x60;,             &#x60;tx_rollup_finalize_commitment&#x60;, &#x60;tx_rollup_remove_commitment&#x60;, &#x60;tx_rollup_rejection&#x60;, &#x60;tx_rollup_dispatch_tickets&#x60;, &#x60;transfer_ticket&#x60;, &#x60;migration&#x60;,             &#x60;update_consensus_key&#x60;, &#x60;drain_delegate&#x60;, &#x60;sr_add_messages&#x60;, &#x60;sr_cement&#x60;, &#x60;sr_execute&#x60;, &#x60;sr_originate&#x60;, &#x60;sr_publish&#x60;, &#x60;sr_recover_bond&#x60;, &#x60;sr_refute&#x60;,             &#x60;revelation_penalty&#x60;, &#x60;baking&#x60;, &#x60;endorsing_reward&#x60;). If not specified then the default set will be returned. | [optional] |
-| **initiator** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters transactions, delegations and originations by initiator. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **sender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters transactions, delegations, originations, reveals and seed nonce revelations by sender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **target** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters transactions by target. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **prev_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters delegations by prev delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **new_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters delegations by new delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **contract_manager** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by manager. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **contract_delegate** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by delegate. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **originated_contract** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters origination operations by originated contract. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **accuser** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters double baking and double endorsing by accuser. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **offender** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters double baking and double endorsing by offender. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **baker** | [**\Tzkt\Model\AccountsGetDelegateParameter**](../Model/.md)| Filters seed nonce revelation operations by baker. Allowed fields for &#x60;.eqx&#x60; mode: none. | [optional] |
-| **level** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters operations by level. | [optional] |
-| **timestamp** | [**\Tzkt\Model\AccountsGetOperationsTimestampParameter**](../Model/.md)| Filters operations by timestamp. | [optional] |
-| **entrypoint** | [**\Tzkt\Model\AccountsGetOperationsEntrypointParameter**](../Model/.md)| Filters transactions by entrypoint called on the target contract. | [optional] |
-| **parameter** | [**\Tzkt\Model\AccountsGetOperationsParameterParameter**](../Model/.md)| Filters transactions by parameter value. Note, this query parameter supports the following format: &#x60;?parameter{.path?}{.mode?}&#x3D;...&#x60;,             so you can specify a path to a particular field to filter by, for example: &#x60;?parameter.token_id&#x3D;...&#x60; or &#x60;?parameter.sigs.0.ne&#x3D;...&#x60;. | [optional] |
-| **has_internals** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Filters transactions by presence of internal operations. | [optional] |
-| **status** | [**\Tzkt\Model\AccountsGetOperationsStatusParameter**](../Model/.md)| Filters transactions, delegations, originations and reveals by operation status (&#x60;applied&#x60;, &#x60;failed&#x60;, &#x60;backtracked&#x60;, &#x60;skipped&#x60;). | [optional] |
-| **sort** | [**\Tzkt\Model\AccountsGetOperationsSortParameter**](../Model/.md)| Sort mode (0 - ascending, 1 - descending), operations of different types can only be sorted by ID. | [optional] |
-| **last_id** | **int**| Id of the last operation received, which is used as an offset for pagination | [optional] |
-| **limit** | **int**| Number of items to return | [optional] [default to 100] |
-| **micheline** | [**\Tzkt\Model\AccountsGetOperationsMichelineParameter**](../Model/.md)| Format of the parameters, storage and diffs: &#x60;0&#x60; - JSON, &#x60;1&#x60; - JSON string, &#x60;2&#x60; - raw micheline, &#x60;3&#x60; - raw micheline string | [optional] |
-| **quote** | [**\Tzkt\Model\AccountsGetOperationsQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
-
-### Return type
-
-[**\Tzkt\Model\Operation[]**](../Model/Operation.md)
 
 ### Authorization
 

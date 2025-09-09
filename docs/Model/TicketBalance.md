@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Internal TzKT id.   **[sortable]** | [optional]
-**ticket** | [**\Tzkt\Model\TicketBalanceTicket**](TicketBalanceTicket.md) |  | [optional]
+**ticket** | [**\Tzkt\Model\TicketTransferActivityAllOfTicket**](TicketTransferActivityAllOfTicket.md) |  | [optional]
 **account** | [**\Tzkt\Model\TicketBalanceAccount**](TicketBalanceAccount.md) |  | [optional]
 **balance** | **string** | Balance.   **[sortable]** | [optional]
 **transfers_count** | **int** | Total number of transfers, affecting the ticket balance.   **[sortable]** | [optional]

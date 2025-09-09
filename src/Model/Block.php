@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Rionet: `https://api.rionet.tzkt.io/` ([view docs](https://api.rionet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.9
+ * The version of the OpenAPI document: 1.16.0
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -78,22 +78,21 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'bonus_staked_shared' => 'int',
         'fees' => 'int',
         'nonce_revealed' => 'bool',
-        'proposer' => '\Tzkt\Model\BakingOperationAllOfProposer',
-        'producer' => '\Tzkt\Model\BakingOperationAllOfProducer',
+        'proposer' => '\Tzkt\Model\BlockProposer',
+        'producer' => '\Tzkt\Model\BlockProducer',
         'software' => '\Tzkt\Model\BlockSoftware',
         'lb_toggle' => 'bool',
         'lb_toggle_ema' => 'int',
         'ai_toggle' => 'bool',
         'ai_toggle_ema' => 'int',
-        'endorsements' => '\Tzkt\Model\EndorsementOperation[]',
-        'preendorsements' => '\Tzkt\Model\PreendorsementOperation[]',
+        'attestations' => '\Tzkt\Model\AttestationOperation[]',
+        'preattestations' => '\Tzkt\Model\PreattestationOperation[]',
         'proposals' => '\Tzkt\Model\ProposalOperation[]',
         'ballots' => '\Tzkt\Model\BallotOperation[]',
         'activations' => '\Tzkt\Model\ActivationOperation[]',
         'dal_entrapment_evidence_ops' => '\Tzkt\Model\DalEntrapmentEvidenceOperation[]',
         'double_baking' => '\Tzkt\Model\DoubleBakingOperation[]',
-        'double_endorsing' => '\Tzkt\Model\DoubleEndorsingOperation[]',
-        'double_preendorsing' => '\Tzkt\Model\DoublePreendorsingOperation[]',
+        'double_consensus' => '\Tzkt\Model\DoubleConsensusOperation[]',
         'nonce_revelations' => '\Tzkt\Model\NonceRevelationOperation[]',
         'vdf_revelations' => '\Tzkt\Model\VdfRevelationOperation[]',
         'delegations' => '\Tzkt\Model\DelegationOperation[]',
@@ -112,7 +111,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'tx_rollup_return_bond_ops' => '\Tzkt\Model\TxRollupReturnBondOperation[]',
         'tx_rollup_submit_batch_ops' => '\Tzkt\Model\TxRollupSubmitBatchOperation[]',
         'increase_paid_storage_ops' => '\Tzkt\Model\IncreasePaidStorageOperation[]',
-        'update_consensus_key_ops' => '\Tzkt\Model\UpdateConsensusKeyOperation[]',
+        'update_secondary_key_ops' => '\Tzkt\Model\UpdateSecondaryKeyOperation[]',
         'drain_delegate_ops' => '\Tzkt\Model\DrainDelegateOperation[]',
         'sr_add_messages_ops' => '\Tzkt\Model\SmartRollupAddMessagesOperation[]',
         'sr_cement_ops' => '\Tzkt\Model\SmartRollupCementOperation[]',
@@ -126,18 +125,16 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_publish_commitment_ops' => '\Tzkt\Model\DalPublishCommitmentOperation[]',
         'migrations' => '\Tzkt\Model\MigrationOperation[]',
         'revelation_penalties' => '\Tzkt\Model\RevelationPenaltyOperation[]',
-        'endorsing_rewards' => '\Tzkt\Model\EndorsingRewardOperation[]',
+        'attestation_rewards' => '\Tzkt\Model\AttestationRewardOperation[]',
         'dal_attestation_rewards' => '\Tzkt\Model\DalAttestationRewardOperation[]',
         'autostaking_ops' => '\Tzkt\Model\AutostakingOperation[]',
         'quote' => '\Tzkt\Model\BlockQuote',
-        'reward_liquid' => 'int',
-        'bonus_liquid' => 'int',
-        'reward' => 'int',
-        'bonus' => 'int',
-        'priority' => 'int',
-        'baker' => '\Tzkt\Model\BakingOperationAllOfBaker',
-        'lb_escape_vote' => 'bool',
-        'lb_escape_ema' => 'int'
+        'update_consensus_key_ops' => '\Tzkt\Model\UpdateSecondaryKeyOperation[]',
+        'endorsements' => '\Tzkt\Model\AttestationOperation[]',
+        'preendorsements' => '\Tzkt\Model\PreattestationOperation[]',
+        'double_endorsing' => '\Tzkt\Model\DoubleConsensusOperation[]',
+        'double_preendorsing' => '\Tzkt\Model\DoubleConsensusOperation[]',
+        'endorsing_rewards' => '\Tzkt\Model\AttestationRewardOperation[]'
     ];
 
     /**
@@ -172,15 +169,14 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'lb_toggle_ema' => 'int32',
         'ai_toggle' => null,
         'ai_toggle_ema' => 'int32',
-        'endorsements' => null,
-        'preendorsements' => null,
+        'attestations' => null,
+        'preattestations' => null,
         'proposals' => null,
         'ballots' => null,
         'activations' => null,
         'dal_entrapment_evidence_ops' => null,
         'double_baking' => null,
-        'double_endorsing' => null,
-        'double_preendorsing' => null,
+        'double_consensus' => null,
         'nonce_revelations' => null,
         'vdf_revelations' => null,
         'delegations' => null,
@@ -199,7 +195,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'tx_rollup_return_bond_ops' => null,
         'tx_rollup_submit_batch_ops' => null,
         'increase_paid_storage_ops' => null,
-        'update_consensus_key_ops' => null,
+        'update_secondary_key_ops' => null,
         'drain_delegate_ops' => null,
         'sr_add_messages_ops' => null,
         'sr_cement_ops' => null,
@@ -213,18 +209,16 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_publish_commitment_ops' => null,
         'migrations' => null,
         'revelation_penalties' => null,
-        'endorsing_rewards' => null,
+        'attestation_rewards' => null,
         'dal_attestation_rewards' => null,
         'autostaking_ops' => null,
         'quote' => null,
-        'reward_liquid' => 'int64',
-        'bonus_liquid' => 'int64',
-        'reward' => 'int64',
-        'bonus' => 'int64',
-        'priority' => 'int32',
-        'baker' => null,
-        'lb_escape_vote' => null,
-        'lb_escape_ema' => 'int32'
+        'update_consensus_key_ops' => null,
+        'endorsements' => null,
+        'preendorsements' => null,
+        'double_endorsing' => null,
+        'double_preendorsing' => null,
+        'endorsing_rewards' => null
     ];
 
     /**
@@ -235,7 +229,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     protected static array $openAPINullables = [
         'cycle' => false,
         'level' => false,
-        'hash' => true,
+        'hash' => false,
         'timestamp' => false,
         'proto' => false,
         'payload_round' => false,
@@ -259,15 +253,14 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'lb_toggle_ema' => false,
         'ai_toggle' => true,
         'ai_toggle_ema' => false,
-        'endorsements' => true,
-        'preendorsements' => true,
+        'attestations' => true,
+        'preattestations' => true,
         'proposals' => true,
         'ballots' => true,
         'activations' => true,
         'dal_entrapment_evidence_ops' => true,
         'double_baking' => true,
-        'double_endorsing' => true,
-        'double_preendorsing' => true,
+        'double_consensus' => true,
         'nonce_revelations' => true,
         'vdf_revelations' => true,
         'delegations' => true,
@@ -286,7 +279,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'tx_rollup_return_bond_ops' => true,
         'tx_rollup_submit_batch_ops' => true,
         'increase_paid_storage_ops' => true,
-        'update_consensus_key_ops' => true,
+        'update_secondary_key_ops' => true,
         'drain_delegate_ops' => true,
         'sr_add_messages_ops' => true,
         'sr_cement_ops' => true,
@@ -300,18 +293,16 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_publish_commitment_ops' => true,
         'migrations' => true,
         'revelation_penalties' => true,
-        'endorsing_rewards' => true,
+        'attestation_rewards' => true,
         'dal_attestation_rewards' => true,
         'autostaking_ops' => true,
         'quote' => true,
-        'reward_liquid' => false,
-        'bonus_liquid' => false,
-        'reward' => false,
-        'bonus' => false,
-        'priority' => false,
-        'baker' => true,
-        'lb_escape_vote' => false,
-        'lb_escape_ema' => false
+        'update_consensus_key_ops' => true,
+        'endorsements' => true,
+        'preendorsements' => true,
+        'double_endorsing' => true,
+        'double_preendorsing' => true,
+        'endorsing_rewards' => true
     ];
 
     /**
@@ -426,15 +417,14 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'lb_toggle_ema' => 'lbToggleEma',
         'ai_toggle' => 'aiToggle',
         'ai_toggle_ema' => 'aiToggleEma',
-        'endorsements' => 'endorsements',
-        'preendorsements' => 'preendorsements',
+        'attestations' => 'attestations',
+        'preattestations' => 'preattestations',
         'proposals' => 'proposals',
         'ballots' => 'ballots',
         'activations' => 'activations',
         'dal_entrapment_evidence_ops' => 'dalEntrapmentEvidenceOps',
         'double_baking' => 'doubleBaking',
-        'double_endorsing' => 'doubleEndorsing',
-        'double_preendorsing' => 'doublePreendorsing',
+        'double_consensus' => 'doubleConsensus',
         'nonce_revelations' => 'nonceRevelations',
         'vdf_revelations' => 'vdfRevelations',
         'delegations' => 'delegations',
@@ -453,7 +443,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'tx_rollup_return_bond_ops' => 'txRollupReturnBondOps',
         'tx_rollup_submit_batch_ops' => 'txRollupSubmitBatchOps',
         'increase_paid_storage_ops' => 'increasePaidStorageOps',
-        'update_consensus_key_ops' => 'updateConsensusKeyOps',
+        'update_secondary_key_ops' => 'updateSecondaryKeyOps',
         'drain_delegate_ops' => 'drainDelegateOps',
         'sr_add_messages_ops' => 'srAddMessagesOps',
         'sr_cement_ops' => 'srCementOps',
@@ -467,18 +457,16 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_publish_commitment_ops' => 'dalPublishCommitmentOps',
         'migrations' => 'migrations',
         'revelation_penalties' => 'revelationPenalties',
-        'endorsing_rewards' => 'endorsingRewards',
+        'attestation_rewards' => 'attestationRewards',
         'dal_attestation_rewards' => 'dalAttestationRewards',
         'autostaking_ops' => 'autostakingOps',
         'quote' => 'quote',
-        'reward_liquid' => 'rewardLiquid',
-        'bonus_liquid' => 'bonusLiquid',
-        'reward' => 'reward',
-        'bonus' => 'bonus',
-        'priority' => 'priority',
-        'baker' => 'baker',
-        'lb_escape_vote' => 'lbEscapeVote',
-        'lb_escape_ema' => 'lbEscapeEma'
+        'update_consensus_key_ops' => 'updateConsensusKeyOps',
+        'endorsements' => 'endorsements',
+        'preendorsements' => 'preendorsements',
+        'double_endorsing' => 'doubleEndorsing',
+        'double_preendorsing' => 'doublePreendorsing',
+        'endorsing_rewards' => 'endorsingRewards'
     ];
 
     /**
@@ -513,15 +501,14 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'lb_toggle_ema' => 'setLbToggleEma',
         'ai_toggle' => 'setAiToggle',
         'ai_toggle_ema' => 'setAiToggleEma',
-        'endorsements' => 'setEndorsements',
-        'preendorsements' => 'setPreendorsements',
+        'attestations' => 'setAttestations',
+        'preattestations' => 'setPreattestations',
         'proposals' => 'setProposals',
         'ballots' => 'setBallots',
         'activations' => 'setActivations',
         'dal_entrapment_evidence_ops' => 'setDalEntrapmentEvidenceOps',
         'double_baking' => 'setDoubleBaking',
-        'double_endorsing' => 'setDoubleEndorsing',
-        'double_preendorsing' => 'setDoublePreendorsing',
+        'double_consensus' => 'setDoubleConsensus',
         'nonce_revelations' => 'setNonceRevelations',
         'vdf_revelations' => 'setVdfRevelations',
         'delegations' => 'setDelegations',
@@ -540,7 +527,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'tx_rollup_return_bond_ops' => 'setTxRollupReturnBondOps',
         'tx_rollup_submit_batch_ops' => 'setTxRollupSubmitBatchOps',
         'increase_paid_storage_ops' => 'setIncreasePaidStorageOps',
-        'update_consensus_key_ops' => 'setUpdateConsensusKeyOps',
+        'update_secondary_key_ops' => 'setUpdateSecondaryKeyOps',
         'drain_delegate_ops' => 'setDrainDelegateOps',
         'sr_add_messages_ops' => 'setSrAddMessagesOps',
         'sr_cement_ops' => 'setSrCementOps',
@@ -554,18 +541,16 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_publish_commitment_ops' => 'setDalPublishCommitmentOps',
         'migrations' => 'setMigrations',
         'revelation_penalties' => 'setRevelationPenalties',
-        'endorsing_rewards' => 'setEndorsingRewards',
+        'attestation_rewards' => 'setAttestationRewards',
         'dal_attestation_rewards' => 'setDalAttestationRewards',
         'autostaking_ops' => 'setAutostakingOps',
         'quote' => 'setQuote',
-        'reward_liquid' => 'setRewardLiquid',
-        'bonus_liquid' => 'setBonusLiquid',
-        'reward' => 'setReward',
-        'bonus' => 'setBonus',
-        'priority' => 'setPriority',
-        'baker' => 'setBaker',
-        'lb_escape_vote' => 'setLbEscapeVote',
-        'lb_escape_ema' => 'setLbEscapeEma'
+        'update_consensus_key_ops' => 'setUpdateConsensusKeyOps',
+        'endorsements' => 'setEndorsements',
+        'preendorsements' => 'setPreendorsements',
+        'double_endorsing' => 'setDoubleEndorsing',
+        'double_preendorsing' => 'setDoublePreendorsing',
+        'endorsing_rewards' => 'setEndorsingRewards'
     ];
 
     /**
@@ -600,15 +585,14 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'lb_toggle_ema' => 'getLbToggleEma',
         'ai_toggle' => 'getAiToggle',
         'ai_toggle_ema' => 'getAiToggleEma',
-        'endorsements' => 'getEndorsements',
-        'preendorsements' => 'getPreendorsements',
+        'attestations' => 'getAttestations',
+        'preattestations' => 'getPreattestations',
         'proposals' => 'getProposals',
         'ballots' => 'getBallots',
         'activations' => 'getActivations',
         'dal_entrapment_evidence_ops' => 'getDalEntrapmentEvidenceOps',
         'double_baking' => 'getDoubleBaking',
-        'double_endorsing' => 'getDoubleEndorsing',
-        'double_preendorsing' => 'getDoublePreendorsing',
+        'double_consensus' => 'getDoubleConsensus',
         'nonce_revelations' => 'getNonceRevelations',
         'vdf_revelations' => 'getVdfRevelations',
         'delegations' => 'getDelegations',
@@ -627,7 +611,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'tx_rollup_return_bond_ops' => 'getTxRollupReturnBondOps',
         'tx_rollup_submit_batch_ops' => 'getTxRollupSubmitBatchOps',
         'increase_paid_storage_ops' => 'getIncreasePaidStorageOps',
-        'update_consensus_key_ops' => 'getUpdateConsensusKeyOps',
+        'update_secondary_key_ops' => 'getUpdateSecondaryKeyOps',
         'drain_delegate_ops' => 'getDrainDelegateOps',
         'sr_add_messages_ops' => 'getSrAddMessagesOps',
         'sr_cement_ops' => 'getSrCementOps',
@@ -641,18 +625,16 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_publish_commitment_ops' => 'getDalPublishCommitmentOps',
         'migrations' => 'getMigrations',
         'revelation_penalties' => 'getRevelationPenalties',
-        'endorsing_rewards' => 'getEndorsingRewards',
+        'attestation_rewards' => 'getAttestationRewards',
         'dal_attestation_rewards' => 'getDalAttestationRewards',
         'autostaking_ops' => 'getAutostakingOps',
         'quote' => 'getQuote',
-        'reward_liquid' => 'getRewardLiquid',
-        'bonus_liquid' => 'getBonusLiquid',
-        'reward' => 'getReward',
-        'bonus' => 'getBonus',
-        'priority' => 'getPriority',
-        'baker' => 'getBaker',
-        'lb_escape_vote' => 'getLbEscapeVote',
-        'lb_escape_ema' => 'getLbEscapeEma'
+        'update_consensus_key_ops' => 'getUpdateConsensusKeyOps',
+        'endorsements' => 'getEndorsements',
+        'preendorsements' => 'getPreendorsements',
+        'double_endorsing' => 'getDoubleEndorsing',
+        'double_preendorsing' => 'getDoublePreendorsing',
+        'endorsing_rewards' => 'getEndorsingRewards'
     ];
 
     /**
@@ -737,15 +719,14 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('lb_toggle_ema', $data ?? [], null);
         $this->setIfExists('ai_toggle', $data ?? [], null);
         $this->setIfExists('ai_toggle_ema', $data ?? [], null);
-        $this->setIfExists('endorsements', $data ?? [], null);
-        $this->setIfExists('preendorsements', $data ?? [], null);
+        $this->setIfExists('attestations', $data ?? [], null);
+        $this->setIfExists('preattestations', $data ?? [], null);
         $this->setIfExists('proposals', $data ?? [], null);
         $this->setIfExists('ballots', $data ?? [], null);
         $this->setIfExists('activations', $data ?? [], null);
         $this->setIfExists('dal_entrapment_evidence_ops', $data ?? [], null);
         $this->setIfExists('double_baking', $data ?? [], null);
-        $this->setIfExists('double_endorsing', $data ?? [], null);
-        $this->setIfExists('double_preendorsing', $data ?? [], null);
+        $this->setIfExists('double_consensus', $data ?? [], null);
         $this->setIfExists('nonce_revelations', $data ?? [], null);
         $this->setIfExists('vdf_revelations', $data ?? [], null);
         $this->setIfExists('delegations', $data ?? [], null);
@@ -764,7 +745,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('tx_rollup_return_bond_ops', $data ?? [], null);
         $this->setIfExists('tx_rollup_submit_batch_ops', $data ?? [], null);
         $this->setIfExists('increase_paid_storage_ops', $data ?? [], null);
-        $this->setIfExists('update_consensus_key_ops', $data ?? [], null);
+        $this->setIfExists('update_secondary_key_ops', $data ?? [], null);
         $this->setIfExists('drain_delegate_ops', $data ?? [], null);
         $this->setIfExists('sr_add_messages_ops', $data ?? [], null);
         $this->setIfExists('sr_cement_ops', $data ?? [], null);
@@ -778,18 +759,16 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('dal_publish_commitment_ops', $data ?? [], null);
         $this->setIfExists('migrations', $data ?? [], null);
         $this->setIfExists('revelation_penalties', $data ?? [], null);
-        $this->setIfExists('endorsing_rewards', $data ?? [], null);
+        $this->setIfExists('attestation_rewards', $data ?? [], null);
         $this->setIfExists('dal_attestation_rewards', $data ?? [], null);
         $this->setIfExists('autostaking_ops', $data ?? [], null);
         $this->setIfExists('quote', $data ?? [], null);
-        $this->setIfExists('reward_liquid', $data ?? [], null);
-        $this->setIfExists('bonus_liquid', $data ?? [], null);
-        $this->setIfExists('reward', $data ?? [], null);
-        $this->setIfExists('bonus', $data ?? [], null);
-        $this->setIfExists('priority', $data ?? [], null);
-        $this->setIfExists('baker', $data ?? [], null);
-        $this->setIfExists('lb_escape_vote', $data ?? [], null);
-        $this->setIfExists('lb_escape_ema', $data ?? [], null);
+        $this->setIfExists('update_consensus_key_ops', $data ?? [], null);
+        $this->setIfExists('endorsements', $data ?? [], null);
+        $this->setIfExists('preendorsements', $data ?? [], null);
+        $this->setIfExists('double_endorsing', $data ?? [], null);
+        $this->setIfExists('double_preendorsing', $data ?? [], null);
+        $this->setIfExists('endorsing_rewards', $data ?? [], null);
     }
 
     /**
@@ -908,14 +887,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     public function setHash(?string $hash): static
     {
         if (is_null($hash)) {
-            array_push($this->openAPINullablesSetToNull, 'hash');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hash', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new InvalidArgumentException('non-nullable hash cannot be null');
         }
         $this->container['hash'] = $hash;
 
@@ -1043,7 +1015,7 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets validations
      *
-     * @param int|null $validations Number of endorsements (slots), included into the block
+     * @param int|null $validations Number of attestations (slots), included into the block
      *
      * @return $this
      */
@@ -1357,9 +1329,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets proposer
      *
-     * @return \Tzkt\Model\BakingOperationAllOfProposer|null
+     * @return \Tzkt\Model\BlockProposer|null
      */
-    public function getProposer(): ?\Tzkt\Model\BakingOperationAllOfProposer
+    public function getProposer(): ?\Tzkt\Model\BlockProposer
     {
         return $this->container['proposer'];
     }
@@ -1367,11 +1339,11 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets proposer
      *
-     * @param \Tzkt\Model\BakingOperationAllOfProposer|null $proposer proposer
+     * @param \Tzkt\Model\BlockProposer|null $proposer proposer
      *
      * @return $this
      */
-    public function setProposer(?\Tzkt\Model\BakingOperationAllOfProposer $proposer): static
+    public function setProposer(?\Tzkt\Model\BlockProposer $proposer): static
     {
         if (is_null($proposer)) {
             array_push($this->openAPINullablesSetToNull, 'proposer');
@@ -1391,9 +1363,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Gets producer
      *
-     * @return \Tzkt\Model\BakingOperationAllOfProducer|null
+     * @return \Tzkt\Model\BlockProducer|null
      */
-    public function getProducer(): ?\Tzkt\Model\BakingOperationAllOfProducer
+    public function getProducer(): ?\Tzkt\Model\BlockProducer
     {
         return $this->container['producer'];
     }
@@ -1401,11 +1373,11 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets producer
      *
-     * @param \Tzkt\Model\BakingOperationAllOfProducer|null $producer producer
+     * @param \Tzkt\Model\BlockProducer|null $producer producer
      *
      * @return $this
      */
-    public function setProducer(?\Tzkt\Model\BakingOperationAllOfProducer $producer): static
+    public function setProducer(?\Tzkt\Model\BlockProducer $producer): static
     {
         if (is_null($producer)) {
             array_push($this->openAPINullablesSetToNull, 'producer');
@@ -1579,69 +1551,69 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets endorsements
+     * Gets attestations
      *
-     * @return \Tzkt\Model\EndorsementOperation[]|null
+     * @return \Tzkt\Model\AttestationOperation[]|null
      */
-    public function getEndorsements(): ?array
+    public function getAttestations(): ?array
     {
-        return $this->container['endorsements'];
+        return $this->container['attestations'];
     }
 
     /**
-     * Sets endorsements
+     * Sets attestations
      *
-     * @param \Tzkt\Model\EndorsementOperation[]|null $endorsements List of endorsement (is operation, which specifies the head of the chain as seen by the endorser of a given slot) operations, included in the block
+     * @param \Tzkt\Model\AttestationOperation[]|null $attestations List of attestation (is operation, which specifies the head of the chain as seen by the attester of a given slot) operations, included in the block
      *
      * @return $this
      */
-    public function setEndorsements(?array $endorsements): static
+    public function setAttestations(?array $attestations): static
     {
-        if (is_null($endorsements)) {
-            array_push($this->openAPINullablesSetToNull, 'endorsements');
+        if (is_null($attestations)) {
+            array_push($this->openAPINullablesSetToNull, 'attestations');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('endorsements', $nullablesSetToNull);
+            $index = array_search('attestations', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['endorsements'] = $endorsements;
+        $this->container['attestations'] = $attestations;
 
         return $this;
     }
 
     /**
-     * Gets preendorsements
+     * Gets preattestations
      *
-     * @return \Tzkt\Model\PreendorsementOperation[]|null
+     * @return \Tzkt\Model\PreattestationOperation[]|null
      */
-    public function getPreendorsements(): ?array
+    public function getPreattestations(): ?array
     {
-        return $this->container['preendorsements'];
+        return $this->container['preattestations'];
     }
 
     /**
-     * Sets preendorsements
+     * Sets preattestations
      *
-     * @param \Tzkt\Model\PreendorsementOperation[]|null $preendorsements List of preendorsement operations, included in the block
+     * @param \Tzkt\Model\PreattestationOperation[]|null $preattestations List of preattestation operations, included in the block
      *
      * @return $this
      */
-    public function setPreendorsements(?array $preendorsements): static
+    public function setPreattestations(?array $preattestations): static
     {
-        if (is_null($preendorsements)) {
-            array_push($this->openAPINullablesSetToNull, 'preendorsements');
+        if (is_null($preattestations)) {
+            array_push($this->openAPINullablesSetToNull, 'preattestations');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('preendorsements', $nullablesSetToNull);
+            $index = array_search('preattestations', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['preendorsements'] = $preendorsements;
+        $this->container['preattestations'] = $preattestations;
 
         return $this;
     }
@@ -1817,69 +1789,35 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets double_endorsing
+     * Gets double_consensus
      *
-     * @return \Tzkt\Model\DoubleEndorsingOperation[]|null
+     * @return \Tzkt\Model\DoubleConsensusOperation[]|null
      */
-    public function getDoubleEndorsing(): ?array
+    public function getDoubleConsensus(): ?array
     {
-        return $this->container['double_endorsing'];
+        return $this->container['double_consensus'];
     }
 
     /**
-     * Sets double_endorsing
+     * Sets double_consensus
      *
-     * @param \Tzkt\Model\DoubleEndorsingOperation[]|null $double_endorsing List of double endorsement evidence (is used by bakers to provide evidence of double endorsement (endorsing two different blocks at the same block height) by a baker) operations, included in the block
+     * @param \Tzkt\Model\DoubleConsensusOperation[]|null $double_consensus List of double consensus evidence (is used by bakers to provide evidence of double (pre)attestation ((pre)attestation of two different blocks at the same block height) by a baker) operations, included in the block
      *
      * @return $this
      */
-    public function setDoubleEndorsing(?array $double_endorsing): static
+    public function setDoubleConsensus(?array $double_consensus): static
     {
-        if (is_null($double_endorsing)) {
-            array_push($this->openAPINullablesSetToNull, 'double_endorsing');
+        if (is_null($double_consensus)) {
+            array_push($this->openAPINullablesSetToNull, 'double_consensus');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('double_endorsing', $nullablesSetToNull);
+            $index = array_search('double_consensus', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['double_endorsing'] = $double_endorsing;
-
-        return $this;
-    }
-
-    /**
-     * Gets double_preendorsing
-     *
-     * @return \Tzkt\Model\DoublePreendorsingOperation[]|null
-     */
-    public function getDoublePreendorsing(): ?array
-    {
-        return $this->container['double_preendorsing'];
-    }
-
-    /**
-     * Sets double_preendorsing
-     *
-     * @param \Tzkt\Model\DoublePreendorsingOperation[]|null $double_preendorsing List of double preendorsement evidence operations, included in the block
-     *
-     * @return $this
-     */
-    public function setDoublePreendorsing(?array $double_preendorsing): static
-    {
-        if (is_null($double_preendorsing)) {
-            array_push($this->openAPINullablesSetToNull, 'double_preendorsing');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('double_preendorsing', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['double_preendorsing'] = $double_preendorsing;
+        $this->container['double_consensus'] = $double_consensus;
 
         return $this;
     }
@@ -2497,35 +2435,35 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets update_consensus_key_ops
+     * Gets update_secondary_key_ops
      *
-     * @return \Tzkt\Model\UpdateConsensusKeyOperation[]|null
+     * @return \Tzkt\Model\UpdateSecondaryKeyOperation[]|null
      */
-    public function getUpdateConsensusKeyOps(): ?array
+    public function getUpdateSecondaryKeyOps(): ?array
     {
-        return $this->container['update_consensus_key_ops'];
+        return $this->container['update_secondary_key_ops'];
     }
 
     /**
-     * Sets update_consensus_key_ops
+     * Sets update_secondary_key_ops
      *
-     * @param \Tzkt\Model\UpdateConsensusKeyOperation[]|null $update_consensus_key_ops List of update consensus key operations, included in the block
+     * @param \Tzkt\Model\UpdateSecondaryKeyOperation[]|null $update_secondary_key_ops List of update secondary key operations, included in the block
      *
      * @return $this
      */
-    public function setUpdateConsensusKeyOps(?array $update_consensus_key_ops): static
+    public function setUpdateSecondaryKeyOps(?array $update_secondary_key_ops): static
     {
-        if (is_null($update_consensus_key_ops)) {
-            array_push($this->openAPINullablesSetToNull, 'update_consensus_key_ops');
+        if (is_null($update_secondary_key_ops)) {
+            array_push($this->openAPINullablesSetToNull, 'update_secondary_key_ops');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('update_consensus_key_ops', $nullablesSetToNull);
+            $index = array_search('update_secondary_key_ops', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['update_consensus_key_ops'] = $update_consensus_key_ops;
+        $this->container['update_secondary_key_ops'] = $update_secondary_key_ops;
 
         return $this;
     }
@@ -2973,35 +2911,35 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets endorsing_rewards
+     * Gets attestation_rewards
      *
-     * @return \Tzkt\Model\EndorsingRewardOperation[]|null
+     * @return \Tzkt\Model\AttestationRewardOperation[]|null
      */
-    public function getEndorsingRewards(): ?array
+    public function getAttestationRewards(): ?array
     {
-        return $this->container['endorsing_rewards'];
+        return $this->container['attestation_rewards'];
     }
 
     /**
-     * Sets endorsing_rewards
+     * Sets attestation_rewards
      *
-     * @param \Tzkt\Model\EndorsingRewardOperation[]|null $endorsing_rewards List of endorsing rewards, implicitly applied at the end of the block
+     * @param \Tzkt\Model\AttestationRewardOperation[]|null $attestation_rewards List of attestation rewards, implicitly applied at the end of the block
      *
      * @return $this
      */
-    public function setEndorsingRewards(?array $endorsing_rewards): static
+    public function setAttestationRewards(?array $attestation_rewards): static
     {
-        if (is_null($endorsing_rewards)) {
-            array_push($this->openAPINullablesSetToNull, 'endorsing_rewards');
+        if (is_null($attestation_rewards)) {
+            array_push($this->openAPINullablesSetToNull, 'attestation_rewards');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('endorsing_rewards', $nullablesSetToNull);
+            $index = array_search('attestation_rewards', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['endorsing_rewards'] = $endorsing_rewards;
+        $this->container['attestation_rewards'] = $attestation_rewards;
 
         return $this;
     }
@@ -3109,224 +3047,205 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets reward_liquid
+     * Gets update_consensus_key_ops
      *
-     * @return int|null
+     * @return \Tzkt\Model\UpdateSecondaryKeyOperation[]|null
      */
-    public function getRewardLiquid(): ?int
+    public function getUpdateConsensusKeyOps(): ?array
     {
-        return $this->container['reward_liquid'];
+        return $this->container['update_consensus_key_ops'];
     }
 
     /**
-     * Sets reward_liquid
+     * Sets update_consensus_key_ops
      *
-     * @param int|null $reward_liquid [DEPRECATED]
+     * @param \Tzkt\Model\UpdateSecondaryKeyOperation[]|null $update_consensus_key_ops **DEPRECATED**
      *
      * @return $this
      */
-    public function setRewardLiquid(?int $reward_liquid): static
+    public function setUpdateConsensusKeyOps(?array $update_consensus_key_ops): static
     {
-        if (is_null($reward_liquid)) {
-            throw new InvalidArgumentException('non-nullable reward_liquid cannot be null');
-        }
-        $this->container['reward_liquid'] = $reward_liquid;
-
-        return $this;
-    }
-
-    /**
-     * Gets bonus_liquid
-     *
-     * @return int|null
-     */
-    public function getBonusLiquid(): ?int
-    {
-        return $this->container['bonus_liquid'];
-    }
-
-    /**
-     * Sets bonus_liquid
-     *
-     * @param int|null $bonus_liquid [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setBonusLiquid(?int $bonus_liquid): static
-    {
-        if (is_null($bonus_liquid)) {
-            throw new InvalidArgumentException('non-nullable bonus_liquid cannot be null');
-        }
-        $this->container['bonus_liquid'] = $bonus_liquid;
-
-        return $this;
-    }
-
-    /**
-     * Gets reward
-     *
-     * @return int|null
-     */
-    public function getReward(): ?int
-    {
-        return $this->container['reward'];
-    }
-
-    /**
-     * Sets reward
-     *
-     * @param int|null $reward [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setReward(?int $reward): static
-    {
-        if (is_null($reward)) {
-            throw new InvalidArgumentException('non-nullable reward cannot be null');
-        }
-        $this->container['reward'] = $reward;
-
-        return $this;
-    }
-
-    /**
-     * Gets bonus
-     *
-     * @return int|null
-     */
-    public function getBonus(): ?int
-    {
-        return $this->container['bonus'];
-    }
-
-    /**
-     * Sets bonus
-     *
-     * @param int|null $bonus [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setBonus(?int $bonus): static
-    {
-        if (is_null($bonus)) {
-            throw new InvalidArgumentException('non-nullable bonus cannot be null');
-        }
-        $this->container['bonus'] = $bonus;
-
-        return $this;
-    }
-
-    /**
-     * Gets priority
-     *
-     * @return int|null
-     */
-    public function getPriority(): ?int
-    {
-        return $this->container['priority'];
-    }
-
-    /**
-     * Sets priority
-     *
-     * @param int|null $priority [DEPRECATED]
-     *
-     * @return $this
-     */
-    public function setPriority(?int $priority): static
-    {
-        if (is_null($priority)) {
-            throw new InvalidArgumentException('non-nullable priority cannot be null');
-        }
-        $this->container['priority'] = $priority;
-
-        return $this;
-    }
-
-    /**
-     * Gets baker
-     *
-     * @return \Tzkt\Model\BakingOperationAllOfBaker|null
-     */
-    public function getBaker(): ?\Tzkt\Model\BakingOperationAllOfBaker
-    {
-        return $this->container['baker'];
-    }
-
-    /**
-     * Sets baker
-     *
-     * @param \Tzkt\Model\BakingOperationAllOfBaker|null $baker baker
-     *
-     * @return $this
-     */
-    public function setBaker(?\Tzkt\Model\BakingOperationAllOfBaker $baker): static
-    {
-        if (is_null($baker)) {
-            array_push($this->openAPINullablesSetToNull, 'baker');
+        if (is_null($update_consensus_key_ops)) {
+            array_push($this->openAPINullablesSetToNull, 'update_consensus_key_ops');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('baker', $nullablesSetToNull);
+            $index = array_search('update_consensus_key_ops', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['baker'] = $baker;
+        $this->container['update_consensus_key_ops'] = $update_consensus_key_ops;
 
         return $this;
     }
 
     /**
-     * Gets lb_escape_vote
+     * Gets endorsements
      *
-     * @return bool|null
+     * @return \Tzkt\Model\AttestationOperation[]|null
      */
-    public function getLbEscapeVote(): ?bool
+    public function getEndorsements(): ?array
     {
-        return $this->container['lb_escape_vote'];
+        return $this->container['endorsements'];
     }
 
     /**
-     * Sets lb_escape_vote
+     * Sets endorsements
      *
-     * @param bool|null $lb_escape_vote [DEPRECATED]
+     * @param \Tzkt\Model\AttestationOperation[]|null $endorsements **DEPRECATED**
      *
      * @return $this
      */
-    public function setLbEscapeVote(?bool $lb_escape_vote): static
+    public function setEndorsements(?array $endorsements): static
     {
-        if (is_null($lb_escape_vote)) {
-            throw new InvalidArgumentException('non-nullable lb_escape_vote cannot be null');
+        if (is_null($endorsements)) {
+            array_push($this->openAPINullablesSetToNull, 'endorsements');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('endorsements', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['lb_escape_vote'] = $lb_escape_vote;
+        $this->container['endorsements'] = $endorsements;
 
         return $this;
     }
 
     /**
-     * Gets lb_escape_ema
+     * Gets preendorsements
      *
-     * @return int|null
+     * @return \Tzkt\Model\PreattestationOperation[]|null
      */
-    public function getLbEscapeEma(): ?int
+    public function getPreendorsements(): ?array
     {
-        return $this->container['lb_escape_ema'];
+        return $this->container['preendorsements'];
     }
 
     /**
-     * Sets lb_escape_ema
+     * Sets preendorsements
      *
-     * @param int|null $lb_escape_ema [DEPRECATED]
+     * @param \Tzkt\Model\PreattestationOperation[]|null $preendorsements **DEPRECATED**
      *
      * @return $this
      */
-    public function setLbEscapeEma(?int $lb_escape_ema): static
+    public function setPreendorsements(?array $preendorsements): static
     {
-        if (is_null($lb_escape_ema)) {
-            throw new InvalidArgumentException('non-nullable lb_escape_ema cannot be null');
+        if (is_null($preendorsements)) {
+            array_push($this->openAPINullablesSetToNull, 'preendorsements');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('preendorsements', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['lb_escape_ema'] = $lb_escape_ema;
+        $this->container['preendorsements'] = $preendorsements;
+
+        return $this;
+    }
+
+    /**
+     * Gets double_endorsing
+     *
+     * @return \Tzkt\Model\DoubleConsensusOperation[]|null
+     */
+    public function getDoubleEndorsing(): ?array
+    {
+        return $this->container['double_endorsing'];
+    }
+
+    /**
+     * Sets double_endorsing
+     *
+     * @param \Tzkt\Model\DoubleConsensusOperation[]|null $double_endorsing **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setDoubleEndorsing(?array $double_endorsing): static
+    {
+        if (is_null($double_endorsing)) {
+            array_push($this->openAPINullablesSetToNull, 'double_endorsing');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('double_endorsing', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['double_endorsing'] = $double_endorsing;
+
+        return $this;
+    }
+
+    /**
+     * Gets double_preendorsing
+     *
+     * @return \Tzkt\Model\DoubleConsensusOperation[]|null
+     */
+    public function getDoublePreendorsing(): ?array
+    {
+        return $this->container['double_preendorsing'];
+    }
+
+    /**
+     * Sets double_preendorsing
+     *
+     * @param \Tzkt\Model\DoubleConsensusOperation[]|null $double_preendorsing **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setDoublePreendorsing(?array $double_preendorsing): static
+    {
+        if (is_null($double_preendorsing)) {
+            array_push($this->openAPINullablesSetToNull, 'double_preendorsing');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('double_preendorsing', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['double_preendorsing'] = $double_preendorsing;
+
+        return $this;
+    }
+
+    /**
+     * Gets endorsing_rewards
+     *
+     * @return \Tzkt\Model\AttestationRewardOperation[]|null
+     */
+    public function getEndorsingRewards(): ?array
+    {
+        return $this->container['endorsing_rewards'];
+    }
+
+    /**
+     * Sets endorsing_rewards
+     *
+     * @param \Tzkt\Model\AttestationRewardOperation[]|null $endorsing_rewards **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setEndorsingRewards(?array $endorsing_rewards): static
+    {
+        if (is_null($endorsing_rewards)) {
+            array_push($this->openAPINullablesSetToNull, 'endorsing_rewards');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('endorsing_rewards', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['endorsing_rewards'] = $endorsing_rewards;
 
         return $this;
     }

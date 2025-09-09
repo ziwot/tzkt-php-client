@@ -27,10 +27,5 @@ Name | Type | Description | Notes
 **nay_voting_power** | **int** | Total voting power of the ballots with \&quot;nay\&quot; vote (only for exploration and promotion periods) | [optional]
 **pass_ballots** | **int** | The number of the ballots with \&quot;pass\&quot; vote (only for exploration and promotion periods) | [optional]
 **pass_voting_power** | **int** | Total voting power of the ballots with \&quot;pass\&quot; vote (only for exploration and promotion periods) | [optional]
-**total_rolls** | **int** | [DEPRECATED] | [optional]
-**top_rolls** | **int** | [DEPRECATED] | [optional]
-**yay_rolls** | **int** | [DEPRECATED] | [optional]
-**nay_rolls** | **int** | [DEPRECATED] | [optional]
-**pass_rolls** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

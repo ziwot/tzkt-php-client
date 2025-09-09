@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **alias** | **string** | Name of the project behind the contract or contract description. | [optional]
 **balance** | **int** | Contract balance (micro tez).   **[sortable]** | [optional]
 **creator** | [**\Tzkt\Model\ContractAllOfCreator**](ContractAllOfCreator.md) |  | [optional]
-**manager** | [**\Tzkt\Model\ContractAllOfManager**](ContractAllOfManager.md) |  | [optional]
 **delegate** | [**\Tzkt\Model\ContractAllOfDelegate**](ContractAllOfDelegate.md) |  | [optional]
 **delegation_level** | **int** | Block height of latest delegation. &#x60;null&#x60; if it&#39;s not delegated. | [optional]
 **delegation_time** | **\DateTime** | Block datetime of latest delegation (ISO 8601, e.g. &#x60;2020-02-20T02:40:57Z&#x60;). &#x60;null&#x60; if it&#39;s not delegated. | [optional]
@@ -39,7 +38,7 @@ Name | Type | Description | Notes
 **last_activity_time** | **\DateTime** | Datetime of the block in which the account state was changed last time (ISO 8601, e.g. &#x60;2020-02-20T02:40:57Z&#x60;). | [optional]
 **type_hash** | **int** | 32-bit hash of the contract parameter and storage types. This field can be used for searching similar contracts (which have the same interface). | [optional]
 **code_hash** | **int** | 32-bit hash of the contract code. This field can be used for searching same contracts (which have the same script). | [optional]
-**metadata** | **mixed** | TZIP-16 metadata (with &#x60;?legacy&#x3D;true&#x60; this field will contain tzkt profile info). | [optional]
+**metadata** | **mixed** | TZIP-16 metadata. | [optional]
 **extras** | **mixed** | Off-chain extras. | [optional]
 **storage** | **mixed** | Contract storage value. Omitted by default. Use &#x60;?includeStorage&#x3D;true&#x60; to include it into response. | [optional]
 

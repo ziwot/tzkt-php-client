@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Internal TzKT id.   **[sortable]** | [optional]
-**ticketer** | [**\Tzkt\Model\TicketTicketer**](TicketTicketer.md) |  | [optional]
-**raw_type** | [**\Tzkt\Model\TicketRawType**](TicketRawType.md) |  | [optional]
-**raw_content** | [**\Tzkt\Model\TicketRawContent**](TicketRawContent.md) |  | [optional]
+**ticketer** | [**\Tzkt\Model\TicketInfoTicketer**](TicketInfoTicketer.md) |  | [optional]
+**raw_type** | [**\Tzkt\Model\TicketInfoRawType**](TicketInfoRawType.md) |  | [optional]
+**raw_content** | [**\Tzkt\Model\TicketInfoRawContent**](TicketInfoRawContent.md) |  | [optional]
 **content** | **mixed** | Ticket content in JSON format. | [optional]
 **type_hash** | **int** | 32-bit hash of the ticket content type. | [optional]
 **content_hash** | **int** | 32-bit hash of the ticket content. | [optional]

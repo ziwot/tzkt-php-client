@@ -16,6 +16,5 @@ Name | Type | Description | Notes
 **voting_power** | **int** | Baker&#39;s voting power | [optional]
 **vote** | **string** | Vote, given in the ballot (&#x60;yay&#x60;, &#x60;nay&#x60;, or &#x60;pass&#x60;) | [optional]
 **quote** | [**\Tzkt\Model\BallotOperationAllOfQuote**](BallotOperationAllOfQuote.md) |  | [optional]
-**rolls** | **int** | [DEPRECATED] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Internal TzKT id (not the same as &#x60;tokenId&#x60;).   **[sortable]** | [optional]
-**contract** | [**\Tzkt\Model\TokenContract**](TokenContract.md) |  | [optional]
+**contract** | [**\Tzkt\Model\TokenInfoContract**](TokenInfoContract.md) |  | [optional]
 **token_id** | **string** | Token id, unique within the contract.   **[sortable]** | [optional]
 **standard** | **string** | Token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;). | [optional]
 **first_minter** | [**\Tzkt\Model\TokenFirstMinter**](TokenFirstMinter.md) |  | [optional]

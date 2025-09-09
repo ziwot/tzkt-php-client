@@ -11,9 +11,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Rionet: `https://api.rionet.tzkt.io/` ([view docs](https://api.rionet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.9
+ * The version of the OpenAPI document: 1.16.0
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -152,12 +152,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -176,12 +176,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -205,12 +205,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -229,12 +229,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -365,12 +365,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -388,12 +388,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -421,12 +421,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -444,12 +444,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -506,12 +506,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -529,12 +529,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -796,7 +796,7 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -815,7 +815,7 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -839,7 +839,7 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -858,7 +858,7 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -989,7 +989,7 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -1007,7 +1007,7 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -1035,7 +1035,7 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -1053,7 +1053,7 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -1110,7 +1110,7 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -1128,7 +1128,7 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -1345,12 +1345,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenBalancesCount'] to see the possible values for this operation
      *
@@ -1365,12 +1365,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenBalancesCount'][0]
     ): int
@@ -1390,12 +1390,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenBalancesCount'] to see the possible values for this operation
      *
@@ -1410,12 +1410,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenBalancesCount'][0]
     ): array
@@ -1542,12 +1542,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenBalancesCount'] to see the possible values for this operation
      *
@@ -1561,12 +1561,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenBalancesCount'][0]
     ): PromiseInterface
@@ -1590,12 +1590,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenBalancesCount'] to see the possible values for this operation
      *
@@ -1609,12 +1609,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenBalancesCount'][0]
     ): PromiseInterface
@@ -1667,12 +1667,12 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $balance Filter by balance.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the balance was first changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the balance was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the balance was last changed.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenBalancesCount'] to see the possible values for this operation
      *
@@ -1686,12 +1686,12 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $balance = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenBalancesCount'][0]
     ): Request
@@ -1899,12 +1899,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -1912,6 +1912,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -1926,12 +1927,12 @@ class TokensApi
     public function tokensGetTokenTransfers(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -1939,6 +1940,7 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -1947,7 +1949,7 @@ class TokensApi
         string $contentType = self::contentTypes['tokensGetTokenTransfers'][0]
     ): array
     {
-        list($response) = $this->tokensGetTokenTransfersWithHttpInfo($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $indexed_at, $sort, $offset, $limit, $select, $contentType);
+        list($response) = $this->tokensGetTokenTransfersWithHttpInfo($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $or_cols_and_vals, $indexed_at, $sort, $offset, $limit, $select, $contentType);
         return $response;
     }
 
@@ -1958,12 +1960,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -1971,6 +1973,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -1985,12 +1988,12 @@ class TokensApi
     public function tokensGetTokenTransfersWithHttpInfo(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -1998,6 +2001,7 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -2006,7 +2010,7 @@ class TokensApi
         string $contentType = self::contentTypes['tokensGetTokenTransfers'][0]
     ): array
     {
-        $request = $this->tokensGetTokenTransfersRequest($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $indexed_at, $sort, $offset, $limit, $select, $contentType);
+        $request = $this->tokensGetTokenTransfersRequest($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $or_cols_and_vals, $indexed_at, $sort, $offset, $limit, $select, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2124,12 +2128,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -2137,6 +2141,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -2150,12 +2155,12 @@ class TokensApi
     public function tokensGetTokenTransfersAsync(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -2163,6 +2168,7 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -2171,7 +2177,7 @@ class TokensApi
         string $contentType = self::contentTypes['tokensGetTokenTransfers'][0]
     ): PromiseInterface
     {
-        return $this->tokensGetTokenTransfersAsyncWithHttpInfo($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $indexed_at, $sort, $offset, $limit, $select, $contentType)
+        return $this->tokensGetTokenTransfersAsyncWithHttpInfo($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $or_cols_and_vals, $indexed_at, $sort, $offset, $limit, $select, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2186,12 +2192,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -2199,6 +2205,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -2212,12 +2219,12 @@ class TokensApi
     public function tokensGetTokenTransfersAsyncWithHttpInfo(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -2225,6 +2232,7 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -2234,7 +2242,7 @@ class TokensApi
     ): PromiseInterface
     {
         $returnType = '\Tzkt\Model\TokenTransfer[]';
-        $request = $this->tokensGetTokenTransfersRequest($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $indexed_at, $sort, $offset, $limit, $select, $contentType);
+        $request = $this->tokensGetTokenTransfersRequest($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $or_cols_and_vals, $indexed_at, $sort, $offset, $limit, $select, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2277,12 +2285,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -2290,6 +2298,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -2303,12 +2312,12 @@ class TokensApi
     public function tokensGetTokenTransfersRequest(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -2316,6 +2325,7 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -2324,6 +2334,7 @@ class TokensApi
         string $contentType = self::contentTypes['tokensGetTokenTransfers'][0]
     ): Request
     {
+
 
 
 
@@ -2496,6 +2507,15 @@ class TokensApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $or_cols_and_vals,
+            'or.ColsAndVals', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $indexed_at,
             'indexedAt', // param base name
             '\Tzkt\Model\Int32NullParameter', // openApiType
@@ -2603,12 +2623,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -2616,6 +2636,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenTransfersCount'] to see the possible values for this operation
      *
@@ -2626,12 +2647,12 @@ class TokensApi
     public function tokensGetTokenTransfersCount(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -2639,11 +2660,12 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenTransfersCount'][0]
     ): int
     {
-        list($response) = $this->tokensGetTokenTransfersCountWithHttpInfo($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $indexed_at, $contentType);
+        list($response) = $this->tokensGetTokenTransfersCountWithHttpInfo($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $or_cols_and_vals, $indexed_at, $contentType);
         return $response;
     }
 
@@ -2654,12 +2676,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -2667,6 +2689,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenTransfersCount'] to see the possible values for this operation
      *
@@ -2677,12 +2700,12 @@ class TokensApi
     public function tokensGetTokenTransfersCountWithHttpInfo(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -2690,11 +2713,12 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenTransfersCount'][0]
     ): array
     {
-        $request = $this->tokensGetTokenTransfersCountRequest($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $indexed_at, $contentType);
+        $request = $this->tokensGetTokenTransfersCountRequest($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $or_cols_and_vals, $indexed_at, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2812,12 +2836,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -2825,6 +2849,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenTransfersCount'] to see the possible values for this operation
      *
@@ -2834,12 +2859,12 @@ class TokensApi
     public function tokensGetTokenTransfersCountAsync(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -2847,11 +2872,12 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenTransfersCount'][0]
     ): PromiseInterface
     {
-        return $this->tokensGetTokenTransfersCountAsyncWithHttpInfo($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $indexed_at, $contentType)
+        return $this->tokensGetTokenTransfersCountAsyncWithHttpInfo($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $or_cols_and_vals, $indexed_at, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2866,12 +2892,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -2879,6 +2905,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenTransfersCount'] to see the possible values for this operation
      *
@@ -2888,12 +2915,12 @@ class TokensApi
     public function tokensGetTokenTransfersCountAsyncWithHttpInfo(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -2901,12 +2928,13 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenTransfersCount'][0]
     ): PromiseInterface
     {
         $returnType = 'int';
-        $request = $this->tokensGetTokenTransfersCountRequest($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $indexed_at, $contentType);
+        $request = $this->tokensGetTokenTransfersCountRequest($id, $level, $timestamp, $token_id, $token_contract, $token_token_id, $token_standard, $token_metadata, $anyof, $from, $to, $amount, $transaction_id, $origination_id, $migration_id, $or_cols_and_vals, $indexed_at, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2949,12 +2977,12 @@ class TokensApi
      *
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $level Filter by level of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $timestamp Filter by timestamp (ISO 8601) of the block where the transfer was made.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $token_id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $token_contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $token_standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $token_metadata Filter by metadata. Note, this parameter supports the following format: &#x60;token.metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by, for example: &#x60;?token.metadata.symbol.in&#x3D;kUSD,uUSD&#x60;.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\BlocksGetAnyofParameter|null $anyof Filter by any of the specified fields (&#x60;from&#x60; or &#x60;to&#x60;). Example: &#x60;anyof.from.to&#x3D;tz1...&#x60; will return transfers where &#x60;from&#x60; OR &#x60;to&#x60; is equal to the specified value. This parameter is useful when you need to get both incoming and outgoing transfers of the account at once.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $from Filter by sender account address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $to Filter by target account address.   Click on the parameter to expand more details. (optional)
@@ -2962,6 +2990,7 @@ class TokensApi
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $transaction_id Filter by id of the transaction, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $origination_id Filter by id of the origination, caused the token transfer.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter|null $migration_id Filter by id of the migration, caused the token transfer.   Click on the parameter to expand more details. (optional)
+     * @param  object[]|null $or_cols_and_vals (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokenTransfersCount'] to see the possible values for this operation
      *
@@ -2971,12 +3000,12 @@ class TokensApi
     public function tokensGetTokenTransfersCountRequest(
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetIdParameter $level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $timestamp = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $timestamp = null,
         ?\Tzkt\Model\AccountsGetBalanceParameter $token_id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $token_contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_token_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $token_standard = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $token_metadata = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $token_metadata = null,
         ?\Tzkt\Model\BlocksGetAnyofParameter $anyof = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $from = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $to = null,
@@ -2984,10 +3013,12 @@ class TokensApi
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $transaction_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $origination_id = null,
         ?\Tzkt\Model\StakingGetStakingUpdatesCountRoundingErrorParameter $migration_id = null,
+        ?array $or_cols_and_vals = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokenTransfersCount'][0]
     ): Request
     {
+
 
 
 
@@ -3150,6 +3181,15 @@ class TokensApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $or_cols_and_vals,
+            'or.ColsAndVals', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $indexed_at,
             'indexedAt', // param base name
             '\Tzkt\Model\Int32NullParameter', // openApiType
@@ -3222,13 +3262,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -3244,13 +3288,17 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -3259,7 +3307,7 @@ class TokensApi
         string $contentType = self::contentTypes['tokensGetTokens'][0]
     ): array
     {
-        list($response) = $this->tokensGetTokensWithHttpInfo($id, $contract, $token_id, $standard, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $sort, $offset, $limit, $select, $contentType);
+        list($response) = $this->tokensGetTokensWithHttpInfo($id, $contract, $token_id, $global_id, $standard, $total_minted, $total_burned, $total_supply, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $sort, $offset, $limit, $select, $contentType);
         return $response;
     }
 
@@ -3271,13 +3319,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -3293,13 +3345,17 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -3308,7 +3364,7 @@ class TokensApi
         string $contentType = self::contentTypes['tokensGetTokens'][0]
     ): array
     {
-        $request = $this->tokensGetTokensRequest($id, $contract, $token_id, $standard, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $sort, $offset, $limit, $select, $contentType);
+        $request = $this->tokensGetTokensRequest($id, $contract, $token_id, $global_id, $standard, $total_minted, $total_burned, $total_supply, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $sort, $offset, $limit, $select, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3427,13 +3483,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -3448,13 +3508,17 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -3463,7 +3527,7 @@ class TokensApi
         string $contentType = self::contentTypes['tokensGetTokens'][0]
     ): PromiseInterface
     {
-        return $this->tokensGetTokensAsyncWithHttpInfo($id, $contract, $token_id, $standard, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $sort, $offset, $limit, $select, $contentType)
+        return $this->tokensGetTokensAsyncWithHttpInfo($id, $contract, $token_id, $global_id, $standard, $total_minted, $total_burned, $total_supply, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $sort, $offset, $limit, $select, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3479,13 +3543,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -3500,13 +3568,17 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -3516,7 +3588,7 @@ class TokensApi
     ): PromiseInterface
     {
         $returnType = '\Tzkt\Model\Token[]';
-        $request = $this->tokensGetTokensRequest($id, $contract, $token_id, $standard, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $sort, $offset, $limit, $select, $contentType);
+        $request = $this->tokensGetTokensRequest($id, $contract, $token_id, $global_id, $standard, $total_minted, $total_burned, $total_supply, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $sort, $offset, $limit, $select, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3560,13 +3632,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
@@ -3581,13 +3657,17 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
@@ -3596,6 +3676,10 @@ class TokensApi
         string $contentType = self::contentTypes['tokensGetTokens'][0]
     ): Request
     {
+
+
+
+
 
 
 
@@ -3655,9 +3739,45 @@ class TokensApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $global_id,
+            'globalId', // param base name
+            '\Tzkt\Model\TokenGlobalIdParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $standard,
             'standard', // param base name
             '\Tzkt\Model\TokenStandardParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $total_minted,
+            'totalMinted', // param base name
+            '\Tzkt\Model\NatParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $total_burned,
+            'totalBurned', // param base name
+            '\Tzkt\Model\NatParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $total_supply,
+            'totalSupply', // param base name
+            '\Tzkt\Model\NatParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3826,13 +3946,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokensCount'] to see the possible values for this operation
      *
@@ -3844,18 +3968,22 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokensCount'][0]
     ): int
     {
-        list($response) = $this->tokensGetTokensCountWithHttpInfo($id, $contract, $token_id, $standard, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $contentType);
+        list($response) = $this->tokensGetTokensCountWithHttpInfo($id, $contract, $token_id, $global_id, $standard, $total_minted, $total_burned, $total_supply, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $contentType);
         return $response;
     }
 
@@ -3867,13 +3995,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokensCount'] to see the possible values for this operation
      *
@@ -3885,18 +4017,22 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokensCount'][0]
     ): array
     {
-        $request = $this->tokensGetTokensCountRequest($id, $contract, $token_id, $standard, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $contentType);
+        $request = $this->tokensGetTokensCountRequest($id, $contract, $token_id, $global_id, $standard, $total_minted, $total_burned, $total_supply, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4015,13 +4151,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokensCount'] to see the possible values for this operation
      *
@@ -4032,18 +4172,22 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokensCount'][0]
     ): PromiseInterface
     {
-        return $this->tokensGetTokensCountAsyncWithHttpInfo($id, $contract, $token_id, $standard, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $contentType)
+        return $this->tokensGetTokensCountAsyncWithHttpInfo($id, $contract, $token_id, $global_id, $standard, $total_minted, $total_burned, $total_supply, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4059,13 +4203,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokensCount'] to see the possible values for this operation
      *
@@ -4076,19 +4224,23 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokensCount'][0]
     ): PromiseInterface
     {
         $returnType = 'int';
-        $request = $this->tokensGetTokensCountRequest($id, $contract, $token_id, $standard, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $contentType);
+        $request = $this->tokensGetTokensCountRequest($id, $contract, $token_id, $global_id, $standard, $total_minted, $total_burned, $total_supply, $first_minter, $first_level, $first_time, $last_level, $last_time, $metadata, $indexed_at, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4132,13 +4284,17 @@ class TokensApi
      * @param  \Tzkt\Model\AccountsGetBalanceParameter|null $id Filter by internal TzKT id. Note, this is not the same as &#x60;tokenId&#x60; nat value.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $contract Filter by contract address.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $token_id Filter by tokenId (for FA1.2 tokens tokenId is always &#x60;\&quot;0\&quot;&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TokensGetTokensCountGlobalIdParameter|null $global_id Filter by \&quot;global id\&quot;, which is a &#x60;\&quot;{contract}:{tokenId}\&quot;&#x60; string.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\TokensGetTokensCountStandardParameter|null $standard Filter by token standard (&#x60;fa1.2&#x60; or &#x60;fa2&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_minted Filter by total minted.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_burned Filter by total burned. Note: total burned shows only those tokens that were literally burned, excluding tokens sent to burn addresses (because they still exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter|null $total_supply Filter by total supply. Note: total supply shows all existing tokens, including tokens sent to burn addresses (so that they exist on the burn address&#39; balance).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetDelegateParameter|null $first_minter Filter by address of the first minter.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $first_level Filter by level of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $first_time Filter by timestamp (ISO 8601) of the block where the token was first seen.   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\AccountsGetIdParameter|null $last_level Filter by level of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
-     * @param  \Tzkt\Model\AccountsGetOperationsParameterParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityTimestampParameter|null $last_time Filter by timestamp (ISO 8601) of the block where the token was last seen.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysKeyParameter|null $metadata Filter by metadata.   Note, this parameter supports the following format: &#x60;metadata{.path?}{.mode?}&#x3D;...&#x60;, so you can specify a path to a particular field to filter by (for example, &#x60;?metadata.symbol.in&#x3D;kUSD,uUSD&#x60;).   Click on the parameter to expand more details. (optional)
      * @param  \Tzkt\Model\CommitmentsGetAllActivationLevelParameter|null $indexed_at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['tokensGetTokensCount'] to see the possible values for this operation
      *
@@ -4149,17 +4305,25 @@ class TokensApi
         ?\Tzkt\Model\AccountsGetBalanceParameter $id = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $contract = null,
         ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $token_id = null,
+        ?\Tzkt\Model\TokensGetTokensCountGlobalIdParameter $global_id = null,
         ?\Tzkt\Model\TokensGetTokensCountStandardParameter $standard = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_minted = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_burned = null,
+        ?\Tzkt\Model\TicketsGetTicketBalancesCountBalanceParameter $total_supply = null,
         ?\Tzkt\Model\AccountsGetDelegateParameter $first_minter = null,
         ?\Tzkt\Model\AccountsGetIdParameter $first_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $first_time = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $first_time = null,
         ?\Tzkt\Model\AccountsGetIdParameter $last_level = null,
-        ?\Tzkt\Model\BigMapsGetBigMapKeysFirstTimeParameter $last_time = null,
-        ?\Tzkt\Model\AccountsGetOperationsParameterParameter $metadata = null,
+        ?\Tzkt\Model\AccountsGetActivityTimestampParameter $last_time = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysKeyParameter $metadata = null,
         ?\Tzkt\Model\CommitmentsGetAllActivationLevelParameter $indexed_at = null,
         string $contentType = self::contentTypes['tokensGetTokensCount'][0]
     ): Request
     {
+
+
+
+
 
 
 
@@ -4209,9 +4373,45 @@ class TokensApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $global_id,
+            'globalId', // param base name
+            '\Tzkt\Model\TokenGlobalIdParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $standard,
             'standard', // param base name
             '\Tzkt\Model\TokenStandardParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $total_minted,
+            'totalMinted', // param base name
+            '\Tzkt\Model\NatParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $total_burned,
+            'totalBurned', // param base name
+            '\Tzkt\Model\NatParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $total_supply,
+            'totalSupply', // param base name
+            '\Tzkt\Model\NatParameter', // openApiType
             'form', // style
             true, // explode
             false // required

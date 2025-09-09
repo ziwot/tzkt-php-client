@@ -11,9 +11,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Rionet: `https://api.rionet.tzkt.io/` ([view docs](https://api.rionet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.14.9
+ * The version of the OpenAPI document: 1.16.0
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -87,7 +87,13 @@ class RewardsApi
         'rewardsGetRewardSplit' => [
             'application/json',
         ],
-        'rewardsGetRewardSplitDelegator' => [
+        'rewardsGetRewardSplitMember' => [
+            'application/json',
+        ],
+        'rewardsGetStakerRewards' => [
+            'application/json',
+        ],
+        'rewardsGetStakerRewardsCount' => [
             'application/json',
         ],
     ];
@@ -144,12 +150,12 @@ class RewardsApi
      * Get baker cycle rewards
      *
      * @param  string $address Baker address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetBakerRewards'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -159,15 +165,15 @@ class RewardsApi
     public function rewardsGetBakerRewards(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetBakerRewards'][0]
     ): array
     {
-        list($response) = $this->rewardsGetBakerRewardsWithHttpInfo($address, $cycle, $select, $sort, $offset, $limit, $quote, $contentType);
+        list($response) = $this->rewardsGetBakerRewardsWithHttpInfo($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
         return $response;
     }
 
@@ -177,12 +183,12 @@ class RewardsApi
      * Get baker cycle rewards
      *
      * @param  string $address Baker address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetBakerRewards'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -192,15 +198,15 @@ class RewardsApi
     public function rewardsGetBakerRewardsWithHttpInfo(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetBakerRewards'][0]
     ): array
     {
-        $request = $this->rewardsGetBakerRewardsRequest($address, $cycle, $select, $sort, $offset, $limit, $quote, $contentType);
+        $request = $this->rewardsGetBakerRewardsRequest($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -317,12 +323,12 @@ class RewardsApi
      * Get baker cycle rewards
      *
      * @param  string $address Baker address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetBakerRewards'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -331,15 +337,15 @@ class RewardsApi
     public function rewardsGetBakerRewardsAsync(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetBakerRewards'][0]
     ): PromiseInterface
     {
-        return $this->rewardsGetBakerRewardsAsyncWithHttpInfo($address, $cycle, $select, $sort, $offset, $limit, $quote, $contentType)
+        return $this->rewardsGetBakerRewardsAsyncWithHttpInfo($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -353,12 +359,12 @@ class RewardsApi
      * Get baker cycle rewards
      *
      * @param  string $address Baker address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetBakerRewards'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -367,16 +373,16 @@ class RewardsApi
     public function rewardsGetBakerRewardsAsyncWithHttpInfo(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetBakerRewards'][0]
     ): PromiseInterface
     {
         $returnType = '\Tzkt\Model\BakerRewards[]';
-        $request = $this->rewardsGetBakerRewardsRequest($address, $cycle, $select, $sort, $offset, $limit, $quote, $contentType);
+        $request = $this->rewardsGetBakerRewardsRequest($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -418,12 +424,12 @@ class RewardsApi
      * Create request for operation 'rewardsGetBakerRewards'
      *
      * @param  string $address Baker address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetBakerRewards'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -432,11 +438,11 @@ class RewardsApi
     public function rewardsGetBakerRewardsRequest(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetBakerRewards'][0]
     ): Request
     {
@@ -451,7 +457,6 @@ class RewardsApi
 
 
 
-
         if ($limit !== null && $limit > 10000) {
             throw new InvalidArgumentException('invalid value for "$limit" when calling RewardsApi.rewardsGetBakerRewards, must be smaller than or equal to 10000.');
         }
@@ -459,6 +464,7 @@ class RewardsApi
             throw new InvalidArgumentException('invalid value for "$limit" when calling RewardsApi.rewardsGetBakerRewards, must be bigger than or equal to 0.');
         }
         
+
 
 
         $resourcePath = '/v1/rewards/bakers/{address}';
@@ -473,15 +479,6 @@ class RewardsApi
             $cycle,
             'cycle', // param base name
             '\Tzkt\Model\Int32Parameter', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $select,
-            'select', // param base name
-            '\Tzkt\Model\SelectParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -509,6 +506,15 @@ class RewardsApi
             $limit,
             'limit', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $select,
+            'select', // param base name
+            '\Tzkt\Model\SelectionParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -916,12 +922,12 @@ class RewardsApi
      * Get delegator cycle rewards
      *
      * @param  string $address Delegator address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetDelegatorRewards'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -931,15 +937,15 @@ class RewardsApi
     public function rewardsGetDelegatorRewards(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetDelegatorRewards'][0]
     ): array
     {
-        list($response) = $this->rewardsGetDelegatorRewardsWithHttpInfo($address, $cycle, $select, $sort, $offset, $limit, $quote, $contentType);
+        list($response) = $this->rewardsGetDelegatorRewardsWithHttpInfo($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
         return $response;
     }
 
@@ -949,12 +955,12 @@ class RewardsApi
      * Get delegator cycle rewards
      *
      * @param  string $address Delegator address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetDelegatorRewards'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -964,15 +970,15 @@ class RewardsApi
     public function rewardsGetDelegatorRewardsWithHttpInfo(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetDelegatorRewards'][0]
     ): array
     {
-        $request = $this->rewardsGetDelegatorRewardsRequest($address, $cycle, $select, $sort, $offset, $limit, $quote, $contentType);
+        $request = $this->rewardsGetDelegatorRewardsRequest($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1089,12 +1095,12 @@ class RewardsApi
      * Get delegator cycle rewards
      *
      * @param  string $address Delegator address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetDelegatorRewards'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1103,15 +1109,15 @@ class RewardsApi
     public function rewardsGetDelegatorRewardsAsync(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetDelegatorRewards'][0]
     ): PromiseInterface
     {
-        return $this->rewardsGetDelegatorRewardsAsyncWithHttpInfo($address, $cycle, $select, $sort, $offset, $limit, $quote, $contentType)
+        return $this->rewardsGetDelegatorRewardsAsyncWithHttpInfo($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1125,12 +1131,12 @@ class RewardsApi
      * Get delegator cycle rewards
      *
      * @param  string $address Delegator address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetDelegatorRewards'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1139,16 +1145,16 @@ class RewardsApi
     public function rewardsGetDelegatorRewardsAsyncWithHttpInfo(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetDelegatorRewards'][0]
     ): PromiseInterface
     {
         $returnType = '\Tzkt\Model\DelegatorRewards[]';
-        $request = $this->rewardsGetDelegatorRewardsRequest($address, $cycle, $select, $sort, $offset, $limit, $quote, $contentType);
+        $request = $this->rewardsGetDelegatorRewardsRequest($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1190,12 +1196,12 @@ class RewardsApi
      * Create request for operation 'rewardsGetDelegatorRewards'
      *
      * @param  string $address Delegator address. (required)
-     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filters rewards by cycle. (optional)
-     * @param  \Tzkt\Model\AccountsGetSelectParameter|null $select Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. (optional)
-     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts cycle rewards by specified field. Supported fields: &#x60;cycle&#x60; (default, desc). (optional)
-     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped (optional)
-     * @param  int|null $limit Maximum number of items to return (optional, default to 100)
-     * @param  \Tzkt\Model\AccountsGetOperationsQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetDelegatorRewards'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1204,11 +1210,11 @@ class RewardsApi
     public function rewardsGetDelegatorRewardsRequest(
         string $address,
         ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
-        ?\Tzkt\Model\AccountsGetSelectParameter $select = null,
         ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
         ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
-        ?int $limit = 100,
-        ?\Tzkt\Model\AccountsGetOperationsQuoteParameter $quote = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
         string $contentType = self::contentTypes['rewardsGetDelegatorRewards'][0]
     ): Request
     {
@@ -1223,7 +1229,6 @@ class RewardsApi
 
 
 
-
         if ($limit !== null && $limit > 10000) {
             throw new InvalidArgumentException('invalid value for "$limit" when calling RewardsApi.rewardsGetDelegatorRewards, must be smaller than or equal to 10000.');
         }
@@ -1231,6 +1236,7 @@ class RewardsApi
             throw new InvalidArgumentException('invalid value for "$limit" when calling RewardsApi.rewardsGetDelegatorRewards, must be bigger than or equal to 0.');
         }
         
+
 
 
         $resourcePath = '/v1/rewards/delegators/{address}';
@@ -1245,15 +1251,6 @@ class RewardsApi
             $cycle,
             'cycle', // param base name
             '\Tzkt\Model\Int32Parameter', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $select,
-            'select', // param base name
-            '\Tzkt\Model\SelectParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1281,6 +1278,15 @@ class RewardsApi
             $limit,
             'limit', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $select,
+            'select', // param base name
+            '\Tzkt\Model\SelectionParameter', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1689,8 +1695,8 @@ class RewardsApi
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Rewards cycle (required)
-     * @param  int|null $offset Specifies how many delegators in the reward split should be skipped (optional, default to 0)
-     * @param  int|null $limit Maximum number of delegators to return (optional, default to 100)
+     * @param  int|null $offset Specifies how many delegators/stakers in the reward split should be skipped (optional, default to 0)
+     * @param  int|null $limit Maximum number of delegators/stakers to return (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplit'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -1716,8 +1722,8 @@ class RewardsApi
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Rewards cycle (required)
-     * @param  int|null $offset Specifies how many delegators in the reward split should be skipped (optional, default to 0)
-     * @param  int|null $limit Maximum number of delegators to return (optional, default to 100)
+     * @param  int|null $offset Specifies how many delegators/stakers in the reward split should be skipped (optional, default to 0)
+     * @param  int|null $limit Maximum number of delegators/stakers to return (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplit'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -1850,8 +1856,8 @@ class RewardsApi
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Rewards cycle (required)
-     * @param  int|null $offset Specifies how many delegators in the reward split should be skipped (optional, default to 0)
-     * @param  int|null $limit Maximum number of delegators to return (optional, default to 100)
+     * @param  int|null $offset Specifies how many delegators/stakers in the reward split should be skipped (optional, default to 0)
+     * @param  int|null $limit Maximum number of delegators/stakers to return (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplit'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1880,8 +1886,8 @@ class RewardsApi
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Rewards cycle (required)
-     * @param  int|null $offset Specifies how many delegators in the reward split should be skipped (optional, default to 0)
-     * @param  int|null $limit Maximum number of delegators to return (optional, default to 100)
+     * @param  int|null $offset Specifies how many delegators/stakers in the reward split should be skipped (optional, default to 0)
+     * @param  int|null $limit Maximum number of delegators/stakers to return (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplit'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1939,8 +1945,8 @@ class RewardsApi
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Rewards cycle (required)
-     * @param  int|null $offset Specifies how many delegators in the reward split should be skipped (optional, default to 0)
-     * @param  int|null $limit Maximum number of delegators to return (optional, default to 100)
+     * @param  int|null $offset Specifies how many delegators/stakers in the reward split should be skipped (optional, default to 0)
+     * @param  int|null $limit Maximum number of delegators/stakers to return (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplit'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -2077,52 +2083,52 @@ class RewardsApi
     }
 
     /**
-     * Operation rewardsGetRewardSplitDelegator
+     * Operation rewardsGetRewardSplitMember
      *
-     * Get reward split delegator
+     * Get reward split member
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Reward split cycle (required)
-     * @param  string $delegator Delegator address (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitDelegator'] to see the possible values for this operation
+     * @param  string $member Member address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitMember'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return \Tzkt\Model\SplitDelegator
+     * @return \Tzkt\Model\SplitMember
      */
-    public function rewardsGetRewardSplitDelegator(
+    public function rewardsGetRewardSplitMember(
         string $baker,
         int $cycle,
-        string $delegator,
-        string $contentType = self::contentTypes['rewardsGetRewardSplitDelegator'][0]
-    ): \Tzkt\Model\SplitDelegator
+        string $member,
+        string $contentType = self::contentTypes['rewardsGetRewardSplitMember'][0]
+    ): \Tzkt\Model\SplitMember
     {
-        list($response) = $this->rewardsGetRewardSplitDelegatorWithHttpInfo($baker, $cycle, $delegator, $contentType);
+        list($response) = $this->rewardsGetRewardSplitMemberWithHttpInfo($baker, $cycle, $member, $contentType);
         return $response;
     }
 
     /**
-     * Operation rewardsGetRewardSplitDelegatorWithHttpInfo
+     * Operation rewardsGetRewardSplitMemberWithHttpInfo
      *
-     * Get reward split delegator
+     * Get reward split member
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Reward split cycle (required)
-     * @param  string $delegator Delegator address (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitDelegator'] to see the possible values for this operation
+     * @param  string $member Member address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitMember'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return array of \Tzkt\Model\SplitDelegator, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Tzkt\Model\SplitMember, HTTP status code, HTTP response headers (array of strings)
      */
-    public function rewardsGetRewardSplitDelegatorWithHttpInfo(
+    public function rewardsGetRewardSplitMemberWithHttpInfo(
         string $baker,
         int $cycle,
-        string $delegator,
-        string $contentType = self::contentTypes['rewardsGetRewardSplitDelegator'][0]
+        string $member,
+        string $contentType = self::contentTypes['rewardsGetRewardSplitMember'][0]
     ): array
     {
-        $request = $this->rewardsGetRewardSplitDelegatorRequest($baker, $cycle, $delegator, $contentType);
+        $request = $this->rewardsGetRewardSplitMemberRequest($baker, $cycle, $member, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2149,11 +2155,11 @@ class RewardsApi
 
             switch($statusCode) {
                 case 200:
-                    if (in_array('\Tzkt\Model\SplitDelegator', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\Tzkt\Model\SplitMember', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Tzkt\Model\SplitDelegator' !== 'string') {
+                        if ('\Tzkt\Model\SplitMember' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2171,7 +2177,7 @@ class RewardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Tzkt\Model\SplitDelegator', []),
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\SplitMember', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2190,7 +2196,7 @@ class RewardsApi
                 );
             }
 
-            $returnType = '\Tzkt\Model\SplitDelegator';
+            $returnType = '\Tzkt\Model\SplitMember';
             if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2223,7 +2229,7 @@ class RewardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Tzkt\Model\SplitDelegator',
+                        '\Tzkt\Model\SplitMember',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2234,26 +2240,26 @@ class RewardsApi
     }
 
     /**
-     * Operation rewardsGetRewardSplitDelegatorAsync
+     * Operation rewardsGetRewardSplitMemberAsync
      *
-     * Get reward split delegator
+     * Get reward split member
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Reward split cycle (required)
-     * @param  string $delegator Delegator address (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitDelegator'] to see the possible values for this operation
+     * @param  string $member Member address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitMember'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function rewardsGetRewardSplitDelegatorAsync(
+    public function rewardsGetRewardSplitMemberAsync(
         string $baker,
         int $cycle,
-        string $delegator,
-        string $contentType = self::contentTypes['rewardsGetRewardSplitDelegator'][0]
+        string $member,
+        string $contentType = self::contentTypes['rewardsGetRewardSplitMember'][0]
     ): PromiseInterface
     {
-        return $this->rewardsGetRewardSplitDelegatorAsyncWithHttpInfo($baker, $cycle, $delegator, $contentType)
+        return $this->rewardsGetRewardSplitMemberAsyncWithHttpInfo($baker, $cycle, $member, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2262,27 +2268,27 @@ class RewardsApi
     }
 
     /**
-     * Operation rewardsGetRewardSplitDelegatorAsyncWithHttpInfo
+     * Operation rewardsGetRewardSplitMemberAsyncWithHttpInfo
      *
-     * Get reward split delegator
+     * Get reward split member
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Reward split cycle (required)
-     * @param  string $delegator Delegator address (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitDelegator'] to see the possible values for this operation
+     * @param  string $member Member address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitMember'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function rewardsGetRewardSplitDelegatorAsyncWithHttpInfo(
+    public function rewardsGetRewardSplitMemberAsyncWithHttpInfo(
         string $baker,
         int $cycle,
-        string $delegator,
-        string $contentType = self::contentTypes['rewardsGetRewardSplitDelegator'][0]
+        string $member,
+        string $contentType = self::contentTypes['rewardsGetRewardSplitMember'][0]
     ): PromiseInterface
     {
-        $returnType = '\Tzkt\Model\SplitDelegator';
-        $request = $this->rewardsGetRewardSplitDelegatorRequest($baker, $cycle, $delegator, $contentType);
+        $returnType = '\Tzkt\Model\SplitMember';
+        $request = $this->rewardsGetRewardSplitMemberRequest($baker, $cycle, $member, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2321,47 +2327,47 @@ class RewardsApi
     }
 
     /**
-     * Create request for operation 'rewardsGetRewardSplitDelegator'
+     * Create request for operation 'rewardsGetRewardSplitMember'
      *
      * @param  string $baker Baker address (required)
      * @param  int $cycle Reward split cycle (required)
-     * @param  string $delegator Delegator address (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitDelegator'] to see the possible values for this operation
+     * @param  string $member Member address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetRewardSplitMember'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function rewardsGetRewardSplitDelegatorRequest(
+    public function rewardsGetRewardSplitMemberRequest(
         string $baker,
         int $cycle,
-        string $delegator,
-        string $contentType = self::contentTypes['rewardsGetRewardSplitDelegator'][0]
+        string $member,
+        string $contentType = self::contentTypes['rewardsGetRewardSplitMember'][0]
     ): Request
     {
 
         // verify the required parameter 'baker' is set
         if ($baker === null || (is_array($baker) && count($baker) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $baker when calling rewardsGetRewardSplitDelegator'
+                'Missing the required parameter $baker when calling rewardsGetRewardSplitMember'
             );
         }
 
         // verify the required parameter 'cycle' is set
         if ($cycle === null || (is_array($cycle) && count($cycle) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $cycle when calling rewardsGetRewardSplitDelegator'
+                'Missing the required parameter $cycle when calling rewardsGetRewardSplitMember'
             );
         }
 
-        // verify the required parameter 'delegator' is set
-        if ($delegator === null || (is_array($delegator) && count($delegator) === 0)) {
+        // verify the required parameter 'member' is set
+        if ($member === null || (is_array($member) && count($member) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $delegator when calling rewardsGetRewardSplitDelegator'
+                'Missing the required parameter $member when calling rewardsGetRewardSplitMember'
             );
         }
 
 
-        $resourcePath = '/v1/rewards/split/{baker}/{cycle}/{delegator}';
+        $resourcePath = '/v1/rewards/split/{baker}/{cycle}/{member}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2387,10 +2393,782 @@ class RewardsApi
             );
         }
         // path params
-        if ($delegator !== null) {
+        if ($member !== null) {
             $resourcePath = str_replace(
-                '{' . 'delegator' . '}',
-                ObjectSerializer::toPathValue($delegator),
+                '{' . 'member' . '}',
+                ObjectSerializer::toPathValue($member),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation rewardsGetStakerRewards
+     *
+     * Get staker cycle rewards
+     *
+     * @param  string $address Staker address. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewards'] to see the possible values for this operation
+     *
+     * @throws ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws InvalidArgumentException
+     * @return \Tzkt\Model\StakerRewards[]
+     */
+    public function rewardsGetStakerRewards(
+        string $address,
+        ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
+        ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
+        ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
+        string $contentType = self::contentTypes['rewardsGetStakerRewards'][0]
+    ): array
+    {
+        list($response) = $this->rewardsGetStakerRewardsWithHttpInfo($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation rewardsGetStakerRewardsWithHttpInfo
+     *
+     * Get staker cycle rewards
+     *
+     * @param  string $address Staker address. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewards'] to see the possible values for this operation
+     *
+     * @throws ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws InvalidArgumentException
+     * @return array of \Tzkt\Model\StakerRewards[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function rewardsGetStakerRewardsWithHttpInfo(
+        string $address,
+        ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
+        ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
+        ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
+        string $contentType = self::contentTypes['rewardsGetStakerRewards'][0]
+    ): array
+    {
+        $request = $this->rewardsGetStakerRewardsRequest($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if (in_array('\Tzkt\Model\StakerRewards[]', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Tzkt\Model\StakerRewards[]' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Tzkt\Model\StakerRewards[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Tzkt\Model\StakerRewards[]';
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Tzkt\Model\StakerRewards[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation rewardsGetStakerRewardsAsync
+     *
+     * Get staker cycle rewards
+     *
+     * @param  string $address Staker address. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewards'] to see the possible values for this operation
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function rewardsGetStakerRewardsAsync(
+        string $address,
+        ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
+        ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
+        ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
+        string $contentType = self::contentTypes['rewardsGetStakerRewards'][0]
+    ): PromiseInterface
+    {
+        return $this->rewardsGetStakerRewardsAsyncWithHttpInfo($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation rewardsGetStakerRewardsAsyncWithHttpInfo
+     *
+     * Get staker cycle rewards
+     *
+     * @param  string $address Staker address. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewards'] to see the possible values for this operation
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function rewardsGetStakerRewardsAsyncWithHttpInfo(
+        string $address,
+        ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
+        ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
+        ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
+        string $contentType = self::contentTypes['rewardsGetStakerRewards'][0]
+    ): PromiseInterface
+    {
+        $returnType = '\Tzkt\Model\StakerRewards[]';
+        $request = $this->rewardsGetStakerRewardsRequest($address, $cycle, $sort, $offset, $limit, $select, $quote, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'rewardsGetStakerRewards'
+     *
+     * @param  string $address Staker address. (required)
+     * @param  \Tzkt\Model\AccountsGetIdParameter|null $cycle Filter by cycle. (optional)
+     * @param  \Tzkt\Model\AccountsGetSortParameter|null $sort Sorts items (asc or desc) by the specified field. You can see what fields can be used for sorting in the response description, below.   Click on the parameter to expand more details. (optional)
+     * @param  \Tzkt\Model\AccountsGetOffsetParameter|null $offset Specifies which or how many items should be skipped.   Click on the parameter to expand more details. (optional)
+     * @param  int|null $limit Maximum number of items to return. (optional)
+     * @param  \Tzkt\Model\BigMapsGetBigMapKeysSelectParameter|null $select Specify a comma-separated list of fields to include into response or leave it undefined to get default set of fields. This parameter accepts values of the following format: &#x60;{field}{path?}{as alias?}&#x60;, so you can do deep selection (for example, &#x60;?select&#x3D;balance,token.metadata.symbol as token,...&#x60;).   Note, if you select just one field, the response will be flatten into a simple array of values.   Click on the parameter to expand the details. (optional)
+     * @param  \Tzkt\Model\AccountsGetActivityQuoteParameter|null $quote Comma-separated list of ticker symbols to inject historical prices into response (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewards'] to see the possible values for this operation
+     *
+     * @throws InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function rewardsGetStakerRewardsRequest(
+        string $address,
+        ?\Tzkt\Model\AccountsGetIdParameter $cycle = null,
+        ?\Tzkt\Model\AccountsGetSortParameter $sort = null,
+        ?\Tzkt\Model\AccountsGetOffsetParameter $offset = null,
+        ?int $limit = null,
+        ?\Tzkt\Model\BigMapsGetBigMapKeysSelectParameter $select = null,
+        ?\Tzkt\Model\AccountsGetActivityQuoteParameter $quote = null,
+        string $contentType = self::contentTypes['rewardsGetStakerRewards'][0]
+    ): Request
+    {
+
+        // verify the required parameter 'address' is set
+        if ($address === null || (is_array($address) && count($address) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $address when calling rewardsGetStakerRewards'
+            );
+        }
+
+
+
+
+        if ($limit !== null && $limit > 10000) {
+            throw new InvalidArgumentException('invalid value for "$limit" when calling RewardsApi.rewardsGetStakerRewards, must be smaller than or equal to 10000.');
+        }
+        if ($limit !== null && $limit < 0) {
+            throw new InvalidArgumentException('invalid value for "$limit" when calling RewardsApi.rewardsGetStakerRewards, must be bigger than or equal to 0.');
+        }
+        
+
+
+
+        $resourcePath = '/v1/rewards/stakers/{address}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cycle,
+            'cycle', // param base name
+            '\Tzkt\Model\Int32Parameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort,
+            'sort', // param base name
+            '\Tzkt\Model\SortParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            '\Tzkt\Model\OffsetParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $select,
+            'select', // param base name
+            '\Tzkt\Model\SelectionParameter', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $quote,
+            'quote', // param base name
+            '\Tzkt\Model\Symbols', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($address !== null) {
+            $resourcePath = str_replace(
+                '{' . 'address' . '}',
+                ObjectSerializer::toPathValue($address),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation rewardsGetStakerRewardsCount
+     *
+     * Get staker cycle rewards count
+     *
+     * @param  string $address Staker address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewardsCount'] to see the possible values for this operation
+     *
+     * @throws ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws InvalidArgumentException
+     * @return int
+     */
+    public function rewardsGetStakerRewardsCount(
+        string $address,
+        string $contentType = self::contentTypes['rewardsGetStakerRewardsCount'][0]
+    ): int
+    {
+        list($response) = $this->rewardsGetStakerRewardsCountWithHttpInfo($address, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation rewardsGetStakerRewardsCountWithHttpInfo
+     *
+     * Get staker cycle rewards count
+     *
+     * @param  string $address Staker address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewardsCount'] to see the possible values for this operation
+     *
+     * @throws ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws InvalidArgumentException
+     * @return array of int, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function rewardsGetStakerRewardsCountWithHttpInfo(
+        string $address,
+        string $contentType = self::contentTypes['rewardsGetStakerRewardsCount'][0]
+    ): array
+    {
+        $request = $this->rewardsGetStakerRewardsCountRequest($address, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if (in_array('int', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('int' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'int', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = 'int';
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'int',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation rewardsGetStakerRewardsCountAsync
+     *
+     * Get staker cycle rewards count
+     *
+     * @param  string $address Staker address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewardsCount'] to see the possible values for this operation
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function rewardsGetStakerRewardsCountAsync(
+        string $address,
+        string $contentType = self::contentTypes['rewardsGetStakerRewardsCount'][0]
+    ): PromiseInterface
+    {
+        return $this->rewardsGetStakerRewardsCountAsyncWithHttpInfo($address, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation rewardsGetStakerRewardsCountAsyncWithHttpInfo
+     *
+     * Get staker cycle rewards count
+     *
+     * @param  string $address Staker address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewardsCount'] to see the possible values for this operation
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function rewardsGetStakerRewardsCountAsyncWithHttpInfo(
+        string $address,
+        string $contentType = self::contentTypes['rewardsGetStakerRewardsCount'][0]
+    ): PromiseInterface
+    {
+        $returnType = 'int';
+        $request = $this->rewardsGetStakerRewardsCountRequest($address, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'rewardsGetStakerRewardsCount'
+     *
+     * @param  string $address Staker address (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rewardsGetStakerRewardsCount'] to see the possible values for this operation
+     *
+     * @throws InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function rewardsGetStakerRewardsCountRequest(
+        string $address,
+        string $contentType = self::contentTypes['rewardsGetStakerRewardsCount'][0]
+    ): Request
+    {
+
+        // verify the required parameter 'address' is set
+        if ($address === null || (is_array($address) && count($address) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $address when calling rewardsGetStakerRewardsCount'
+            );
+        }
+
+
+        $resourcePath = '/v1/rewards/stakers/{address}/count';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($address !== null) {
+            $resourcePath = str_replace(
+                '{' . 'address' . '}',
+                ObjectSerializer::toPathValue($address),
                 $resourcePath
             );
         }

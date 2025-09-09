@@ -8,7 +8,8 @@
     "php",
     "sdk",
     "rest",
-    "api"
+    "api",
+    "tezos"
   ],
   "homepage": "https://openapi-generator.tech",
   "license": "MIT",
