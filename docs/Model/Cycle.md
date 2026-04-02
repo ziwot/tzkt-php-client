@@ -14,12 +14,14 @@ Name | Type | Description | Notes
 **total_bakers** | **int** | Total number of all active in this cycle bakers | [optional]
 **total_baking_power** | **int** | Total baking power of all active in this cycle bakers | [optional]
 **block_reward** | **int** | Fixed reward paid to the block payload proposer in this cycle (micro tez) | [optional]
-**block_bonus_per_slot** | **int** | Bonus reward paid to the block producer in this cycle (micro tez) | [optional]
-**attestation_reward_per_slot** | **int** | Reward for attestation in this cycle (micro tez) | [optional]
+**block_bonus_per_block** | **int** | Bonus reward paid to the block producer in this cycle (micro tez) | [optional]
+**attestation_reward_per_block** | **int** | Reward for attestation in this cycle (micro tez) | [optional]
 **nonce_revelation_reward** | **int** | Reward for seed nonce revelation in this cycle (micro tez) | [optional]
 **vdf_revelation_reward** | **int** | Reward for vdf revelation in this cycle (micro tez) | [optional]
 **dal_attestation_reward_per_shard** | **int** | Reward for dal attestation in this cycle (micro tez) | [optional]
 **quote** | [**\Tzkt\Model\CycleQuote**](CycleQuote.md) |  | [optional]
+**block_bonus_per_slot** | **int** | **DEPRECATED** | [optional]
+**attestation_reward_per_slot** | **int** | **DEPRECATED** | [optional]
 **endorsement_reward_per_slot** | **int** | **DEPRECATED** | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

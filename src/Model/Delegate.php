@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - X: https://x.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Shadownet: `https://api.shadownet.tzkt.io/` ([view docs](https://api.shadownet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))  - Tallinnnet: `https://api.tallinnnet.tzkt.io/` ([view docs](https://api.tallinnnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.16.0
+ * The version of the OpenAPI document: 1.17.1
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -62,6 +62,8 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'id' => 'int',
         'type' => 'string',
         'address' => 'string',
+        'consensus_address' => 'string',
+        'companion_address' => 'string',
         'active' => 'bool',
         'alias' => 'string',
         'public_key' => 'string',
@@ -86,8 +88,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'activation_time' => '\DateTime',
         'deactivation_level' => 'int',
         'deactivation_time' => '\DateTime',
-        'staking_balance' => 'int',
-        'delegated_balance' => 'int',
+        'baking_power' => 'int',
+        'voting_power' => 'int',
+        'own_delegated_balance' => 'int',
+        'external_delegated_balance' => 'int',
         'num_contracts' => 'int',
         'rollups_count' => 'int',
         'smart_rollups_count' => 'int',
@@ -151,6 +155,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'last_activity_time' => '\DateTime',
         'extras' => 'mixed',
         'software' => '\Tzkt\Model\DelegateAllOfSoftware',
+        'software_update_level' => 'int',
+        'software_update_time' => '\DateTime',
+        'staking_balance' => 'int',
+        'delegated_balance' => 'int',
         'update_consensus_key_count' => 'int',
         'num_endorsements' => 'int',
         'num_preendorsements' => 'int',
@@ -168,6 +176,8 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'id' => 'int32',
         'type' => null,
         'address' => null,
+        'consensus_address' => null,
+        'companion_address' => null,
         'active' => null,
         'alias' => null,
         'public_key' => null,
@@ -192,8 +202,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'activation_time' => 'date-time',
         'deactivation_level' => 'int32',
         'deactivation_time' => 'date-time',
-        'staking_balance' => 'int64',
-        'delegated_balance' => 'int64',
+        'baking_power' => 'int64',
+        'voting_power' => 'int64',
+        'own_delegated_balance' => 'int64',
+        'external_delegated_balance' => 'int64',
         'num_contracts' => 'int32',
         'rollups_count' => 'int32',
         'smart_rollups_count' => 'int32',
@@ -257,6 +269,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'last_activity_time' => 'date-time',
         'extras' => null,
         'software' => null,
+        'software_update_level' => 'int32',
+        'software_update_time' => 'date-time',
+        'staking_balance' => 'int64',
+        'delegated_balance' => 'int64',
         'update_consensus_key_count' => 'int32',
         'num_endorsements' => 'int32',
         'num_preendorsements' => 'int32',
@@ -274,6 +290,8 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'id' => false,
         'type' => false,
         'address' => false,
+        'consensus_address' => true,
+        'companion_address' => true,
         'active' => false,
         'alias' => true,
         'public_key' => false,
@@ -298,8 +316,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'activation_time' => false,
         'deactivation_level' => true,
         'deactivation_time' => true,
-        'staking_balance' => false,
-        'delegated_balance' => false,
+        'baking_power' => false,
+        'voting_power' => false,
+        'own_delegated_balance' => false,
+        'external_delegated_balance' => false,
         'num_contracts' => false,
         'rollups_count' => false,
         'smart_rollups_count' => false,
@@ -363,6 +383,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'last_activity_time' => false,
         'extras' => true,
         'software' => true,
+        'software_update_level' => true,
+        'software_update_time' => true,
+        'staking_balance' => false,
+        'delegated_balance' => false,
         'update_consensus_key_count' => false,
         'num_endorsements' => false,
         'num_preendorsements' => false,
@@ -460,6 +484,8 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'id' => 'id',
         'type' => 'type',
         'address' => 'address',
+        'consensus_address' => 'consensusAddress',
+        'companion_address' => 'companionAddress',
         'active' => 'active',
         'alias' => 'alias',
         'public_key' => 'publicKey',
@@ -484,8 +510,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'activation_time' => 'activationTime',
         'deactivation_level' => 'deactivationLevel',
         'deactivation_time' => 'deactivationTime',
-        'staking_balance' => 'stakingBalance',
-        'delegated_balance' => 'delegatedBalance',
+        'baking_power' => 'bakingPower',
+        'voting_power' => 'votingPower',
+        'own_delegated_balance' => 'ownDelegatedBalance',
+        'external_delegated_balance' => 'externalDelegatedBalance',
         'num_contracts' => 'numContracts',
         'rollups_count' => 'rollupsCount',
         'smart_rollups_count' => 'smartRollupsCount',
@@ -549,6 +577,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'last_activity_time' => 'lastActivityTime',
         'extras' => 'extras',
         'software' => 'software',
+        'software_update_level' => 'softwareUpdateLevel',
+        'software_update_time' => 'softwareUpdateTime',
+        'staking_balance' => 'stakingBalance',
+        'delegated_balance' => 'delegatedBalance',
         'update_consensus_key_count' => 'updateConsensusKeyCount',
         'num_endorsements' => 'numEndorsements',
         'num_preendorsements' => 'numPreendorsements',
@@ -566,6 +598,8 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'id' => 'setId',
         'type' => 'setType',
         'address' => 'setAddress',
+        'consensus_address' => 'setConsensusAddress',
+        'companion_address' => 'setCompanionAddress',
         'active' => 'setActive',
         'alias' => 'setAlias',
         'public_key' => 'setPublicKey',
@@ -590,8 +624,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'activation_time' => 'setActivationTime',
         'deactivation_level' => 'setDeactivationLevel',
         'deactivation_time' => 'setDeactivationTime',
-        'staking_balance' => 'setStakingBalance',
-        'delegated_balance' => 'setDelegatedBalance',
+        'baking_power' => 'setBakingPower',
+        'voting_power' => 'setVotingPower',
+        'own_delegated_balance' => 'setOwnDelegatedBalance',
+        'external_delegated_balance' => 'setExternalDelegatedBalance',
         'num_contracts' => 'setNumContracts',
         'rollups_count' => 'setRollupsCount',
         'smart_rollups_count' => 'setSmartRollupsCount',
@@ -655,6 +691,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'last_activity_time' => 'setLastActivityTime',
         'extras' => 'setExtras',
         'software' => 'setSoftware',
+        'software_update_level' => 'setSoftwareUpdateLevel',
+        'software_update_time' => 'setSoftwareUpdateTime',
+        'staking_balance' => 'setStakingBalance',
+        'delegated_balance' => 'setDelegatedBalance',
         'update_consensus_key_count' => 'setUpdateConsensusKeyCount',
         'num_endorsements' => 'setNumEndorsements',
         'num_preendorsements' => 'setNumPreendorsements',
@@ -672,6 +712,8 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'id' => 'getId',
         'type' => 'getType',
         'address' => 'getAddress',
+        'consensus_address' => 'getConsensusAddress',
+        'companion_address' => 'getCompanionAddress',
         'active' => 'getActive',
         'alias' => 'getAlias',
         'public_key' => 'getPublicKey',
@@ -696,8 +738,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'activation_time' => 'getActivationTime',
         'deactivation_level' => 'getDeactivationLevel',
         'deactivation_time' => 'getDeactivationTime',
-        'staking_balance' => 'getStakingBalance',
-        'delegated_balance' => 'getDelegatedBalance',
+        'baking_power' => 'getBakingPower',
+        'voting_power' => 'getVotingPower',
+        'own_delegated_balance' => 'getOwnDelegatedBalance',
+        'external_delegated_balance' => 'getExternalDelegatedBalance',
         'num_contracts' => 'getNumContracts',
         'rollups_count' => 'getRollupsCount',
         'smart_rollups_count' => 'getSmartRollupsCount',
@@ -761,6 +805,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         'last_activity_time' => 'getLastActivityTime',
         'extras' => 'getExtras',
         'software' => 'getSoftware',
+        'software_update_level' => 'getSoftwareUpdateLevel',
+        'software_update_time' => 'getSoftwareUpdateTime',
+        'staking_balance' => 'getStakingBalance',
+        'delegated_balance' => 'getDelegatedBalance',
         'update_consensus_key_count' => 'getUpdateConsensusKeyCount',
         'num_endorsements' => 'getNumEndorsements',
         'num_preendorsements' => 'getNumPreendorsements',
@@ -828,6 +876,8 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
+        $this->setIfExists('consensus_address', $data ?? [], null);
+        $this->setIfExists('companion_address', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
         $this->setIfExists('alias', $data ?? [], null);
         $this->setIfExists('public_key', $data ?? [], null);
@@ -852,8 +902,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('activation_time', $data ?? [], null);
         $this->setIfExists('deactivation_level', $data ?? [], null);
         $this->setIfExists('deactivation_time', $data ?? [], null);
-        $this->setIfExists('staking_balance', $data ?? [], null);
-        $this->setIfExists('delegated_balance', $data ?? [], null);
+        $this->setIfExists('baking_power', $data ?? [], null);
+        $this->setIfExists('voting_power', $data ?? [], null);
+        $this->setIfExists('own_delegated_balance', $data ?? [], null);
+        $this->setIfExists('external_delegated_balance', $data ?? [], null);
         $this->setIfExists('num_contracts', $data ?? [], null);
         $this->setIfExists('rollups_count', $data ?? [], null);
         $this->setIfExists('smart_rollups_count', $data ?? [], null);
@@ -917,6 +969,10 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('last_activity_time', $data ?? [], null);
         $this->setIfExists('extras', $data ?? [], null);
         $this->setIfExists('software', $data ?? [], null);
+        $this->setIfExists('software_update_level', $data ?? [], null);
+        $this->setIfExists('software_update_time', $data ?? [], null);
+        $this->setIfExists('staking_balance', $data ?? [], null);
+        $this->setIfExists('delegated_balance', $data ?? [], null);
         $this->setIfExists('update_consensus_key_count', $data ?? [], null);
         $this->setIfExists('num_endorsements', $data ?? [], null);
         $this->setIfExists('num_preendorsements', $data ?? [], null);
@@ -1034,7 +1090,7 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets address
      *
-     * @param string|null $address Public key hash of the delegate (baker)
+     * @param string|null $address Public key hash of the delegate's main key
      *
      * @return $this
      */
@@ -1044,6 +1100,74 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable address cannot be null');
         }
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets consensus_address
+     *
+     * @return string|null
+     */
+    public function getConsensusAddress(): ?string
+    {
+        return $this->container['consensus_address'];
+    }
+
+    /**
+     * Sets consensus_address
+     *
+     * @param string|null $consensus_address Public key hash of the delegate's consensus key
+     *
+     * @return $this
+     */
+    public function setConsensusAddress(?string $consensus_address): static
+    {
+        if (is_null($consensus_address)) {
+            array_push($this->openAPINullablesSetToNull, 'consensus_address');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('consensus_address', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['consensus_address'] = $consensus_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets companion_address
+     *
+     * @return string|null
+     */
+    public function getCompanionAddress(): ?string
+    {
+        return $this->container['companion_address'];
+    }
+
+    /**
+     * Sets companion_address
+     *
+     * @param string|null $companion_address Public key hash of the delegate's companion key
+     *
+     * @return $this
+     */
+    public function setCompanionAddress(?string $companion_address): static
+    {
+        if (is_null($companion_address)) {
+            array_push($this->openAPINullablesSetToNull, 'companion_address');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('companion_address', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['companion_address'] = $companion_address;
 
         return $this;
     }
@@ -1753,55 +1877,109 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets staking_balance
+     * Gets baking_power
      *
      * @return int|null
      */
-    public function getStakingBalance(): ?int
+    public function getBakingPower(): ?int
     {
-        return $this->container['staking_balance'];
+        return $this->container['baking_power'];
     }
 
     /**
-     * Sets staking_balance
+     * Sets baking_power
      *
-     * @param int|null $staking_balance Baker's own balance plus delegated balance (micro tez)
+     * @param int|null $baking_power Current baking power
      *
      * @return $this
      */
-    public function setStakingBalance(?int $staking_balance): static
+    public function setBakingPower(?int $baking_power): static
     {
-        if (is_null($staking_balance)) {
-            throw new InvalidArgumentException('non-nullable staking_balance cannot be null');
+        if (is_null($baking_power)) {
+            throw new InvalidArgumentException('non-nullable baking_power cannot be null');
         }
-        $this->container['staking_balance'] = $staking_balance;
+        $this->container['baking_power'] = $baking_power;
 
         return $this;
     }
 
     /**
-     * Gets delegated_balance
+     * Gets voting_power
      *
      * @return int|null
      */
-    public function getDelegatedBalance(): ?int
+    public function getVotingPower(): ?int
     {
-        return $this->container['delegated_balance'];
+        return $this->container['voting_power'];
     }
 
     /**
-     * Sets delegated_balance
+     * Sets voting_power
      *
-     * @param int|null $delegated_balance Total amount delegated to the baker (micro tez)
+     * @param int|null $voting_power Current voting power
      *
      * @return $this
      */
-    public function setDelegatedBalance(?int $delegated_balance): static
+    public function setVotingPower(?int $voting_power): static
     {
-        if (is_null($delegated_balance)) {
-            throw new InvalidArgumentException('non-nullable delegated_balance cannot be null');
+        if (is_null($voting_power)) {
+            throw new InvalidArgumentException('non-nullable voting_power cannot be null');
         }
-        $this->container['delegated_balance'] = $delegated_balance;
+        $this->container['voting_power'] = $voting_power;
+
+        return $this;
+    }
+
+    /**
+     * Gets own_delegated_balance
+     *
+     * @return int|null
+     */
+    public function getOwnDelegatedBalance(): ?int
+    {
+        return $this->container['own_delegated_balance'];
+    }
+
+    /**
+     * Sets own_delegated_balance
+     *
+     * @param int|null $own_delegated_balance Amount delegated from the own balance (micro tez).
+     *
+     * @return $this
+     */
+    public function setOwnDelegatedBalance(?int $own_delegated_balance): static
+    {
+        if (is_null($own_delegated_balance)) {
+            throw new InvalidArgumentException('non-nullable own_delegated_balance cannot be null');
+        }
+        $this->container['own_delegated_balance'] = $own_delegated_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_delegated_balance
+     *
+     * @return int|null
+     */
+    public function getExternalDelegatedBalance(): ?int
+    {
+        return $this->container['external_delegated_balance'];
+    }
+
+    /**
+     * Sets external_delegated_balance
+     *
+     * @param int|null $external_delegated_balance Amount delegated from the external delegators (micro tez).
+     *
+     * @return $this
+     */
+    public function setExternalDelegatedBalance(?int $external_delegated_balance): static
+    {
+        if (is_null($external_delegated_balance)) {
+            throw new InvalidArgumentException('non-nullable external_delegated_balance cannot be null');
+        }
+        $this->container['external_delegated_balance'] = $external_delegated_balance;
 
         return $this;
     }
@@ -3517,6 +3695,128 @@ class Delegate implements ModelInterface, ArrayAccess, JsonSerializable
             }
         }
         $this->container['software'] = $software;
+
+        return $this;
+    }
+
+    /**
+     * Gets software_update_level
+     *
+     * @return int|null
+     */
+    public function getSoftwareUpdateLevel(): ?int
+    {
+        return $this->container['software_update_level'];
+    }
+
+    /**
+     * Sets software_update_level
+     *
+     * @param int|null $software_update_level Level of the first block baked by the baker with the current software version
+     *
+     * @return $this
+     */
+    public function setSoftwareUpdateLevel(?int $software_update_level): static
+    {
+        if (is_null($software_update_level)) {
+            array_push($this->openAPINullablesSetToNull, 'software_update_level');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('software_update_level', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['software_update_level'] = $software_update_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets software_update_time
+     *
+     * @return \DateTime|null
+     */
+    public function getSoftwareUpdateTime(): ?\DateTime
+    {
+        return $this->container['software_update_time'];
+    }
+
+    /**
+     * Sets software_update_time
+     *
+     * @param \DateTime|null $software_update_time Datetime of the first block baked by the baker with the current software version
+     *
+     * @return $this
+     */
+    public function setSoftwareUpdateTime(?\DateTime $software_update_time): static
+    {
+        if (is_null($software_update_time)) {
+            array_push($this->openAPINullablesSetToNull, 'software_update_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('software_update_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['software_update_time'] = $software_update_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets staking_balance
+     *
+     * @return int|null
+     */
+    public function getStakingBalance(): ?int
+    {
+        return $this->container['staking_balance'];
+    }
+
+    /**
+     * Sets staking_balance
+     *
+     * @param int|null $staking_balance **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setStakingBalance(?int $staking_balance): static
+    {
+        if (is_null($staking_balance)) {
+            throw new InvalidArgumentException('non-nullable staking_balance cannot be null');
+        }
+        $this->container['staking_balance'] = $staking_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets delegated_balance
+     *
+     * @return int|null
+     */
+    public function getDelegatedBalance(): ?int
+    {
+        return $this->container['delegated_balance'];
+    }
+
+    /**
+     * Sets delegated_balance
+     *
+     * @param int|null $delegated_balance **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setDelegatedBalance(?int $delegated_balance): static
+    {
+        if (is_null($delegated_balance)) {
+            throw new InvalidArgumentException('non-nullable delegated_balance cannot be null');
+        }
+        $this->container['delegated_balance'] = $delegated_balance;
 
         return $this;
     }

@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - X: https://x.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Shadownet: `https://api.shadownet.tzkt.io/` ([view docs](https://api.shadownet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))  - Tallinnnet: `https://api.tallinnnet.tzkt.io/` ([view docs](https://api.tallinnnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.16.0
+ * The version of the OpenAPI document: 1.17.1
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -75,6 +75,15 @@ class Statistics implements ModelInterface, ArrayAccess, JsonSerializable
         'total_rollup_bonds' => 'int',
         'total_smart_rollup_bonds' => 'int',
         'total_lost' => 'int',
+        'total_own_staked' => 'int',
+        'total_own_delegated' => 'int',
+        'total_external_staked' => 'int',
+        'total_external_delegated' => 'int',
+        'total_baking_power' => 'int',
+        'total_voting_power' => 'int',
+        'total_bakers' => 'int',
+        'total_stakers' => 'int',
+        'total_delegators' => 'int',
         'quote' => '\Tzkt\Model\StatisticsQuote'
     ];
 
@@ -100,6 +109,15 @@ class Statistics implements ModelInterface, ArrayAccess, JsonSerializable
         'total_rollup_bonds' => 'int64',
         'total_smart_rollup_bonds' => 'int64',
         'total_lost' => 'int64',
+        'total_own_staked' => 'int64',
+        'total_own_delegated' => 'int64',
+        'total_external_staked' => 'int64',
+        'total_external_delegated' => 'int64',
+        'total_baking_power' => 'int64',
+        'total_voting_power' => 'int64',
+        'total_bakers' => 'int32',
+        'total_stakers' => 'int32',
+        'total_delegators' => 'int32',
         'quote' => null
     ];
 
@@ -125,6 +143,15 @@ class Statistics implements ModelInterface, ArrayAccess, JsonSerializable
         'total_rollup_bonds' => false,
         'total_smart_rollup_bonds' => false,
         'total_lost' => false,
+        'total_own_staked' => false,
+        'total_own_delegated' => false,
+        'total_external_staked' => false,
+        'total_external_delegated' => false,
+        'total_baking_power' => false,
+        'total_voting_power' => false,
+        'total_bakers' => false,
+        'total_stakers' => false,
+        'total_delegators' => false,
         'quote' => true
     ];
 
@@ -230,6 +257,15 @@ class Statistics implements ModelInterface, ArrayAccess, JsonSerializable
         'total_rollup_bonds' => 'totalRollupBonds',
         'total_smart_rollup_bonds' => 'totalSmartRollupBonds',
         'total_lost' => 'totalLost',
+        'total_own_staked' => 'totalOwnStaked',
+        'total_own_delegated' => 'totalOwnDelegated',
+        'total_external_staked' => 'totalExternalStaked',
+        'total_external_delegated' => 'totalExternalDelegated',
+        'total_baking_power' => 'totalBakingPower',
+        'total_voting_power' => 'totalVotingPower',
+        'total_bakers' => 'totalBakers',
+        'total_stakers' => 'totalStakers',
+        'total_delegators' => 'totalDelegators',
         'quote' => 'quote'
     ];
 
@@ -255,6 +291,15 @@ class Statistics implements ModelInterface, ArrayAccess, JsonSerializable
         'total_rollup_bonds' => 'setTotalRollupBonds',
         'total_smart_rollup_bonds' => 'setTotalSmartRollupBonds',
         'total_lost' => 'setTotalLost',
+        'total_own_staked' => 'setTotalOwnStaked',
+        'total_own_delegated' => 'setTotalOwnDelegated',
+        'total_external_staked' => 'setTotalExternalStaked',
+        'total_external_delegated' => 'setTotalExternalDelegated',
+        'total_baking_power' => 'setTotalBakingPower',
+        'total_voting_power' => 'setTotalVotingPower',
+        'total_bakers' => 'setTotalBakers',
+        'total_stakers' => 'setTotalStakers',
+        'total_delegators' => 'setTotalDelegators',
         'quote' => 'setQuote'
     ];
 
@@ -280,6 +325,15 @@ class Statistics implements ModelInterface, ArrayAccess, JsonSerializable
         'total_rollup_bonds' => 'getTotalRollupBonds',
         'total_smart_rollup_bonds' => 'getTotalSmartRollupBonds',
         'total_lost' => 'getTotalLost',
+        'total_own_staked' => 'getTotalOwnStaked',
+        'total_own_delegated' => 'getTotalOwnDelegated',
+        'total_external_staked' => 'getTotalExternalStaked',
+        'total_external_delegated' => 'getTotalExternalDelegated',
+        'total_baking_power' => 'getTotalBakingPower',
+        'total_voting_power' => 'getTotalVotingPower',
+        'total_bakers' => 'getTotalBakers',
+        'total_stakers' => 'getTotalStakers',
+        'total_delegators' => 'getTotalDelegators',
         'quote' => 'getQuote'
     ];
 
@@ -355,6 +409,15 @@ class Statistics implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('total_rollup_bonds', $data ?? [], null);
         $this->setIfExists('total_smart_rollup_bonds', $data ?? [], null);
         $this->setIfExists('total_lost', $data ?? [], null);
+        $this->setIfExists('total_own_staked', $data ?? [], null);
+        $this->setIfExists('total_own_delegated', $data ?? [], null);
+        $this->setIfExists('total_external_staked', $data ?? [], null);
+        $this->setIfExists('total_external_delegated', $data ?? [], null);
+        $this->setIfExists('total_baking_power', $data ?? [], null);
+        $this->setIfExists('total_voting_power', $data ?? [], null);
+        $this->setIfExists('total_bakers', $data ?? [], null);
+        $this->setIfExists('total_stakers', $data ?? [], null);
+        $this->setIfExists('total_delegators', $data ?? [], null);
         $this->setIfExists('quote', $data ?? [], null);
     }
 
@@ -842,6 +905,249 @@ class Statistics implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable total_lost cannot be null');
         }
         $this->container['total_lost'] = $total_lost;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_own_staked
+     *
+     * @return int|null
+     */
+    public function getTotalOwnStaked(): ?int
+    {
+        return $this->container['total_own_staked'];
+    }
+
+    /**
+     * Sets total_own_staked
+     *
+     * @param int|null $total_own_staked Total active bakers' own staked balance
+     *
+     * @return $this
+     */
+    public function setTotalOwnStaked(?int $total_own_staked): static
+    {
+        if (is_null($total_own_staked)) {
+            throw new InvalidArgumentException('non-nullable total_own_staked cannot be null');
+        }
+        $this->container['total_own_staked'] = $total_own_staked;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_own_delegated
+     *
+     * @return int|null
+     */
+    public function getTotalOwnDelegated(): ?int
+    {
+        return $this->container['total_own_delegated'];
+    }
+
+    /**
+     * Sets total_own_delegated
+     *
+     * @param int|null $total_own_delegated Total active bakers' own delegated balance
+     *
+     * @return $this
+     */
+    public function setTotalOwnDelegated(?int $total_own_delegated): static
+    {
+        if (is_null($total_own_delegated)) {
+            throw new InvalidArgumentException('non-nullable total_own_delegated cannot be null');
+        }
+        $this->container['total_own_delegated'] = $total_own_delegated;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_external_staked
+     *
+     * @return int|null
+     */
+    public function getTotalExternalStaked(): ?int
+    {
+        return $this->container['total_external_staked'];
+    }
+
+    /**
+     * Sets total_external_staked
+     *
+     * @param int|null $total_external_staked Total active bakers' external staked balance
+     *
+     * @return $this
+     */
+    public function setTotalExternalStaked(?int $total_external_staked): static
+    {
+        if (is_null($total_external_staked)) {
+            throw new InvalidArgumentException('non-nullable total_external_staked cannot be null');
+        }
+        $this->container['total_external_staked'] = $total_external_staked;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_external_delegated
+     *
+     * @return int|null
+     */
+    public function getTotalExternalDelegated(): ?int
+    {
+        return $this->container['total_external_delegated'];
+    }
+
+    /**
+     * Sets total_external_delegated
+     *
+     * @param int|null $total_external_delegated Total active bakers' external delegated balance
+     *
+     * @return $this
+     */
+    public function setTotalExternalDelegated(?int $total_external_delegated): static
+    {
+        if (is_null($total_external_delegated)) {
+            throw new InvalidArgumentException('non-nullable total_external_delegated cannot be null');
+        }
+        $this->container['total_external_delegated'] = $total_external_delegated;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_baking_power
+     *
+     * @return int|null
+     */
+    public function getTotalBakingPower(): ?int
+    {
+        return $this->container['total_baking_power'];
+    }
+
+    /**
+     * Sets total_baking_power
+     *
+     * @param int|null $total_baking_power Total active bakers' baking power
+     *
+     * @return $this
+     */
+    public function setTotalBakingPower(?int $total_baking_power): static
+    {
+        if (is_null($total_baking_power)) {
+            throw new InvalidArgumentException('non-nullable total_baking_power cannot be null');
+        }
+        $this->container['total_baking_power'] = $total_baking_power;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_voting_power
+     *
+     * @return int|null
+     */
+    public function getTotalVotingPower(): ?int
+    {
+        return $this->container['total_voting_power'];
+    }
+
+    /**
+     * Sets total_voting_power
+     *
+     * @param int|null $total_voting_power Total active bakers' voting power
+     *
+     * @return $this
+     */
+    public function setTotalVotingPower(?int $total_voting_power): static
+    {
+        if (is_null($total_voting_power)) {
+            throw new InvalidArgumentException('non-nullable total_voting_power cannot be null');
+        }
+        $this->container['total_voting_power'] = $total_voting_power;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_bakers
+     *
+     * @return int|null
+     */
+    public function getTotalBakers(): ?int
+    {
+        return $this->container['total_bakers'];
+    }
+
+    /**
+     * Sets total_bakers
+     *
+     * @param int|null $total_bakers Total number of active bakers
+     *
+     * @return $this
+     */
+    public function setTotalBakers(?int $total_bakers): static
+    {
+        if (is_null($total_bakers)) {
+            throw new InvalidArgumentException('non-nullable total_bakers cannot be null');
+        }
+        $this->container['total_bakers'] = $total_bakers;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_stakers
+     *
+     * @return int|null
+     */
+    public function getTotalStakers(): ?int
+    {
+        return $this->container['total_stakers'];
+    }
+
+    /**
+     * Sets total_stakers
+     *
+     * @param int|null $total_stakers Total number of active bakers' stakers
+     *
+     * @return $this
+     */
+    public function setTotalStakers(?int $total_stakers): static
+    {
+        if (is_null($total_stakers)) {
+            throw new InvalidArgumentException('non-nullable total_stakers cannot be null');
+        }
+        $this->container['total_stakers'] = $total_stakers;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_delegators
+     *
+     * @return int|null
+     */
+    public function getTotalDelegators(): ?int
+    {
+        return $this->container['total_delegators'];
+    }
+
+    /**
+     * Sets total_delegators
+     *
+     * @param int|null $total_delegators Total number of active bakers' delegators
+     *
+     * @return $this
+     */
+    public function setTotalDelegators(?int $total_delegators): static
+    {
+        if (is_null($total_delegators)) {
+            throw new InvalidArgumentException('non-nullable total_delegators cannot be null');
+        }
+        $this->container['total_delegators'] = $total_delegators;
 
         return $this;
     }

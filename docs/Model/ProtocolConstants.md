@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **slashing_delay** | **int** | Number of cycles after double baking/(pre)attestation evidence where slashing happens | [optional]
 **max_delegated_over_frozen_ratio** | **int** | The ratio of delegated tez over the baker’s frozen stake | [optional]
 **max_external_over_own_stake_ratio** | **int** | The ratio of external staked balance over the baker’s own staked balance | [optional]
+**delegation_power_divider** | **int** | The divider by which delegation power is divided | [optional]
 **smart_rollup_origination_size** | **int** | Initial storage size of an originated (created) smart rollup (bytes) | [optional]
 **smart_rollup_stake_amount** | **int** | Smart rollup commitment bond (mutez) | [optional]
 **smart_rollup_challenge_window** | **int** | Window (in blocks) when it&#39;s possible to refute pending commitment | [optional]

@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **block** | **string** | Hash of the block, in which the operation was included | [optional]
 **hash** | **string** | Hash of the operation | [optional]
 **delegate** | [**\Tzkt\Model\PreattestationOperationAllOfDelegate**](PreattestationOperationAllOfDelegate.md) |  | [optional]
-**slots** | **int** | Number of assigned attestation slots to the baker who sent the operation | [optional]
+**power** | **int** | Attestation power | [optional]
 **quote** | [**\Tzkt\Model\PreattestationOperationAllOfQuote**](PreattestationOperationAllOfQuote.md) |  | [optional]
+**slots** | **int** | **DEPRECATED** | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

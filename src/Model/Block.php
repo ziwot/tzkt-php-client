@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - X: https://x.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Shadownet: `https://api.shadownet.tzkt.io/` ([view docs](https://api.shadownet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))  - Tallinnnet: `https://api.tallinnnet.tzkt.io/` ([view docs](https://api.tallinnnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.16.0
+ * The version of the OpenAPI document: 1.17.1
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -66,7 +66,8 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'proto' => 'int',
         'payload_round' => 'int',
         'block_round' => 'int',
-        'validations' => 'int',
+        'attestation_power' => 'int',
+        'attestation_committee' => 'int',
         'deposit' => 'int',
         'reward_delegated' => 'int',
         'reward_staked_own' => 'int',
@@ -83,8 +84,6 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'software' => '\Tzkt\Model\BlockSoftware',
         'lb_toggle' => 'bool',
         'lb_toggle_ema' => 'int',
-        'ai_toggle' => 'bool',
-        'ai_toggle_ema' => 'int',
         'attestations' => '\Tzkt\Model\AttestationOperation[]',
         'preattestations' => '\Tzkt\Model\PreattestationOperation[]',
         'proposals' => '\Tzkt\Model\ProposalOperation[]',
@@ -129,6 +128,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_attestation_rewards' => '\Tzkt\Model\DalAttestationRewardOperation[]',
         'autostaking_ops' => '\Tzkt\Model\AutostakingOperation[]',
         'quote' => '\Tzkt\Model\BlockQuote',
+        'validations' => 'int',
+        'ai_toggle' => 'bool',
+        'ai_toggle_ema' => 'int',
         'update_consensus_key_ops' => '\Tzkt\Model\UpdateSecondaryKeyOperation[]',
         'endorsements' => '\Tzkt\Model\AttestationOperation[]',
         'preendorsements' => '\Tzkt\Model\PreattestationOperation[]',
@@ -150,7 +152,8 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'proto' => 'int32',
         'payload_round' => 'int32',
         'block_round' => 'int32',
-        'validations' => 'int32',
+        'attestation_power' => 'int64',
+        'attestation_committee' => 'int64',
         'deposit' => 'int64',
         'reward_delegated' => 'int64',
         'reward_staked_own' => 'int64',
@@ -167,8 +170,6 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'software' => null,
         'lb_toggle' => null,
         'lb_toggle_ema' => 'int32',
-        'ai_toggle' => null,
-        'ai_toggle_ema' => 'int32',
         'attestations' => null,
         'preattestations' => null,
         'proposals' => null,
@@ -213,6 +214,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_attestation_rewards' => null,
         'autostaking_ops' => null,
         'quote' => null,
+        'validations' => 'int32',
+        'ai_toggle' => null,
+        'ai_toggle_ema' => 'int32',
         'update_consensus_key_ops' => null,
         'endorsements' => null,
         'preendorsements' => null,
@@ -234,7 +238,8 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'proto' => false,
         'payload_round' => false,
         'block_round' => false,
-        'validations' => false,
+        'attestation_power' => false,
+        'attestation_committee' => false,
         'deposit' => false,
         'reward_delegated' => false,
         'reward_staked_own' => false,
@@ -251,8 +256,6 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'software' => true,
         'lb_toggle' => true,
         'lb_toggle_ema' => false,
-        'ai_toggle' => true,
-        'ai_toggle_ema' => false,
         'attestations' => true,
         'preattestations' => true,
         'proposals' => true,
@@ -297,6 +300,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_attestation_rewards' => true,
         'autostaking_ops' => true,
         'quote' => true,
+        'validations' => false,
+        'ai_toggle' => true,
+        'ai_toggle_ema' => false,
         'update_consensus_key_ops' => true,
         'endorsements' => true,
         'preendorsements' => true,
@@ -398,7 +404,8 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'proto' => 'proto',
         'payload_round' => 'payloadRound',
         'block_round' => 'blockRound',
-        'validations' => 'validations',
+        'attestation_power' => 'attestationPower',
+        'attestation_committee' => 'attestationCommittee',
         'deposit' => 'deposit',
         'reward_delegated' => 'rewardDelegated',
         'reward_staked_own' => 'rewardStakedOwn',
@@ -415,8 +422,6 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'software' => 'software',
         'lb_toggle' => 'lbToggle',
         'lb_toggle_ema' => 'lbToggleEma',
-        'ai_toggle' => 'aiToggle',
-        'ai_toggle_ema' => 'aiToggleEma',
         'attestations' => 'attestations',
         'preattestations' => 'preattestations',
         'proposals' => 'proposals',
@@ -461,6 +466,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_attestation_rewards' => 'dalAttestationRewards',
         'autostaking_ops' => 'autostakingOps',
         'quote' => 'quote',
+        'validations' => 'validations',
+        'ai_toggle' => 'aiToggle',
+        'ai_toggle_ema' => 'aiToggleEma',
         'update_consensus_key_ops' => 'updateConsensusKeyOps',
         'endorsements' => 'endorsements',
         'preendorsements' => 'preendorsements',
@@ -482,7 +490,8 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'proto' => 'setProto',
         'payload_round' => 'setPayloadRound',
         'block_round' => 'setBlockRound',
-        'validations' => 'setValidations',
+        'attestation_power' => 'setAttestationPower',
+        'attestation_committee' => 'setAttestationCommittee',
         'deposit' => 'setDeposit',
         'reward_delegated' => 'setRewardDelegated',
         'reward_staked_own' => 'setRewardStakedOwn',
@@ -499,8 +508,6 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'software' => 'setSoftware',
         'lb_toggle' => 'setLbToggle',
         'lb_toggle_ema' => 'setLbToggleEma',
-        'ai_toggle' => 'setAiToggle',
-        'ai_toggle_ema' => 'setAiToggleEma',
         'attestations' => 'setAttestations',
         'preattestations' => 'setPreattestations',
         'proposals' => 'setProposals',
@@ -545,6 +552,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_attestation_rewards' => 'setDalAttestationRewards',
         'autostaking_ops' => 'setAutostakingOps',
         'quote' => 'setQuote',
+        'validations' => 'setValidations',
+        'ai_toggle' => 'setAiToggle',
+        'ai_toggle_ema' => 'setAiToggleEma',
         'update_consensus_key_ops' => 'setUpdateConsensusKeyOps',
         'endorsements' => 'setEndorsements',
         'preendorsements' => 'setPreendorsements',
@@ -566,7 +576,8 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'proto' => 'getProto',
         'payload_round' => 'getPayloadRound',
         'block_round' => 'getBlockRound',
-        'validations' => 'getValidations',
+        'attestation_power' => 'getAttestationPower',
+        'attestation_committee' => 'getAttestationCommittee',
         'deposit' => 'getDeposit',
         'reward_delegated' => 'getRewardDelegated',
         'reward_staked_own' => 'getRewardStakedOwn',
@@ -583,8 +594,6 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'software' => 'getSoftware',
         'lb_toggle' => 'getLbToggle',
         'lb_toggle_ema' => 'getLbToggleEma',
-        'ai_toggle' => 'getAiToggle',
-        'ai_toggle_ema' => 'getAiToggleEma',
         'attestations' => 'getAttestations',
         'preattestations' => 'getPreattestations',
         'proposals' => 'getProposals',
@@ -629,6 +638,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         'dal_attestation_rewards' => 'getDalAttestationRewards',
         'autostaking_ops' => 'getAutostakingOps',
         'quote' => 'getQuote',
+        'validations' => 'getValidations',
+        'ai_toggle' => 'getAiToggle',
+        'ai_toggle_ema' => 'getAiToggleEma',
         'update_consensus_key_ops' => 'getUpdateConsensusKeyOps',
         'endorsements' => 'getEndorsements',
         'preendorsements' => 'getPreendorsements',
@@ -700,7 +712,8 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('proto', $data ?? [], null);
         $this->setIfExists('payload_round', $data ?? [], null);
         $this->setIfExists('block_round', $data ?? [], null);
-        $this->setIfExists('validations', $data ?? [], null);
+        $this->setIfExists('attestation_power', $data ?? [], null);
+        $this->setIfExists('attestation_committee', $data ?? [], null);
         $this->setIfExists('deposit', $data ?? [], null);
         $this->setIfExists('reward_delegated', $data ?? [], null);
         $this->setIfExists('reward_staked_own', $data ?? [], null);
@@ -717,8 +730,6 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('software', $data ?? [], null);
         $this->setIfExists('lb_toggle', $data ?? [], null);
         $this->setIfExists('lb_toggle_ema', $data ?? [], null);
-        $this->setIfExists('ai_toggle', $data ?? [], null);
-        $this->setIfExists('ai_toggle_ema', $data ?? [], null);
         $this->setIfExists('attestations', $data ?? [], null);
         $this->setIfExists('preattestations', $data ?? [], null);
         $this->setIfExists('proposals', $data ?? [], null);
@@ -763,6 +774,9 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('dal_attestation_rewards', $data ?? [], null);
         $this->setIfExists('autostaking_ops', $data ?? [], null);
         $this->setIfExists('quote', $data ?? [], null);
+        $this->setIfExists('validations', $data ?? [], null);
+        $this->setIfExists('ai_toggle', $data ?? [], null);
+        $this->setIfExists('ai_toggle_ema', $data ?? [], null);
         $this->setIfExists('update_consensus_key_ops', $data ?? [], null);
         $this->setIfExists('endorsements', $data ?? [], null);
         $this->setIfExists('preendorsements', $data ?? [], null);
@@ -1003,28 +1017,55 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets validations
+     * Gets attestation_power
      *
      * @return int|null
      */
-    public function getValidations(): ?int
+    public function getAttestationPower(): ?int
     {
-        return $this->container['validations'];
+        return $this->container['attestation_power'];
     }
 
     /**
-     * Sets validations
+     * Sets attestation_power
      *
-     * @param int|null $validations Number of attestations (slots), included into the block
+     * @param int|null $attestation_power Recorder attestation power
      *
      * @return $this
      */
-    public function setValidations(?int $validations): static
+    public function setAttestationPower(?int $attestation_power): static
     {
-        if (is_null($validations)) {
-            throw new InvalidArgumentException('non-nullable validations cannot be null');
+        if (is_null($attestation_power)) {
+            throw new InvalidArgumentException('non-nullable attestation_power cannot be null');
         }
-        $this->container['validations'] = $validations;
+        $this->container['attestation_power'] = $attestation_power;
+
+        return $this;
+    }
+
+    /**
+     * Gets attestation_committee
+     *
+     * @return int|null
+     */
+    public function getAttestationCommittee(): ?int
+    {
+        return $this->container['attestation_committee'];
+    }
+
+    /**
+     * Sets attestation_committee
+     *
+     * @param int|null $attestation_committee Total attestation committee power
+     *
+     * @return $this
+     */
+    public function setAttestationCommittee(?int $attestation_committee): static
+    {
+        if (is_null($attestation_committee)) {
+            throw new InvalidArgumentException('non-nullable attestation_committee cannot be null');
+        }
+        $this->container['attestation_committee'] = $attestation_committee;
 
         return $this;
     }
@@ -1485,67 +1526,6 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable lb_toggle_ema cannot be null');
         }
         $this->container['lb_toggle_ema'] = $lb_toggle_ema;
-
-        return $this;
-    }
-
-    /**
-     * Gets ai_toggle
-     *
-     * @return bool|null
-     */
-    public function getAiToggle(): ?bool
-    {
-        return $this->container['ai_toggle'];
-    }
-
-    /**
-     * Sets ai_toggle
-     *
-     * @param bool|null $ai_toggle Adaptive issuance toggle (`true` if enabled, `false` if disabled, or `null` if the baker says 'pass')
-     *
-     * @return $this
-     */
-    public function setAiToggle(?bool $ai_toggle): static
-    {
-        if (is_null($ai_toggle)) {
-            array_push($this->openAPINullablesSetToNull, 'ai_toggle');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ai_toggle', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['ai_toggle'] = $ai_toggle;
-
-        return $this;
-    }
-
-    /**
-     * Gets ai_toggle_ema
-     *
-     * @return int|null
-     */
-    public function getAiToggleEma(): ?int
-    {
-        return $this->container['ai_toggle_ema'];
-    }
-
-    /**
-     * Sets ai_toggle_ema
-     *
-     * @param int|null $ai_toggle_ema Adaptive issuance EMA value with precision of 1000000 for integer computation
-     *
-     * @return $this
-     */
-    public function setAiToggleEma(?int $ai_toggle_ema): static
-    {
-        if (is_null($ai_toggle_ema)) {
-            throw new InvalidArgumentException('non-nullable ai_toggle_ema cannot be null');
-        }
-        $this->container['ai_toggle_ema'] = $ai_toggle_ema;
 
         return $this;
     }
@@ -3042,6 +3022,94 @@ class Block implements ModelInterface, ArrayAccess, JsonSerializable
             }
         }
         $this->container['quote'] = $quote;
+
+        return $this;
+    }
+
+    /**
+     * Gets validations
+     *
+     * @return int|null
+     */
+    public function getValidations(): ?int
+    {
+        return $this->container['validations'];
+    }
+
+    /**
+     * Sets validations
+     *
+     * @param int|null $validations **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setValidations(?int $validations): static
+    {
+        if (is_null($validations)) {
+            throw new InvalidArgumentException('non-nullable validations cannot be null');
+        }
+        $this->container['validations'] = $validations;
+
+        return $this;
+    }
+
+    /**
+     * Gets ai_toggle
+     *
+     * @return bool|null
+     */
+    public function getAiToggle(): ?bool
+    {
+        return $this->container['ai_toggle'];
+    }
+
+    /**
+     * Sets ai_toggle
+     *
+     * @param bool|null $ai_toggle **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setAiToggle(?bool $ai_toggle): static
+    {
+        if (is_null($ai_toggle)) {
+            array_push($this->openAPINullablesSetToNull, 'ai_toggle');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ai_toggle', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ai_toggle'] = $ai_toggle;
+
+        return $this;
+    }
+
+    /**
+     * Gets ai_toggle_ema
+     *
+     * @return int|null
+     */
+    public function getAiToggleEma(): ?int
+    {
+        return $this->container['ai_toggle_ema'];
+    }
+
+    /**
+     * Sets ai_toggle_ema
+     *
+     * @param int|null $ai_toggle_ema **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setAiToggleEma(?int $ai_toggle_ema): static
+    {
+        if (is_null($ai_toggle_ema)) {
+            throw new InvalidArgumentException('non-nullable ai_toggle_ema cannot be null');
+        }
+        $this->container['ai_toggle_ema'] = $ai_toggle_ema;
 
         return $this;
     }

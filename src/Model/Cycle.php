@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - X: https://x.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Shadownet: `https://api.shadownet.tzkt.io/` ([view docs](https://api.shadownet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))  - Tallinnnet: `https://api.tallinnnet.tzkt.io/` ([view docs](https://api.tallinnnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.16.0
+ * The version of the OpenAPI document: 1.17.1
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -69,12 +69,14 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_bakers' => 'int',
         'total_baking_power' => 'int',
         'block_reward' => 'int',
-        'block_bonus_per_slot' => 'int',
-        'attestation_reward_per_slot' => 'int',
+        'block_bonus_per_block' => 'int',
+        'attestation_reward_per_block' => 'int',
         'nonce_revelation_reward' => 'int',
         'vdf_revelation_reward' => 'int',
         'dal_attestation_reward_per_shard' => 'int',
         'quote' => '\Tzkt\Model\CycleQuote',
+        'block_bonus_per_slot' => 'int',
+        'attestation_reward_per_slot' => 'int',
         'endorsement_reward_per_slot' => 'int'
     ];
 
@@ -94,12 +96,14 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_bakers' => 'int32',
         'total_baking_power' => 'int64',
         'block_reward' => 'int64',
-        'block_bonus_per_slot' => 'int64',
-        'attestation_reward_per_slot' => 'int64',
+        'block_bonus_per_block' => 'int64',
+        'attestation_reward_per_block' => 'int64',
         'nonce_revelation_reward' => 'int64',
         'vdf_revelation_reward' => 'int64',
         'dal_attestation_reward_per_shard' => 'int64',
         'quote' => null,
+        'block_bonus_per_slot' => 'int64',
+        'attestation_reward_per_slot' => 'int64',
         'endorsement_reward_per_slot' => 'int64'
     ];
 
@@ -119,12 +123,14 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_bakers' => false,
         'total_baking_power' => false,
         'block_reward' => false,
-        'block_bonus_per_slot' => false,
-        'attestation_reward_per_slot' => false,
+        'block_bonus_per_block' => false,
+        'attestation_reward_per_block' => false,
         'nonce_revelation_reward' => false,
         'vdf_revelation_reward' => false,
         'dal_attestation_reward_per_shard' => false,
         'quote' => true,
+        'block_bonus_per_slot' => false,
+        'attestation_reward_per_slot' => false,
         'endorsement_reward_per_slot' => false
     ];
 
@@ -224,12 +230,14 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_bakers' => 'totalBakers',
         'total_baking_power' => 'totalBakingPower',
         'block_reward' => 'blockReward',
-        'block_bonus_per_slot' => 'blockBonusPerSlot',
-        'attestation_reward_per_slot' => 'attestationRewardPerSlot',
+        'block_bonus_per_block' => 'blockBonusPerBlock',
+        'attestation_reward_per_block' => 'attestationRewardPerBlock',
         'nonce_revelation_reward' => 'nonceRevelationReward',
         'vdf_revelation_reward' => 'vdfRevelationReward',
         'dal_attestation_reward_per_shard' => 'dalAttestationRewardPerShard',
         'quote' => 'quote',
+        'block_bonus_per_slot' => 'blockBonusPerSlot',
+        'attestation_reward_per_slot' => 'attestationRewardPerSlot',
         'endorsement_reward_per_slot' => 'endorsementRewardPerSlot'
     ];
 
@@ -249,12 +257,14 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_bakers' => 'setTotalBakers',
         'total_baking_power' => 'setTotalBakingPower',
         'block_reward' => 'setBlockReward',
-        'block_bonus_per_slot' => 'setBlockBonusPerSlot',
-        'attestation_reward_per_slot' => 'setAttestationRewardPerSlot',
+        'block_bonus_per_block' => 'setBlockBonusPerBlock',
+        'attestation_reward_per_block' => 'setAttestationRewardPerBlock',
         'nonce_revelation_reward' => 'setNonceRevelationReward',
         'vdf_revelation_reward' => 'setVdfRevelationReward',
         'dal_attestation_reward_per_shard' => 'setDalAttestationRewardPerShard',
         'quote' => 'setQuote',
+        'block_bonus_per_slot' => 'setBlockBonusPerSlot',
+        'attestation_reward_per_slot' => 'setAttestationRewardPerSlot',
         'endorsement_reward_per_slot' => 'setEndorsementRewardPerSlot'
     ];
 
@@ -274,12 +284,14 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         'total_bakers' => 'getTotalBakers',
         'total_baking_power' => 'getTotalBakingPower',
         'block_reward' => 'getBlockReward',
-        'block_bonus_per_slot' => 'getBlockBonusPerSlot',
-        'attestation_reward_per_slot' => 'getAttestationRewardPerSlot',
+        'block_bonus_per_block' => 'getBlockBonusPerBlock',
+        'attestation_reward_per_block' => 'getAttestationRewardPerBlock',
         'nonce_revelation_reward' => 'getNonceRevelationReward',
         'vdf_revelation_reward' => 'getVdfRevelationReward',
         'dal_attestation_reward_per_shard' => 'getDalAttestationRewardPerShard',
         'quote' => 'getQuote',
+        'block_bonus_per_slot' => 'getBlockBonusPerSlot',
+        'attestation_reward_per_slot' => 'getAttestationRewardPerSlot',
         'endorsement_reward_per_slot' => 'getEndorsementRewardPerSlot'
     ];
 
@@ -349,12 +361,14 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('total_bakers', $data ?? [], null);
         $this->setIfExists('total_baking_power', $data ?? [], null);
         $this->setIfExists('block_reward', $data ?? [], null);
-        $this->setIfExists('block_bonus_per_slot', $data ?? [], null);
-        $this->setIfExists('attestation_reward_per_slot', $data ?? [], null);
+        $this->setIfExists('block_bonus_per_block', $data ?? [], null);
+        $this->setIfExists('attestation_reward_per_block', $data ?? [], null);
         $this->setIfExists('nonce_revelation_reward', $data ?? [], null);
         $this->setIfExists('vdf_revelation_reward', $data ?? [], null);
         $this->setIfExists('dal_attestation_reward_per_shard', $data ?? [], null);
         $this->setIfExists('quote', $data ?? [], null);
+        $this->setIfExists('block_bonus_per_slot', $data ?? [], null);
+        $this->setIfExists('attestation_reward_per_slot', $data ?? [], null);
         $this->setIfExists('endorsement_reward_per_slot', $data ?? [], null);
     }
 
@@ -671,55 +685,55 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
-     * Gets block_bonus_per_slot
+     * Gets block_bonus_per_block
      *
      * @return int|null
      */
-    public function getBlockBonusPerSlot(): ?int
+    public function getBlockBonusPerBlock(): ?int
     {
-        return $this->container['block_bonus_per_slot'];
+        return $this->container['block_bonus_per_block'];
     }
 
     /**
-     * Sets block_bonus_per_slot
+     * Sets block_bonus_per_block
      *
-     * @param int|null $block_bonus_per_slot Bonus reward paid to the block producer in this cycle (micro tez)
+     * @param int|null $block_bonus_per_block Bonus reward paid to the block producer in this cycle (micro tez)
      *
      * @return $this
      */
-    public function setBlockBonusPerSlot(?int $block_bonus_per_slot): static
+    public function setBlockBonusPerBlock(?int $block_bonus_per_block): static
     {
-        if (is_null($block_bonus_per_slot)) {
-            throw new InvalidArgumentException('non-nullable block_bonus_per_slot cannot be null');
+        if (is_null($block_bonus_per_block)) {
+            throw new InvalidArgumentException('non-nullable block_bonus_per_block cannot be null');
         }
-        $this->container['block_bonus_per_slot'] = $block_bonus_per_slot;
+        $this->container['block_bonus_per_block'] = $block_bonus_per_block;
 
         return $this;
     }
 
     /**
-     * Gets attestation_reward_per_slot
+     * Gets attestation_reward_per_block
      *
      * @return int|null
      */
-    public function getAttestationRewardPerSlot(): ?int
+    public function getAttestationRewardPerBlock(): ?int
     {
-        return $this->container['attestation_reward_per_slot'];
+        return $this->container['attestation_reward_per_block'];
     }
 
     /**
-     * Sets attestation_reward_per_slot
+     * Sets attestation_reward_per_block
      *
-     * @param int|null $attestation_reward_per_slot Reward for attestation in this cycle (micro tez)
+     * @param int|null $attestation_reward_per_block Reward for attestation in this cycle (micro tez)
      *
      * @return $this
      */
-    public function setAttestationRewardPerSlot(?int $attestation_reward_per_slot): static
+    public function setAttestationRewardPerBlock(?int $attestation_reward_per_block): static
     {
-        if (is_null($attestation_reward_per_slot)) {
-            throw new InvalidArgumentException('non-nullable attestation_reward_per_slot cannot be null');
+        if (is_null($attestation_reward_per_block)) {
+            throw new InvalidArgumentException('non-nullable attestation_reward_per_block cannot be null');
         }
-        $this->container['attestation_reward_per_slot'] = $attestation_reward_per_slot;
+        $this->container['attestation_reward_per_block'] = $attestation_reward_per_block;
 
         return $this;
     }
@@ -835,6 +849,60 @@ class Cycle implements ModelInterface, ArrayAccess, JsonSerializable
             }
         }
         $this->container['quote'] = $quote;
+
+        return $this;
+    }
+
+    /**
+     * Gets block_bonus_per_slot
+     *
+     * @return int|null
+     */
+    public function getBlockBonusPerSlot(): ?int
+    {
+        return $this->container['block_bonus_per_slot'];
+    }
+
+    /**
+     * Sets block_bonus_per_slot
+     *
+     * @param int|null $block_bonus_per_slot **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setBlockBonusPerSlot(?int $block_bonus_per_slot): static
+    {
+        if (is_null($block_bonus_per_slot)) {
+            throw new InvalidArgumentException('non-nullable block_bonus_per_slot cannot be null');
+        }
+        $this->container['block_bonus_per_slot'] = $block_bonus_per_slot;
+
+        return $this;
+    }
+
+    /**
+     * Gets attestation_reward_per_slot
+     *
+     * @return int|null
+     */
+    public function getAttestationRewardPerSlot(): ?int
+    {
+        return $this->container['attestation_reward_per_slot'];
+    }
+
+    /**
+     * Sets attestation_reward_per_slot
+     *
+     * @param int|null $attestation_reward_per_slot **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setAttestationRewardPerSlot(?int $attestation_reward_per_slot): static
+    {
+        if (is_null($attestation_reward_per_slot)) {
+            throw new InvalidArgumentException('non-nullable attestation_reward_per_slot cannot be null');
+        }
+        $this->container['attestation_reward_per_slot'] = $attestation_reward_per_slot;
 
         return $this;
     }

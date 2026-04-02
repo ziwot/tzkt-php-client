@@ -12,9 +12,9 @@
 /**
  * TzKT API
  *
- * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - Slack: https://tezos-dev.slack.com/archives/CV5NX7F2L  - Twitter: https://twitter.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
+ * # Introduction    TzKT is the most widely used tool in Tezos that provides you with convenient and flexible access to the Tezos blockchain data, processed and indexed by its own indexer.   You can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API. TzKT was built by the joint efforts of the entire Tezos community   to help developers build more services and dapps on top of Tezos.    TzKT Indexer and API are [open-source](https://github.com/baking-bad/tzkt), so don't be afraid to depend on the third-party service,  because you can always clone, build and run it yourself to have full control over all the components.    Feel free to contact us if you have any questions or feature requests.  Your feedback is much appreciated!    - Discord: https://discord.gg/aG8XKuwsQd  - Telegram: https://t.me/baking_bad_chat  - X: https://x.com/TezosBakingBad  - Email: hello@bakingbad.dev    And don't forget to star TzKT [on GitHub](https://github.com/baking-bad/tzkt) if you like it 😊    # Get Started    There are two API services provided for public use:  - **Free TzKT API** with free anonymous access;  - **TzKT Pro** with paid subscriptions with increased rate limits, off-chain data, extended support and business-level SLA.    You can find more details about differences between available tiers [here](https://tzkt.io/api).    ## Free TzKT API    Free-tier TzKT API is the best way to get started and explore available Tezos data and API functionality.  It doesn't require authorization and is free for everyone and for both commercial and non-commercial use.    > #### Note: attribution required  If you use free-tier TzKT API, you **must** mention it on your website or application by placing the label  \"Powered by TzKT API\", or \"Built with TzKT API\", or \"Data provided by TzKT API\" with a direct link to [tzkt.io](https://tzkt.io).    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://api.tzkt.io/` or `https://api.mainnet.tzkt.io/` ([view docs](https://api.tzkt.io))  - Ghostnet: `https://api.ghostnet.tzkt.io/` ([view docs](https://api.ghostnet.tzkt.io))  - Shadownet: `https://api.shadownet.tzkt.io/` ([view docs](https://api.shadownet.tzkt.io))  - Seoulnet: `https://api.seoulnet.tzkt.io/` ([view docs](https://api.seoulnet.tzkt.io))  - Tallinnnet: `https://api.tallinnnet.tzkt.io/` ([view docs](https://api.tallinnnet.tzkt.io))    ### Sending Requests    To send a request to Free TzKT API you need literally nothing. Just take the base URL of the particular network  (for example, Tezos mainnet: `https://api.tzkt.io`) and append the path of the particular endpoint  (for example, chain's head: `/v1/head`), that's pretty much it:     ```bash  curl https://api.tzkt.io/v1/head  ```    Read through this documentation to explore available endpoints, query parameters  (note, if you click on a query parameter, you will see available modes, such as `.eq`, `.in`, etc.)  and response models. If you have any questions, do not hesitate to ask for support, Tezos community has always been very friendly! 😉    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits.    If you exceed the limit, the API will respond with `HTTP 429` status code.    ## TzKT Pro    TzKT Pro is intended for professional use, for those who seek for extended capabilities, performance, reliability and business-level SLA.  TzKT Pro service is provided via paid subscriptions. Please, refer to [Pricing Plans](https://tzkt.io/api) to check available tiers.    It's available for the following Tezos networks with the following base URLs:    - Mainnet: `https://pro.tzkt.io/` ([view docs](https://api.tzkt.io))  - Testnets: *let us know if you need TzKT Pro for testnets*    ### Authorization    To access TzKT Pro you will need to authorize requests with your personal API key, that you will receive on your email after purchasing a subscription.  This can be done by adding the query string parameter `?apikey={your_key}` or by adding the HTTP header `apikey: {your_key}`.    Note that you can have multiple API keys within a single subscription.    Keep your API keys private, do not publish it anywhere and do not hardcode it, especially in public repositories.  If your key was compromised, just let us know and we will issue a new one.    Also note that passing the API key via HTTP headers is more secure, because in HTTPS headers are encrypted,  but query string is not, so the key can be unintentionally exposed to third parties.    ### Sending Requests    Sending a request with the API key passed as a query string parameter:    ```bash  curl https://pro.tzkt.io/v1/head?apikey={your_key}  ```    Sending a request with the API key passed via an HTTP header:    ```bash  curl https://pro.tzkt.io/v1/head \\      -H 'apikey: {your_key}'  ```    ### Rate Limits    Please, refer to https://tzkt.io/api to check relevant rate limits for different pricing plans.    Also, TzKT Pro provides you with the additional HTTP headers to show the allowed limits, number of available requests  and the time remaining (in seconds) until the quota is reset. Here's an example:    ```  RateLimit-Limit: 50  RateLimit-Remaining: 49  RateLimit-Reset: 1  ```    It also sends general information about your rate limits per second and per day:    ```  X-RateLimit-Limit-Second: 50  X-RateLimit-Remaining-Second: 49  X-RateLimit-Limit-Day: 3000000  X-RateLimit-Remaining-Day: 2994953  ```    If you exceed the limit, the API will respond with `HTTP 429` status code.
  *
- * The version of the OpenAPI document: 1.16.0
+ * The version of the OpenAPI document: 1.17.1
  * Contact: hello@bakingbad.dev
  * @generated Generated by: https://openapi-generator.tech
  * Generator version: 7.12.0
@@ -66,10 +66,11 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
         'block' => 'string',
         'hash' => 'string',
         'delegate' => '\Tzkt\Model\AttestationOperationAllOfDelegate',
-        'slots' => 'int',
+        'power' => 'int',
         'deposit' => 'int',
         'rewards' => 'int',
-        'quote' => '\Tzkt\Model\AttestationOperationAllOfQuote'
+        'quote' => '\Tzkt\Model\AttestationOperationAllOfQuote',
+        'slots' => 'int'
     ];
 
     /**
@@ -85,10 +86,11 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
         'block' => null,
         'hash' => null,
         'delegate' => null,
-        'slots' => 'int32',
+        'power' => 'int64',
         'deposit' => 'int64',
         'rewards' => 'int64',
-        'quote' => null
+        'quote' => null,
+        'slots' => 'int32'
     ];
 
     /**
@@ -104,10 +106,11 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
         'block' => false,
         'hash' => false,
         'delegate' => false,
-        'slots' => false,
+        'power' => false,
         'deposit' => false,
         'rewards' => false,
-        'quote' => true
+        'quote' => true,
+        'slots' => false
     ];
 
     /**
@@ -203,10 +206,11 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
         'block' => 'block',
         'hash' => 'hash',
         'delegate' => 'delegate',
-        'slots' => 'slots',
+        'power' => 'power',
         'deposit' => 'deposit',
         'rewards' => 'rewards',
-        'quote' => 'quote'
+        'quote' => 'quote',
+        'slots' => 'slots'
     ];
 
     /**
@@ -222,10 +226,11 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
         'block' => 'setBlock',
         'hash' => 'setHash',
         'delegate' => 'setDelegate',
-        'slots' => 'setSlots',
+        'power' => 'setPower',
         'deposit' => 'setDeposit',
         'rewards' => 'setRewards',
-        'quote' => 'setQuote'
+        'quote' => 'setQuote',
+        'slots' => 'setSlots'
     ];
 
     /**
@@ -241,10 +246,11 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
         'block' => 'getBlock',
         'hash' => 'getHash',
         'delegate' => 'getDelegate',
-        'slots' => 'getSlots',
+        'power' => 'getPower',
         'deposit' => 'getDeposit',
         'rewards' => 'getRewards',
-        'quote' => 'getQuote'
+        'quote' => 'getQuote',
+        'slots' => 'getSlots'
     ];
 
     /**
@@ -310,10 +316,11 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
         $this->setIfExists('block', $data ?? [], null);
         $this->setIfExists('hash', $data ?? [], null);
         $this->setIfExists('delegate', $data ?? [], null);
-        $this->setIfExists('slots', $data ?? [], null);
+        $this->setIfExists('power', $data ?? [], null);
         $this->setIfExists('deposit', $data ?? [], null);
         $this->setIfExists('rewards', $data ?? [], null);
         $this->setIfExists('quote', $data ?? [], null);
+        $this->setIfExists('slots', $data ?? [], null);
     }
 
     /**
@@ -548,28 +555,28 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
     }
 
     /**
-     * Gets slots
+     * Gets power
      *
      * @return int|null
      */
-    public function getSlots(): ?int
+    public function getPower(): ?int
     {
-        return $this->container['slots'];
+        return $this->container['power'];
     }
 
     /**
-     * Sets slots
+     * Sets power
      *
-     * @param int|null $slots Number of assigned attestation slots to the baker who sent the operation
+     * @param int|null $power Attestation power
      *
      * @return $this
      */
-    public function setSlots(?int $slots): static
+    public function setPower(?int $power): static
     {
-        if (is_null($slots)) {
-            throw new InvalidArgumentException('non-nullable slots cannot be null');
+        if (is_null($power)) {
+            throw new InvalidArgumentException('non-nullable power cannot be null');
         }
-        $this->container['slots'] = $slots;
+        $this->container['power'] = $power;
 
         return $this;
     }
@@ -658,6 +665,33 @@ class AttestationOperation implements ModelInterface, ArrayAccess, JsonSerializa
             }
         }
         $this->container['quote'] = $quote;
+
+        return $this;
+    }
+
+    /**
+     * Gets slots
+     *
+     * @return int|null
+     */
+    public function getSlots(): ?int
+    {
+        return $this->container['slots'];
+    }
+
+    /**
+     * Sets slots
+     *
+     * @param int|null $slots **DEPRECATED**
+     *
+     * @return $this
+     */
+    public function setSlots(?int $slots): static
+    {
+        if (is_null($slots)) {
+            throw new InvalidArgumentException('non-nullable slots cannot be null');
+        }
+        $this->container['slots'] = $slots;
 
         return $this;
     }

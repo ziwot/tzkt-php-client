@@ -20,6 +20,15 @@ Name | Type | Description | Notes
 **total_rollup_bonds** | **int** | Total amount of tokens locked as rollup bonds | [optional]
 **total_smart_rollup_bonds** | **int** | Total amount of tokens locked as smart rollup bonds | [optional]
 **total_lost** | **int** | Total amount lost due to inaccuracy of the economic protocol introduced in Oxford. This amount is literally lost, because it is no longer available for the account in any mean, but for some reason it is counted as delegated. | [optional]
+**total_own_staked** | **int** | Total active bakers&#39; own staked balance | [optional]
+**total_own_delegated** | **int** | Total active bakers&#39; own delegated balance | [optional]
+**total_external_staked** | **int** | Total active bakers&#39; external staked balance | [optional]
+**total_external_delegated** | **int** | Total active bakers&#39; external delegated balance | [optional]
+**total_baking_power** | **int** | Total active bakers&#39; baking power | [optional]
+**total_voting_power** | **int** | Total active bakers&#39; voting power | [optional]
+**total_bakers** | **int** | Total number of active bakers | [optional]
+**total_stakers** | **int** | Total number of active bakers&#39; stakers | [optional]
+**total_delegators** | **int** | Total number of active bakers&#39; delegators | [optional]
 **quote** | [**\Tzkt\Model\StatisticsQuote**](StatisticsQuote.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

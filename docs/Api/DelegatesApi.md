@@ -35,7 +35,7 @@ $apiInstance = new Tzkt\Api\DelegatesApi(
 $active = new \Tzkt\Model\\Tzkt\Model\AccountsGetStakedParameter(); // \Tzkt\Model\AccountsGetStakedParameter | Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates)
 $last_activity = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters delegates by last activity level (where the delegate was updated)
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `id` (default), `activationLevel`, `deactivationLevel`, `stakingBalance`, `balance`, `numDelegators`.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts delegators by specified field. Supported fields: `id` (default), `stakedBalance`, `externalStakedBalance`, `ownDelegatedBalance`, `externalDelegatedBalance`, `bakingPower`, `votingPower`, `balance`, `numDelegators`, `stakersCount`, `activationLevel`, `deactivationLevel`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 
@@ -54,7 +54,7 @@ try {
 | **active** | [**\Tzkt\Model\AccountsGetStakedParameter**](../Model/.md)| Delegate status to filter by (true - only active, false - only deactivated, undefined - all delegates) | [optional] |
 | **last_activity** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters delegates by last activity level (where the delegate was updated) | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;activationLevel&#x60;, &#x60;deactivationLevel&#x60;, &#x60;stakingBalance&#x60;, &#x60;balance&#x60;, &#x60;numDelegators&#x60;. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts delegators by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;stakedBalance&#x60;, &#x60;externalStakedBalance&#x60;, &#x60;ownDelegatedBalance&#x60;, &#x60;externalDelegatedBalance&#x60;, &#x60;bakingPower&#x60;, &#x60;votingPower&#x60;, &#x60;balance&#x60;, &#x60;numDelegators&#x60;, &#x60;stakersCount&#x60;, &#x60;activationLevel&#x60;, &#x60;deactivationLevel&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 

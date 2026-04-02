@@ -43,7 +43,7 @@ $level = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\Ac
 $timestamp = new \Tzkt\Model\\Tzkt\Model\BlocksGetTimestampParameter(); // \Tzkt\Model\BlocksGetTimestampParameter | Filters blocks by timestamp.
 $block_round = new \Tzkt\Model\\Tzkt\Model\AccountsGetIdParameter(); // \Tzkt\Model\AccountsGetIdParameter | Filters blocks by block round.
 $select = new \Tzkt\Model\\Tzkt\Model\AccountsGetSelectParameter(); // \Tzkt\Model\AccountsGetSelectParameter | Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both `.fields` and `.values` modes.
-$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts blocks by specified field. Supported fields: `id` (default), `level`, `payloadRound`, `blockRound`, `validations`, `reward`, `bonus`, `fees`.
+$sort = new \Tzkt\Model\\Tzkt\Model\AccountsGetSortParameter(); // \Tzkt\Model\AccountsGetSortParameter | Sorts blocks by specified field. Supported fields: `id` (default), `level`, `payloadRound`, `blockRound`, `attestationPower`, `reward`, `bonus`, `fees`.
 $offset = new \Tzkt\Model\\Tzkt\Model\AccountsGetOffsetParameter(); // \Tzkt\Model\AccountsGetOffsetParameter | Specifies which or how many items should be skipped
 $limit = 100; // int | Maximum number of items to return
 $quote = new \Tzkt\Model\\Tzkt\Model\AccountsGetActivityQuoteParameter(); // \Tzkt\Model\AccountsGetActivityQuoteParameter | Comma-separated list of ticker symbols to inject historical prices into response
@@ -67,7 +67,7 @@ try {
 | **timestamp** | [**\Tzkt\Model\BlocksGetTimestampParameter**](../Model/.md)| Filters blocks by timestamp. | [optional] |
 | **block_round** | [**\Tzkt\Model\AccountsGetIdParameter**](../Model/.md)| Filters blocks by block round. | [optional] |
 | **select** | [**\Tzkt\Model\AccountsGetSelectParameter**](../Model/.md)| Specify comma-separated list of fields to include into response or leave it undefined to return full object. If you select single field, response will be an array of values in both &#x60;.fields&#x60; and &#x60;.values&#x60; modes. | [optional] |
-| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts blocks by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;payloadRound&#x60;, &#x60;blockRound&#x60;, &#x60;validations&#x60;, &#x60;reward&#x60;, &#x60;bonus&#x60;, &#x60;fees&#x60;. | [optional] |
+| **sort** | [**\Tzkt\Model\AccountsGetSortParameter**](../Model/.md)| Sorts blocks by specified field. Supported fields: &#x60;id&#x60; (default), &#x60;level&#x60;, &#x60;payloadRound&#x60;, &#x60;blockRound&#x60;, &#x60;attestationPower&#x60;, &#x60;reward&#x60;, &#x60;bonus&#x60;, &#x60;fees&#x60;. | [optional] |
 | **offset** | [**\Tzkt\Model\AccountsGetOffsetParameter**](../Model/.md)| Specifies which or how many items should be skipped | [optional] |
 | **limit** | **int**| Maximum number of items to return | [optional] [default to 100] |
 | **quote** | [**\Tzkt\Model\AccountsGetActivityQuoteParameter**](../Model/.md)| Comma-separated list of ticker symbols to inject historical prices into response | [optional] |
